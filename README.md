@@ -16,11 +16,6 @@ une présentation sur la maintenabilité des applications
  * possibilité de devoir à partir d'un projet antérieur
  * ou alors moi je prends des projets étudiants et je montre ce qui pourrait être amélioré 
 
-## Pour le mail d'introduction
-
-Penser à inclure le [CV linkedin](http://fr.linkedin.com/in/lcottereau/fr "Laurent Cottereau") dans la proposition.
-L'idée est de faire un cours de 2 à 4h max au total (en 1 ou 2 fois). Le langage privilégié serait java.
-
 ## Préparation de la présentation
 ### Outils
 
