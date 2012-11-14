@@ -1,0 +1,17 @@
+.special body {
+	background: url('../img/test.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.special p {
+	color: #222;
+}
+.dingle body {
+	background: url('../img/fond_dingle.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

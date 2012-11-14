@@ -1,19 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>TODO slogan écologique</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Développement logiciel durable : une présentation sur la maintenabilité des applications">
+		<meta name="author" content="Laurent Cottereau">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/maintenabilite.css">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -35,20 +36,29 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+				<section data-state="special">
+					<h1>TODO Slogan écologique !</h1>
+					<p>Développement Logiciel Durable</p>
+				</section>
+				
+				<section data-state="dingle">
+					<h1>Laurent Cottereau</h1>
+					<p>Développeur au Sénat</p>
+					<p>nuage de tags gros</p>
+					<ul>
+						<li>gros : J2EE, HTML, CSS, Accessibilité, Agilité</li>
+						<li>moyen : SQL, javascript, PHP</li>
+						<li>petit : XUL, C++</li>
+					<ul>
+						<li><a href="http://laurent.cottereau.name">http://laurent.cottereau.name</a></li>
+						<li><a href="mailto:laurent@cottereau.name">laurent@cottereau.name</a></li>
+						<li><a href="http://twitter.com/lcottereau">@lcottereau</a></li>
+					</ul>
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
+					<h2>Usine de développement</h2>
+					<p><a href="svg/usine-dev.svg">La base de tout</a></p>
 
 					<aside class="notes">
 						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
@@ -61,9 +71,9 @@
 						<h2>Vertical Slides</h2>
 						<p>
 							Slides can be nested inside of other slides,
-							try pressing <a href="#/2/1">down</a>.
+							try pressing <a href="#" class="navigate-down">down</a>.
 						</p>
-						<a href="#/2/1" class="image">
+						<a href="#" class="image navigate-down">
 							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
 						</a>
 					</section>
@@ -164,6 +174,7 @@
 						<a href="?theme=beige#/themes">Beige</a> -
 						<a href="?theme=simple#/themes">Simple</a> -
 						<a href="?theme=serif#/themes">Serif</a> -
+						<a href="?theme=night#/night">Night</a> -
 						<a href="?#/themes">Default</a>
 					</p>
 					<p>
@@ -181,20 +192,20 @@
 							will be added as a class to the document element when the slide is open. This lets you
 							apply broader style changes, like switching the background.
 						</p>
-						<a href="#/7/1" class="image">
+						<a href="#" class="image navigate-down">
 							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
 						</a>
 					</section>
 					<section data-state="blackout">
 						<h2>"blackout"</h2>
-						<a href="#/7/2" class="image">
+						<a href="#" class="image navigate-down">
 							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
 						</a>
 					</section>
 					<section data-state="soothe">
 						<h2>"soothe"</h2>
-						<a href="#/7/0" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
+						<a href="#" class="image navigate-next">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(-90deg);">
 						</a>
 					</section>
 				</section>
@@ -350,6 +361,7 @@ function linkify( selector ) {
 				controls: true,
 				progress: true,
 				history: true,
+				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
@@ -362,6 +374,7 @@ function linkify( selector ) {
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 
