@@ -33,6 +33,7 @@ Intégrer le [software craftmanship](http://training.xebia.fr/formations-java-je
 * Ateliers orateurs [2011](http://www.paris-web.fr/actualites/2011/05/compte-rendu-atelier-orateurs.php) et [2012](http://www.paris-web.fr/actualites/2012/05/compte-rendu-de-latelier-orateurs-2012.php)
 
 ### Citations
+* Les pollueurs (dév crades) ne sont pas les payeurs (mainteneurs)
 * <http://t37.net/13-citations-droles-l-histoire-programmation.html>
  * _Il y existe deux manières de concevoir un logiciel. La première, c’est de le faire si simple qu’il est évident qu’il ne présente aucun problème. La seconde, c’est de le faire si compliqué qu’il ne présente aucun problème évident. La première méthode est de loin la plus complexe_ - C.A.R. Hoare
  * _Si les ouvriers construisaient les bâtiments comme les développeurs écrivent leurs programmes, le premier pivert venu aurait détruit toute civilisation_ - Gerald Weinberg
