@@ -18,6 +18,12 @@ une présentation sur la maintenabilité des applications
  * ou alors moi je prends des projets étudiants et je montre ce qui pourrait être amélioré 
 * conclure sur le [software craftmanship](http://training.xebia.fr/formations-java-jee/formation-tdd-software-craftsmanship.html)
 
+## Contexte
+
+Il faut poser des questions sur
+* taille de la classe
+* niveau (en particulier maturité en java)
+* projets existants sur lesquels travailler concrètement
 
 ## Préparation de la présentation
 ### Outils
