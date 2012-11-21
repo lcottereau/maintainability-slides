@@ -5,6 +5,9 @@ une présentation sur la maintenabilité des applications
 ## Synopsis
 
 * parler des différents défis pour le développeur : métier, ergonomie très fonctionnels, architecture et performance plus technique. Et en venir à la maintenabilité. Des difficultés très spécifiques (pas pollueur-payeur, pas évident, même pas vraiment de nom !) Une manière intéressante de faire ça pourrait être de décrire un scenario catastrophe.
+ * correction d'un bug -> livraison (avec les coûts associés)
+ * arrivée d'un autre bug lié à une duplication du code précedent -> correction de tout et relivraison (ou batterie de tests quand on a cette phase)
+ * régression fonctionnelle lié à une toute petite modif dans le code dupliqué pour un cas. Non vu
 * définition de la maintenabilité. Parler d'adaptation au contexte (il faut choisir l'investissement en fonction du besoin). Mentionner la dette technique. Présenter un diagramme _araignée_ avec les 4 axes d'un projet (coût, délai, fonctionnalités, qualité) et leurs interactions. Parler de ce qui est possible ou pas : certains prétendent qu'il ne faut pas jouer sur la qualité, expliquer que pas possible trop jouer sur les délais grâce aux coûts, expliquer que client pas souvent d'accord pour jouer sur les fonctionnalités, ...
 * bonnes pratiques : convention over configuration, maven, frameworks, comprendre ce qui se passe vraiment sous le capot. supprimer le code obsolète au fur et à mesure. [clean code](http://blog.octo.com/les-artisans-codeurs-chez-octo/)
 * se concentrer sur le coeur de métier : le moins de code possible, utilisation de bibliothèques (code déporté, pas de responsabilité). Attention à ce qu'il soit propre et à ne pas prendre trop d'inutile. Parler aussi de lombok
