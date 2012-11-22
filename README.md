@@ -32,7 +32,7 @@ Il faut poser des questions sur
 ### Outils
 
 * [Reveal.js](https://github.com/hakimel/reveal.js)
-* [Sozi](http://sozi.baierouge.fr/wiki/fr:bienvenue) pour naviguer dans du SVG
+* [Diagram.ly](http://www.diagram.ly/), [Inkscape](http://inkscape.org/?lang=fr) et [Sozi](http://sozi.baierouge.fr/wiki/fr:bienvenue) pour le schéma de l'usine de dev
 * [Delicious](http://www.delicious.com) pour partager l'ensemble des liens
 
 Ce qu'on n'utilisera pas [fathom.js](http://markdalgleish.com/projects/fathom/), [Deck.js](http://imakewebthings.com/deck.js/) (avec des [extensions](http://home.heeere.com/tech-deckjs-ext.html)) et [Shower](https://github.com/pepelsbey/shower) (avec les [notes](http://christianheilmann.com/2012/08/15/browsers-have-a-presenter-mode-console-info/))
