@@ -4,7 +4,7 @@ une présentation sur la maintenabilité des applications
 
 ## Synopsis
 
-* parler des différents défis pour le développeur : métier, ergonomie très fonctionnels, architecture et performance plus technique. Et en venir à la maintenabilité. Des difficultés très spécifiques (pas pollueur-payeur, pas évident, même pas vraiment de nom !) Une manière intéressante de faire ça pourrait être de décrire un scenario catastrophe.
+* parler des différents défis pour le développeur : métier, ergonomie très fonctionnels, architecture et performance plus technique. Et en venir à la maintenabilité avec [quelques exemples](https://www.inria.fr/centre/grenoble/actualites/la-fiabilite-des-systemes-devient-un-defi-majeur). Des difficultés très spécifiques (pas pollueur-payeur, pas évident, même pas vraiment de nom !) Une manière intéressante de faire ça pourrait être de décrire un scenario catastrophe.
  * correction d'un bug -> livraison (avec les coûts associés)
  * arrivée d'un autre bug lié à une duplication du code précedent -> correction de tout et relivraison (ou batterie de tests quand on a cette phase)
  * régression fonctionnelle lié à une toute petite modif dans le code dupliqué pour un cas. Non vu
