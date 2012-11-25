@@ -1,6 +1,6 @@
 # Développement de Logiciel Durable
 
-une présentation sur la maintenabilité des applications
+une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintainability) des applications
 
 ## Synopsis
 
