@@ -9,7 +9,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
  * arrivée d'un autre bug lié à une duplication du code précedent -> correction de tout et relivraison (ou batterie de tests quand on a cette phase)
  * régression fonctionnelle lié à une toute petite modif dans le code dupliqué pour un cas. Non vu
 * définition de la maintenabilité. Parler d'adaptation au contexte (il faut choisir l'investissement en fonction du besoin). Mentionner la dette technique. Présenter un diagramme _araignée_ avec les 4 axes d'un projet (coût, délai, fonctionnalités, qualité) et leurs interactions. Parler de ce qui est possible ou pas : certains prétendent qu'il ne faut pas jouer sur la qualité, expliquer que pas possible trop jouer sur les délais grâce aux coûts, expliquer que client pas souvent d'accord pour jouer sur les fonctionnalités, ...
-* bonnes pratiques : convention over configuration, maven, frameworks, comprendre ce qui se passe vraiment sous le capot. supprimer le code obsolète au fur et à mesure. [clean code](http://blog.octo.com/les-artisans-codeurs-chez-octo/)
+* bonnes pratiques : convention over configuration, maven, frameworks, comprendre ce qui se passe vraiment sous le capot. supprimer le code obsolète au fur et à mesure. [clean code](http://blog.octo.com/les-artisans-codeurs-chez-octo/). Vérif avant commit
 * utiliser les fonctionnalités de son éditeur (par exemple eclipse avec les variables non utilisées) : du coup obligation de purger les erreurs et warnings
 * parler de l'informatique de gestion précisément (en leur demandant de le définir par exemple) se concentrer sur le coeur de métier : le __moins de code, de doc, de tout que possible__, utilisation de bibliothèques (code déporté, pas de responsabilité). Attention à ce qu'il soit propre et à ne pas prendre trop d'inutile. Parler aussi de lombok
 * la documentation : your code is your documentation, pas de documents énormes word mais plutôt des fichiers en gestion de version avec editeur en ligne (cf [readme un fichier nommé désir](http://www.paris-web.fr/2012/conferences/readme-un-fichier-nomme-plaisir.php)) ou des wikis. L'important est la facilité de mise à jour et la taille.
@@ -33,7 +33,7 @@ Il faut poser des questions sur
 ### Outils
 
 * [Reveal.js](https://github.com/hakimel/reveal.js)
-* [Diagram.ly](http://www.diagram.ly/), [Inkscape](http://inkscape.org/?lang=fr) et [Sozi](http://sozi.baierouge.fr/wiki/fr:bienvenue) pour le schéma de l'usine de dev
+* [Diagram.ly](http://www.diagram.ly/), [Inkscape](http://inkscape.org/?lang=fr) et [Sozi](http://sozi.baierouge.fr/wiki/fr:bienvenue) pour le schéma de l'usine de dev. Etudier [Prezi](http://prezi.com/) mais pas sûr de pouvoir exporter à un format ouvert...
 * [Delicious](http://www.delicious.com) pour partager l'ensemble des liens
 
 Ce qu'on n'utilisera pas [fathom.js](http://markdalgleish.com/projects/fathom/), [Deck.js](http://imakewebthings.com/deck.js/) (avec des [extensions](http://home.heeere.com/tech-deckjs-ext.html)) et [Shower](https://github.com/pepelsbey/shower) (avec les [notes](http://christianheilmann.com/2012/08/15/browsers-have-a-presenter-mode-console-info/))
