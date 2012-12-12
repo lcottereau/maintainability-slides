@@ -4,11 +4,35 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
 
 ## Synopsis
 
-* parler des différents défis pour le développeur : métier, ergonomie très fonctionnels, architecture et performance plus technique. Et en venir à la maintenabilité avec [quelques exemples](https://www.inria.fr/centre/grenoble/actualites/la-fiabilite-des-systemes-devient-un-defi-majeur). Des difficultés très spécifiques (pas pollueur-payeur, pas évident, même pas vraiment de nom !) Une manière intéressante de faire ça pourrait être de décrire un scenario catastrophe.
- * correction d'un bug -> livraison (avec les coûts associés)
- * arrivée d'un autre bug lié à une duplication du code précedent -> correction de tout et relivraison (ou batterie de tests quand on a cette phase)
- * régression fonctionnelle lié à une toute petite modif dans le code dupliqué pour un cas. Non vu
-* définition de la maintenabilité. Parler d'adaptation au contexte (il faut choisir l'investissement en fonction du besoin). Mentionner la dette technique. Présenter un diagramme _araignée_ avec les 4 axes d'un projet (coût, délai, fonctionnalités, qualité) et leurs interactions. Parler de ce qui est possible ou pas : certains prétendent qu'il ne faut pas jouer sur la qualité, expliquer que pas possible trop jouer sur les délais grâce aux coûts, expliquer que client pas souvent d'accord pour jouer sur les fonctionnalités, ...
+* SCENARIO CATASTROPHE (ou alors en deuxième position ?)
+    * correction d'un bug bloquant simple et livraison (rappel qu'il y a des coûts associés)
+    * arrivée d'un autre bug lié à une duplication du code précedent -> correction de tout et relivraison (ou batterie de tests quand on a cette phase)
+    * régression fonctionnelle lié à une toute petite modif dans le code dupliqué pour un cas, non vu
+* INTRODUCTION A LA MAINTENABILITE
+    * parler de la théorie des [3 contraintes d'un projet informatique](http://www.projectsmart.co.uk/project-management-scope-triangle.html)
+    * Bien montrer qu'en fait la qualité n'est pas fixe (plutôt un carré donc) avec une histoire où l'on parle des commerciaux (pas de décalage, moins cher) ou des utilisateurs (pas de décalage, moins cher, plus de fonctionnalités).
+    * Transition de la qualité à la maintenabilité. Définition. 
+    * Donner [quelques exemples](https://www.inria.fr/centre/grenoble/actualites/la-fiabilite-des-systemes-devient-un-defi-majeur)
+    * Déjà indiquer que certains point sont faciles, mais que d'autres ont des coûts.
+    * Parler d'adaptation au contexte en différenciant 
+        * le projet pilote
+        * peut-être trouver un moyen de déjà montrer que cela pourrait être différent pour un projet avec beaucoup besoin de performance ou de sécurité
+        * le projet avec beaucoup de métier
+    * Peut-être (à voir : quel est l'object ?) parler du métier de dév en informatique de gestion
+        * des points particulièrement importants (métier complexe, ergonomie)
+        * des points parfois moins critiques (architectures classiques, performance moins importante)
+    * Conclure
+        * en parlant de la problématique du pollueur-payeur (rarement le mainteneur qui a développé)
+        * en indiquant que c'est compliqué à expliquer (cf la durée de l'introduction)
+        * en indiquant qu'il n'y a même pas vraiment de nom !
+* BONNES PRATIQUES ET TECHNIQUES DE DEV
+* USINE LOGICIELLE
+* PROJET
+* CONCLUSION
+
+A caser :
+* la métaphore de l'écologie
+* Mentionner la dette technique. 
 * Less is More mais comparaison entre 3 codes (1 avec rien de compréhensible, 1 avec des noms métiers, et 1 avec fonction métier séparée) qui montre que parfois plus de code est plus lisible. Vraiment comprendre à fond ce que l'on écrit (veille technique, lecture des specs, ...)
 * bonnes pratiques : convention over configuration, maven, frameworks, comprendre ce qui se passe vraiment sous le capot. supprimer le code obsolète au fur et à mesure. [clean code](http://blog.octo.com/les-artisans-codeurs-chez-octo/). Vérif avant commit
 * utiliser les fonctionnalités de son éditeur (par exemple eclipse avec les variables non utilisées) : du coup obligation de purger les erreurs et warnings
