@@ -32,6 +32,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
 
 A caser :
 * la métaphore de l'écologie
+* des petits sondages (qu'est-ce que la maintenabilité, qui a fait de la maintenance en stage/apprentissage, ...)
 * Mentionner la dette technique. 
 * Less is More mais comparaison entre 3 codes (1 avec rien de compréhensible, 1 avec des noms métiers, et 1 avec fonction métier séparée) qui montre que parfois plus de code est plus lisible. Vraiment comprendre à fond ce que l'on écrit (veille technique, lecture des specs, ...)
 * bonnes pratiques : convention over configuration, maven, frameworks, comprendre ce qui se passe vraiment sous le capot. supprimer le code obsolète au fur et à mesure. [clean code](http://blog.octo.com/les-artisans-codeurs-chez-octo/). Vérif avant commit
