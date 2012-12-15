@@ -18,7 +18,8 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * le projet pilote
         * peut-être trouver un moyen de déjà montrer que cela pourrait être différent pour un projet avec beaucoup besoin de performance ou de sécurité
         * le projet avec beaucoup de métier
-    * Peut-être (à voir : quel est l'object ?) parler du métier de dév en informatique de gestion
+    * Accentuer sur le métier de dév en informatique de gestion
+        + leur demander de le définir
         * des points particulièrement importants (métier complexe, ergonomie)
         * des points parfois moins critiques (architectures classiques, performance moins importante)
     * Conclure
@@ -26,19 +27,60 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * en indiquant que c'est compliqué à expliquer (cf la durée de l'introduction)
         * en indiquant qu'il n'y a même pas vraiment de nom !
 * BONNES PRATIQUES ET TECHNIQUES DE DEV
+    * Less is More
+        * __le moins de code possible, le moins de doc possible__
+        * /!\ meilleur conseil à des dev : comprendre chaque bout de code écrit ou maintenu
+            * pas de code en trop, pas de bugs techniques (inadmissibles)
+            * c'est ce qui différencie un bon développeur d'un mauvais développeur
+            * veille techniques, lecture des specs techniques, curiosité permanente, pas de pré-suppositions
+        * vérifier systématiquement avant de commiter quelque chose
+        * utiliser des frameworks et bibliothèques
+            + demander qui connait la différence entre frameworks et bibliothèques : si pas clair, raccord sur la curiosité permanente
+            * code est déporté, mieux testé (en général)
+            * permet de se concentrer sur la valeur ajoutée. Exemples :
+                * pour l'info de gestion, c'est le métier qui est la valeur, pas l'affichage des pages. Donc utilisation de frameworks et bibliothèques pour l'affichage (Play 2, Spring MVC, JSF)
+                * pour une application de blog, c'est la gestion des articles qui est la valeur. Donc externaliser la connexion, l'infra d'exploitation.
+                * autres ?
+                * Des choses sont à la marge (ergo sur info de gestion, commentaires pour blog). Dans ce cas-là, c'est un choix. Pages auto ou Pages spécifiques. Code pour les commentaires ou externalisation.
+            * attention malgré tout à ce qu'il soit propre, documenté, testé avec une communauté afin qu'il n'amène pas plus de problème qu'il n'en résoud.
+            * éviter d'écraser une mouche avec une enclume et un marteau. Pas trop d'inutile, pas d'usine pour des choses simples. 
+            * jugement qui vient avec l'expérience. Il faut sans arrêt se poser la question (cf bon développeur)
+        * petite pépite : Lombok
+            * expliquer le principe (parler des beans en injection de dépendance Spring/J2EE CDI)
+            * une démo avec du code (avant après sur le site, peut-être aussi avec des beans métier)
+            * évoquer les difficultés (éditeurs, debug, ...) comme avec les techniques AOP
+        * convention over configuration (allusion à maven, documentation, choix des bibliothèques et frameworks exactement adaptés)
+        * "your code is your documentation" (citation de quelqu'un ?)
+            * pas de documents word énormes
+            * plutôt des choses faciles à mettre à jour, simples et petites
+                * éditeur en ligne de github
+                * wikis dans les forges logicielles
+                * évoquer [readme un fichier nommé désir](http://www.paris-web.fr/2012/conferences/readme-un-fichier-nomme-plaisir.php)
+        * tempérer le discours 
+    * code "expressif" (trouver une meilleure expression)
+        * comparaison entre 3 codes (1 tout un bloc incompréhensible, 1 avec des noms parlants, 1 avec une fonction et une variable en plus) qui montre 
+    * KISS
+        * dans l'archi technique globale
+        * dans le code (architecture logicielle). Evoquer l'Agile.
+        * dans les choix progiciels (plus compliqué de ne pas prévoir à long terme)
+    * Refactoring et nettoyage permanent
+        * évoquer la difficulté
+        * Tests automatisés
+            * Facilité de refactoring 
+            * Permet de détecter le code inutile : suppression des tests inutiles et couverture des tests
+            * 
+    * 
 * USINE LOGICIELLE
 * PROJET
 * CONCLUSION
 
 A caser :
+* l'objectif de la présentation (évoquer sans trop de détails, donner des pistes de réflexion et de travail, ...)
 * la métaphore de l'écologie
 * des petits sondages (qu'est-ce que la maintenabilité, qui a fait de la maintenance en stage/apprentissage, ...)
 * Mentionner la dette technique. 
-* Less is More mais comparaison entre 3 codes (1 avec rien de compréhensible, 1 avec des noms métiers, et 1 avec fonction métier séparée) qui montre que parfois plus de code est plus lisible. Vraiment comprendre à fond ce que l'on écrit (veille technique, lecture des specs, ...)
-* bonnes pratiques : convention over configuration, maven, frameworks, comprendre ce qui se passe vraiment sous le capot. supprimer le code obsolète au fur et à mesure. [clean code](http://blog.octo.com/les-artisans-codeurs-chez-octo/). Vérif avant commit
+* [clean code](http://blog.octo.com/les-artisans-codeurs-chez-octo/).
 * utiliser les fonctionnalités de son éditeur (par exemple eclipse avec les variables non utilisées) : du coup obligation de purger les erreurs et warnings
-* parler de l'informatique de gestion précisément (en leur demandant de le définir par exemple) se concentrer sur le coeur de métier : le __moins de code, de doc, de tout que possible__, utilisation de bibliothèques (code déporté, pas de responsabilité). Attention à ce qu'il soit propre et à ne pas prendre trop d'inutile. Parler aussi de lombok
-* la documentation : your code is your documentation, pas de documents énormes word mais plutôt des fichiers en gestion de version avec editeur en ligne (cf [readme un fichier nommé désir](http://www.paris-web.fr/2012/conferences/readme-un-fichier-nomme-plaisir.php)) ou des wikis. L'important est la facilité de mise à jour et la taille.
 * tests automatisés : unitaires, intégration, fonctionnels (graphique pour montrer le flou entre les définitions). Parler des difficultés et contraintes. Evoquer les mocks et le TD
 * intégration/[déploiement](http://blog.octo.com/continuous-deployment/)/... continu
 * usine de développement (jenkins, sonar) avec nexus en bonus. Évoquer les critères de choix des outils et la vigilance à ne pas s'enfermer. Donner quelques liens pour des [usines en ligne](http://deors.wordpress.com/2012/10/03/developer-day/)
