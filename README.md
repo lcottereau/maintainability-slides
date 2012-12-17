@@ -59,7 +59,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * tempérer le discours 
     * code "expressif" (trouver une meilleure expression)
         * comparaison entre 3 codes (1 tout un bloc incompréhensible, 1 avec des noms parlants, 1 avec une fonction et une variable en plus) qui montre 
-    * KISS
+    * [KISS](http://www.redaction-technique.org/redacteur-technique/redacteur-technique/principe-de-simplicite-kiss/)
         * dans l'archi technique globale
         * dans le code (architecture logicielle). Evoquer l'Agile.
         * dans les choix progiciels (plus compliqué de ne pas prévoir à long terme)
