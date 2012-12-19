@@ -56,6 +56,10 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
                 * éditeur en ligne de github
                 * wikis dans les forges logicielles
                 * évoquer [readme un fichier nommé désir](http://www.paris-web.fr/2012/conferences/readme-un-fichier-nomme-plaisir.php)
+            * bien gérer son gestionnaire de sources pour avoir une documentation très complète
+                * historique des problèmes, incidents, choix d'architecture
+                * liens avec le gestionnaire de tickets
+                * changelog automatisé
         * tempérer le discours 
     * code "expressif" (trouver une meilleure expression)
         * comparaison entre 3 codes (1 tout un bloc incompréhensible, 1 avec des noms parlants, 1 avec une fonction et une variable en plus) qui montre 
