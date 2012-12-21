@@ -8,6 +8,10 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
     * correction d'un bug bloquant simple et livraison (rappel qu'il y a des coûts associés)
     * arrivée d'un autre bug lié à une duplication du code précedent -> correction de tout et relivraison (ou batterie de tests quand on a cette phase)
     * régression fonctionnelle lié à une toute petite modif dans le code dupliqué pour un cas, non vu
+    * Conclure sur le fait que c'est la vraie vie de développeur
+        * ici à mon arrivée dans une entreprise
+        * mais aussi partout où je suis allé
+        * et partout où vous irez
 * INTRODUCTION A LA MAINTENABILITE
     * parler de la théorie des [3 contraintes d'un projet informatique](http://www.projectsmart.co.uk/project-management-scope-triangle.html)
     * Bien montrer qu'en fait la qualité n'est pas fixe (plutôt un carré donc) avec une histoire où l'on parle des commerciaux (pas de décalage, moins cher) ou des utilisateurs (pas de décalage, moins cher, plus de fonctionnalités).
