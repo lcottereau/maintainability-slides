@@ -118,6 +118,7 @@ Ce qu'on n'utilisera pas [fathom.js](http://markdalgleish.com/projects/fathom/),
 * [Developer Evangelism](http://developer-evangelism.com/slides.php)
 * [Evangelism Reps](https://wiki.mozilla.org/ReMo/SIGs/Evangelism_Reps/Evangelism_Reps_Toolkit) dont [Great Talks](https://wiki.mozilla.org/Evangelism_Reps_Training_Program/GreatTalks)
 * Ateliers orateurs [2011](http://www.paris-web.fr/actualites/2011/05/compte-rendu-atelier-orateurs.php) et [2012](http://www.paris-web.fr/actualites/2012/05/compte-rendu-de-latelier-orateurs-2012.php)
+* [3 tricks to better public speaking](http://neiljoglekar.com/what-i-learned-from-our-guest-lecture-at-cmu)
 
 ### Citations
 * Les pollueurs (dév crades) ne sont pas les payeurs (mainteneurs)
