@@ -24,6 +24,9 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * des points parfois moins critiques (architectures classiques, performance moins importante)
     * Conclure
         * en parlant de la problématique du pollueur-payeur (rarement le mainteneur qui a développé)
+            * mais souvent le développeur qui fait le début de la maintenance
+            * appliquer ces techniques en début de récupération de maintenance est positif (meilleure maintenabilité et montée en connaissance)
+            * le karma : il faut bien commencer quelque part
         * en indiquant que c'est compliqué à expliquer (cf la durée de l'introduction)
         * en indiquant qu'il n'y a même pas vraiment de nom !
 * BONNES PRATIQUES ET TECHNIQUES DE DEV
