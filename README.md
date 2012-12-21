@@ -109,6 +109,7 @@ A caser :
 Il faut poser des questions sur
 * taille de la classe
 * niveau (en particulier maturité en java)
+* connaissance sur les différentes briques de l'usine de dév pour savoir où insister
 * projets existants sur lesquels travailler concrètement
 
 ## Préparation de la présentation
