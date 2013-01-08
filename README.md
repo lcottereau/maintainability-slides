@@ -8,6 +8,10 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
     * correction d'un bug bloquant simple et livraison (rappel qu'il y a des coûts associés)
     * arrivée d'un autre bug lié à une duplication du code précedent -> correction de tout et relivraison (ou batterie de tests quand on a cette phase)
     * régression fonctionnelle lié à une toute petite modif dans le code dupliqué pour un cas, non vu
+    * Conclure sur le fait que c'est la vraie vie de développeur
+        * ici à mon arrivée dans une entreprise
+        * mais aussi partout où je suis allé
+        * et partout où vous irez
 * INTRODUCTION A LA MAINTENABILITE
     * parler de la théorie des [3 contraintes d'un projet informatique](http://www.projectsmart.co.uk/project-management-scope-triangle.html)
     * Bien montrer qu'en fait la qualité n'est pas fixe (plutôt un carré donc) avec une histoire où l'on parle des commerciaux (pas de décalage, moins cher) ou des utilisateurs (pas de décalage, moins cher, plus de fonctionnalités).
@@ -22,13 +26,16 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         + leur demander de le définir
         * des points particulièrement importants (métier complexe, ergonomie)
         * des points parfois moins critiques (architectures classiques, performance moins importante)
+    * Parler de la problématique du pollueur-payeur (rarement le mainteneur qui a développé). 
+        * Indiquer qu'il est important pour bien développer de maintenir aussi du code.
+        * appliquer ces techniques en début de récupération de maintenance est positif (meilleure maintenabilité et montée en connaissance)
+        * le karma : il faut bien commencer quelque part dans la situation difficile actuelle
     * Conclure
-        * en parlant de la problématique du pollueur-payeur (rarement le mainteneur qui a développé). Indiquer qu'il est important pour bien développer de maintenir aussi du code.
         * en indiquant que c'est compliqué à expliquer (cf la durée de l'introduction)
         * en indiquant qu'il n'y a même pas vraiment de nom !
-    * Evoquer la dette technique
+        * en évoquant la dette technique
 * BONNES PRATIQUES ET TECHNIQUES DE DEV
-    * KISS
+    * [KISS](http://www.redaction-technique.org/redacteur-technique/redacteur-technique/principe-de-simplicite-kiss/)
         * dans l'archi technique globale
         * dans le code (architecture logicielle). Evoquer l'Agile.
         * une des raisons de la réussite d'UNIX est la séparation des tâches en des programmes indépendants (chacun est plus facilement maintenable)
@@ -65,6 +72,13 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
                 * éditeur en ligne de github
                 * wikis dans les forges logicielles
                 * évoquer [readme un fichier nommé désir](http://www.paris-web.fr/2012/conferences/readme-un-fichier-nomme-plaisir.php)
+            * gestionnaire de sources
+                * historique des problèmes, incidents, choix d'architecture
+                * changelog automatisé
+                * liens avec le gestionnaire de tickets
+            * noter les TODO
+                * dans le gestionnaire de tickets
+                * éventuellement dans le code (mais pas trop)
         * tempérer le discours 
     * Refactoring et nettoyage permanent
         * évoquer la difficulté (rappel au scenario catastrophe ?)
@@ -133,6 +147,7 @@ A caser :
 Il faut poser des questions sur
 * taille de la classe
 * niveau (en particulier maturité en java)
+* connaissance sur les différentes briques de l'usine de dév pour savoir où insister
 * projets existants sur lesquels travailler concrètement
 * quelles parties ont déjà été vues dans un autre cours
 
@@ -150,6 +165,7 @@ Ce qu'on n'utilisera pas [fathom.js](http://markdalgleish.com/projects/fathom/),
 * [Developer Evangelism](http://developer-evangelism.com/slides.php)
 * [Evangelism Reps](https://wiki.mozilla.org/ReMo/SIGs/Evangelism_Reps/Evangelism_Reps_Toolkit) dont [Great Talks](https://wiki.mozilla.org/Evangelism_Reps_Training_Program/GreatTalks)
 * Ateliers orateurs [2011](http://www.paris-web.fr/actualites/2011/05/compte-rendu-atelier-orateurs.php) et [2012](http://www.paris-web.fr/actualites/2012/05/compte-rendu-de-latelier-orateurs-2012.php)
+* [3 tricks to better public speaking](http://neiljoglekar.com/what-i-learned-from-our-guest-lecture-at-cmu)
 
 ### Citations
 * Les pollueurs (dév crades) ne sont pas les payeurs (mainteneurs)
@@ -162,3 +178,8 @@ Ce qu'on n'utilisera pas [fathom.js](http://markdalgleish.com/projects/fathom/),
  * _Avant de vouloir qu’un logiciel soit réutilisable, il faudrait d’abord qu’il ait été utilisable_ - Ralph Johnson
 * <http://www.evene.fr/celebre/biographie/antoine-de-saint-exupery-279.php?citations>
  * _La perfection est atteinte, non pas lorsqu'il n'y a plus rien à ajouter, mais lorsqu'il n'y a plus rien à retirer_ - Antoine de Saint-Exupéry
+
+### Relectures
+* Florent M.
+* Michael S.
+* Marie C.
