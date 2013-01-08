@@ -101,7 +101,11 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
     * utiliser les fonctionnalités de son éditeur (exemple pour les variables non utilisées)
         * il est nécessaire de les traiter au fur et à mesure au risque de se faire dépasser (cf la théorie de la fenêtre brisée à NY)
 * USINE LOGICIELLE
-    * Poste client
+    1. Un nouveau bug à gérer : **Suivi des tickets**
+        * sert à la fois pour les bugs et les évolutions
+        * pas de documentation énorme donc nécessité de tout suivre, même petits bugs rapides à corriger
+        * réfléchir à qui saisit, administre et voit les tickets (problèmatiques d'efficacité, de conservation de l'historique, de compréhension _téléphone arabe_)
+    1. Poste client
         * Editeur de code source
             * ce que vous pouvez rechercher
                 * compilation automatique
@@ -121,13 +125,31 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * gestionnaire de dépendances
             * ensemble de bonnes pratiques
             * 
-* PROJET
+    * Site web du code source
+    * Intégration continue
+    * Gestion des sources
+        * parler des hookups git
+    * Dépôt de binaires
+    * Documentation projet
+    * Suivi de la qualité
+    * Note sur les environnements de développement
+        * Viser une portabilité maximale
+            * limiter les risques pour le passage en production
+            * un package identique qui marche partout sans modification
+            * des fichiers de configuration, par exemple à des emplacements "connus"
+        * environnement de production
+        * environnement local
+            * maximum doit être fait dessus si c'est possible (suivant l'infrastructure)
+        * environnement d'intégration 
+            * identique à la production 
+            * pour des tests en conditions réelles,  reproduction d'incidents de production, tests de charge pertinents (mais pas idéaux)
+            * faire plus de tests sur cet environnement si le contexte infra est très différent entre produciton et local
+* PROJET ?
 * CONCLUSION
     * Rappel sur les points les plus importants
-        * Less Is More
-        * Refactor
-        * ...
-    * Parler des artisans codeur
+        * Comprendre toujours dans le détail le code écrit ou maintenu
+        * Remettre en cause sans craindre mais sans ignorer les impacts
+    * Parler des [artisans codeur](http://training.xebia.fr/formations-java-jee/formation-tdd-software-craftsmanship.html)
 
 A caser :
 * l'objectif de la présentation (évoquer sans trop de détails, donner des pistes de réflexion et de travail, ...)
@@ -135,12 +157,13 @@ A caser :
 * des petits sondages (qu'est-ce que la maintenabilité, qui a fait de la maintenance en stage/apprentissage, ...)
 * [clean code](http://blog.octo.com/les-artisans-codeurs-chez-octo/).
 * intégration/[déploiement](http://blog.octo.com/continuous-deployment/)/... continu
+* voire comment on indique les différences entre les infrastructures "par projet" et les infrastructures mutualisées. Est-ce pertinent d'en parler ?
 * usine de développement (jenkins, sonar) avec nexus en bonus. Évoquer les critères de choix des outils et la vigilance à ne pas s'enfermer. Donner quelques liens pour des [usines en ligne](http://deors.wordpress.com/2012/10/03/developer-day/)
 * parler de stratégie de mise en place du suivi qualité (pour une application existante, lien avec d'autres systèmes qualité comme opquast par exemple). Les indicateurs pour les indicateurs sont inefficaces : prendre du recul, parler de l'expérience vécue. C'est une aide pour le développeur seulement. Evoquer les erreurs sonars liés au code Lombok et le fait de faire des commentaires vides ou nuls.
 * exemples de règles java sur du vrai code avec sonar
  * possibilité de devoir à partir d'un projet antérieur
- * ou alors moi je prends des projets étudiants et je montre ce qui pourrait être amélioré 
-* conclure sur le [software craftmanship](http://training.xebia.fr/formations-java-jee/formation-tdd-software-craftsmanship.html)
+ * ou alors moi je prends des projets étudiants et je montre ce qui pourrait être amélioré
+ * parler des usines logicielles intégrées (github voire jira studio). avantages et inconvénients par rapport à des produuits séparés
 
 ## Contexte
 
@@ -183,3 +206,6 @@ Ce qu'on n'utilisera pas [fathom.js](http://markdalgleish.com/projects/fathom/),
 * Florent M.
 * Michael S.
 * Marie C.
+* Ludovic P.
+* Sébastien D.
+* autres collègues
