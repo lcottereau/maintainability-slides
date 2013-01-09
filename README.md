@@ -4,6 +4,9 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
 
 ## Synopsis
 
+* PRESENTATION
+    * expérience professionnelle dans le développement
+    * insister sur le fait que ce condensé est lié à mon expérience et *doit* être analysé, questionné et remis en cause régulièrement
 * SCENARIO CATASTROPHE (ou alors en deuxième position ?)
     * correction d'un bug bloquant simple et livraison (rappel qu'il y a des coûts associés)
     * arrivée d'un autre bug lié à une duplication du code précedent -> correction de tout et relivraison (ou batterie de tests quand on a cette phase)
@@ -72,13 +75,21 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
                 * éditeur en ligne de github
                 * wikis dans les forges logicielles
                 * évoquer [readme un fichier nommé désir](http://www.paris-web.fr/2012/conferences/readme-un-fichier-nomme-plaisir.php)
-            * gestionnaire de sources
-                * historique des problèmes, incidents, choix d'architecture
-                * changelog automatisé
-                * liens avec le gestionnaire de tickets
+            * les sources d'information existantes _automatiques_
+                * historique des problèmes, incidents, évolutions fonctionnelles, choix d'architecture
+                * javadoc dans code source et tests
+                * description et commentaires dans gestionnaire de tickets
+                * commentaires de commit dans gestionnaire de source
+                * idéalement, des liens entre ces infrastructures
             * noter les TODO
                 * dans le gestionnaire de tickets
                 * éventuellement dans le code (mais pas trop)
+            * Ce qu'il est bon d'avoir
+                * un point d'entrée pour un nouveau participant (dev, utilisateur, management)
+                * description fonctionnelle haut niveau (à adapter en fonction de la cible et du besoin)
+                * description technique haut niveau
+                * changelog ou historique (plus de détails si souhaité car informations pérennes)
+                * ce qui ne rentre pas ailleurs
         * tempérer le discours 
     * Refactoring et nettoyage permanent
         * évoquer la difficulté (rappel au scenario catastrophe ?)
@@ -100,12 +111,25 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * très peu de cas où il est pertinent sur le long terme de garder le code non compris : le supprimer (avec éventuellement des communications, des avertissements)
     * utiliser les fonctionnalités de son éditeur (exemple pour les variables non utilisées)
         * il est nécessaire de les traiter au fur et à mesure au risque de se faire dépasser (cf la théorie de la fenêtre brisée à NY)
+* ENVIRONNEMENTS
+    * Viser une portabilité complète du binaire
+        * limiter les risques pour le passage en production
+        * un package identique qui marche partout sans modification
+        * des fichiers de configuration, par exemple à des emplacements "connus"
+    * environnement de production
+    * environnement local
+        * maximum doit être fait dessus si c'est possible (suivant l'infrastructure)
+    * environnement d'intégration 
+        * identique à la production 
+        * pour des tests en conditions réelles,  reproduction d'incidents de production, tests de charge pertinents (mais pas idéaux)
+        * faire plus de tests sur cet environnement si le contexte infra est très différent entre produciton et local
+    * à adapter évidemment au contexte
 * USINE LOGICIELLE
     1. Un nouveau bug à gérer : **Suivi des tickets**
         * sert à la fois pour les bugs et les évolutions
         * pas de documentation énorme donc nécessité de tout suivre, même petits bugs rapides à corriger
         * réfléchir à qui saisit, administre et voit les tickets (problèmatiques d'efficacité, de conservation de l'historique, de compréhension _téléphone arabe_)
-    1. Poste client
+    1. Développement : **Poste utilisateur**
         * Editeur de code source
             * ce que vous pouvez rechercher
                 * compilation automatique
@@ -117,33 +141,34 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
                 * NetBeans (moche mais maintenant semble intéressant)
                 * mais pourquoi pas vi ou emacs avec les bons plugins
                 * un projet pérenne ne devrait pas être lié à un IDE ou à une version
-            * note sur les choix de carrière
-                * exigez un ordinateur puissant, cela coûte beaucoup moins cher que votre temps perdu.
-                * apprenez à vous servir de votre IDE, investissement nécessaire 
-                * remettez-vous en cause régulièrement en (re)testant d'autres IDEs
         * Maven
             * gestionnaire de dépendances
-            * ensemble de bonnes pratiques
-            * 
-    * Site web du code source
-    * Intégration continue
-    * Gestion des sources
-        * parler des hookups git
-    * Dépôt de binaires
-    * Documentation projet
+            * ensemble de bonnes pratiques _gratuites_ : convention over configuration
+                * organisation des répertoires
+                * TODO
+            * gestionnaire de construction
+                * prépackagé pour jar et war et extensible
+                * différenciation entre les version SNAPSHOT et finales
+    1. Echange avec les autres développeurs ou membres projet : **Site web du code source**
+        * pas d'authentification ou alors facile pour tous (SSO d'entreprise par exemple)
+    1. Sauvegarde et partage des changements du code : **Gestion des sources**
+        * sauvegarde, historique, partage
+        * TODO parler des branches et des tags
+        * TODO parler des hookups git
+    1. Pour documenter ce qui n'est pas documentable dans le code : __Documentation projet__
+    1. Vérifier en permanence la compilation et l'ensemble des tests : **Intégration continue**
+        * différentes stratégies de lancement (au commit, régulier)
+            * en fonction du besoin de réactivité, du nombre de commits, des durées de compilation et de tests
+            * stratégies mixtes possibles si build trop long
+                * tests de montée en charge une fois par semaine
+                * packaging des binaires que sur les versions non SNAPSHOT
+        * penser à exécuter le maximum de tests en local (unitaires au minimum)
+    1. __Dépôt de binaires__
+        * pour rendre disponible des packages binaires projet à tous (pas besoin d'avoir les sources pour installer en production par exemple)
+        * mirroir pour économiser la bande passante externe
+        * pour les dépendances qui ne sont pas disponibles publiquement (Drivers Oracle par exemple)
     * Suivi de la qualité
-    * Note sur les environnements de développement
-        * Viser une portabilité maximale
-            * limiter les risques pour le passage en production
-            * un package identique qui marche partout sans modification
-            * des fichiers de configuration, par exemple à des emplacements "connus"
-        * environnement de production
-        * environnement local
-            * maximum doit être fait dessus si c'est possible (suivant l'infrastructure)
-        * environnement d'intégration 
-            * identique à la production 
-            * pour des tests en conditions réelles,  reproduction d'incidents de production, tests de charge pertinents (mais pas idéaux)
-            * faire plus de tests sur cet environnement si le contexte infra est très différent entre produciton et local
+    * Revue de code
 * PROJET ?
 * CONCLUSION
     * Rappel sur les points les plus importants
@@ -164,6 +189,11 @@ A caser :
  * possibilité de devoir à partir d'un projet antérieur
  * ou alors moi je prends des projets étudiants et je montre ce qui pourrait être amélioré
  * parler des usines logicielles intégrées (github voire jira studio). avantages et inconvénients par rapport à des produuits séparés
+* note sur les choix de carrière, exigez un ordinateur puissant, cela coûte beaucoup moins cher que votre temps perdu. Faut-il forcément travailler à un endroit où une usine de développement est en place ?
+* apprenez à vous servir de votre IDE, investissement nécessaire
+* remettez-vous en cause régulièrement en (re)testant d'autres IDEs
+* parler de la gestion des postes clients (IE 6 par exemple quand dev sous Linux) : dans la section sur les environnements de dev ?
+* pas de mots de passe dans le code source : partage complet pour toute l'entreprise
 
 ## Contexte
 
@@ -209,3 +239,5 @@ Ce qu'on n'utilisera pas [fathom.js](http://markdalgleish.com/projects/fathom/),
 * Ludovic P.
 * Sébastien D.
 * autres collègues
+* Lang H.
+* Eric L.
