@@ -70,7 +70,8 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * évoquer les difficultés (éditeurs, debug, ...) comme avec les techniques AOP
         * convention over configuration (allusion à maven, documentation, choix des bibliothèques et frameworks exactement adaptés)
         * "your code is your documentation" (citation de quelqu'un ?). Y compris les tests
-            * pas de documents word énormes
+            * ne pas oublier que c'est le code le patrimoine et la valeur de l'entreprise qui fait du développement
+            * pas de documents word énormes. 
             * plutôt des choses faciles à mettre à jour, simples et petites
                 * éditeur en ligne de github
                 * wikis dans les forges logicielles
@@ -129,6 +130,10 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * sert à la fois pour les bugs et les évolutions
         * pas de documentation énorme donc nécessité de tout suivre, même petits bugs rapides à corriger
         * réfléchir à qui saisit, administre et voit les tickets (problèmatiques d'efficacité, de conservation de l'historique, de compréhension _téléphone arabe_)
+        * suggestions
+            * bugzilla (compliqué mais complet et pérenne)
+            * mantis (plus apprécié des utilisateurs et grosse communauté)
+            * suivi des tickets intégrés (en général très simples) : github, gitlab, trac, jira
     1. Développement : **Poste utilisateur**
         * Editeur de code source
             * ce que vous pouvez rechercher
@@ -151,11 +156,21 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
                 * différenciation entre les version SNAPSHOT et finales
     1. Echange avec les autres développeurs ou membres projet : **Site web du code source**
         * pas d'authentification ou alors facile pour tous (SSO d'entreprise par exemple)
+        * suggestions : webgit inclus avec git
     1. Sauvegarde et partage des changements du code : **Gestion des sources**
         * sauvegarde, historique, partage
         * TODO parler des branches et des tags
         * TODO parler des hookups git
-    1. Pour documenter ce qui n'est pas documentable dans le code : __Documentation projet__
+        * suggestions
+            * ce qui est en place par défaut (pas le premier truc à faire évoluer)
+            * CVS était chouette mais maintenant complètement dépassé
+            * Subversion mieux que CVS (support, changements atomiques) mais pas terrible
+            * Les gestionnaires distribués sont à privilégier
+            * histoire rapide de git : pas mal de support aujourd'hui, github, pérennité
+    1. Pour documenter ce qui n'est pas documentable dans le code : __Documentation 
+        * suggestions :
+            * wiki autonome : le wiki d'entreprise (habitude pour les utilisateurs)
+            * wiki intégré : github, trac, gitlab
     1. Vérifier en permanence la compilation et l'ensemble des tests : **Intégration continue**
         * différentes stratégies de lancement (au commit, régulier)
             * en fonction du besoin de réactivité, du nombre de commits, des durées de compilation et de tests
@@ -163,10 +178,19 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
                 * tests de montée en charge une fois par semaine
                 * packaging des binaires que sur les versions non SNAPSHOT
         * penser à exécuter le maximum de tests en local (unitaires au minimum)
+        * suggestions
+            * hudson/jenkins : opensource et largement utilisé mais pas très user-friendly
+            * cruise control
+            * celui de atlassian
     1. __Dépôt de binaires__
-        * pour rendre disponible des packages binaires projet à tous (pas besoin d'avoir les sources pour installer en production par exemple)
+        * pour rendre disponible des packages binaires projet à tous
+            * pas besoin d'avoir les sources pour installer en production
+            * partage des bibliothèques utilitaires développées de manière centralisée
         * mirroir pour économiser la bande passante externe
         * pour les dépendances qui ne sont pas disponibles publiquement (Drivers Oracle par exemple)
+        * suggestions
+            * nexus
+            * un autre TODO ?
     * Suivi de la qualité
     * Revue de code
 * PROJET ?
@@ -194,6 +218,7 @@ A caser :
 * remettez-vous en cause régulièrement en (re)testant d'autres IDEs
 * parler de la gestion des postes clients (IE 6 par exemple quand dev sous Linux) : dans la section sur les environnements de dev ?
 * pas de mots de passe dans le code source : partage complet pour toute l'entreprise
+* indiquer en conclusion ce qui est bien acquis aujourd'hui (bonnes pratiques de dev sur le principe, usine de dev) et ce qui l'est moins (code = valeur, artisans codeur)
 
 ## Contexte
 
