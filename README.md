@@ -167,7 +167,13 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * Subversion mieux que CVS (support, changements atomiques) mais pas terrible
             * Les gestionnaires distribués sont à privilégier
             * histoire rapide de git : pas mal de support aujourd'hui, github, pérennité
-    1. Pour documenter ce qui n'est pas documentable dans le code : __Documentation 
+    1. __Revue de code__
+        * parfois a priori (par exemple Google, avec un nombre de validations dépendant de la criticité du projet)
+        * parfois a posteriori (suivi d'un développeur junior ou d'un stagiaire par un senior à moindre coût)
+        * objectifs assez similaire au pair programming mais plus facile à mettre en place et différemment efficace
+            * moins de communication et de partage
+            * meilleure validation effective de la maintenabilité long terme
+    1. Pour documenter ce qui n'est pas documentable dans le code : __Documentation__
         * suggestions :
             * wiki autonome : le wiki d'entreprise (habitude pour les utilisateurs)
             * wiki intégré : github, trac, gitlab
@@ -189,10 +195,18 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * mirroir pour économiser la bande passante externe
         * pour les dépendances qui ne sont pas disponibles publiquement (Drivers Oracle par exemple)
         * suggestions
-            * nexus
+            * apache nexus : open source, grosse communauté, simple
             * un autre TODO ?
-    * Suivi de la qualité
-    * Revue de code
+    1. __Suivi de la qualité__ de l'ensemble du patrimoine applicatif
+        * suivi d'un certain nombre d'indicateurs qualité
+            * TODO les plus importants
+        * pour le développeur, pour l'équipe, pour le management
+        * attention à ne l'utiliser que comme aide à contextualiser. 100% cache un projet extrêmement simple ou alors des mauvais choix
+            * pas d'accesseurs lorsque l'on utilise lombok : normal
+            * lorsque l'on étend des classes de bibliothèques, des erreurs sur les signatures originelles ne peuvent pas être corrigées.
+            * désactiver les règles peut parfois être utiles, mais seulement si jamais nécessaire
+        * suggestions : Sonar est globalement seul sur le marché et très simple d'utilisation avec un serveur d'intégration continue et maven
+            * évoquer des produits comme CAST mais fermé, très cher et complexe à utiliser
 * PROJET ?
 * CONCLUSION
     * Rappel sur les points les plus importants
