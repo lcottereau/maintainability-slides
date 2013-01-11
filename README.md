@@ -64,6 +64,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * attention malgré tout à ce qu'il soit propre, documenté, testé avec une communauté afin qu'il n'amène pas plus de problème qu'il n'en résoud.
             * éviter d'écraser une mouche avec une enclume et un marteau. Pas trop d'inutile, pas d'usine pour des choses simples. 
             * jugement qui vient avec l'expérience. Il faut sans arrêt se poser la question (cf bon développeur)
+            * une fois le choix fait, approfondir la connaissance pour une efficacité optimale.
         * petite pépite : Lombok
             * expliquer le principe (parler des beans en injection de dépendance Spring/J2EE CDI)
             * une démo avec du code (avant après sur le site, peut-être aussi avec des beans métier)
@@ -110,13 +111,30 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * creuser, creuser
             * tester la suppression si possible
             * très peu de cas où il est pertinent sur le long terme de garder le code non compris : le supprimer (avec éventuellement des communications, des avertissements)
-    * utiliser les fonctionnalités de son éditeur (exemple pour les variables non utilisées)
+    * Utiliser des outils spécialisés
+        * message du compilateur 
+        * certains éditeurs (exemple pour les variables non utilisées)
+        * plateformes de suivi 
+            * suivi d'un certain nombre d'indicateurs qualité
+                * complexité (cyclomatique?) : utile globalement mais il peut être normal d'avoir du code complexe
+                * taux de couverture des tests : normal de ne pas être à 100%TODO les plus importants
+                * couverture javadoc sur les API publiques (attention, cela ne vérifie pas la pertinence)
+                * ...
+            * pour le développeur, pour l'équipe, pour le management
+            * attention à ne l'utiliser que comme aide à contextualiser. 100% cache un projet extrêmement simple ou alors des mauvais choix
+                * commentaire _ceci est un commentaire_
+                * pas d'accesseurs lorsque l'on utilise lombok : normal
+                * lorsque l'on étend des classes de bibliothèques, des erreurs sur les signatures originelles ne peuvent pas être corrigées.
+                * désactiver les règles peut parfois être utiles, mais seulement si jamais nécessaire
+            * un point plus utile que la note instantanée est l'évolution. 
+                * Certaines entreprises comme la RATP contractualisent parfois cette évolution pour la maintenance.
         * il est nécessaire de les traiter au fur et à mesure au risque de se faire dépasser (cf la théorie de la fenêtre brisée à NY)
 * ENVIRONNEMENTS
     * Viser une portabilité complète du binaire
-        * limiter les risques pour le passage en production
         * un package identique qui marche partout sans modification
         * des fichiers de configuration, par exemple à des emplacements "connus"
+        * limiter les risques pour le passage en production
+        * 
     * environnement de production
     * environnement local
         * maximum doit être fait dessus si c'est possible (suivant l'infrastructure)
@@ -126,6 +144,27 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * faire plus de tests sur cet environnement si le contexte infra est très différent entre produciton et local
     * à adapter évidemment au contexte
 * USINE LOGICIELLE
+    * préambule : critères de choix généraux
+        * fonctionnalités. Attention à ne prêter attention qu'à ce qui est nécessaire
+        * interconnexion entre les briques de l'usine
+        * communauté et implantation en entreprise
+        * connaissance en interne (par les administrateurs système, par les utilisateurs)
+        * facilité d'utilisation et documentation
+        * ne pas oublier la capacité à changer d'outil. Pour certains outils, il faut pouvoir garder l'historique
+    * stratégie de mise en place
+        * peut-être lourd à gérer et à maintenir
+        * utile uniquement si c'est vraiment utilisé
+        * sauf si stratégie d'entreprise, mieux vaut y aller graduellement
+        * certaines applications tout compris ou dans le nuage peuvent aider
+            * avantage : moins de maintenance, intégration entre briques plus poussée
+                1. exemple d'un commentaire de commit sur github contenant _fixes #12 /cc @toto_) TODO
+                1. le ticket 12 a un commentaire de plus avec le message et un lien vers la page du commit
+                1. le ticket 12 est résolu
+                1. le développeur @toto est prévenu par mail
+                1. le message de commit sur le site a un lien direct vers le ticket
+            * désavantages : utilisation partielle compliquée, interopérabilité souvent plus complexe
+            * quelques exemples d'[usines en ligne](http://deors.wordpress.com/2012/10/03/developer-day/) : github, jira studio, trac
+            * attention à la localisation du code source et à la sécurité
     1. Un nouveau bug à gérer : **Suivi des tickets**
         * sert à la fois pour les bugs et les évolutions
         * pas de documentation énorme donc nécessité de tout suivre, même petits bugs rapides à corriger
@@ -146,6 +185,9 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
                 * NetBeans (moche mais maintenant semble intéressant)
                 * mais pourquoi pas vi ou emacs avec les bons plugins
                 * un projet pérenne ne devrait pas être lié à un IDE ou à une version
+            * ne sera jamais plus utile que la maîtrise que le développeur en a. il est nécessaire d'apprendre à bien s'en servir
+                * capacités
+                * raccourcis clavier
         * Maven
             * gestionnaire de dépendances
             * ensemble de bonnes pratiques _gratuites_ : convention over configuration
@@ -197,42 +239,72 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * suggestions
             * apache nexus : open source, grosse communauté, simple
             * un autre TODO ?
+    1. __Tests d'intégration et mise en production__
+        * intégration/[déploiement](http://blog.octo.com/continuous-deployment/)/... continu : TODO
+        * évoquer le mouvement DevOps, récent mais appelé à un grand avenir
+        * profite grandement des préceptes décrits ici : automatisation, indépendance aux environnements
     1. __Suivi de la qualité__ de l'ensemble du patrimoine applicatif
-        * suivi d'un certain nombre d'indicateurs qualité
-            * TODO les plus importants
-        * pour le développeur, pour l'équipe, pour le management
-        * attention à ne l'utiliser que comme aide à contextualiser. 100% cache un projet extrêmement simple ou alors des mauvais choix
-            * pas d'accesseurs lorsque l'on utilise lombok : normal
-            * lorsque l'on étend des classes de bibliothèques, des erreurs sur les signatures originelles ne peuvent pas être corrigées.
-            * désactiver les règles peut parfois être utiles, mais seulement si jamais nécessaire
-        * suggestions : Sonar est globalement seul sur le marché et très simple d'utilisation avec un serveur d'intégration continue et maven
+        * suggestions
+            * Sonar est globalement seul sur le marché et très simple d'utilisation avec un serveur d'intégration continue et maven
             * évoquer des produits comme CAST mais fermé, très cher et complexe à utiliser
-* PROJET ?
-* CONCLUSION
+            * évoquer des outils comme Opquast qui valident la qualité du produit final et pas du code permettant de l'obtenir
+* MISE EN PRATIQUE (différentes possibilités)
+    * expliquer les premières étapes de reprise en maintenance
+        1. lister et récupérer l'ensemble des contenus : code source, documentation, URLs, ...
+        1. lire la documentation de démarrage si elle existe
+        1. lire ou parcourir l'ensemble de la documentation
+        1. installation d'un environnement de dev complet (compiltation, packaging, infrastructure, ne pas oublier les données)
+            * Tout devrait être disponible
+        1. Effectuer toutes les corrections ou oublis nécessaires pour que l'installation soit effectivement possible pour un nouvel arrivant
+        1. Prévoir un plan d'action à plus ou moins long terme pour suivre l'ensemble des bonnes pratiques évoquées
+            * intégration plus ou moins poussée à une usine de développement
+                * penser aux coûts globaux (si l'on veut sonar, il faut probablement utiliser maven par exemple)
+            * rationalisation des environnements
+            * packaging indépendant de l'environnement
+            * mise en place d'un processus d'amélioration continue de la qualité
+        1. Point d'étape avec le management et les utilisateurs
+            * Formalisation orale ou contractuelle du mode de fonctionnement 
+        1. Prise en charge du premier ticket
+        * Lors de l'ensemble de ces étapes, il faut noter toutes les questions qui viennent à l'esprit
+            * cette étape est très utile car c'est un tests grandeur nature. Elle doit être répétée à chaque arrivée dans l'équipe
+    * faire utiliser Sonar aux élèves sur une plateforme en ligne sur un projet précedent.
+        * le livrable est le code mis à jour avec l'explication des choix des points améliorés ou non
+        * cinq point sonar doivent être améliorés
+        * la note tiendra compte de la criticité de la correction, du coût de la correction : une meilleure note pour les corrections utiles et pas chères
+    * récupération d'un projet précédent (plutôt en groupe)
+        * je le passe dans Sonar
+        * je fais un compte-rendu du résultat
+        * je propose des améliorations et expliquant comment choisir les plus efficaces et les moins chères
+* CONCLUSION TODO
     * Rappel sur les points les plus importants
-        * Comprendre toujours dans le détail le code écrit ou maintenu
-        * Remettre en cause sans craindre mais sans ignorer les impacts
+        * Less is More : pour cela, comprendre toujours dans le détail le code écrit ou maintenu
+            * normalement, devriez avoir peur de la quantité de choses à connaître à fond
+            * bien de savoir ce qui est attendu de vous
+            * c'est cette diversité qui fait que le boulot reste intéressant après de nombreuses années
+        * Remettre en cause sans craindre mais sans ignorer ou minimiser les impacts.
+            * le code source
+            * l'architecture technique et les choix de bibliothèques
+            * les outils de développement
+        * Ne pas se baser sur les modes mais plutôt sur des besoins précis que l'on peut exprimer
     * Parler des [artisans codeur](http://training.xebia.fr/formations-java-jee/formation-tdd-software-craftsmanship.html)
 
 A caser :
 * l'objectif de la présentation (évoquer sans trop de détails, donner des pistes de réflexion et de travail, ...)
 * la métaphore de l'écologie
-* des petits sondages (qu'est-ce que la maintenabilité, qui a fait de la maintenance en stage/apprentissage, ...)
+* des petits sondages (qu'est-ce que la maintenabilité, qui a fait de la maintenance en stage/apprentissage, ...) avec idéalement des statistiques réelles pour les résultats
 * [clean code](http://blog.octo.com/les-artisans-codeurs-chez-octo/).
-* intégration/[déploiement](http://blog.octo.com/continuous-deployment/)/... continu
-* voire comment on indique les différences entre les infrastructures "par projet" et les infrastructures mutualisées. Est-ce pertinent d'en parler ?
-* usine de développement (jenkins, sonar) avec nexus en bonus. Évoquer les critères de choix des outils et la vigilance à ne pas s'enfermer. Donner quelques liens pour des [usines en ligne](http://deors.wordpress.com/2012/10/03/developer-day/)
-* parler de stratégie de mise en place du suivi qualité (pour une application existante, lien avec d'autres systèmes qualité comme opquast par exemple). Les indicateurs pour les indicateurs sont inefficaces : prendre du recul, parler de l'expérience vécue. C'est une aide pour le développeur seulement. Evoquer les erreurs sonars liés au code Lombok et le fait de faire des commentaires vides ou nuls.
-* exemples de règles java sur du vrai code avec sonar
- * possibilité de devoir à partir d'un projet antérieur
- * ou alors moi je prends des projets étudiants et je montre ce qui pourrait être amélioré
- * parler des usines logicielles intégrées (github voire jira studio). avantages et inconvénients par rapport à des produuits séparés
 * note sur les choix de carrière, exigez un ordinateur puissant, cela coûte beaucoup moins cher que votre temps perdu. Faut-il forcément travailler à un endroit où une usine de développement est en place ?
-* apprenez à vous servir de votre IDE, investissement nécessaire
-* remettez-vous en cause régulièrement en (re)testant d'autres IDEs
 * parler de la gestion des postes clients (IE 6 par exemple quand dev sous Linux) : dans la section sur les environnements de dev ?
 * pas de mots de passe dans le code source : partage complet pour toute l'entreprise
 * indiquer en conclusion ce qui est bien acquis aujourd'hui (bonnes pratiques de dev sur le principe, usine de dev) et ce qui l'est moins (code = valeur, artisans codeur)
+* où parler de l'intérêt des liens URL entre les différents contenus de l'usine de dev ?
+* ne pas laisser traîner des messages d'erreur en local/integration/production. Si compris et accepté, essayer de les faire disparaître (sans empêcher de nouveaux messages). Si pas possible, documenter.
+* penser à mettre un slide sur les coûts de maintenance sur la durée de vie d'un projet.
+* mode de fonctionnement flickr avec activation des fonctionnalités ou non
+* penser aux crédits logiciels et photo
+
+Ne sera probablement pas décrit :
+* les différences entre outils par projet et outils centralisés pour l'usine de développement
 
 ## Contexte
 
