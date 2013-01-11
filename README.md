@@ -7,7 +7,8 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
 * PRESENTATION
     * expérience professionnelle dans le développement
     * insister sur le fait que ce condensé est lié à mon expérience et *doit* être analysé, questionné et remis en cause régulièrement
-* SCENARIO CATASTROPHE (ou alors en deuxième position ?)
+    + qu'est-ce que la maintenabilité pour vous ?
+* SCENARIO CATASTROPHE
     * correction d'un bug bloquant simple et livraison (rappel qu'il y a des coûts associés)
     * arrivée d'un autre bug lié à une duplication du code précedent -> correction de tout et relivraison (ou batterie de tests quand on a cette phase)
     * régression fonctionnelle lié à une toute petite modif dans le code dupliqué pour un cas, non vu
@@ -27,15 +28,36 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * le projet avec beaucoup de métier
     * Accentuer sur le métier de dév en informatique de gestion
         + leur demander de le définir
-        * des points particulièrement importants (métier complexe, ergonomie)
+        * des points particulièrement importants (métier complexe, ergonomie, nombreux projets en parallèle)
         * des points parfois moins critiques (architectures classiques, performance moins importante)
-    * Parler de la problématique du pollueur-payeur (rarement le mainteneur qui a développé). 
-        * Indiquer qu'il est important pour bien développer de maintenir aussi du code.
-        * appliquer ces techniques en début de récupération de maintenance est positif (meilleure maintenabilité et montée en connaissance)
-        * le karma : il faut bien commencer quelque part dans la situation difficile actuelle
+    * Problématiques de la maintenabilité (on le garde ou pas cf maintenabilité)
+        * la maintenance est parfois mal considérée
+            * par les développeurs
+            * par les manageurs
+            * par l'organisation
+        * c'est compliqué à expliquer (cf la durée de l'introduction) et à chiffrer
+        * MAIS ça s'améliore
+            * dette technique
+        * côté développement
+            * Code _legacy_ peut être vraiment ancien, compliqué et lourd
+            * une forme d'arrogance et de paresse fait que de nombreux développeurs n'aiment pas _rentrer_ dans du code produit par quelqu'un d'autre
+            * manque d'implication des développeurs projet qui savent qu'ils ne maintiendront pas
+            * MAIS il y a systématiquement des améliorations à apporter, un intérêt à trouver, beaucoup à apprendre (attention à l'empathie)
+            * l'adrénaline et la complexité de la résolution des bugs de production apporte autre chose
+        * Parler de la problématique du pollueur-payeur (rarement maintenu par celui qui a développé). 
+            * Indiquer qu'il est important pour bien développer de maintenir aussi du code.
+            * appliquer ces techniques en début de récupération de maintenance est positif (meilleure maintenabilité et montée en connaissance)
+            * le karma : il faut bien commencer quelque part dans la situation difficile actuelle
+            * c'est utile aussi pour soi (oubli car nombreuses maintenances et projets en parallèle)
+        * Politiquement, pour les managers, un projet est plus porteur que la maintenance
+        * La gestion financière (largement répandue en entreprise) sépare schématiquement
+            * budget d'investissements - projet - BON
+            * budget d'exploitation - maintenance - MAUVAIS
+        * maintenance et développement en interne limitent ces difficultés (projet et maintenance peut être avec même dev)
     * Conclure
-        * en indiquant que c'est compliqué à expliquer (cf la durée de l'introduction)
-        * en indiquant qu'il n'y a même pas vraiment de nom !
+        * c'est parfois mal considéré
+        * c'est compliqué à expliquer (cf la durée de l'introduction)
+        * à tel point qu'il n'y a même pas de vrai nom !
         * en évoquant la dette technique
 * BONNES PRATIQUES ET TECHNIQUES DE DEV
     * [KISS](http://www.redaction-technique.org/redacteur-technique/redacteur-technique/principe-de-simplicite-kiss/)
@@ -111,9 +133,10 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * creuser, creuser
             * tester la suppression si possible
             * très peu de cas où il est pertinent sur le long terme de garder le code non compris : le supprimer (avec éventuellement des communications, des avertissements)
-    * Utiliser des outils spécialisés
+    * Utiliser toutes les informations disponibles
         * message du compilateur 
         * certains éditeurs (exemple pour les variables non utilisées)
+        * logs (serveurs, framework, bibliothèques, applicatifs)
         * plateformes de suivi 
             * suivi d'un certain nombre d'indicateurs qualité
                 * complexité (cyclomatique?) : utile globalement mais il peut être normal d'avoir du code complexe
@@ -128,13 +151,16 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
                 * désactiver les règles peut parfois être utiles, mais seulement si jamais nécessaire
             * un point plus utile que la note instantanée est l'évolution. 
                 * Certaines entreprises comme la RATP contractualisent parfois cette évolution pour la maintenance.
-        * il est nécessaire de les traiter au fur et à mesure au risque de se faire dépasser (cf la théorie de la fenêtre brisée à NY)
+        * ne rien laisser passer sans comprendre : "ce qui est facile en informatique, c'est qu'il y a __toujours__ une explication rationnelle"
+        * traiter au fur et à mesure au risque de se faire dépasser (cf la théorie de la fenêtre brisée à NY), quel que soit l'environnement
+        * Si message compris et accepté, essayer de le faire disparaître (sans empêcher les nouveaux messages)
+        * Si pas possible, documenter pour les prochains mainteneurs ou pour soi dans quelques mois.
 * ENVIRONNEMENTS
     * Viser une portabilité complète du binaire
         * un package identique qui marche partout sans modification
         * des fichiers de configuration, par exemple à des emplacements "connus"
         * limiter les risques pour le passage en production
-        * 
+        * partage complet et simple pour toute l'entreprise
     * environnement de production
     * environnement local
         * maximum doit être fait dessus si c'est possible (suivant l'infrastructure)
@@ -286,7 +312,13 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * l'architecture technique et les choix de bibliothèques
             * les outils de développement
         * Ne pas se baser sur les modes mais plutôt sur des besoins précis que l'on peut exprimer
-    * Parler des [artisans codeur](http://training.xebia.fr/formations-java-jee/formation-tdd-software-craftsmanship.html)
+    * Ce qui commencê à être généralisé
+        * bonnes pratiques de dev
+        * le concept d'usine de développement, outillage qualité
+    * Les axes qui doivent encore être améliorés en entreprise
+        * le concept de patrimoine de code
+        * du coup, l'intérêt d'investir sur la qualité du code, que ce soit en investissement ou en exploitation
+        * le développement de la culture des [artisans codeur](http://training.xebia.fr/formations-java-jee/formation-tdd-software-craftsmanship.html)
 
 A caser :
 * l'objectif de la présentation (évoquer sans trop de détails, donner des pistes de réflexion et de travail, ...)
@@ -295,12 +327,10 @@ A caser :
 * [clean code](http://blog.octo.com/les-artisans-codeurs-chez-octo/).
 * note sur les choix de carrière, exigez un ordinateur puissant, cela coûte beaucoup moins cher que votre temps perdu. Faut-il forcément travailler à un endroit où une usine de développement est en place ?
 * parler de la gestion des postes clients (IE 6 par exemple quand dev sous Linux) : dans la section sur les environnements de dev ?
-* pas de mots de passe dans le code source : partage complet pour toute l'entreprise
-* indiquer en conclusion ce qui est bien acquis aujourd'hui (bonnes pratiques de dev sur le principe, usine de dev) et ce qui l'est moins (code = valeur, artisans codeur)
 * où parler de l'intérêt des liens URL entre les différents contenus de l'usine de dev ?
-* ne pas laisser traîner des messages d'erreur en local/integration/production. Si compris et accepté, essayer de les faire disparaître (sans empêcher de nouveaux messages). Si pas possible, documenter.
 * penser à mettre un slide sur les coûts de maintenance sur la durée de vie d'un projet.
 * mode de fonctionnement flickr avec activation des fonctionnalités ou non
+* parler de budgets d'investissement et d'exploitation
 * penser aux crédits logiciels et photo
 
 Ne sera probablement pas décrit :
