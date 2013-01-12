@@ -16,49 +16,48 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * ici à mon arrivée dans une entreprise
         * mais aussi partout où je suis allé
         * et partout où vous irez
+    * Donner [quelques exemples](https://www.inria.fr/centre/grenoble/actualites/la-fiabilite-des-systemes-devient-un-defi-majeur)
 * INTRODUCTION A LA MAINTENABILITE
+    + demander de définir la différence entre projet et maintenance
+    + demander de définir maintenance corrective, évolutive (et un autre migration techniques ?)
     * parler de la théorie des [3 contraintes d'un projet informatique](http://www.projectsmart.co.uk/project-management-scope-triangle.html)
     * Bien montrer qu'en fait la qualité n'est pas fixe (plutôt un carré donc) avec une histoire où l'on parle des commerciaux (pas de décalage, moins cher) ou des utilisateurs (pas de décalage, moins cher, plus de fonctionnalités).
-    * Transition de la qualité à la maintenabilité. Définition. 
-    * Donner [quelques exemples](https://www.inria.fr/centre/grenoble/actualites/la-fiabilite-des-systemes-devient-un-defi-majeur)
-    * Déjà indiquer que certains points sont faciles, mais que d'autres ont des coûts.
+    * objectifs d'un projet relativement évidents : réaliser les fonctionnalités dans le temps et le budget imparti
+    * plus compliqué pour la maintenance 
+        * parfois divergents des objectifs projet
+        * durée souvent non définie
+        * pour les évolutions de fonctionnalités, il y en a en général plus que de budget chaque année
+        * comment définir que la maintenance se passe bien ou non
+    * la maintenabilité est donc en général un ressenti complètement subjectif
+        * qui peut être différent entre utilisateur, manager et développeur
+    * Proposition de définition. 
+        * capacité en terme de coûts et de moyens nécessaire pour réaliser la maintenance évolutive ou corrective
+        * sur le long terme (changements d'équipes, migrations techniques, grosses évolutions, ...)
+        * moins c'est cher, plus la maintenabilité de l'application est haute
+        * un projet réalisé de manière très rapide sera le plus souvent peu maintenable
+    * Déjà indiquer que certains points sont faciles, mais que d'autres ont des coûts (à court terme)
     * Parler d'adaptation au contexte en différenciant 
         * le projet pilote
-        * peut-être trouver un moyen de déjà montrer que cela pourrait être différent pour un projet avec beaucoup besoin de performance ou de sécurité
-        * le projet avec beaucoup de métier
-    * Accentuer sur le métier de dév en informatique de gestion
-        + leur demander de le définir
-        * des points particulièrement importants (métier complexe, ergonomie, nombreux projets en parallèle)
-        * des points parfois moins critiques (architectures classiques, performance moins importante)
-    * Problématiques de la maintenabilité (on le garde ou pas cf maintenabilité)
-        * la maintenance est parfois mal considérée
-            * par les développeurs
-            * par les manageurs
-            * par l'organisation
-        * c'est compliqué à expliquer (cf la durée de l'introduction) et à chiffrer
-        * MAIS ça s'améliore
-            * dette technique
-        * côté développement
-            * Code _legacy_ peut être vraiment ancien, compliqué et lourd
-            * une forme d'arrogance et de paresse fait que de nombreux développeurs n'aiment pas _rentrer_ dans du code produit par quelqu'un d'autre
-            * manque d'implication des développeurs projet qui savent qu'ils ne maintiendront pas
-            * MAIS il y a systématiquement des améliorations à apporter, un intérêt à trouver, beaucoup à apprendre (attention à l'empathie)
-            * l'adrénaline et la complexité de la résolution des bugs de production apporte autre chose
-        * Parler de la problématique du pollueur-payeur (rarement maintenu par celui qui a développé). 
-            * Indiquer qu'il est important pour bien développer de maintenir aussi du code.
-            * appliquer ces techniques en début de récupération de maintenance est positif (meilleure maintenabilité et montée en connaissance)
-            * le karma : il faut bien commencer quelque part dans la situation difficile actuelle
-            * c'est utile aussi pour soi (oubli car nombreuses maintenances et projets en parallèle)
-        * Politiquement, pour les managers, un projet est plus porteur que la maintenance
-        * La gestion financière (largement répandue en entreprise) sépare schématiquement
-            * budget d'investissements - projet - BON
-            * budget d'exploitation - maintenance - MAUVAIS
-        * maintenance et développement en interne limitent ces difficultés (projet et maintenance peut être avec même dev)
-    * Conclure
-        * c'est parfois mal considéré
-        * c'est compliqué à expliquer (cf la durée de l'introduction)
-        * à tel point qu'il n'y a même pas de vrai nom !
-        * en évoquant la dette technique
+        * jeu vidéos (gros besoin de performance, pas d'évolutions)
+        * le projet de gestion
+            + leur demander de le définir (ou pas ?)
+            * chiffres sur le volume de projets
+            * des points particulièrement importants (métier complexe, ergonomie, nombreux projets en parallèle)
+            * des points parfois moins critiques (architectures classiques, performance moins importante)
+    * Alors pourquoi cette présentation
+        * d'abord parce que c'est quelque chose de spécifique et compliqué (cf la longueur de l'introduction, et même pas de vrai nom !)
+        * parce que la maintenance suivra toujours un projet
+        * parce qu'il y a des outils qui commencent à se développer pour aider à la maintenabilité
+        * parce que ces outils feront de vous de meilleurs développeurs
+            * des bonnes pratiques de développement
+            * des outils (usine de développement)
+            * dette technique contractualisée (TODO)
+        * NOTE : je parlerai pas en détail d'éléments organisationnels qui peuvent aider 
+            * si vous êtes un jour responsables d'équipes de développeurs
+            * avoir des équipes qui font du projet ET de la maintenance
+            * avoir des développeurs en interne, ce qui limite les dérives de l'externalisation
+                * perte de connaissance en interne et incapacité à évaluer les travaux externes
+                * perte de temps à abuser les indicateurs de suivi
 * BONNES PRATIQUES ET TECHNIQUES DE DEV
     * [KISS](http://www.redaction-technique.org/redacteur-technique/redacteur-technique/principe-de-simplicite-kiss/)
         * dans l'archi technique globale
@@ -335,6 +334,25 @@ A caser :
 
 Ne sera probablement pas décrit :
 * les différences entre outils par projet et outils centralisés pour l'usine de développement
+* la maintenance est souvent mal considérée
+    * par les développeurs
+        * Code _legacy_ peut être vraiment ancien, compliqué et lourd
+        * une forme d'arrogance et de paresse fait que de nombreux développeurs n'aiment pas _rentrer_ dans du code produit par quelqu'un d'autre
+        * manque d'implication des développeurs projet qui savent qu'ils ne maintiendront pas
+        * MAIS il y a systématiquement des améliorations à apporter, un intérêt à trouver, beaucoup à apprendre (attention à l'empathie)
+        * l'adrénaline et la complexité de la résolution des bugs de production apporte autre chose
+    * par les manageurs
+        * Politiquement, pour les managers, un projet est plus porteur que la maintenance
+    * par l'organisation
+* Parler de la problématique du pollueur-payeur (rarement maintenu par celui qui a développé). 
+    * Indiquer qu'il est important pour bien développer de maintenir aussi du code.
+    * appliquer ces techniques en début de récupération de maintenance est positif (meilleure maintenabilité et montée en connaissance)
+    * le karma : il faut bien commencer quelque part dans la situation difficile actuelle
+    * c'est utile aussi pour soi (oubli car nombreuses maintenances et projets en parallèle)
+* La gestion financière (largement répandue en entreprise) sépare schématiquement
+    * budget d'investissements - projet - BON
+    * budget d'exploitation - maintenance - MOYEN
+    * masse salariale - développeurs en interne - MAUVAIS
 
 ## Contexte
 
