@@ -6,53 +6,86 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
 
 * PRESENTATION
     * expérience professionnelle dans le développement
+        * entreprises
+        * technologies
+        + définition dès là de l'informatique de gestion ou métier
     * insister sur le fait que ce condensé est lié à mon expérience et *doit* être analysé, questionné et remis en cause régulièrement
-    + qu'est-ce que la maintenabilité pour vous ?
-* SCENARIO CATASTROPHE
+* SONDAGES
+    + demander de définir la différence entre projet et maintenance
+        * évoquer ou pas le TBR ?
+    + demander de définir maintenance corrective, évolutive (et un autre migration techniques ?)
+        * les définir
+    + demander de définir l'informatique de gestion
+        * chiffres sur le volume de projets
+        * des points particulièrement importants (métier complexe, ergonomie, nombreux projets en parallèle)
+        * des points parfois moins critiques (architectures classiques, performance moins importante)
+    + qu'est-ce que la maintenabilité pour vous ? Noter les propositions dans un coin
+* SCENARIO CATASTROPHE : mauvaise maintenabilité
+    * arrivée dans l'entreprise, reprise en maintenance d'une application relativement simple
+        * voir si on prend l'exemple de DosRap ou plutôt un exemple bidon
     * correction d'un bug bloquant simple et livraison (rappel qu'il y a des coûts associés)
+        * email ou coup de fil lapidaire
+        * comprend pas, besoin de le recontacter
+        * après 2-3 heures, on se rend compte que ça marche comme ça devrait. 
+            * La doc n'avait pas été mise à jour suite à une évolution
+            * Le code est très complexe (code inutile qu'on hésite à enlever parce que impacts non maîtrisés, algorithmes complexes, noms de variables bizarres)
+        * création d'un ticket d'évolution qui sera fait à un autre moment
+        * dans le processus, on se rend compte d'un autre bug
+        * correction
+        * tests (1 jour car application simple)
+        * livraison (1 jours car application simple)
     * arrivée d'un autre bug lié à une duplication du code précedent -> correction de tout et relivraison (ou batterie de tests quand on a cette phase)
+        * bug trouvé et corrigé rapidement car en tête
+        * mais retests et relivraison
     * régression fonctionnelle lié à une toute petite modif dans le code dupliqué pour un cas, non vu
+        * ressenti utilisateur (régressions sont très mauvaises de ce point de vue-là)
+        * correction assez longue (long de comprendre qu'on a fait une erreur avant)
+        * retests et relivraison (plus gâchis précédent)
     * Conclure sur le fait que c'est la vraie vie de développeur
         * ici à mon arrivée dans une entreprise
         * mais aussi partout où je suis allé
         * et partout où vous irez
     * Donner [quelques exemples](https://www.inria.fr/centre/grenoble/actualites/la-fiabilite-des-systemes-devient-un-defi-majeur)
 * INTRODUCTION A LA MAINTENABILITE
-    + demander de définir la différence entre projet et maintenance
-    + demander de définir maintenance corrective, évolutive (et un autre migration techniques ?)
     * parler de la théorie des [3 contraintes d'un projet informatique](http://www.projectsmart.co.uk/project-management-scope-triangle.html)
     * Bien montrer qu'en fait la qualité n'est pas fixe (plutôt un carré donc) avec une histoire où l'on parle des commerciaux (pas de décalage, moins cher) ou des utilisateurs (pas de décalage, moins cher, plus de fonctionnalités).
-    * objectifs d'un projet relativement évidents : réaliser les fonctionnalités dans le temps et le budget imparti
+    * objectifs d'un projet relativement évidents : réaliser les fonctionnalités dans le temps et le budget imparti. 
+    * qualité pas vraiment importante tant que l'objectif est atteint
     * plus compliqué pour la maintenance 
-        * parfois divergents des objectifs projet
-        * durée souvent non définie
+        * objectifs parfois divergents des objectifs projet. TODO des examples
+        * durée souvent non définie, équipe change plus, énormément d'évolutions, se repose sur le projet qui a parfois été fait par quelqu'un d'autres
         * pour les évolutions de fonctionnalités, il y en a en général plus que de budget chaque année
-        * comment définir que la maintenance se passe bien ou non
-    * la maintenabilité est donc en général un ressenti complètement subjectif
+        * comment définir que la maintenance se passe bien ou non ?
+    * certains indicateurs peuvent aider (nombre de bugs en production, nombre de bugs en intégration)
+    * la maintenabilité reste aujourd'hui un ressenti assez subjectif
         * qui peut être différent entre utilisateur, manager et développeur
-    * Proposition de définition. 
-        * capacité en terme de coûts et de moyens nécessaire pour réaliser la maintenance évolutive ou corrective
-        * sur le long terme (changements d'équipes, migrations techniques, grosses évolutions, ...)
-        * moins c'est cher, plus la maintenabilité de l'application est haute
-        * un projet réalisé de manière très rapide sera le plus souvent peu maintenable
-    * Déjà indiquer que certains points sont faciles, mais que d'autres ont des coûts (à court terme)
+        * consiste surtout à demander du budget et à faire _du mieux possible_ avec
     * Parler d'adaptation au contexte en différenciant 
         * le projet pilote
         * jeu vidéos (gros besoin de performance, pas d'évolutions)
         * le projet de gestion
-            + leur demander de le définir (ou pas ?)
-            * chiffres sur le volume de projets
-            * des points particulièrement importants (métier complexe, ergonomie, nombreux projets en parallèle)
-            * des points parfois moins critiques (architectures classiques, performance moins importante)
-    * Alors pourquoi cette présentation
+    * Proposition de définition. 
+        * capacité à réaliser la maintenance évolutive ou corrective
+        * sur le long terme (changements d'équipes, migrations techniques, grosses évolutions, ...)
+        * moins il y a de bugs, moins c'est cher (au sens large) de faire une évolution, plus la maintenabilité de l'application est haute
+        * 1ères informations
+            * un projet réalisé de manière très rapide sera le plus souvent peu maintenable
+            * certains points sont faciles, mais que d'autres ont des coûts (à court terme) et qu'il faut bien adapter au besoin
+    * Alors pourquoi cette présentation ?
         * d'abord parce que c'est quelque chose de spécifique et compliqué (cf la longueur de l'introduction, et même pas de vrai nom !)
-        * parce que la maintenance suivra toujours un projet
+        * parce que la maintenance suivra toujours un projet et dure longtemps en informatique de gestion
+            * le sytème de génération du site web du Senat en place depuis 1989 (quasiment tout est changé)
+            * les sytèmes de gestion de la paie peuvent durer plus de 25 ans (avec beaucoup d'évolutions)
+        * parce que le coût de la maintenance (et donc le travail disponible) est très important : chiffres ?
         * parce qu'il y a des outils qui commencent à se développer pour aider à la maintenabilité
-        * parce que ces outils feront de vous de meilleurs développeurs
-            * des bonnes pratiques de développement
-            * des outils (usine de développement)
-            * dette technique contractualisée (TODO)
-        * NOTE : je parlerai pas en détail d'éléments organisationnels qui peuvent aider 
+        * parce que ces outils feront de vous de meilleurs développeurs dans toutes les situations
+    * Ce que l'on va voir
+        * particulièrement pour l'informatique de gestion
+        * des bonnes pratiques de développement
+        * des outils (usine de développement)
+        * un indicateur d'évaluation de la maintenabilité
+    * Ce que l'on ne verra pas en détail : 
+        * éléments organisationnels qui peuvent aider 
             * si vous êtes un jour responsables d'équipes de développeurs
             * avoir des équipes qui font du projet ET de la maintenance
             * avoir des développeurs en interne, ce qui limite les dérives de l'externalisation
@@ -61,7 +94,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
 * BONNES PRATIQUES ET TECHNIQUES DE DEV
     * [KISS](http://www.redaction-technique.org/redacteur-technique/redacteur-technique/principe-de-simplicite-kiss/)
         * dans l'archi technique globale
-        * dans le code (architecture logicielle). Evoquer l'Agile.
+        * dans le code (architecture logicielle). Ne pas faire plus que nécessaire (pas d'usine à gaz). Evoquer l'Agile.
         * une des raisons de la réussite d'UNIX est la séparation des tâches en des programmes indépendants (chacun est plus facilement maintenable)
         * dans les choix progiciels (plus compliqué de ne pas prévoir à long terme)
     * code "expressif" (trouver une meilleure expression)
@@ -69,23 +102,25 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * évoquer la pratique de la métaphore en XP
     * Less is More
         * __le moins de code possible, le moins de doc possible__
-        * /!\ meilleur conseil à des dev : comprendre chaque bout de code écrit ou maintenu
+        * /!\ meilleur conseil à des futurs dev : comprendre chaque bout de code écrit ou maintenu
             * pas de code en trop, pas de bugs techniques (inadmissibles)
             * c'est ce qui différencie un bon développeur d'un mauvais développeur
             * veille techniques, lecture des specs techniques, curiosité permanente, pas de pré-suppositions
         * vérifier systématiquement avant de commiter quelque chose
+            * pas de commit de code mis en commentaire en testant
+            * en commitant régulièrement, peu de code à la fois, on augmente la probabilité de voir ce qui est améliorable avant même de le commiter
         * utiliser des frameworks et bibliothèques
             + demander qui connait la différence entre frameworks et bibliothèques : si pas clair, raccord sur la curiosité permanente
             * code est déporté, mieux testé (en général)
             * permet de se concentrer sur la valeur ajoutée. Exemples :
                 * pour l'info de gestion, c'est le métier qui est la valeur, pas l'affichage des pages. Donc utilisation de frameworks et bibliothèques pour l'affichage (Play 2, Spring MVC, JSF)
                 * pour une application de blog, c'est la gestion des articles qui est la valeur. Donc externaliser la connexion, l'infra d'exploitation.
-                * autres ?
-                * Des choses sont à la marge (ergo sur info de gestion, commentaires pour blog). Dans ce cas-là, c'est un choix. Pages auto ou Pages spécifiques. Code pour les commentaires ou externalisation.
+                * pour un jeu vidéo, on va probablement passer du temps sur le moteur graphique ou l'IA car c'est l'élément différenciateur.
+                * Des choses sont à la marge (ergo sur info de gestion, commentaires pour blog, moteur graphique suivant le jeu). Dans ce cas-là, c'est un choix. Pages auto ou Pages spécifiques. Code pour les commentaires ou externalisation.
             * attention malgré tout à ce qu'il soit propre, documenté, testé avec une communauté afin qu'il n'amène pas plus de problème qu'il n'en résoud.
             * éviter d'écraser une mouche avec une enclume et un marteau. Pas trop d'inutile, pas d'usine pour des choses simples. 
             * jugement qui vient avec l'expérience. Il faut sans arrêt se poser la question (cf bon développeur)
-            * une fois le choix fait, approfondir la connaissance pour une efficacité optimale.
+            * une fois le choix fait, prendre le temps de le maîtriser pour une efficacité optimale.
         * petite pépite : Lombok
             * expliquer le principe (parler des beans en injection de dépendance Spring/J2EE CDI)
             * une démo avec du code (avant après sur le site, peut-être aussi avec des beans métier)
@@ -93,41 +128,49 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * convention over configuration (allusion à maven, documentation, choix des bibliothèques et frameworks exactement adaptés)
         * "your code is your documentation" (citation de quelqu'un ?). Y compris les tests
             * ne pas oublier que c'est le code le patrimoine et la valeur de l'entreprise qui fait du développement
+            * en cas d'absence de documentation ou d'incohérence, on creuse dans le code pour savoir ce qui est fait
+            * les sources d'information existantes _automatiques_
+                * parcours du code source
+                * javadoc dans code source et tests
+                * historique des problèmes, incidents, évolutions fonctionnelles, choix d'architecture
+                * description et commentaires dans gestionnaire de tickets
+                * commentaires de commit dans gestionnaire de source
+                * idéalement, des liens entre ces infrastructures
+            * dans la vraie vie, les documentations non automatiques sont rarement bien mises à jour (très cher)
             * pas de documents word énormes. 
             * plutôt des choses faciles à mettre à jour, simples et petites
                 * éditeur en ligne de github
                 * wikis dans les forges logicielles
                 * évoquer [readme un fichier nommé désir](http://www.paris-web.fr/2012/conferences/readme-un-fichier-nomme-plaisir.php)
-            * les sources d'information existantes _automatiques_
-                * historique des problèmes, incidents, évolutions fonctionnelles, choix d'architecture
-                * javadoc dans code source et tests
-                * description et commentaires dans gestionnaire de tickets
-                * commentaires de commit dans gestionnaire de source
-                * idéalement, des liens entre ces infrastructures
-            * noter les TODO
+            * pour des informations temporaires, comme des TODO 
                 * dans le gestionnaire de tickets
-                * éventuellement dans le code (mais pas trop)
+                * éventuellement dans le code (mais pas trop). Outils peuvent lister les lignes commençant par _TODO_
             * Ce qu'il est bon d'avoir
                 * un point d'entrée pour un nouveau participant (dev, utilisateur, management)
                 * description fonctionnelle haut niveau (à adapter en fonction de la cible et du besoin)
                 * description technique haut niveau
-                * changelog ou historique (plus de détails si souhaité car informations pérennes)
+                * changelog ou historique des choix techniques (plus de détails si souhaité car informations pérennes)
                 * ce qui ne rentre pas ailleurs
-        * tempérer le discours 
+        * tempérer le discours. Il faut garder l'expressivité
+            * exemple de code trop raccourci avec des if
     * Refactoring et nettoyage permanent
-        * évoquer la difficulté (rappel au scenario catastrophe ?)
-        * Tests automatisés
+        * évoquer la difficulté (rappel au scenario catastrophe ?). 
+            * Responsabilité mal valorisée aujourd'hui du développeur. 
+            * Important pour votre karma de _bon_ développeur. Est toujours récompensé (au moins par vos pairs)
+        * Element primordial : les tests automatisés
             * définition générale des tests automatisés
+            * Bien comprendre que c'est une très importante part du code source qui n'est pas l'applicatif
+            * pourcentage d'un projet passé sur les tests pour comprendre l'intérêt d'automatiser
             * Plusieurs types de tests : unitaires, intégration, fonctionnels (graphique pour montrer les chevauchements)
             * Facilité de refactoring en limitant les risques de régression fonctionnelle
             * Permet de détecter le code inutile : suppression des tests inutiles et couverture des tests
             * la pratique du TDD aide à n'écrire que le code nécessaire
             * Bonnes pratiques
                 * limiter les recouvrements entre les différents types de tests
-                * tout ce que l'on a évoqué pour le code source (lisibilité, KISS, Less is More, ...)
+                * tout ce que l'on a évoqué pour le code source (lisibilité, KISS, Less is More, utiliser des bibliothèques, ...)
                 * donc pas besoin de tout tester (exemple des getters et setters)
-                * parler des mocks
-                * utiliser les frameworks (JUnit, Mockito)
+                * aperçu rapide de JUnit
+                * parler des mocks et indiquer mockito
         * si on ne sait pas à quoi sert un bout de code
             * creuser, creuser
             * tester la suppression si possible
@@ -136,20 +179,23 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * message du compilateur 
         * certains éditeurs (exemple pour les variables non utilisées)
         * logs (serveurs, framework, bibliothèques, applicatifs)
-        * plateformes de suivi 
-            * suivi d'un certain nombre d'indicateurs qualité
+        * plateformes de suivi qualité
+            * suivi d'un certain nombre d'indicateurs qualité (capture d'écran sonar)
                 * complexité (cyclomatique?) : utile globalement mais il peut être normal d'avoir du code complexe
-                * taux de couverture des tests : normal de ne pas être à 100%TODO les plus importants
+                * taux de couverture des tests
+                    * peut-être acceptable de ne pas être à 100% si c'est le code métier important qui est testé
+                    * la tendance en ce moment est plutôt de considérer qu'il est intéressant de couvrir le code à 100% (si du code n'a pas besoin d'être testé, pas de valeur ajoutée, peut-être faut-il le supprimer, cf Lombok)
                 * couverture javadoc sur les API publiques (attention, cela ne vérifie pas la pertinence)
                 * ...
             * pour le développeur, pour l'équipe, pour le management
             * attention à ne l'utiliser que comme aide à contextualiser. 100% cache un projet extrêmement simple ou alors des mauvais choix
-                * commentaire _ceci est un commentaire_
+                * commentaire _ceci est un commentaire_ (cela arrive dans le cadre d'externalisations)
                 * pas d'accesseurs lorsque l'on utilise lombok : normal
                 * lorsque l'on étend des classes de bibliothèques, des erreurs sur les signatures originelles ne peuvent pas être corrigées.
                 * désactiver les règles peut parfois être utiles, mais seulement si jamais nécessaire
             * un point plus utile que la note instantanée est l'évolution. 
                 * Certaines entreprises comme la RATP contractualisent parfois cette évolution pour la maintenance.
+            * dette technique contractualisée (TODO) 
         * ne rien laisser passer sans comprendre : "ce qui est facile en informatique, c'est qu'il y a __toujours__ une explication rationnelle"
         * traiter au fur et à mesure au risque de se faire dépasser (cf la théorie de la fenêtre brisée à NY), quel que soit l'environnement
         * Si message compris et accepté, essayer de le faire disparaître (sans empêcher les nouveaux messages)
@@ -159,37 +205,21 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * un package identique qui marche partout sans modification
         * des fichiers de configuration, par exemple à des emplacements "connus"
         * limiter les risques pour le passage en production
-        * partage complet et simple pour toute l'entreprise
+        * partage complet et simple pour toute l'entreprise 
+        * si pas adapté ou pas possible, il faut en tout cas automatiser un maximum
+            * filtres maven (mais mots de passe doivent être connus du développeur et compliquer à configurer, puis disponibles ensuite dans le package)
+            * d'autres ?
     * environnement de production
     * environnement local
         * maximum doit être fait dessus si c'est possible (suivant l'infrastructure)
     * environnement d'intégration 
-        * identique à la production 
-        * pour des tests en conditions réelles,  reproduction d'incidents de production, tests de charge pertinents (mais pas idéaux)
-        * faire plus de tests sur cet environnement si le contexte infra est très différent entre produciton et local
+        * le plus proche de la production 
+        * pour des tests en conditions réelles, reproduction d'incidents de production, tests de charge pertinents (mais pas idéaux)
+        * faire plus de tests sur cet environnement si le contexte infra est très différent entre production et local
     * à adapter évidemment au contexte
+        * parfois un environnement de pré-production, exactement identique à la production
+        * parfois plusieurs environnements d'intégration
 * USINE LOGICIELLE
-    * préambule : critères de choix généraux
-        * fonctionnalités. Attention à ne prêter attention qu'à ce qui est nécessaire
-        * interconnexion entre les briques de l'usine
-        * communauté et implantation en entreprise
-        * connaissance en interne (par les administrateurs système, par les utilisateurs)
-        * facilité d'utilisation et documentation
-        * ne pas oublier la capacité à changer d'outil. Pour certains outils, il faut pouvoir garder l'historique
-    * stratégie de mise en place
-        * peut-être lourd à gérer et à maintenir
-        * utile uniquement si c'est vraiment utilisé
-        * sauf si stratégie d'entreprise, mieux vaut y aller graduellement
-        * certaines applications tout compris ou dans le nuage peuvent aider
-            * avantage : moins de maintenance, intégration entre briques plus poussée
-                1. exemple d'un commentaire de commit sur github contenant _fixes #12 /cc @toto_) TODO
-                1. le ticket 12 a un commentaire de plus avec le message et un lien vers la page du commit
-                1. le ticket 12 est résolu
-                1. le développeur @toto est prévenu par mail
-                1. le message de commit sur le site a un lien direct vers le ticket
-            * désavantages : utilisation partielle compliquée, interopérabilité souvent plus complexe
-            * quelques exemples d'[usines en ligne](http://deors.wordpress.com/2012/10/03/developer-day/) : github, jira studio, trac
-            * attention à la localisation du code source et à la sécurité
     1. Un nouveau bug à gérer : **Suivi des tickets**
         * sert à la fois pour les bugs et les évolutions
         * pas de documentation énorme donc nécessité de tout suivre, même petits bugs rapides à corriger
@@ -273,6 +303,35 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * Sonar est globalement seul sur le marché et très simple d'utilisation avec un serveur d'intégration continue et maven
             * évoquer des produits comme CAST mais fermé, très cher et complexe à utiliser
             * évoquer des outils comme Opquast qui valident la qualité du produit final et pas du code permettant de l'obtenir
+    * critères de choix
+        * fonctionnalités. Attention à ne prêter attention qu'à ce qui est nécessaire
+        * interconnexion entre les briques de l'usine
+            1. exemple d'un commentaire de commit sur github contenant _fixes #12 /cc @toto_) TODO
+            1. le ticket 12 a un commentaire de plus avec le message et un lien vers la page du commit
+            1. le ticket 12 est résolu
+            1. le développeur @toto est prévenu par mail
+            1. le message de commit sur le site a un lien direct vers le ticket
+        * communauté et implantation en entreprise
+        * connaissance en interne (par les administrateurs système, par les utilisateurs)
+        * facilité d'utilisation et documentation
+        * ne pas oublier la capacité à changer d'outil (valable pour tout choix progiciel). 
+            * Pour certains outils (vcs), il faut pouvoir garder l'historique
+    * stratégie de mise en place
+        * peut-être lourd à gérer et à maintenir. 
+            * Bien savoir ce qu'on en attent et le partager avec la direction.
+            * utile uniquement si c'est vraiment utilisé
+        * sauf si stratégie d'entreprise, mieux vaut y aller graduellement
+        * certaines applications tout compris ou dans le nuage peuvent aider
+            * avantage : moins de maintenance, intégration entre briques plus poussée (et plus facile)
+            * désavantages : utilisation partielle compliquée, interopérabilité souvent plus complexe
+            * quelques exemples d'[usines en ligne](http://deors.wordpress.com/2012/10/03/developer-day/) : github, jira studio, trac
+            * attention à la localisation du code source et à la sécurité
+* RETOUR SUR LE SCENARIO CATASTROPHE
+    * un code plus clair et compréhensible
+    * documentation plus à jour (wiki, tests)
+    * pas de crainte de modifier et outils : pas de code mort
+    * tests unitaires limitent les risques de régression fonctionnelle 
+    * n'empêche pas de faire n'importe quoi, mais aide grandement le développeur.
 * MISE EN PRATIQUE (différentes possibilités)
     * expliquer les premières étapes de reprise en maintenance
         1. lister et récupérer l'ensemble des contenus : code source, documentation, URLs, ...
@@ -317,6 +376,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
     * Les axes qui doivent encore être améliorés en entreprise
         * le concept de patrimoine de code
         * du coup, l'intérêt d'investir sur la qualité du code, que ce soit en investissement ou en exploitation
+        * l'utilisation formelle, voire contractualisée, de la dette techniques
         * le développement de la culture des [artisans codeur](http://training.xebia.fr/formations-java-jee/formation-tdd-software-craftsmanship.html)
 
 A caser :
@@ -324,15 +384,13 @@ A caser :
 * la métaphore de l'écologie
 * des petits sondages (qu'est-ce que la maintenabilité, qui a fait de la maintenance en stage/apprentissage, ...) avec idéalement des statistiques réelles pour les résultats
 * [clean code](http://blog.octo.com/les-artisans-codeurs-chez-octo/).
-* note sur les choix de carrière, exigez un ordinateur puissant, cela coûte beaucoup moins cher que votre temps perdu. Faut-il forcément travailler à un endroit où une usine de développement est en place ?
-* parler de la gestion des postes clients (IE 6 par exemple quand dev sous Linux) : dans la section sur les environnements de dev ?
 * où parler de l'intérêt des liens URL entre les différents contenus de l'usine de dev ?
-* penser à mettre un slide sur les coûts de maintenance sur la durée de vie d'un projet.
 * mode de fonctionnement flickr avec activation des fonctionnalités ou non
-* parler de budgets d'investissement et d'exploitation
 * penser aux crédits logiciels et photo
 
-Ne sera probablement pas décrit :
+Ne sera probablement pas décrit (ou alors si on a du temps en plus):
+* parler de la gestion des postes clients (IE 6 par exemple quand dev sous Linux) : dans la section sur les environnements de dev ?
+* note sur les choix de carrière, exigez un ordinateur puissant, cela coûte beaucoup moins cher que votre temps perdu. Faut-il forcément travailler à un endroit où une usine de développement est en place ?
 * les différences entre outils par projet et outils centralisés pour l'usine de développement
 * la maintenance est souvent mal considérée
     * par les développeurs
