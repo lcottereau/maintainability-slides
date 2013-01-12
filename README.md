@@ -232,7 +232,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * ce qui est en place par défaut (pas le premier truc à faire évoluer)
             * CVS était chouette mais maintenant complètement dépassé
             * Subversion mieux que CVS (support, changements atomiques) mais pas terrible
-            * Les gestionnaires distribués sont à privilégier
+            * Les gestionnaires distribués sont à privilégier, git en particulier (svn est sur github !)
             * histoire rapide de git : pas mal de support aujourd'hui, github, pérennité
     1. __Revue de code__
         * parfois a priori (par exemple Google, avec un nombre de validations dépendant de la criticité du projet)
