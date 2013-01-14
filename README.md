@@ -64,7 +64,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * dans le code (architecture logicielle). Evoquer l'Agile.
         * une des raisons de la réussite d'UNIX est la séparation des tâches en des programmes indépendants (chacun est plus facilement maintenable)
         * dans les choix progiciels (plus compliqué de ne pas prévoir à long terme)
-    * code "expressif" (trouver une meilleure expression)
+    * [code "expressif"](http://blog.xebia.fr/2013/01/14/craftsman-recipes-de-lart-de-bien-nommer-les-concepts/) (trouver une meilleure expression ?)
         * comparaison entre 3 codes (1 tout un bloc incompréhensible, 1 avec des noms parlants, 1 avec une fonction et une variable en plus)
         * évoquer la pratique de la métaphore en XP
     * Less is More
