@@ -219,7 +219,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
     * à adapter évidemment au contexte
         * parfois un environnement de pré-production, exactement identique à la production
         * parfois plusieurs environnements d'intégration
-* USINE LOGICIELLE
+* [USINE LOGICIELLE](http://blog.octo.com/vers-une-usine-de-developpement-2-0/)
     1. Un nouveau bug à gérer : **Suivi des tickets**
         * sert à la fois pour les bugs et les évolutions
         * pas de documentation énorme donc nécessité de tout suivre, même petits bugs rapides à corriger
