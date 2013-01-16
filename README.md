@@ -282,9 +282,9 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
                 * packaging des binaires que sur les versions non SNAPSHOT
         * penser à exécuter le maximum de tests en local (unitaires au minimum)
         * suggestions
-            * hudson/jenkins : opensource et largement utilisé mais pas très user-friendly
+            * hudson/jenkins : opensource, largement utilisé, nombreux plugins et langages mais pas très user-friendly
             * cruise control
-            * celui de atlassian
+            * closed source : atlassian bamboo, jetbrains teamcity, microsoft Team Foundation Servre
     1. __Dépôt de binaires__
         * pour rendre disponible des packages binaires projet à tous
             * pas besoin d'avoir les sources pour installer en production
@@ -300,7 +300,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * profite grandement des préceptes décrits ici : automatisation, indépendance aux environnements
     1. __Suivi de la qualité__ de l'ensemble du patrimoine applicatif
         * suggestions
-            * Sonar est globalement seul sur le marché et très simple d'utilisation avec un serveur d'intégration continue et maven
+            * Sonar est globalement seul sur le marché et très simple d'utilisation avec un serveur d't et maven
             * évoquer des produits comme CAST mais fermé, très cher et complexe à utiliser
             * évoquer des outils comme Opquast qui valident la qualité du produit final et pas du code permettant de l'obtenir
     * critères de choix
