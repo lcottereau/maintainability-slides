@@ -243,7 +243,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * ne sera jamais plus utile que la maîtrise que le développeur en a. il est nécessaire d'apprendre à bien s'en servir
                 * capacités
                 * raccourcis clavier
-        * Maven
+        * [Maven](https://maven.apache.org/guides/getting-started/index.html)
             * gestionnaire de dépendances
             * ensemble de bonnes pratiques _gratuites_ : convention over configuration
                 * organisation des répertoires
