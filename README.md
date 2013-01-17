@@ -5,10 +5,10 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
 ## Synopsis
 
 * PRESENTATION
-    * expérience professionnelle dans le développement
+    * expérience professionnelle dans le développement et le management d'équipes de développeurs
         * entreprises
         * technologies
-        + définition dès là de l'informatique de gestion ou métier
+        * projets plutôt petits (1 à 5 personnes sur 6 mois max) et maintenances associées
     * insister sur le fait que ce condensé est lié à mon expérience et *doit* être analysé, questionné et remis en cause régulièrement
 * SONDAGES
     + demander de définir la différence entre projet et maintenance
