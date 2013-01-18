@@ -201,6 +201,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * dette technique contractualisée (TODO) 
         * ne rien laisser passer sans comprendre : "ce qui est facile en informatique, c'est qu'il y a __toujours__ une explication rationnelle"
         * traiter au fur et à mesure au risque de se faire dépasser (cf la théorie de la fenêtre brisée à NY), quel que soit l'environnement
+            * en cas de reprise, il faut élaborer une stratégie de choix. Sonar aide en disant ce qui est dangereux, le développeur peut voir ce qui est facile/cher à faire.
         * Si message compris et accepté, essayer de le faire disparaître (sans empêcher les nouveaux messages)
         * Si pas possible, documenter pour les prochains mainteneurs ou pour soi dans quelques mois.
 * ENVIRONNEMENTS
