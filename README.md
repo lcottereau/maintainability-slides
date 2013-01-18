@@ -76,6 +76,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * parce que la maintenance suivra toujours un projet et dure longtemps en informatique de gestion
             * le sytème de génération du site web du Senat en place depuis 1989 (quasiment tout est changé)
             * les sytèmes de gestion de la paie peuvent durer plus de 25 ans (avec beaucoup d'évolutions)
+            * "programmers are constantly in maintenance mode." -  The Pragmatic Programmer: From Journeyman to Master, de Andrew Hunt et David Thomas 
         * parce que le coût de la maintenance (et donc le travail disponible) est très important : chiffres ?
         * parce qu'il y a des outils qui commencent à se développer pour aider à la maintenabilité
         * parce que ces outils feront de vous de meilleurs développeurs dans toutes les situations
@@ -125,6 +126,8 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
             * expliquer le principe (parler des beans en injection de dépendance Spring/J2EE CDI)
             * une démo avec du code (avant après sur le site, peut-être aussi avec des beans métier)
             * évoquer les difficultés (éditeurs, debug, ...) comme avec les techniques AOP
+        * [DRY - don't WET (write everything twice)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+            * "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system." - The Pragmatic Programmer
         * convention over configuration (allusion à maven, documentation, choix des bibliothèques et frameworks exactement adaptés)
         * "your code is your documentation" (citation de quelqu'un ?). Y compris les tests
             * ne pas oublier que c'est le code le patrimoine et la valeur de l'entreprise qui fait du développement
