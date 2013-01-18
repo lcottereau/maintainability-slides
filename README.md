@@ -415,6 +415,10 @@ Ne sera probablement pas décrit (ou alors si on a du temps en plus):
     * budget d'exploitation - maintenance - MOYEN
     * masse salariale - développeurs en interne - MAUVAIS
 
+## TODO
+
+1. récupérer doc et code des 2 projets
+
 ## Contexte
 
 Il faut poser des questions sur
