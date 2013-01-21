@@ -207,7 +207,7 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
 * ENVIRONNEMENTS
     * Viser une portabilité complète du binaire
         * un package identique qui marche partout sans modification
-        * des fichiers de configuration, par exemple à des emplacements "connus"
+        * des fichiers de configuration, par exemple à des emplacements "connus". Différencier la configuration applicative et la configuration liée à l'environnement (donner des exemples)
         * limiter les risques pour le passage en production
         * partage complet et simple pour toute l'entreprise 
         * si pas adapté ou pas possible, il faut en tout cas automatiser un maximum
