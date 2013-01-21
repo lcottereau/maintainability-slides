@@ -363,6 +363,10 @@ une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
         * je le passe dans Sonar
         * je fais un compte-rendu du résultat
         * je propose des améliorations et expliquant comment choisir les plus efficaces et les moins chères
+    * Il faut trouver sur quoi les faire bosser côté pratique (sur le code du projet qui est repris)
+        * leur faire proposer des améliorations sur un bout de code donné avec analyse sonar. Comparer les différentes solutions (leur montrer qu'il n'y a pas UNE solution)
+        * leur faire coder un test unitaire
+        * TODO
 * CONCLUSION TODO
     * Rappel sur les points les plus importants
         * Less is More : pour cela, comprendre toujours dans le détail le code écrit ou maintenu
