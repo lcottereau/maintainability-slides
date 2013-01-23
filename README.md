@@ -57,3 +57,4 @@ Ce qu'on n'utilisera pas [fathom.js](http://markdalgleish.com/projects/fathom/),
 * autres collègues
 * Lang H.
 * Eric L.
+* Mathieu R.
