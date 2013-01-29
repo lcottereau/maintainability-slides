@@ -23,11 +23,14 @@ Il faut poser des questions sur
 ## Préparation de la présentation
 ### Outils
 
-* [Reveal.js](https://github.com/hakimel/reveal.js)
+* [Power Poligon](https://hacks.mozilla.org/2013/01/power-polygon-html5-slides-with-theming-and-much-more/)
 * [Diagram.ly](http://www.diagram.ly/), [Inkscape](http://inkscape.org/?lang=fr) et [Sozi](http://sozi.baierouge.fr/wiki/fr:bienvenue) pour le schéma de l'usine de dev. Etudier [Prezi](http://prezi.com/) mais pas sûr de pouvoir exporter à un format ouvert...
 * [Delicious](http://www.delicious.com) pour partager l'ensemble des liens
 
-Ce qu'on n'utilisera pas [fathom.js](http://markdalgleish.com/projects/fathom/), [Deck.js](http://imakewebthings.com/deck.js/) (avec des [extensions](http://home.heeere.com/tech-deckjs-ext.html)) et [Shower](https://github.com/pepelsbey/shower) (avec les [notes](http://christianheilmann.com/2012/08/15/browsers-have-a-presenter-mode-console-info/))
+Ce qu'on n'utilisera pas :
+* [Reveal.js](https://github.com/hakimel/reveal.js)
+* [fathom.js](http://markdalgleish.com/projects/fathom/)
+* [Deck.js](http://imakewebthings.com/deck.js/) (avec des [extensions](http://home.heeere.com/tech-deckjs-ext.html)) et [Shower](https://github.com/pepelsbey/shower) (avec les [notes](http://christianheilmann.com/2012/08/15/browsers-have-a-presenter-mode-console-info/))
 
 ### Astuces et aide pour la présentation
 * [Tell a Story !](http://fr.slideshare.net/andywhitlock/how-to-do-presentations-that-dont-induce-suicide)
