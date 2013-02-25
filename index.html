@@ -23,6 +23,8 @@
             top: 0; 
             right: 0; 
             border: 0;
+            padding: 0;
+            margin: 0;
         }
         </style>
 
@@ -39,6 +41,10 @@
             <a href="http://fr.linkedin.com/in/lcottereau/fr">LinkedIn</a>
             <a href="https://twitter.com/lcottereau">@lcottereau</a>
             <a href="https://github.com/lcottereau/"><img src="img/github.png" title="Suivez-moi sur GitHub"/></a>
+        </section>
+
+        <section id="test">
+            <h2>test de contenu</h2>
         </section>
 
         <section id="credits">
@@ -153,7 +159,13 @@
                 duration: 180,
                 // When in minutes, the speaker should be alerted(default: 30, 40)
                 alertAt: [30, 60, 90, 120, 150, 170],
-                
+                slides: [ 
+                    { type: 'title', id: 'splash' }, 
+                    { type: 'opening', id: 'about', notes: ["First note", "Second note!"] },
+                    { id: 'test'},
+                    { type: 'closing', id: 'credits' },
+                    { type: 'closing', id: 'questions' }
+                ],
                 // KEYBOARD SHORTCUTS(optional)
                 // shortcuts: {
                 //     'F6': function(){
