@@ -50,6 +50,12 @@ Ce qu'on n'utilisera pas :
     * _Avant de vouloir qu’un logiciel soit réutilisable, il faudrait d’abord qu’il ait été utilisable_ - Ralph Johnson
 * <http://www.evene.fr/celebre/biographie/antoine-de-saint-exupery-279.php?citations>
     * _La perfection est atteinte, non pas lorsqu'il n'y a plus rien à ajouter, mais lorsqu'il n'y a plus rien à retirer_ - Antoine de Saint-Exupéry
+* <http://marxsoftware.blogspot.fr/2013/02/five-favorite-software-development.html>
+    * couplage trop fort et part de pizzas
+    * Maintenabilité et Jenga
+    * Neuf femmes n'accouchent pas d'un bébé en un mois
+    * balayer la poussière sous le tapis et les warnings
+    * commentaires sont le déodorant du code qui sent mauvais
 
 ### Relectures
 * Florent M.
