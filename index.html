@@ -31,20 +31,34 @@
     </head>
     <body>
         
-        <section id="splash">
+        <section id="titre">
             <h1>Maintenabilité des applications</h1>
         </section>
 
-        <section id="about">
+        <section id="laurent-cottereau">    
             <h2>Laurent Cottereau</h2>
-            <img src="img/skills.png"/>
-            <a href="http://fr.linkedin.com/in/lcottereau/fr">LinkedIn</a>
-            <a href="https://twitter.com/lcottereau">@lcottereau</a>
-            <a href="https://github.com/lcottereau/"><img src="img/github.png" title="Suivez-moi sur GitHub"/></a>
+            <p><img style="float:right;" src="img/skills.png"/></p>
+            <p><img src="img/entreprises.png"/></p>
         </section>
 
-        <section id="test">
-            <h2>test de contenu</h2>
+        <section id="questions-preliminaires">
+            <h2>Questions préliminaires</h2>
+            <ul>
+                <li>Différence entre projet et maintenance ?</li>
+                <li>Différents types de maintenance ?</li>
+                <li>Différents types d'informatique ?</li>
+            </ul>
+        </section>
+
+        <section id="info-gestion">
+            <h2>Informatique de Gestion</h2>
+            <ul>
+                <li>métier complexe et non maîtrisé par le développeur</li>
+                <li>ergonomie primordiale</li>
+                <li>nombreux projets en parallèle</li>
+                <li>architectures classiques</li>
+                <li>performances peu critiques</li>
+            </ul>
         </section>
 
         <section id="credits">
@@ -58,12 +72,38 @@
         <section id="questions">
                 <h2>Merci</h2>
                 <p>Des questions?</p>
-                <p class="clip"><a href="https://github.com/lcottereau/maintainability-slides/"><img src="img/forkme.png" alt="Fork me on GitHub"></a></p>
+                <p class="clip"><a href="https://github.com/lcottereau/maintainability-slides/"><img src="img/forkme.png" alt="Fork me on GitHub"/></a></p>
+                <ul>
+            <li><a href="http://fr.linkedin.com/in/lcottereau/fr">LinkedIn</a></li>
+            <li><a href="https://twitter.com/lcottereau">@lcottereau</a></li>
+            <li><a href="https://github.com/lcottereau/"><img src="img/github.png" title="Suivez-moi sur GitHub"/></a></li>
+        </ul>
             
         </section>
         
         <script>
             window.PPW.init({
+                slides: [ 
+                    { type: 'opening', id: 'titre' }, 
+                    { id: 'laurent-cottereau', notes: [
+                        "projets plutôt petits (1 à 5 personnes sur 6 mois max) et maintenances associées", 
+                        "Ce condensé est lié à mon expérience et doit être analysé, questionné et remis en cause"
+                        ] },
+                    { id: 'questions-preliminaires', notes: [
+                        "3 phases TBR - Flou autour de la MEP - Questionner sur trains de maintenance", 
+                        "Corrective - Evolutive - Adaptative - Préventive (moins en informatique)",
+                        "De gestion - scientifique (supercalculateurs) - embarquée (temps réel) - ingénierie des connaissances"
+                        ] },
+                    { id: 'info-gestion', notes: [
+                        "De loin l'activité la plus importante en informatique sur le marché de l'emploi",
+                        "> Au vue de tout ça, qu'est-ce que la maintenabilité pour vous ?",
+                        ] },
+                    { id: 'temp', notes: [
+                        "",
+                        ] },
+                    { type: 'closing', id: 'credits' },
+                    { type: 'closing', id: 'questions' }
+                ],
                 
                 /**************************************************
                 * BASIC CONFIGURATION (most of it, is optional) *
@@ -86,7 +126,7 @@
                 // may be false or id(slide' id)
                 friendlyURL: 'id',
                 // should ppw open the splash screen first?
-                useSplashScreen: true,
+                useSplashScreen: false,
                 /**
                 * Defines the pattern to be used to load external slides.
                 * The default is SLIDE_ID_DIR, found in cons.fs.
@@ -159,13 +199,6 @@
                 duration: 180,
                 // When in minutes, the speaker should be alerted(default: 30, 40)
                 alertAt: [30, 60, 90, 120, 150, 170],
-                slides: [ 
-                    { type: 'title', id: 'splash' }, 
-                    { type: 'opening', id: 'about', notes: ["First note", "Second note!"] },
-                    { id: 'test'},
-                    { type: 'closing', id: 'credits' },
-                    { type: 'closing', id: 'questions' }
-                ],
                 // KEYBOARD SHORTCUTS(optional)
                 // shortcuts: {
                 //     'F6': function(){
