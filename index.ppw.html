@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Presentation Demo</title>
+        
+        <!-- REQUIRED -->
+        <script src="ppw/_scripts/jquery-1.8.2.min.js"></script>
+        
+        <script src="ppw/ppw.js"></script>
+        <!-- ADDONS -->
+        <!--
+        <script src="ppw/_addons/remote-control/ppw-remote-control.js"></script>
+        <script src="ppw/_addons/syntaxhighlighter/sh.js"></script>
+        <script src="ppw/_addons/social/social.js"></script>
+        -->
+        <script src="ppw/_addons/caniuse/caniuse.js"></script>
+        <!-- -->
+
+        <style>
+        .clip {
+            position: absolute; 
+            top: 0; 
+            right: 0; 
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+
+    </head>
+    <body>
+        
+        <section id="titre">
+            <h1>Maintenabilité des applications</h1>
+        </section>
+
+        <section id="laurent-cottereau">    
+            <h2>Laurent Cottereau</h2>
+            <p><img style="float:right;" src="img/skills.png"/></p>
+            <p><img src="img/entreprises.png"/></p>
+        </section>
+
+        <section id="questions-preliminaires">
+            <h2>Questions préliminaires</h2>
+            <ul>
+                <li>Différence entre projet et maintenance ?</li>
+                <li>Différents types de maintenance ?</li>
+                <li>Différents types d'informatique ?</li>
+            </ul>
+        </section>
+
+        <section id="info-gestion">
+            <h2>Informatique de Gestion</h2>
+            <ul>
+                <li>métier complexe et non maîtrisé par le développeur</li>
+                <li>ergonomie primordiale</li>
+                <li>nombreux projets en parallèle</li>
+                <li>architectures classiques</li>
+                <li>performances peu critiques</li>
+            </ul>
+        </section>
+
+        <section id="scenario-catastrophe">
+            <h2>La vie d'un nouvel arrivant</h2>
+            <ol>
+                <li>correction d'un bug simple et livraison</li>
+                <li>nouveau bug lié à une duplication de bug</li>
+                <li>régression fonctionnelle</li>
+            </ol>
+        </section>
+
+        <section id="bugs-reels">
+            <h2>Dans la vraie vie</h2>
+            <p><img src="img/couts-maintenance.png"/></p>
+        </section>
+
+        <section id="credits">
+            <h2>Remerciements</h2>
+            <ul>
+                <li>Power Poligon</li>
+                <li>Wordle</li>
+                <li>F. Mathé</li>
+        </section>
+        
+        <section id="questions">
+                <h2>Merci</h2>
+                <p>Des questions?</p>
+                <p class="clip"><a href="https://github.com/lcottereau/maintainability-slides/"><img src="img/forkme.png" alt="Fork me on GitHub"/></a></p>
+                <ul>
+            <li><a href="http://fr.linkedin.com/in/lcottereau/fr">LinkedIn</a></li>
+            <li><a href="https://twitter.com/lcottereau">@lcottereau</a></li>
+            <li><a href="https://github.com/lcottereau/"><img src="img/github.png" title="Suivez-moi sur GitHub"/></a></li>
+        </ul>
+            
+        </section>
+        
+        <script>
+            window.PPW.init({
+                slides: [ 
+                    { type: 'opening', id: 'titre' }, 
+                    { id: 'laurent-cottereau', notes: [
+                        "projets plutôt petits (1 à 5 personnes sur 6 mois max) et maintenances associées", 
+                        "Ce condensé est lié à mon expérience et doit être analysé, questionné et remis en cause"
+                        ] },
+                    { id: 'questions-preliminaires', notes: [
+                        "3 phases TBR - Flou autour de la MEP - Questionner sur trains de maintenance", 
+                        "Corrective - Evolutive - Adaptative - Préventive (moins en informatique)",
+                        "De gestion - scientifique (supercalculateurs) - embarquée (temps réel) - ingénierie des connaissances"
+                        ] },
+                    { id: 'info-gestion', notes: [
+                        "De loin l'activité la plus importante en informatique sur le marché de l'emploi",
+                        "> Au vue de tout ça, qu'est-ce que la maintenabilité pour vous ?",
+                        ] },
+                    { id: 'scenario-catastrophe', notes: [
+                        "email lapidaire non compris &ndash; prise de contact et explication &ndash; après 2-3 heures, on se rend compte que ça marche comme ça devrait (mais doc pas mise à jour suite à évolution et code est très complexe mais hésite à enlever car impacts non maîtrisés) &ndash; dans le processus, on se rend compte d'un autre bug &ndash; correction &ndash; tests et livraison",
+                        "correction 2ème a créé un nouveau bug sur du code dupliqué (aurait du être corrigé à 2 endroits) &ndash; corrigé rapidement &ndash; tests et livraison",
+                        "en fait, pas du code dupliqué &ndash; régression fonctionnelle et mauvais ressenti utilisateur &ndash; correction longue, tests et livraison",
+                        ] },
+                    { id: 'bugs-reels', notes: [
+                        "Bug de division du Pentium en 1994",
+                        "Bug sur le pilote automatique lors du lancement du vol 501 inaugural de Ariane 5. 370 millions de dollars, le bug le plus coûteux de l'histoire",
+                        "Estimation du coût des pannes logicielles pour l'économie mondiale avoisinne la centaine de milliards d'euros",
+                        ] },
+                    { id: 'temp', notes: [
+                        "",
+                        ] },
+                    { type: 'closing', id: 'credits' },
+                    { type: 'closing', id: 'questions' }
+                ],
+                
+                /**************************************************
+                * BASIC CONFIGURATION (most of it, is optional) *
+                **************************************************/
+               
+                // the talk's title
+                title: "Maintenabilité des applications",
+                // the list of authors and their information
+                authors: [
+                    {
+                        name: "Laurent Cottereau",
+                        email: "laurent@cottereau.name",
+                        twitter: "@lcottereau"
+                    }
+                ],
+                // where is(relatively) the source of PowerPolygonWeb
+                PPWSrc: "ppw/",
+                // enables or not, the shortcuts
+                shortcutsEnable: true,
+                // may be false or id(slide' id)
+                friendlyURL: 'id',
+                // should ppw open the splash screen first?
+                useSplashScreen: false,
+                /**
+                * Defines the pattern to be used to load external slides.
+                * The default is SLIDE_ID_DIR, found in cons.fs.
+                * Also can be a string defining the pattern, where:
+                * %id = slide identifier
+                * %num = slide number
+                *
+                * For example, if your slides a and b are in a directory called
+                * slides, and the slide file is always index.html, the pattern
+                * is as follows:
+                * fsPattern: 'slides/%id/index.html' // this is the default pattern
+                */
+                //fsPattern: PPW.cons.fs.SLIDE_ID_DIR_ID,
+                // should show battery alerts WHEN SUPPORTED?
+                showBatteryAlerts: true,
+                // should show a notification when goes offline?
+                showOfflineAlerts: true,
+                // should allow cache for external slides? (default true)
+                slidesCache: false,
+                
+                /**
+                * Defines the profile for your presentation.
+                * ** When not set, every slide will be shown.
+                * ** When set, only slides with NO profile property, or profile
+                * equals to null/'none'/false, or equals to the defined profile
+                * here, will be shown.
+                * default: 'none'
+                */
+                //profile: 'shorter',
+                
+                languages: ['FR'],
+                defaultLanguage: 'FR',
+                
+                /**************************************************
+                * PRESENTATION DATA *
+                **************************************************/
+               
+                // optional...you can simply say what is the transition you want
+                // using the theme property of this settings
+                //transition: 'trans-3d-3',
+                //transition: 'trans-fall',
+                //transition: 'trans-zooming',
+                //transition: 'trans-fall-n-roll',
+                //transition: 'trans-cut',
+                //transition: 'trans-fade',
+                
+                // the theme to be used (default: default)
+                // this can be an array of a list of themes separated by comma, although,
+                // be careful loading more than one theme, once they may be concurring
+                // on some rules!
+                theme: "thm-default",
+                //theme: "default",
+                
+                // special settings for a theme(changes according to the choosen theme and is not required)
+                //themeSettings: {
+                //    shTheme: 'sh_bright'
+                //},
+                
+                
+                // disabling the arrows(the default)
+                //useArrows: false,
+                //useOnlyArrows: false,
+                
+                // only for the social addon
+                //social: {
+                //    alertTime: 4000,
+                //    sodialSearch: '#braziljs OR @felipenmoura'
+                //},
+                // the expected duration in minutes in minutes (default 50)
+                duration: 180,
+                // When in minutes, the speaker should be alerted(default: 30, 40)
+                alertAt: [30, 60, 90, 120, 150, 170],
+                // KEYBOARD SHORTCUTS(optional)
+                // shortcuts: {
+                //     'F6': function(){
+                //         alert('F6 was pressed!!!');
+                //     },
+                //     'F7': function(){
+                //         alert('F7 was pressed!!!');
+                //     },
+                //     'F8': function(){
+                //         alert('F8 was pressed!!!');
+                //     },
+                //     'F9': function(){
+                //         alert('F9 was pressed!!!');
+                //     },
+                //     'F10': function(){
+                //         alert('F10 was pressed!!!');
+                //     }
+                // }
+            });
+        </script>
+    </body>
+</html>
