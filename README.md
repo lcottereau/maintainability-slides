@@ -19,6 +19,7 @@ Il faut poser des questions sur
 * est-ce qu'un environnement satisfaisant pour la projection existe 
     * prise VGA
     * Firefox dernière version (ou Chrome si Sozi marche)
+    * résolution du projecteur
 
 ## Préparation de la présentation
 ### Outils
