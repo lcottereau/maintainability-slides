@@ -696,6 +696,31 @@
 							</ul>
 						</aside>
 					</section>
+
+					<section>
+						<h3>Documentation <em>automatique</em></h3>
+						<ul>
+							<li class="fragment">Gestionnaire de tickets</li>
+							<li class="fragment">Gestionnaire de version</li>
+						</ul>
+						<pre class="fragment"><code>$:~/anaf$ git log --pretty=oneline --abbrev-commit
+							3b962cf vues
+							98ee6cd vues
+							b029a3f model et vues
+							e3a527c model et vues
+							5187f8b security</code></pre>
+						<pre class="fragment"><code>$:~/TODO$ git log --pretty=oneline --abbrev-commit</code></pre>
+						<pre class="fragment"><code>$:~/TODO$ git log XXXXXX</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>historique des problèmes, incidents, évolutions fonctionnelles, choix d'architecture</li>
+								<li>Pas automatique : créer et bien remplir (penser à soi dans 2 ans). Trouver la maille.</li>
+								<li>1 ligne de résumé. Puis détails si nécessaires</li>
+								<li>Par exemple, lien vers tickets (et inversement)</li>
+								<li>IDE aident</li>
+							</ul>
+						</aside>
+					</section>
 					
 					<section>
 						<h3>Pour le reste</h3>
