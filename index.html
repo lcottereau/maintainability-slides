@@ -462,6 +462,130 @@
 					</section>
 
 					<section>
+						<h2>Pépite : Lombok</h2>
+						<p>Ne pas coder ce qui est évident</p>
+						<ul class="fragment">
+							<li><code>@Getter(lazy=true)</code></li>
+							<li><code>@ToString</code></li>
+							<li><code>@<em>XXX</em>ArgsConstructor</code></li>
+							<li><code>@Data</code></li>
+							<li><code>@Cleanup</code></li>
+							<li><code>@Log</code></li>
+							<li>...</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Même idée que Design Patterns et Lombok fournit aussi le code</li>
+								<li>Plus rapide ET plus lisible.</li>
+								<li>
+									de <a href="http://projectlombok.org/features/" hreflang="en">nombreuses autres</a>, 
+									des <a href="http://projectlombok.org/features/experimental/" hreflang="en">expérimentales</a> et 
+									des <a href="https://github.com/peichhorn/lombok-pg" hreflang="en">non-officielles</a>
+								</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Sans Lombok</h3>
+						<pre><code>
+							@Entity
+							@Table(name = "School")
+							public class School {
+
+							   	@Id
+							   	@GeneratedValue(strategy = GenerationType.IDENTITY)
+							   	@Column(name = "id_school")
+							   	private int idSchool;
+
+							   	@Column(length = 128, name = "name_school")
+							   	private String nameSchool;
+
+							   	@Column(length = 128, name = "adress_school")
+							   	private String adressSchool;
+
+							   	@Column(name = "validate_school")
+							   	private boolean validateSchool;
+
+							   	public School() {
+							   	}
+								
+							   	public int getIdSchool() {
+							   	   	return idSchool;
+							   	}
+
+							   	public void setIdSchool(int idSchool) {
+							   	   	this.idSchool = idSchool;
+							   	}
+
+							   	public String getNameSchool() {
+							   	   	return nameSchool;
+							   	}
+
+							   	public void setNameSchool(String nameSchool) {
+							   	   	this.nameSchool = nameSchool;
+							   	}
+
+							   	public String getAdressSchool() {
+							   	   	return adressSchool;
+							   	}
+
+							   	public void setAdressSchool(String adressSchool) {
+							   	   	this.adressSchool = adressSchool;
+							   	}
+
+							   	public void setValidateSchool(boolean validateSchool) {
+							   	   	this.validateSchool = validateSchool;
+							   	}
+
+							   	public boolean isValidateSchool() {
+							   	   	return validateSchool;
+							   	}
+
+							}
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Avec Lombok</h3>
+						<pre><code>        
+							&lt;dependency&gt;
+							    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+							    &lt;artifactId&gt;lombok&lt;/artifactId&gt; 
+							    &lt;version&gt;0.11.6&lt;/version&gt; 
+							    &lt;scope&gt;provided&lt;/scope&gt; 
+							&lt;/dependency&gt;
+						</code></pre>
+						<pre><code>	@Entity
+							@Table
+							@Data
+							public class School implements Serializable {
+							    @Id
+							    @GeneratedValue(strategy = GenerationType.IDENTITY)
+							    private int id;
+
+							    @Size(max = 128)
+							    private String name;
+
+							    @Size(max = 128)
+							    private String address;
+
+							    private boolean isValidated;
+							}</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>suppression constructeur/getters/setters. Bonus.</li>
+								<li>Suppression des name inutiles (et donc de @Column)</li>
+								<li>Implémentation de Serializable</li>
+								<li>renommage des variables (lisibilité)</li>
+								<li>rajoute des javadocs (validateSchool pas clair)</li>
+								<li>length changé en contraintes</li>
+								<li> ⇒ que de l'utile ? (débat sur private)</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
 						<h2></h2>
 						<ul>
 							<li></li>
