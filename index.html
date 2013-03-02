@@ -293,7 +293,34 @@
 					</section>
 
 					<section>
-
+						<h2>Code expressif / lisible</h2>
+						<pre><code>
+							Calendar c = new GregorianCalendar();
+							Calendar b = j.bd();
+							if (b != null 
+							    && c.get(Calendar.DAY_OF_YEAR) == 
+							       b.get(Calendar.DAY_OF_YEAR)) {
+							    return gift;
+							}
+						</code></pre>
+						<pre><code>
+							if (joe.hasBirthday()) {
+							    return gift;
+							}
+						</code></pre>
+						<pre><code>
+							when(joe.hasBirthday()).thenReturn(gift);
+						</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>exprimer son intention via le code au mainteneur : racontez des histoires !</li>
+								<li>utiliser des méthodes très efficace (sémantique / javadocs / API réutilisables)</li>
+								<li>compilateurs très évolués : inutile d'optimiser en général</li>
+								<li>Choix de bibliothèques (ex : Joda Time et JSR 310)</li>
+								<li>Le chaînage de méthode améliore la lisibilité</li>
+								<li>Métaphore XP</li>
+							</ul>
+						</aside>
 					</section>
 
 				</section>
