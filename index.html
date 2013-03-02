@@ -557,7 +557,6 @@
 							&lt;/dependency&gt;
 						</code></pre>
 						<pre><code>	@Entity
-							@Table
 							@Data
 							public class School implements Serializable {
 							    @Id
@@ -575,7 +574,7 @@
 						<aside class="notes">
 							<ul>
 								<li>suppression constructeur/getters/setters. Bonus.</li>
-								<li>Suppression des name inutiles (et donc de @Column)</li>
+								<li>Suppression des name inutiles, donc @Column/@Table</li>
 								<li>Implémentation de Serializable</li>
 								<li>renommage des variables (lisibilité)</li>
 								<li>rajoute des javadocs (validateSchool pas clair)</li>
