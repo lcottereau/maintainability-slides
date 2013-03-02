@@ -42,10 +42,19 @@
 			.moins {color: red;}
 			.dingle body {
 				background: url(img/fond_dingle.jpg) no-repeat center center fixed; 
+			}
+			.warning body {
+				background: url(img/warning.jpg) no-repeat center center fixed; 
+			}
+			.dingle body, .warning body {
 				-webkit-background-size: cover;
 				-moz-background-size: cover;
 				-o-background-size: cover;
 				background-size: cover;
+			}
+			.warning section {
+				border-radius: 10px;
+				background-color: rgba(0, 0, 0, 0.5);
 			}
 		</style>
 
@@ -330,6 +339,20 @@
 							<ul>
 								<li>Deuxième et plus gros problème</li>
 								<li>pas incohérent avec la réponse au besoin : principes de simplicité dans le design (apple)</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-state="warning">
+						<h3>Comprenez ce que vous faites !</h3>
+						<p class="fragment">Soyez curieux !</p>
+						<aside class="notes">
+							<ul>
+								<li>différence entre bon (utile, demandé) et mauvais dev</li>
+								<li>bugs techniques inacceptables (pb fonctionnels compréhensibles)</li>
+								<li>en permanence : veille techno, lecture specs, pas de pré-suppositions</li>
+								<li>exemple sessions web</li>
+								<li>TRES IMPORTANT</li>
 							</ul>
 						</aside>
 					</section>
