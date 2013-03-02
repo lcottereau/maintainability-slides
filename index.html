@@ -357,6 +357,53 @@
 						</aside>
 					</section>
 
+					<section>
+						<h3>Réfléchissez à ce que vous commitez</h3>
+						<h4>A supprimer</h4>
+						<pre><code>
+							/**
+							 * $Id:$
+							 * @author toto
+							 */
+							public int doSomething() {
+							    //System.out.println("TOTO");
+							    return x;
+							    //return x*2;
+							}
+						</code></pre>
+						<aside class="notes">
+							Eviter aussi le code généré (risque d'incohérence, de lier à un environnement)
+						</aside>
+					</section>
+
+					<section>
+						<h4>A garder</h4>
+						<pre><code>
+							/*
+							 * (c) Copyright 2013 Laurent Cottereau
+							 * 
+							 * This file is part of Foobar.
+							 * Foobar is free software: you can redistribute it and/or 
+							 * modify it under the terms of the GNU General Public 
+							 * License as published by the Free Software Foundation, 
+							 * version 3 of the License. 
+							 * You should have received a copy of the GNU General Public
+							 * License along with Foobar.  
+							 * If not, see &lt;http://www.gnu.org/licenses/&gt;.
+							 */
+							/**
+							 * commentaire utile.
+							 * TODO penser à implémenter autre chose.
+						</code></pre>
+    					<aside class="notes">
+    						<ul>
+    							<li>Le commit est un moment solennel et presque définitif</li>
+    							<li>La revue doit être complète à chaque fois</li>
+    							<li>Préférer les petits commits souvent (plus facile détecter erreurs et améliorations possibles)</li>
+    						</ul>
+    					</aside>
+					</section>
+
 				</section>
 
 				<section>
