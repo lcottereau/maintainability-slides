@@ -47,10 +47,10 @@
 			.plus {color: green;}
 			.moins {color: red;}
 			.dingle body {
-				background: url(img/fond_dingle.jpg) no-repeat center center fixed; 
+				background: url(img/fond_dingle.jpg) no-repeat center center fixed;
 			}
 			.warning body {
-				background: url(img/warning.jpg) no-repeat center center fixed; 
+				background: url(img/warning.jpg) no-repeat center center fixed;
 			}
 			.dingle body, .warning body {
 				-webkit-background-size: cover;
@@ -128,7 +128,7 @@
 				                <li class="plus">nombreux projets en parallèle</li>
 				                <li class="moins">architectures classiques</li>
 				                <li class="moins">performances non critiques</li>
-				            </ul>			            	
+				            </ul>
 			            </aside>
 			        </section>
 				</section>
@@ -312,8 +312,8 @@
 						<pre><code>
 							Calendar c = new GregorianCalendar();
 							Calendar b = j.bd();
-							if (b != null 
-							    && c.get(Calendar.DAY_OF_YEAR) == 
+							if (b != null
+							    && c.get(Calendar.DAY_OF_YEAR) ==
 							       b.get(Calendar.DAY_OF_YEAR)) {
 							    return gift;
 							}
@@ -391,14 +391,14 @@
 						<pre><code>
 							/*
 							 * (c) Copyright 2013 Laurent Cottereau
-							 * 
+							 *
 							 * This file is part of Foobar.
-							 * Foobar is free software: you can redistribute it and/or 
-							 * modify it under the terms of the GNU General Public 
-							 * License as published by the Free Software Foundation, 
-							 * version 3 of the License. 
+							 * Foobar is free software: you can redistribute it and/or
+							 * modify it under the terms of the GNU General Public
+							 * License as published by the Free Software Foundation,
+							 * version 3 of the License.
 							 * You should have received a copy of the GNU General Public
-							 * License along with Foobar.  
+							 * License along with Foobar.
 							 * If not, see &lt;http://www.gnu.org/licenses/&gt;.
 							 */
 							/**
@@ -484,8 +484,8 @@
 								<li>Même idée que Design Patterns et Lombok fournit aussi le code</li>
 								<li>Plus rapide ET plus lisible.</li>
 								<li>
-									de <a href="http://projectlombok.org/features/" hreflang="en">nombreuses autres</a>, 
-									des <a href="http://projectlombok.org/features/experimental/" hreflang="en">expérimentales</a> et 
+									de <a href="http://projectlombok.org/features/" hreflang="en">nombreuses autres</a>,
+									des <a href="http://projectlombok.org/features/experimental/" hreflang="en">expérimentales</a> et
 									des <a href="https://github.com/peichhorn/lombok-pg" hreflang="en">non-officielles</a>
 								</li>
 							</ul>
@@ -515,7 +515,7 @@
 
 							   	public School() {
 							   	}
-								
+
 							   	public int getIdSchool() {
 							   	   	return idSchool;
 							   	}
@@ -554,12 +554,12 @@
 
 					<section>
 						<h4>Avec Lombok</h4>
-						<pre><code>        
+						<pre><code>
 							&lt;dependency&gt;
 							    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
-							    &lt;artifactId&gt;lombok&lt;/artifactId&gt; 
-							    &lt;version&gt;0.11.6&lt;/version&gt; 
-							    &lt;scope&gt;provided&lt;/scope&gt; 
+							    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+							    &lt;version&gt;0.11.6&lt;/version&gt;
+							    &lt;scope&gt;provided&lt;/scope&gt;
 							&lt;/dependency&gt;
 						</code></pre>
 						<pre><code>	@Entity
@@ -608,7 +608,7 @@
 
 					<section>
 						<h3 lang="en">
-							<acronym title="Don't Repeat Yourself">DRY</acronym> &ndash; 
+							<acronym title="Don't Repeat Yourself">DRY</acronym> &ndash;
 							don't <acronym title="Write Everything Twice">WET</acronym>
 						</h3>
 						<blockquote lang="en">
@@ -618,7 +618,7 @@
 							<ul>
 								<li>Risques : corriger à un seul endroit, savoir lequel utiliser</li>
 								<li>Aide à une bonne conception (responsabilité unique)</li>
-								<li>Attention si presque-pareil : pourquoi ? comment gérer ?</li> 
+								<li>Attention si presque-pareil : pourquoi ? comment gérer ?</li>
 							</ul>
 						</aside>
 					</section>
@@ -647,7 +647,7 @@
 						</figure>
 						<figure class="fragment">
 							<pre><code>
-							    function(a,b,c,d){d+=c; 
+							    function(a,b,c,d){d+=c;
 							    return[d&lt;0|a&amp;b&lt;&lt;d?a=parseInt((a|b&lt;&lt;c)
 							    	.toString(d=32,b=new Date&amp;2|1)
 							    	.replace('v',''),d)
