@@ -865,6 +865,34 @@
 					</section>
 
 					<section>
+						<h3>Junit &amp; Mockito</h3>
+						<pre><code>
+            @Mock Iterator i;
+            @InjectMocks MaClasse m;
+
+            @Test
+            public void iterator_will_return_hello_world(){
+                // 1 - PREPARE
+                when(i.next()).thenReturn("Hello").thenReturn("World");
+                // 2 - EXECUTE
+                String result=m.getNextTwice();
+                // 3 - VERIFIE
+                assertEquals("Hello World", result);
+            }
+            </code></pre>
+            <p class="fragment"><img class="no-border" alt="bonus" src="img/bonus.png"/> PowerMock pour <code>final</code>, <code>private</code>, <code>static</code></p>
+						<aside class="notes">
+							<ul>
+                <li>Junit : annotations et assert</li>
+                <li>TestNG est à explorer (bon support)</li>
+                <li>Mockito : seuls la classe testée peut échouer</li>
+                <li>D'autres (EasyMock) mais Mockito marche bien</li>
+								<li>Trio avec <a href="https://code.google.com/p/powermock/" hreflang="en">PowerMock</a> quasi indispensables</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
 						<h3></h3>
 						<ul>
 							<li></li>
@@ -886,6 +914,7 @@
 		                <li>Wikimedia</li>
 		                <li>http://obinoobie.deviantart.com/art/Microsoft-Office-Word-Icon-195507790</li>
 		                <li>http://ivadeath.deviantart.com/art/Karma-264163572</li>
+                    <li>http://www.1point2vue.com/tampon-encre-gimp/</li>
 		            </ul>
             	</section>
 
