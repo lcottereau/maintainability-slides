@@ -908,6 +908,21 @@
 					</section>
 
 					<section>
+						<h3>Compilateur</h3>
+            <pre><code>
+            Note : Foo() in interface FooBase has been deprecated.
+            Note : Foo.java uses unchecked or unsafe operations.
+            </code></pre>
+            <pre class="fragment"><code>
+            <del>javac -nowarn</del>
+            javac -Xlint <span class="fragment">-Werror</span>
+            </code></pre>
+						<aside class="notes">
+							D'autres warnings : <code>fallthrough</code>, <code>finally</code>, <code>unused</code>
+						</aside>
+					</section>
+
+					<section>
 						<h3></h3>
 						<ul>
 							<li></li>
