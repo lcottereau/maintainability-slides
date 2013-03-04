@@ -7,6 +7,7 @@ Pour plus d'information, voir le [Synopsis](https://github.com/lcottereau/mainta
 
 1. récupérer doc et code des 2 projets
 1. Documenter l'installation de reveal.js (dans un répertoire reveal à la racine)
+1. Réfléchir à un questionnaire de satisfaction
 
 ## Contexte
 
