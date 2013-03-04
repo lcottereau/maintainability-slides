@@ -1032,6 +1032,28 @@
 					</section>
 
 					<section>
+						<h3>Portabilité du binaire</h3>
+						<ul>
+              <li>Unique <code>.jar</code> ou <code>.war</code> réutilisable</li>
+              <li>Configuration spécifique sur l'environnement</li>
+						</ul>
+						<aside class="notes">
+							<ol>
+                <li>Limite les risques en prod (tests pertinent)</li>
+                <li>Partage plus facile (déploiement auto ?)</li>
+                <li>Sécurité (mots de passe que sur env, pas au dev)</li>
+              </ol>
+              <ul>
+                <li>Fichier à des endroits définis. Idéal norme exploit</li>
+                <li>Variables d'env <code>catalina.properties</code> ou shell</li>
+                <li>Se méfier de <code>context.xml</code></li>
+                <li>Temps pour trouver une méthode vaut le coup</li>
+                <li>Sinon filtres maven</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
 						<h3></h3>
 						<ul>
               <li></li>
