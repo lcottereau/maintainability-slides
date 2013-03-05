@@ -65,14 +65,3 @@ Ce qu'on n'utilisera pas :
     * Neuf femmes n'accouchent pas d'un bébé en un mois
     * balayer la poussière sous le tapis et les warnings
     * commentaires sont le déodorant du code qui sent mauvais
-
-### Relectures
-* Florent M.
-* Michael S.
-* Marie C.
-* Ludovic P.
-* Sébastien D.
-* autres collègues
-* Lang H.
-* Eric L.
-* Mathieu R.
