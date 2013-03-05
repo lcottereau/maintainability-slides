@@ -2,6 +2,9 @@
 
 Une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintainability) des applications. 
 
+La présentation est consultable sur [Github Pages](http://lcottereau.github.com/maintainability-slides/) mais elle
+n'est mise à jour qu'épisodiquement.
+
 Pour plus d'information, le [Synopsis](https://github.com/lcottereau/maintainability-slides/wiki/Synopsis) 
 donne une idée du plan. Attention, c'était l'étude initiale qui n'est plus complètement à jour par rapport à 
 [index.html](index.html) et sera supprimée lorsque la présentation sera prête.
