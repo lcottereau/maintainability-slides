@@ -13,8 +13,8 @@ donne une idée du plan. Attention, c'était l'étude initiale qui n'est plus co
 
 ## Installation
 
-Installer [reveal.js](https://github.com/hakimel/reveal.js) dans un répertoire `reveal` à la racine du projet. 
-Ouvrir le fichier `index.html` dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les 
+1. Installer [reveal.js](https://github.com/hakimel/reveal.js) dans un répertoire `reveal` à la racine du projet. 
+1. Ouvrir le fichier `index.html` dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les 
 fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
 
 
