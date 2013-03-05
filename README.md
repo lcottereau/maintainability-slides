@@ -1,7 +1,10 @@
 # Développement de Logiciel Durable
 
 Une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintainability) des applications. 
-Pour plus d'information, voir le [Synopsis](https://github.com/lcottereau/maintainability-slides/wiki/Synopsis)
+
+Pour plus d'information, le [Synopsis](https://github.com/lcottereau/maintainability-slides/wiki/Synopsis) 
+donne une idée du plan. Attention, c'était l'étude initiale qui n'est plus complètement à jour par rapport à 
+[index.html](index.html) et sera supprimée lorsque la présentation sera prête.
 
 ## TODO
 
