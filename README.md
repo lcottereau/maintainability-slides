@@ -11,8 +11,8 @@ Pour plus d'information, voir le [Synopsis](https://github.com/lcottereau/mainta
 ## Installation
 
 Installer [reveal.js](https://github.com/hakimel/reveal.js) dans un répertoire `reveal` à la racine du projet. 
-Ouvrir le fichier `index.html` dans votre navigateur (idéalement via http pour avoir toutes les fonctionnalités 
-de reval).
+Ouvrir le fichier `index.html` dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les 
+fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
 
 
 ## Contexte
