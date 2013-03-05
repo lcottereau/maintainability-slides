@@ -5,9 +5,15 @@ Pour plus d'information, voir le [Synopsis](https://github.com/lcottereau/mainta
 
 ## TODO
 
-1. récupérer doc et code des 2 projets
-1. Documenter l'installation de reveal.js (dans un répertoire reveal à la racine)
+1. récupérer doc des 2 projets si c'est possible
 1. Réfléchir à un questionnaire de satisfaction
+
+## Installation
+
+Installer [reveal.js](https://github.com/hakimel/reveal.js) dans un répertoire `reveal` à la racine du projet. 
+Ouvrir le fichier `index.html` dans votre navigateur (idéalement via http pour avoir toutes les fonctionnalités 
+de reval).
+
 
 ## Contexte
 
@@ -26,12 +32,12 @@ Il faut poser des questions sur
 ## Préparation de la présentation
 ### Outils
 
-* [Power Poligon](https://hacks.mozilla.org/2013/01/power-polygon-html5-slides-with-theming-and-much-more/)
+* [Reveal.js](https://github.com/hakimel/reveal.js) 
 * [Diagram.ly](http://www.diagram.ly/), [Inkscape](http://inkscape.org/?lang=fr) et [Sozi](http://sozi.baierouge.fr/wiki/fr:bienvenue) pour le schéma de l'usine de dev. Etudier [Prezi](http://prezi.com/) mais pas sûr de pouvoir exporter à un format ouvert...
 * [Delicious](http://www.delicious.com) pour partager l'ensemble des liens
 
 Ce qu'on n'utilisera pas :
-* [Reveal.js](https://github.com/hakimel/reveal.js)
+* [Power Poligon](https://hacks.mozilla.org/2013/01/power-polygon-html5-slides-with-theming-and-much-more/) est très complet (langues et profils sont intéressants) mais trop moche de base.
 * [fathom.js](http://markdalgleish.com/projects/fathom/)
 * [Deck.js](http://imakewebthings.com/deck.js/) (avec des [extensions](http://home.heeere.com/tech-deckjs-ext.html)) et [Shower](https://github.com/pepelsbey/shower) (avec les [notes](http://christianheilmann.com/2012/08/15/browsers-have-a-presenter-mode-console-info/))
 
