@@ -1066,12 +1066,15 @@
 
 					<section>
 						<h3>Prédictabilité du binaire</h3>
-						<ul>
-              <li>TODO</li>
-						</ul>
+						<pre><code>
+						        <maven.compiler.source>1.6</maven.compiler.source>
+						        <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+						        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+						</code></pre>
 						<aside class="notes">
-              <ul>
-                <li>Au moins le côté encoding, java compiler</li>
+							<ul>
+								<li>(Presque)-même binaire quel que soit l'environnement de gén.</li>
+								<li>TODO d'autres choses ?</li>
 							</ul>
 						</aside>
 					</section>
