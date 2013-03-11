@@ -53,20 +53,4 @@ Ce qu'on n'utilisera pas :
 * [3 tricks to better public speaking](http://neiljoglekar.com/what-i-learned-from-our-guest-lecture-at-cmu)
 * [The Art of Public Speaking](http://fr.feedbooks.com/book/3695/the-art-of-public-speaking), Dale Breckenridge Carnegie
 
-### Citations
-* Les pollueurs (dév crades) ne sont pas les payeurs (mainteneurs)
-* <http://t37.net/13-citations-droles-l-histoire-programmation.html>
-    * _Il y existe deux manières de concevoir un logiciel. La première, c’est de le faire si simple qu’il est évident qu’il ne présente aucun problème. La seconde, c’est de le faire si compliqué qu’il ne présente aucun problème évident. La première méthode est de loin la plus complexe_ - C.A.R. Hoare
-    * _Si les ouvriers construisaient les bâtiments comme les développeurs écrivent leurs programmes, le premier pivert venu aurait détruit toute civilisation_ - Gerald Weinberg
-    * _Si debugger, c’est supprimer des bugs, alors programmer ne peut être que les ajouter_ - Edsger Dijkstra
-    * _Mesurer la progression du développement d’un logiciel à l’aune de ses lignes de code revient à mesurer la progression de la construction d’un avion à l’aune de son poids_ - Bill Gates
-    * _Neuf femmes ne peuvent pas faire un bébé en un mois_ - Fred Brooks
-    * _Avant de vouloir qu’un logiciel soit réutilisable, il faudrait d’abord qu’il ait été utilisable_ - Ralph Johnson
-* <http://www.evene.fr/celebre/biographie/antoine-de-saint-exupery-279.php?citations>
-    * _La perfection est atteinte, non pas lorsqu'il n'y a plus rien à ajouter, mais lorsqu'il n'y a plus rien à retirer_ - Antoine de Saint-Exupéry
-* <http://marxsoftware.blogspot.fr/2013/02/five-favorite-software-development.html>
-    * couplage trop fort et part de pizzas
-    * Maintenabilité et Jenga
-    * Neuf femmes n'accouchent pas d'un bébé en un mois
-    * balayer la poussière sous le tapis et les warnings
-    * commentaires sont le déodorant du code qui sent mauvais
+### 
