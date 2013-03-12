@@ -1,21 +1,22 @@
 # Développement de Logiciel Durable
 
-Une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintainability) des applications. 
+Une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintainability) des applications.
 
 La présentation est consultable sur [Github Pages](http://lcottereau.github.com/maintainability-slides/) mais n'est pas forcément à jour avec le code source ci-joint.
 
-Pour plus d'information, le [Synopsis](https://github.com/lcottereau/maintainability-slides/wiki/Synopsis) 
-donne une idée du plan. Attention, c'était l'étude initiale qui n'est plus complètement à jour par rapport à 
+Pour plus d'information, le [Synopsis](https://github.com/lcottereau/maintainability-slides/wiki/Synopsis)
+donne une idée du plan. Attention, c'était l'étude initiale qui n'est plus complètement à jour par rapport à
 [index.html](index.html) et sera supprimée lorsque la présentation sera prête.
 
 ## TODO
 
 1. récupérer doc des 2 projets si c'est possible
+1. Passer les 2 projets dans un sonar local et faire une première analyse
 1. Réfléchir à un questionnaire de satisfaction
 
 ## Installation
 
-1. Installer [reveal.js](https://github.com/hakimel/reveal.js) dans un répertoire `reveal` à la racine du projet. 
+1. Installer [reveal.js](https://github.com/hakimel/reveal.js) dans un répertoire `reveal` à la racine du projet.
 1. Ouvrir le fichier [index.html](index.html) dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
 
 
@@ -28,7 +29,7 @@ Il faut poser des questions sur
 * projets existants sur lesquels travailler concrètement
 * quelles parties ont déjà été vues dans un autre cours
     * niveau de connaissance sur git ou autre gestionnaire de version en particulier
-* est-ce qu'un environnement satisfaisant pour la projection existe 
+* est-ce qu'un environnement satisfaisant pour la projection existe
     * prise VGA
     * Firefox dernière version (ou Chrome si Sozi marche)
     * résolution du projecteur
@@ -36,7 +37,7 @@ Il faut poser des questions sur
 ## Préparation de la présentation
 ### Outils
 
-* [Reveal.js](https://github.com/hakimel/reveal.js) 
+* [Reveal.js](https://github.com/hakimel/reveal.js)
 * [Diagram.ly](http://www.diagram.ly/), [Inkscape](http://inkscape.org/?lang=fr) et [Sozi](http://sozi.baierouge.fr/wiki/fr:bienvenue) pour le schéma de l'usine de dev. Etudier [Prezi](http://prezi.com/) mais pas sûr de pouvoir exporter à un format ouvert...
 * [Delicious](http://www.delicious.com) pour partager l'ensemble des liens
 
@@ -53,4 +54,4 @@ Ce qu'on n'utilisera pas :
 * [3 tricks to better public speaking](http://neiljoglekar.com/what-i-learned-from-our-guest-lecture-at-cmu)
 * [The Art of Public Speaking](http://fr.feedbooks.com/book/3695/the-art-of-public-speaking), Dale Breckenridge Carnegie
 
-### 
+###
