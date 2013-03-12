@@ -107,6 +107,16 @@ Reveal.initialize({
 
 Note that the new default vertical centering option will break compatibility with slides that were using transitions with backgrounds (`cube` and `page`). To restore the previous behavior, set `center` to `false`.
 
+The configuration can be update after initialization using the ```configure``` method:
+
+```javascript
+// Turn autoSlide off
+Reveal.configure({ autoSlide: 0 });
+
+// Start auto-sliding every 5s
+Reveal.configure({ autoSlide: 5000 });
+```
+
 
 ### Presentation Size
 
@@ -371,8 +381,14 @@ By default notes are written using standard HTML, see below, but you can add a `
 In some cases it can be desirable to run notes on a separate device from the one you're presenting on. The Node.js-based notes plugin lets you do this using the same note definitions as its client side counterpart. Include the requried scripts by adding the following dependencies:
 
 ```javascript
-{ src: '/socket.io/socket.io.js', async: true },
-{ src: 'plugin/notes-server/client.js', async: true }
+Reveal.initialize({
+	...
+
+	dependencies: [
+		{ src: 'socket.io/socket.io.js', async: true },
+		{ src: 'plugin/notes-server/client.js', async: true }
+	]
+});
 ```
 
 Then:
@@ -380,6 +396,36 @@ Then:
 1. Install [Node.js](http://nodejs.org/)
 2. Run ```npm install```
 3. Run ```node plugin/notes-server```
+
+
+## Multiplexing
+
+The multiplex plugin allows your audience to view the slides on their own phone, tablet or laptop. As the master navigates the slides, all clients will update in real time. See a demo at [http://revealjs.jit.su/](http://revealjs.jit.su).
+
+Configuration is via the multiplex object in ```Reveal.initialize```. To generate unique secret and token values, visit [revealjs.jit.su/token](revealjs.jit.su/token). Below is an example configuration with the multiplex plugin enabled:
+
+```javascript
+Reveal.initialize({
+	...
+
+	// Generate a unique id and secret at revealjs.jit.su/token
+	multiplex: {
+		id: '',
+		secret: '',
+		url: 'revealjs.jit.su:80'
+	},
+
+	dependencies: [
+		{ src: 'socket.io/socket.io.js', async: true },
+		{ src: 'plugin/multiplex/client.js', async: true },
+		{ src: 'plugin/multiplex/master.js', async: true },
+	]
+});
+```
+
+```multiplex.secret``` should only be configured on those pages you wish to be able to control slide navigatoin for all clients. Multi-master configurations work, but if you don't wish your audience to be able to control your slides, set the secret to null. In this master/slave setup, you should create a publicly accessible page with secret set to null, and a protected page containing your secret.
+
+You are very welcome to use the server running at reveal.jit.su, however availability and stability are not guaranteed. For anything mission critical I recommend you run your own server. It is simple to deploy to nodejitsu or run on your own environment.
 
 
 ## Theming
