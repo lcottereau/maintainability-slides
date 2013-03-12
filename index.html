@@ -1108,7 +1108,24 @@
 						<h2>Usine de développement</h2>
             <p><a href="svg/usine-dev.svg"><img alt="Usine de développement" src="img/usine-dev.png"/></a></p>
 					</section>
+          <section>
+						<h3>Indicateur de maintenabilité ?</h3>
+						<p><img alt="capture d'écran sonar" src="img/sonar-trace.png"/></p>
+						<aside class="notes">
+							<ul>
+                <li>Colonne de droite (avec <acronym lang="en" title="Lack of Cohesion Of Methods">LCOM4</acronym>) puis duplications</li>
+                <li>En gris: commentaires (sauf API), Classes/Méthodes</li>
+                <li>100% partout louche (très simple ou triche)<ul>
+                  <li><code>/* COMMENT. */</code> (vu en externalisation)</li>
+                  <li>variable privée non utilisée (OK Lombok)</li>
+                  <li>Extension de bibliothèques</li>
+                </ul></li>
+                <li>Note moins utile qu'évolution (cf RATP maintenance)</li>
+							</ul>
+						</aside>
+					</section>
 
+          <section>
 
 					<section>
 						<h3>Critères de choix</h3>
