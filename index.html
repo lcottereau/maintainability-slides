@@ -64,6 +64,12 @@
       .forkme body {
         background: url(img/forkme.png) no-repeat top right fixed;
       }
+      .dingle .reveal a:not(.image) {
+        color: white;
+      }
+      .dingle .reveal a:not(.image):hover {
+        text-decoration: underline;
+      }
 		</style>
 
 	</head>
@@ -1331,7 +1337,11 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 
           <section data-state="dingle">
             <h1>Merci</h1>
-            <p><a href="mailto:laurent@cottereau.name">mail</a> &ndash; <a href="https://twitter.com/lcottereau">twitter</a> &ndash; <a href="http://fr.linkedin.com/in/lcottereau/fr">linkedin</a></p>
+            <ul>
+              <li class="mail"><a href="mailto:laurent@cottereau.name"><code>laurent@cottereau.name</code></a></li>
+              <li class="twitter"><a href="https://twitter.com/lcottereau"><code>@lcottereau</code></a></li>
+              <li class="linkedin"><a href="http://fr.linkedin.com/in/lcottereau/fr"><code>lcottereau</code></a></li>
+            </ul>
           </section>
         </section>
 			</div>
