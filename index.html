@@ -61,6 +61,15 @@
 				border-radius: 10px;
 				background-color: rgba(0, 0, 0, 0.5);
 			}
+      .forkme body {
+        background: url(img/forkme.png) no-repeat top right fixed;
+      }
+      .dingle .reveal a:not(.image) {
+        color: white;
+      }
+      .dingle .reveal a:not(.image):hover {
+        text-decoration: underline;
+      }
 		</style>
 
 	</head>
@@ -247,11 +256,13 @@
 							<li>5 Bonnes pratiques</li>
 							<li>Gestion des environnements</li>
 							<li>Usine de développement</li>
-							<li>Indicateur de maintenabilité</li>
+							<li>Stratégie de reprise</li>
 						</ol>
 						<aside class="notes">
 							<ul>
 								<li>particulièrement pour l'informatique de gestion</li>
+                <li>indicateur de maintenabilité avec usine de dev</li>
+                <li>comment vous comporter avec scenario catastrophe</li>
 							</ul>
 						</aside>
 					</section>
@@ -1178,7 +1189,7 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 						<aside class="notes">
 							<ul>
                 <li><a href="http://deors.wordpress.com/2012/10/03/developer-day/" hreflang="en">exemples d'usines</a> : github, jira studio, trac</li>
-                <li>en général, aucun pb pour soi. Mais pour entreprise...
+                <li>en général, aucun pb pour soi. Mais pour entreprise...</li>
                 <li>en général sources pérennes mais pas trop le reste</li>
 							</ul>
 						</aside>
@@ -1187,7 +1198,7 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
         </section>
 
 
-        <section> <!-- STRATEGIE DE REPRISE -->
+        <section> <!-- 4) STRATEGIE DE REPRISE -->
           <section>
 						<h2>Stratégie de reprise</h2>
             <h3>Première installation</h3>
@@ -1263,39 +1274,72 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 					</section>
 
           <section>
-						<h2>Pour aller plus loin</h2>
+						<h3>En entreprise</h3>
 						<ul>
-              <li>liens dans présentation (avec lien fork me on github)</li>
-              <li>Lectures : the pragmatic programmer, 97 things every developer should know, ...</li
-              <li>Software Craftmanship</li>
+              <li class="fragment highlight-green">Le <em>principe</em> d'une bonne maintenabilité est acquis (en général)</li>
+              <li>L'utilisation de la dette technique</li>
+              <li class="fragment highlight-red">L'investissement effectif sur la maintenabilité</li>
 						</ul>
 						<aside class="notes">
 							<ul>
-                <li></li>
+                <li>bonnes pratiques et usine de dev</li>
+                <li>contractuel mauvais (indicateurs) mais utile à avoir</li>
+                <li><strong>code = patrimoine</strong> pas acquis</li>
+                <li>la valorisation effective pas acquise</li>
+                <li>
+                  certaines SSII se placent sur ce créneau :
+                  <a href="http://training.xebia.fr/formations-java-jee/formation-tdd-software-craftsmanship.html">Xebia</a>,
+                  <a href="http://blog.octo.com/les-artisans-codeurs-chez-octo/">Octo</a>, Valtech, Ippon (?)
+                </li>
 							</ul>
 						</aside>
 					</section>
+
+          <section data-state="forkme">
+						<h2>Pour aller plus loin</h2>
+						<ul>
+              <li>Des articles dans la présentation (TODO lien fork me on github)</li>
+              <li>Des lectures<ul>
+                <li><cite>97 Things Every Programer Should Know</cite></li>
+                <li><cite>The Pragmatic Programmer</cite></li>
+                <li><cite>Clean Code</cite></li>
+              </ul></li>
+              <li>Le mouvement des artisans codeurs</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+                <li>penser à s'abonner aux flux quand des articles intéressent</li>
+                <li>l'anglais est presqu'indispensable pour votre métier</li>
+                <li>aussi 97 things every software architect should know</li>
+                <li>TODO liens</li>
+                <li>Si peur OK (mieux de savoir). La diversité est intéressante</li>
+							</ul>
+						</aside>
+					</section>
+
           <section>
-            <h2>Remerciements</h2>
-            <ul>
-                <li>reveal.js</li>
-                <li>Wordle</li>
-                <li>F. Mathé</li>
-                <li>Wikimedia</li>
-                <li>http://obinoobie.deviantart.com/art/Microsoft-Office-Word-Icon-195507790</li>
-                <li>http://ivadeath.deviantart.com/art/Karma-264163572</li>
-                <li>http://www.1point2vue.com/tampon-encre-gimp/</li>
-                <li>https://secure.flickr.com/photos/rooster88fan/2077109462/</li>
-                <li>diagram.ly</li>
-                <li>http://pixabay.com/id/tanda-kartun-tanda-tanda-simbol-28715/</li>
-                <li>http://kogakure.github.com/gitweb-theme/</li>
-                <li>http://pixabay.com/id/kunci-membuka-kunci-aman-decode-36575/</li>
-            </ul>
+            <h2>Crédits</h2>
+            <!-- TODO liens -->
+            <p>Cette présentation a été réalisée avec <a hreflang="en" href="https://github.com/hakimel/reveal.js">reveal.js</a>, Inkscape, Sozy, diagram.ly et Wordle</p>
+            <p>Merci à
+                F. Mathé,
+                Wikimedia,
+                <a hreflang="en" href="http://obinoobie.deviantart.com/art/Microsoft-Office-Word-Icon-195507790">obinoobie (Deviant Art)</a>,
+                <a hreflang="en" href="http://ivadeath.deviantart.com/art/Karma-264163572">ivadeath (Deviant Art)</a>,
+                <a hreflang="en" href="https://secure.flickr.com/photos/rooster88fan/2077109462/">rooster88fan (Flickr)</a>,
+                <a hreflang="en" href="http://kogakure.github.com/gitweb-theme/">kogakure (Flickr)</a>,
+                http://pixabay.com/id/tanda-kartun-tanda-tanda-simbol-28715/ et
+                http://pixabay.com/id/kunci-membuka-kunci-aman-decode-36575/
+                pour leurs contributions partagées</p>
           </section>
 
           <section data-state="dingle">
             <h1>Merci</h1>
-            <p><a href="mailto:laurent@cottereau.name">mail</a> &ndash; <a href="https://twitter.com/lcottereau">twitter</a> &ndash; <a href="http://fr.linkedin.com/in/lcottereau/fr">linkedin</a></p>
+            <ul>
+              <li class="mail"><a href="mailto:laurent@cottereau.name"><code>laurent@cottereau.name</code></a></li>
+              <li class="twitter"><a href="https://twitter.com/lcottereau"><code>@lcottereau</code></a></li>
+              <li class="linkedin"><a href="http://fr.linkedin.com/in/lcottereau/fr"><code>lcottereau</code></a></li>
+            </ul>
           </section>
         </section>
 			</div>
