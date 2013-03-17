@@ -61,14 +61,21 @@
 				border-radius: 10px;
 				background-color: rgba(0, 0, 0, 0.5);
 			}
-      .forkme body {
-        background: url(img/forkme.png) no-repeat top right fixed;
+      .forkme {
+        position: absolute;
+        top: 0;
+        right: 0;
       }
       .dingle .reveal a:not(.image) {
         color: white;
       }
       .dingle .reveal a:not(.image):hover {
         text-decoration: underline;
+      }
+      .plusloin body {
+        background-image: url('img/forkme.png');
+        background-repeat: no-repeat;
+        background-position: top right;
       }
 		</style>
 
@@ -1295,10 +1302,10 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 						</aside>
 					</section>
 
-          <section data-state="forkme">
+          <section data-state="plusloin">
 						<h2>Pour aller plus loin</h2>
 						<ul>
-              <li>Des articles dans la présentation (TODO lien fork me on github)</li>
+              <li>Des articles <a href="https://github.com/lcottereau/maintainability-slides" hreflang="en">dans la présentation</a></li>
               <li>Des lectures<ul>
                 <li><cite>97 Things Every Programer Should Know</cite></li>
                 <li><cite>The Pragmatic Programmer</cite></li>
