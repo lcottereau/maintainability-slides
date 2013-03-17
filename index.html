@@ -568,21 +568,23 @@
                   &lt;scope&gt;provided&lt;/scope&gt;
               &lt;/dependency&gt;
             </code></pre>
-            <pre><code>	@Entity
-              @Data
-              public class School implements Serializable {
-                  @Id
-                  @GeneratedValue(strategy = GenerationType.IDENTITY)
-                  private int id;
+            <pre><code>
+            @Entity
+            @Data
+            public class School implements Serializable {
+                @Id
+                @GeneratedValue(strategy = GenerationType.IDENTITY)
+                private int id;
 
-                  @Size(max = 128)
-                  private String name;
+                @Size(max = 128)
+                private String name;
 
-                  @Size(max = 128)
-                  private String address;
+                @Size(max = 128)
+                private String address;
 
-                  private boolean isValidated;
-              }</code></pre>
+                private boolean isValidated;
+            }
+            </code></pre>
             <aside class="notes">
               <ul>
                 <li>suppression constructeur/getters/setters. Bonus.</li>
