@@ -26,7 +26,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="128"
      inkscape:cx="208.06587"
-     inkscape:cy="273.73828"
+     inkscape:cy="274.98828"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -3427,6 +3427,10 @@
 
 
 
+
+
+
+
 ven</text>
     </g>
     <rect
@@ -4415,7 +4419,7 @@ ven</text>
      id="frame1" />
   <ns1:frame
      ns1:refid="rect3467"
-     ns1:sequence="18"
+     ns1:sequence="19"
      ns1:transition-duration-ms="1000.0"
      ns1:hide="true"
      ns1:clip="false"
@@ -4770,12 +4774,12 @@ ven</text>
      ns1:transition-profile="linear"
      ns1:timeout-enable="false"
      ns1:timeout-ms="5000.0"
-     ns1:transition-zoom-percent="-100.0"
+     ns1:transition-zoom-percent="0"
      ns1:title="Git - Revue de code"
      ns1:clip="false"
      ns1:hide="true"
      ns1:transition-duration-ms="1000.0"
-     ns1:sequence="16"
+     ns1:sequence="17"
      ns1:refid="rect3467-7-4-67"
      id="frame15" />
   <ns1:frame
@@ -4812,11 +4816,11 @@ ven</text>
      ns1:hide="false"
      ns1:transition-duration-ms="1000.0"
      id="frame17Q"
-     ns1:sequence="28"
+     ns1:sequence="29"
      ns1:refid="image4884" />
   <ns1:frame
      ns1:refid="rect7483"
-     ns1:sequence="17"
+     ns1:sequence="18"
      id="frame18"
      ns1:transition-duration-ms="1000.0"
      ns1:hide="true"
@@ -4836,11 +4840,11 @@ ven</text>
      ns1:hide="true"
      ns1:transition-duration-ms="1000.0"
      id="frame19"
-     ns1:sequence="27"
+     ns1:sequence="28"
      ns1:refid="rect7483-9-0-0" />
   <ns1:frame
      ns1:refid="rect3467-6-2"
-     ns1:sequence="19"
+     ns1:sequence="20"
      id="frame21"
      ns1:transition-duration-ms="1000.0"
      ns1:hide="true"
@@ -4852,7 +4856,7 @@ ven</text>
      ns1:transition-profile="linear" />
   <ns1:frame
      ns1:refid="rect3467-6"
-     ns1:sequence="20"
+     ns1:sequence="21"
      id="frame22"
      ns1:transition-duration-ms="1000.0"
      ns1:hide="true"
@@ -4872,7 +4876,7 @@ ven</text>
      ns1:hide="true"
      ns1:transition-duration-ms="1000.0"
      id="frame23"
-     ns1:sequence="21"
+     ns1:sequence="22"
      ns1:refid="rect3467-6-4" />
   <ns1:frame
      ns1:transition-profile="linear"
@@ -4884,7 +4888,7 @@ ven</text>
      ns1:hide="true"
      ns1:transition-duration-ms="1000.0"
      id="frame24"
-     ns1:sequence="22"
+     ns1:sequence="23"
      ns1:refid="rect7483" />
   <ns1:frame
      ns1:transition-profile="linear"
@@ -4896,11 +4900,11 @@ ven</text>
      ns1:hide="true"
      ns1:transition-duration-ms="1000.0"
      id="frame25"
-     ns1:sequence="26"
+     ns1:sequence="27"
      ns1:refid="rect7483" />
   <ns1:frame
      ns1:refid="rect7483-7"
-     ns1:sequence="25"
+     ns1:sequence="26"
      id="frame26"
      ns1:transition-duration-ms="1000.0"
      ns1:hide="true"
@@ -4920,7 +4924,7 @@ ven</text>
      ns1:hide="true"
      ns1:transition-duration-ms="1000.0"
      id="frame27"
-     ns1:sequence="23"
+     ns1:sequence="24"
      ns1:refid="rect3467-6-5" />
   <ns1:frame
      ns1:transition-profile="linear"
@@ -4932,7 +4936,7 @@ ven</text>
      ns1:hide="true"
      ns1:transition-duration-ms="1000.0"
      id="frame28"
-     ns1:sequence="24"
+     ns1:sequence="25"
      ns1:refid="rect7483" />
   <script
      ns1:version="12.10-15135541"
@@ -4957,4 +4961,16 @@ ven</text>
      id="path4523-2-5"
      d="m 458.372,205.86648 -34.56396,0.11661"
      style="fill:none;stroke:#ffffff;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mendu)" />
+  <ns1:frame
+     ns1:refid="rect3467-7-4-67-2"
+     ns1:title="Git - Autres Outils"
+     ns1:sequence="16"
+     ns1:hide="true"
+     ns1:clip="false"
+     ns1:timeout-enable="false"
+     ns1:timeout-ms="5000.0"
+     ns1:transition-duration-ms="1000.0"
+     ns1:transition-zoom-percent="0.0"
+     ns1:transition-profile="linear"
+     id="frame29" />
 </svg>
