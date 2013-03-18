@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="453.50913"
-     inkscape:cy="274.52069"
+     inkscape:zoom="128"
+     inkscape:cx="208.06587"
+     inkscape:cy="273.73828"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2583,39 +2583,6 @@
          inkscape:connector-curvature="0" />
     </marker>
     <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5652"
-       id="radialGradient14553"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.09751257,0,0,0.06583182,97.759714,157.92228)"
-       cx="4396.1836"
-       cy="2999.9363"
-       fx="4396.1836"
-       fy="2999.9363"
-       r="5398.7549" />
-    <radialGradient
-       r="5398.7549"
-       fy="2999.9363"
-       fx="4396.1836"
-       cy="2999.9363"
-       cx="4396.1836"
-       gradientTransform="matrix(0.09751257,0,0,0.06583182,97.759714,157.92228)"
-       gradientUnits="userSpaceOnUse"
-       id="radialGradient16053"
-       xlink:href="#linearGradient5652"
-       inkscape:collect="always" />
-    <radialGradient
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1,0,0,0.68172298,0,219.0451)"
-       r="462.55841"
-       fy="688.22156"
-       fx="541.00464"
-       cy="688.22156"
-       cx="541.00464"
-       id="radialGradient16061"
-       xlink:href="#linearGradient2136"
-       inkscape:collect="always" />
-    <radialGradient
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(1,0,0,0.68172298,0,219.0451)"
        r="462.55841"
@@ -3145,7 +3112,7 @@
     </g>
     <g
        id="g7762"
-       transform="matrix(-0.05559435,0.02664492,-0.02664492,-0.05559435,930.22161,385.58084)">
+       transform="matrix(0.06146789,-0.004731,0.004731,0.06146789,279.24061,475.2423)">
       <g
          id="g5062"
          transform="matrix(0.88473375,-0.02165537,0.02165537,0.88473375,572.14115,-686.50233)">
@@ -3424,6 +3391,8 @@
          id="text9180"><tspan
    style="fill:#ff6804"
    id="tspan9182">a</tspan>
+
+
 
 
 
@@ -4326,6 +4295,111 @@ ven</text>
            style="fill:#552200;stroke:#ff0000;stroke-opacity:1" />
       </g>
     </a>
+    <text
+       sodipodi:linespacing="125%"
+       id="text14827-4"
+       y="209.11852"
+       x="-765.05847"
+       style="font-size:0.15908113px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+       xml:space="preserve"
+       transform="matrix(0.0063354,-0.99997993,0.99997993,0.0063354,0,0)"><tspan
+         id="tspan14833-7"
+         y="209.11852"
+         x="-765.05847"
+         sodipodi:role="line">branches et tags</tspan></text>
+    <rect
+       transform="matrix(0.99999964,-8.5115975e-4,-6.3645009e-4,0.9999998,0,0)"
+       style="fill:none;stroke:#ff0000;stroke-width:0.00843937;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3467-7-4-67-2"
+       width="2.9957557"
+       height="1.9420686"
+       x="206.9984"
+       y="764.6106"
+       ry="0.070109963" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text14823-3"
+       y="764.62848"
+       x="207.3149"
+       style="font-size:0.17611769px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+       xml:space="preserve"><tspan
+         y="764.62848"
+         x="207.3149"
+         id="tspan14825-5"
+         sodipodi:role="line"
+         style="font-size:0.17611769px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Verdana;-inkscape-font-specification:Verdana Bold">Autres outils</tspan></text>
+    <g
+       id="g4639"
+       transform="translate(0.7421875,0.5859375)">
+      <text
+         xml:space="preserve"
+         style="font-size:0.12177577px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         x="206.58385"
+         y="765.2215"
+         id="text14827-2"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4595"
+           sodipodi:role="line"
+           x="206.58385"
+           y="765.2215">hooks</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:0.08860827px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+         x="206.63303"
+         y="765.35004"
+         id="text14827-2-0"
+         sodipodi:linespacing="125%"><tspan
+           id="tspan4593-8"
+           sodipodi:role="line"
+           x="206.63303"
+           y="765.35004"> - mails automatiques</tspan><tspan
+           id="tspan4595-8"
+           sodipodi:role="line"
+           x="206.63303"
+           y="765.46082"> - workflow </tspan><tspan
+           id="tspan4635"
+           sodipodi:role="line"
+           x="206.63303"
+           y="765.57153"> - règles de code</tspan><tspan
+           id="tspan4637"
+           sodipodi:role="line"
+           x="206.63303"
+           y="765.68231"> - déploiements automatiques</tspan></text>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text14827-3"
+       y="764.96521"
+       x="206.60565"
+       style="font-size:0.14233597px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Monospace;-inkscape-font-specification:Monospace"
+       xml:space="preserve"><tspan
+         id="tspan14833-0"
+         y="764.96521"
+         x="206.60565"
+         sodipodi:role="line">git stash</tspan><tspan
+         y="765.14313"
+         x="206.60565"
+         sodipodi:role="line"
+         id="tspan4669">git bisect</tspan><tspan
+         y="765.32104"
+         x="206.60565"
+         sodipodi:role="line"
+         id="tspan4671">git submodule</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text14827-3-3"
+       y="765.26489"
+       x="208.27545"
+       style="font-size:0.14233597px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Monospace;-inkscape-font-specification:Monospace"
+       xml:space="preserve"><tspan
+         y="765.26489"
+         x="208.27545"
+         sodipodi:role="line"
+         id="tspan4671-7">git gui</tspan><tspan
+         y="765.44281"
+         x="208.27545"
+         sodipodi:role="line"
+         id="tspan4705">git tk</tspan></text>
   </g>
   <ns1:frame
      ns1:transition-profile="linear"
