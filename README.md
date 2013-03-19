@@ -8,15 +8,9 @@ Pour plus d'information, le [Synopsis](https://github.com/lcottereau/maintainabi
 donne une idée du plan. Attention, c'était l'étude initiale qui n'est plus complètement à jour par rapport à
 [index.html](index.html) et sera supprimée lorsque la présentation sera prête.
 
-## TODO
-
-1. récupérer doc des 2 projets si c'est possible
-1. Passer les 2 projets dans un sonar local et faire une première analyse
-1. Réfléchir à un questionnaire de satisfaction
-
 ## Installation
 
-1. Installer [reveal.js](https://github.com/hakimel/reveal.js) dans un répertoire `reveal` à la racine du projet.
+1. Installer [reveal.js (zip)](https://github.com/hakimel/reveal.js/archive/master.zip) dans un répertoire `reveal` à la racine du projet.
 1. Ouvrir le fichier [index.html](index.html) dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
 
 
