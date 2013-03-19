@@ -17,16 +17,17 @@ donne une idée du plan. Attention, c'était l'étude initiale qui n'est plus co
 ## Contexte
 
 Il faut poser des questions sur
-* taille de la classe
-* niveau (en particulier maturité en java)
-* connaissance sur les différentes briques de l'usine de dév pour savoir où insister
-* projets existants sur lesquels travailler concrètement
-* quelles parties ont déjà été vues dans un autre cours
-    * niveau de connaissance sur git ou autre gestionnaire de version en particulier
-* est-ce qu'un environnement satisfaisant pour la projection existe
-    * prise VGA
-    * Firefox dernière version (ou Chrome si Sozi marche)
-    * résolution du projecteur
+* Logistique
+    * taille de la classe et groupes de travail (binômes, projets, ...)
+    * environnement pour la projection
+        * résolution du projecteur
+        * si BYOD, accès WIFI sur le même réseau que les postes des étudiants
+        * sinon disponibilité d'un navigateur récent
+* Niveau de connaissance préalable des élèves
+    * matûrité sur java
+    * connaissance des différentes briques de l'usine de dev
+    * en particulier, quel gestionnaire de version est utilisé
+* Existence de projets sur lesquels travailler concrètement
 
 ## Préparation de la présentation
 ### Outils
