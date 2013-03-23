@@ -11,6 +11,10 @@ vous donnent une idée du déroulement de la présentation qui dure entre 7 et 1
 1. Installer [reveal.js (zip)](https://github.com/hakimel/reveal.js/archive/master.zip) dans un répertoire `reveal` à la racine du projet.
 1. Ouvrir le fichier [index.html](index.html) dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
 
+## Historique
+
+* 22 mars 2013 : [License Pro CSID de l'IUT de Montreuil (Paris 8)](http://lcottereau.github.com/maintainability-slides/20130322/)
+
 ## Contexte
 
 Il faut poser des questions sur
