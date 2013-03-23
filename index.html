@@ -66,6 +66,17 @@
 			.warning body {
 				background: url(img/warning.jpg) no-repeat center center fixed;
 			}
+      .question body {
+        background: url(img/question_mark.png) no-repeat center center fixed;
+      }
+      .question section.present, .tp section.present {
+        background-color: rgba(0, 0, 0, 0.75);
+        border-radius: 10px;
+      }
+      .tp body {
+        background: url(img/travaux-pratiques.jpg) no-repeat center center fixed;
+      }
+			.dingle body, .warning body, .question body, .tp body {
 				-webkit-background-size: cover;
 				-moz-background-size: cover;
 				-o-background-size: cover;
@@ -128,8 +139,8 @@
             </aside>
           </section>
 
-					<section>
-            <h2>Questions préliminaires</h2>
+					<section data-state="question">
+            <h2 style="display: none">Questions préliminaires</h2>
             <ul>
                 <li class="fragment">Différence entre projet et maintenance ?</li>
                 <li class="fragment">Différents types de maintenance ?</li>
@@ -194,7 +205,7 @@
             </aside>
 					</section>
 
-          <section>
+          <section data-state="question">
             <p>Qu'est-ce que la maintenabilité ?</p>
             <aside class="notes">
               Après les définitions et l'exemple, qu'en pensez-vous ?
@@ -218,7 +229,7 @@
 						</aside>
 					</section>
 
-					<section>
+					<section data-state="question">
 						<h3>Adaptation au contexte</h3>
 						<p>
 							<img class="fragment" alt="projet pilote" src="img/pilote.jpg"/>
@@ -426,7 +437,7 @@
               </aside>
           </section>
 
-          <section>
+          <section data-state="question">
             <h3>Bibliothèques, API et Frameworks</h3>
             <p>Différences ?</p>
 
@@ -616,6 +627,20 @@
             </aside>
           </section>
 
+          <section data-state="tp">
+            <h4>Travaux Pratiques : Lombok</h4>
+            <p>Mise en place sur le modèle</p>
+            <ul>
+              <li><acronym title="Association Nationale des Apprentis de France">ANAF</acronym> : <code>Apprenti, Article, CFA, Entreprise, Journaliste</code></li>
+              <li><acronym title="Annuaire des Anciens">AA</acronym> : <code>Degree, JobOffer, LoginDegree/YearSchoolDegree, School, Status, TypeJobOffer</code></li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Probablement à éviter pour AA : <code>LoginCriteriaDTO, LoginTemp</code>
+              </ul>
+            </aside>
+          </section>
+
           <section>
             <h3 lang="en">
               <acronym title="Don't Repeat Yourself">DRY</acronym> &ndash;
@@ -671,6 +696,17 @@
                 <li>Il faut garder l'expressivité</li>
                 <li>Le plus important est de réfléchir à ce qui est fait. Savoir pourquoi on fait des choix</li>
                 <li>Pas possible de faire tous les bons choix, mais y réfléchir vous empêche de les refaire ⇒ meilleurs plus vite</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-state="tp">
+            <h3>Travaux Pratiques : nettoyez vos projets</h3>
+            <p>Vous avez 10 minutes pour lister le maximum de tâches permettant de diminuer la quantité de code sur votre projet</p>
+            <aside class="notes">
+              <ul>
+                <li>Chaque binôme propose un truc à son tour. Le dernier à en proposer gagne</li>
+                <li>Il faut un exemple précis à chaque fois</li>
               </ul>
             </aside>
           </section>
@@ -920,6 +956,16 @@
             </aside>
           </section>
 
+          <section data-state="tp">
+            <h3>Travaux Pratiques : TDD</h3>
+            <ol>
+              <li>Choisissez une nouvelle fonctionnalité <em>métier</em> à implémenter</li>
+              <li>Codez le test, qui doit échouer</li>
+              <li>Codez le code applicatif. Le test doit réussir</li>
+              <li>Itérez jusqu'à implémentation complète de la fonctionnalité</li>
+            </ol>
+          </section>
+
           <section>
             <h3>Théorie des fenêtres brisées</h3>
             <p><img alt="" src="img/broken-window.jpg"/></p>
@@ -1107,6 +1153,14 @@
 						</aside>
 					</section>
 
+          <section data-state="tp">
+            <h3>Travaux Pratiques : binaire portable</h3>
+            <p>Vous avez 10 minutes pour lister le maximum de parties non portables dans le code source de votre projet</p>
+            <aside class="notes">
+              <p>Aperçu des méthodes pour externaliser : variables d'environnements, fichiers à un endroit fixe, ...</p>
+            </aside>
+          </section>
+
         </section>
 
         <section> <!-- 3) USINE DE DEVELOPPEMENT -->
@@ -1216,6 +1270,17 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 						</aside>
 					</section>
 
+          <section data-state="tp">
+            <h3>Travaux Pratiques : Etat des lieux</h3>
+            <p>
+              On change les mainteneurs sur les projets ! Vous avez 20 minutes pour essayer d'installer le projet sur lequel vous ne travaillez pas habituellement.
+              Notez vos remarques et points de documentation à améliorer.
+            </p>
+            <aside class="notes">
+              <p><strong>Penser à leur faire <a href="http://dist.sonar.codehaus.org/sonar-3.5.zip">télécharger sonar</a> depuis <a href="http://sonarsource.org">sonarsource</a></strong></p>
+            </aside>
+          </section>
+
           <section>
 						<h3>Amélioration</h3>
 						<ol>
@@ -1233,6 +1298,26 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 							</ul>
 						</aside>
 					</section>
+
+          <section data-state="tp">
+            <h3>Travaux Pratiques : Stratégie</h3>
+            <ul>
+              <li>Installez Sonar et analysez votre projet : <pre><code>&lt;sonar_install&gt;/bin/sonar.sh start
+mvn sonar:sonar
+-- OU vi sonar-project.properties; sonnar-runner
+firefox http://localhost:9000/</code></pre></li>
+              <li>Listez les 5 priorités d'amélioration d'après vous</li>
+              <li class="fragment">Travaillez sur les points indiqués</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>ou alors <code>-Dsonar.host.url="http://XXX:9000" -Dsonar.jdbc.url="jdbc:h2:tcp://XXX:9092/sonar"</code>q</li>
+                <li>Leur indiquer la partie <em lang="en">Hotspots</em></li>
+                <li>Priorités doivent être en fonction de leur coûts et criticité</li>
+                <li>Ne pas oublier : couverture des tests, documentation, ...</li>
+              </ul>
+            </aside>
+          </section>
 
         </section>
 
@@ -1324,6 +1409,18 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
               <li class="linkedin"><a href="http://fr.linkedin.com/in/lcottereau/fr"><code>lcottereau</code></a></li>
               <li class="github"><a hreflang="en" href="https://github.com/lcottereau"><code>lcottereau</code></a></li>
             </ul>
+          </section>
+
+          <section data-state="question">
+            <h3>Pas de gâchis</h3>
+            <p>Comment réunir tous le code qui a été produit aujourd'hui ?</p>
+            <aside class="notes">
+              <ul>
+                <li>Volontaire pour être le mainteneur responsable (plusieurs possibles) de la fusion des contributions</li>
+                <li>par patch ou pull request sur github</li>
+                <li>leur parler aussi de <code>git gui</code></li>
+              </ul>
+            </aside>
           </section>
         </section>
 			</div>
