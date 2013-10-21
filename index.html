@@ -646,14 +646,12 @@
               <figcaption>&nbsp;&mdash; <cite>De la Voie et de la Vertu</cite>, Lao-tseu</figcaption>
             </figure>
             <figure class="fragment">
-              <pre><code>
-                  function(a,b,c,d){d+=c;
-                  return[d&lt;0|a&amp;b&lt;&lt;d?a=parseInt((a|b&lt;&lt;c)
-                    .toString(d=32,b=new Date&amp;2|1)
-                    .replace('v',''),d)
-                    :a|b&lt;&lt;d,a,b,d]}
+              <pre><code class="javascript">
+                  function(a,b,c,d){d+=c;return[d&lt;0|a&amp;b&lt;&lt;
+                  d?a=parseInt((a|b&lt;&lt;c).toString(d=32,b=new Date&amp;2|1)
+                  .replace('v',''),d):a|b&lt;&lt;d,a,b,d]}
               </code></pre>
-              <figcaption>&nbsp;&mdash;<a href="http://jsbin.com/egiqul/195"><code>140byt.es</code></a></figcaption>
+              <figcaption>&nbsp;&mdash;<a href="https://gist.github.com/aemkei/1672254#file-annotated-js"><code>140byt.es</code></a></figcaption>
             </figure>
             <aside class="notes">
               <ul>
