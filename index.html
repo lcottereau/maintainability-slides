@@ -1073,8 +1073,8 @@
                 <li>Sécurité (mots de passe que sur env, pas au dev)</li>
               </ol>
               <ul>
-                <li>Fichier à des endroits définis. Idéal norme exploit</li>
-                <li>Variables d'env <code>catalina.properties</code> ou shell</li>
+                <li><a hreflang="en" title="Store config in the environment" href="http://12factor.net/config">Variables d'environnement</a> (voire normes <abbr title="exploitation">exploit.</abbr> figées)</li>
+                <li>Pointent sur fichier de <abbr title="configuration">conf</abbr> (ou <code>catalina.properties</code>)</li>
                 <li>Se méfier de <code>context.xml</code></li>
                 <li>Temps pour trouver une méthode vaut le coup</li>
                 <li>Sinon filtres maven (automatisation)</li>
