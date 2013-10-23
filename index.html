@@ -793,136 +793,7 @@
 
           <section> <!-- 1.4) Prenez vos responsabilités -->
             <h2>4&nbsp;&dash;&nbsp;Prenez vos responsabilités</h2>
-            <p><img class="fragment" alt="Bon pour le Karma" src="img/karma.jpg" /></p>
-            <aside class="notes">
-              <ul>
-                <li><a href="https://fr.wikipedia.org/wiki/R%C3%A9usinage_de_code">Refactoring</a> : travail du code sans ajout de fonctionnalité ⇨ maintenabilité
-                  <ul>
-                    <li>lisibilité</li>
-                    <li>nettoyages (direct si <abbr title="suppression">suppr</abbr> fonction)</li>
-                    <li>architecture logicielle/OO</li>
-                  </ul>
-                </li>
-                <li>Difficile et mal valorisé (management)</li>
-                <li>Mais c'est le <a href="https://fr.wikipedia.org/wiki/Karma">Karma</a> du <em>bon</em> développeur.</li>
-                <li>Valorisisation par ses pairs et gains en maintenabilité.</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h3>Prenez vos responsabilités</h3>
             <p><a hreflang="en" title="Excuses for lazy developers" href="http://developerexcuses.com/"><img alt="marre des excuses de développeurs" src="img/excuses.png"/></a></p>
-          </section>
-
-          <section>
-            <h3>Je ne sais pas à quoi sert ce code ?!</h3>
-            <ol>
-              <li>Creuser</li>
-              <li>Tester</li>
-              <li>Supprimer</li>
-              <li>Documenter</li>
-            </ol>
-            <aside class="notes">
-              <ul>
-                <li>il faut comprendre à quoi il sert (specs...)</li>
-                <li>sur du code legacy, probable code inutile</li>
-                <li>très peu de cas pertinents pour garder du code non compris</li>
-                <li>communiquer et avertir avant suppressions (surtout si pas de tests)</li>
-                <li>mieux vaut le risque que garder du code non maîtrisé</li>
-                <li>N'ayez pas peur ! retour arrière possible</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h3>Tests automatisés</h3>
-            <p><img alt="tests unitaires, d'intégration et fonctionnels se recouvrent" src="img/types-tests.png" /></p>
-            <aside class="notes">
-              <ul>
-                <li>bug est moins cher si détecté tôt (exponentiel)</li>
-                <li>tests manuels rajoutent environ 30% * livraison</li>
-                <li>Code non applicatif prod mais patrimoine aussi</li>
-                <li>Evite 2 pires bugs <acronym title="du point de vue de">pdv</acronym> user : régressions/répétitions</li>
-                <li>plus facile de remanier le code</li>
-                <li>pas de catégorisation officielle (jeunesse)</li>
-                <li>+ facile debug ⇒ + facile code (choix expérience)</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h3 lang="en">Test Driven Development</h3>
-            <!-- TODO Améliorer l'image -->
-            <p><img alt="Tests en erreurs puis tests passent puis remaniement et ça recommence" src="img/TDD.png"/></p>
-            <aside class="notes">
-              <ul>
-                <li>code applicatif doit résoudre un test en erreur</li>
-                <li>aide à ne coder que le nécessaire</li>
-                <li>naturellement 100% de couverture</li>
-                <li>aide à trouver en auto le code inutile</li>
-                <li>en pratique, priorité là où risque (<acronym title="valeur ajoutée">VA</acronym>)</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h3>Bonnes pratiques</h3>
-            <ul>
-              <li>C'est du code</li>
-              <li>Niveau de cloisonnement</li>
-              <li>Jeu de données</li>
-              <li>Documentation</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li>Même principes (lisibilité, KISS, Less is More, ...)</li>
-                <li><a href="http://blog.8thlight.com/uncle-bob/2013/03/06/ThePragmaticsOfTDD.html" hreflang="en">Types de test selon projet, peu recouvrement</a></li>
-                <li>Cloisonnement unitaire ⇒ données intégrées</li>
-                <li>1 jeu de données pour l'ensemble des TF</li>
-                <li>Gérer jeu de données ⇒ cf environnements </li>
-                <li lang="en"><a href="http://www.artima.com/weblogs/viewpost.jsp?thread=203994" hreflang="en">The Way of Testivus</a></li>
-                <li>Elément clé de la documentation</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h3>Junit &amp; Mockito</h3>
-            <pre><code>
-            @Mock Iterator i;
-            @InjectMocks MaClasse m;
-
-            @Test
-            public void iterator_will_return_hello_world(){
-                // 1 - PREPARE
-                when(i.next()).thenReturn("Hello").thenReturn("World");
-                // 2 - EXECUTE
-                String result=m.getNextTwice();
-                // 3 - VERIFIE
-                assertEquals("Hello World", result);
-            }
-            </code></pre>
-            <p class="fragment"><img class="no-border" alt="bonus" src="img/bonus.png"/> PowerMock pour <code>final</code>, <code>private</code>, <code>static</code></p>
-            <aside class="notes">
-              <ul>
-                <li>Junit : annotations et assert</li>
-                <li>TestNG est à explorer (bon support)</li>
-                <li><a href="http://blog.xebia.fr/2013/02/19/craftsman-recipes-happy-hour-pour-vos-tests-avec-mockito/">Mockito</a> : seuls la classe testée peut échouer</li>
-                <li>D'autres (EasyMock) mais Mockito marche bien</li>
-                <li>Trio avec <a href="https://code.google.com/p/powermock/" hreflang="en">PowerMock</a> quasi indispensables</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section data-state="tp">
-            <h3>Travaux Pratiques : TDD</h3>
-            <ol>
-              <li>Choisissez une nouvelle fonctionnalité <em>métier</em> à implémenter</li>
-              <li>Codez le test, qui doit échouer</li>
-              <li>Codez le code applicatif. Le test doit réussir</li>
-              <li>Itérez jusqu'à implémentation complète de la fonctionnalité</li>
-            </ol>
           </section>
 
           <section>
@@ -1029,7 +900,116 @@
               </ul>
             </aside>
           </section>
-				</section>
+
+          <section>
+            <h3>Tests automatisés</h3>
+            <p><img alt="tests unitaires, d'intégration et fonctionnels se recouvrent" src="img/types-tests.png" /></p>
+            <aside class="notes">
+              <ul>
+                <li>bug est moins cher si détecté tôt (exponentiel)</li>
+                <li>tests manuels rajoutent environ 30% * livraison</li>
+                <li>Code non applicatif prod mais patrimoine aussi</li>
+                <li>Evite 2 pires bugs <acronym title="du point de vue de">pdv</acronym> user : régressions/répétitions</li>
+                <li>plus facile de remanier le code</li>
+                <li>pas de catégorisation officielle (jeunesse)</li>
+                <li>+ facile debug ⇒ + facile code (choix expérience)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3 lang="en">Test Driven Development</h3>
+            <!-- TODO Améliorer l'image -->
+            <p><img alt="Tests en erreurs puis tests passent puis remaniement et ça recommence" src="img/TDD.png"/></p>
+            <aside class="notes">
+              <ul>
+                <li>code applicatif doit résoudre un test en erreur</li>
+                <li>aide à ne coder que le nécessaire</li>
+                <li>naturellement 100% de couverture</li>
+                <li>aide à trouver en auto le code inutile</li>
+                <li>en pratique, priorité là où risque (<acronym title="valeur ajoutée">VA</acronym>)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Bonnes pratiques</h3>
+            <ul>
+              <li>C'est du code</li>
+              <li>Niveau de cloisonnement</li>
+              <li>Jeu de données</li>
+              <li>Documentation</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Même principes (lisibilité, KISS, Less is More, ...)</li>
+                <li><a href="http://blog.8thlight.com/uncle-bob/2013/03/06/ThePragmaticsOfTDD.html" hreflang="en">Types de test selon projet, peu recouvrement</a></li>
+                <li>Cloisonnement unitaire ⇒ données intégrées</li>
+                <li>1 jeu de données pour l'ensemble des TF</li>
+                <li>Gérer jeu de données ⇒ cf environnements </li>
+                <li lang="en"><a href="http://www.artima.com/weblogs/viewpost.jsp?thread=203994" hreflang="en">The Way of Testivus</a></li>
+                <li>Elément clé de la documentation</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Junit &amp; Mockito</h3>
+            <pre><code>
+            @Mock Iterator i;
+            @InjectMocks MaClasse m;
+
+            @Test
+            public void iterator_will_return_hello_world(){
+                // 1 - PREPARE
+                when(i.next()).thenReturn("Hello").thenReturn("World");
+                // 2 - EXECUTE
+                String result=m.getNextTwice();
+                // 3 - VERIFIE
+                assertEquals("Hello World", result);
+            }
+            </code></pre>
+            <p class="fragment"><img class="no-border" alt="bonus" src="img/bonus.png"/> PowerMock pour <code>final</code>, <code>private</code>, <code>static</code></p>
+            <aside class="notes">
+              <ul>
+                <li>Junit : annotations et assert</li>
+                <li>TestNG est à explorer (bon support)</li>
+                <li><a href="http://blog.xebia.fr/2013/02/19/craftsman-recipes-happy-hour-pour-vos-tests-avec-mockito/">Mockito</a> : seuls la classe testée peut échouer</li>
+                <li>D'autres (EasyMock) mais Mockito marche bien</li>
+                <li>Trio avec <a href="https://code.google.com/p/powermock/" hreflang="en">PowerMock</a> quasi indispensables</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-state="tp">
+            <h3>Travaux Pratiques : TDD</h3>
+            <ol>
+              <li>Choisissez une nouvelle fonctionnalité <em>métier</em> à implémenter</li>
+              <li>Codez le test, qui doit échouer</li>
+              <li>Codez le code applicatif. Le test doit réussir</li>
+              <li>Itérez jusqu'à implémentation complète de la fonctionnalité</li>
+            </ol>
+          </section>
+
+          <section>
+            <p><img class="fragment" alt="Bon pour le Karma" src="img/karma.jpg" /></p>
+            <aside class="notes">
+              <ul>
+                <li><a href="https://fr.wikipedia.org/wiki/R%C3%A9usinage_de_code">Refactoring</a> : travail du code sans ajout de fonctionnalité ⇨ maintenabilité
+                  <ul>
+                    <li>lisibilité</li>
+                    <li>nettoyages (direct si <abbr title="suppression">suppr</abbr> fonction)</li>
+                    <li>architecture logicielle/OO</li>
+                  </ul>
+                </li>
+                <li>Difficile et mal valorisé (management)</li>
+                <li>Mais c'est le <a href="https://fr.wikipedia.org/wiki/Karma">Karma</a> du <em>bon</em> développeur</li>
+                <li>Valorisisation par ses pairs et gains en maintenabilité.</li>
+              </ul>
+            </aside>
+          </section>
+
+		</section>
 
         <section> <!-- 2) GESTION DES ENVIRONNEMENTS -->
 
@@ -1236,6 +1216,26 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 							</ul>
 						</aside>
 					</section>
+
+          <section>
+            <h3>Je ne sais pas à quoi sert ce code ?!</h3>
+            <ol>
+              <li>Creuser</li>
+              <li>Tester</li>
+              <li>Supprimer</li>
+              <li>Documenter</li>
+            </ol>
+            <aside class="notes">
+              <ul>
+                <li>il faut comprendre à quoi il sert (specs...)</li>
+                <li>sur du code legacy, probable code inutile</li>
+                <li>très peu de cas pertinents pour garder du code non compris</li>
+                <li>communiquer et avertir avant suppressions (surtout si pas de tests)</li>
+                <li>mieux vaut le risque que garder du code non maîtrisé</li>
+                <li>N'ayez pas peur ! retour arrière possible</li>
+              </ul>
+            </aside>
+          </section>
 
           <section data-state="tp">
             <h3>Travaux Pratiques : Stratégie</h3>
