@@ -957,11 +957,11 @@
 
           <section>
             <h3>Compilateur</h3>
-            <pre><code>
+            <pre><code class="no-highlight">
             Note : Foo() in interface FooBase has been deprecated.
             Note : Foo.java uses unchecked or unsafe operations.
             </code></pre>
-            <pre class="fragment"><code>
+            <pre class="fragment"><code data-noescape class="bash">
             <del>javac -nowarn</del>
             javac -Xlint <span class="fragment">-Werror</span>
             </code></pre>
