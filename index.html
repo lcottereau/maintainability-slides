@@ -364,17 +364,26 @@ public String toString() {
           <section>
             <h3>Réfléchissez à ce que vous commitez</h3>
             <h4>A supprimer</h4>
-            <pre><code>
-              /**
-               * $Id:$
-               * @author toto
-               */
-              public int doSomething() {
-                  //System.out.println("TOTO");
-                  return x;
-                  //return x*2;
-              }
-            </code></pre>
+            <pre class="fragment"><code>import java.util.Date;
+//import java.util.Date;</code></pre>
+            <pre class="fragment"><code>/**
+ * 
+ */
+private static final long serialVersionUID = 1L;</code></pre>
+            <pre class="fragment"><code>@Override
+public void setSenderEmail(String senderEmail) {
+  // TODO Auto-generated method stub
+	
+}</code></pre>
+			<pre class="fragment"><code>/**
+* $Id:$
+* @author toto
+*/
+public int doSomething() {
+  //System.out.println("TOTO");
+  return x;
+  //return x*2;
+}</code></pre>
             <aside class="notes">
               <ul>
                 <li>infos qui ne seront pas tenues à jours (@author est déjà ailleurs)</li>
