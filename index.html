@@ -329,9 +329,16 @@
 
           <section> <!-- 1.2) Less is More -->
             <h2>2&nbsp;&dash;&nbsp;Less Is More</h2>
+            <pre class="fragment"><code>@Override
+public String toString() {
+  return "Message [senderName=" + senderName + ", receiverName="
+    + receiverName + ", sendingDate=" + sendingDate + ", subject="
+    + subject + ", body=" + body + "]";
+}</code></pre>
             <p class="fragment">Moins de fonctionnalité</p>
             <aside class="notes">
               <ul>
+              	<li>Pourquoi certains élèves ont codé <code>toString()</code></li>
                 <li>Deuxième et plus gros problème</li>
                 <li>pas incohérent avec la réponse au besoin : principes de simplicité dans le design (apple)</li>
                 <li>Agilité aide à définir les fonctions au plus juste</li>
