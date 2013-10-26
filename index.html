@@ -749,7 +749,7 @@ public class MessageBackup implements Serializable {
 
           <section data-state="tp">
             <h3>Travaux Pratiques : nettoyez vos projets</h3>
-            <p>Vous avez 10 minutes pour lister le maximum de tâches permettant de diminuer la quantité de code sur votre projet</p>
+            <p>Lister le maximum de tâches permettant de diminuer la quantité de code sur votre projet</p>
             <aside class="notes">
               <ul>
                 <li>Chaque binôme propose un truc à son tour. Le dernier à en proposer gagne</li>
@@ -1103,12 +1103,13 @@ public class MessageBackup implements Serializable {
 
           <section data-state="tp">
             <h3>Travaux Pratiques : TDD</h3>
-            <ol>
-              <li>Choisissez une nouvelle fonctionnalité <em>métier</em> à implémenter</li>
-              <li>Codez le test, qui doit échouer</li>
-              <li>Codez le code applicatif. Le test doit réussir</li>
-              <li>Itérez jusqu'à implémentation complète de la fonctionnalité</li>
-            </ol>
+            <p>Coder une méthode qui renvoie un résumé d'un email : </p>
+            <blockquote>message de &lt;X&gt; à &lt;Y&gt; envoyé à &lt;HH&gt;:&lt;MM&gt; à propos de &lt;S&gt;</blockquote>
+            <p class="fragment note">Pensez aux cas aux limites !</p>
+            <aside class="notes">
+            	<ul>
+            		<li>Pourrait être enrichi avec complexité sur date, niveau de détail, ...</li>
+            </aside>
           </section>
 
           <section>
@@ -1212,7 +1213,7 @@ public class MessageBackup implements Serializable {
 
           <section data-state="tp">
             <h3>Travaux Pratiques : binaire portable</h3>
-            <p>Vous avez 10 minutes pour lister le maximum de parties non portables dans le code source de votre projet</p>
+            <p>Lister les parties non portables dans le code source de votre projet</p>
             <aside class="notes">
               <p>Aperçu des méthodes pour externaliser : variables d'environnements, fichiers à un endroit fixe, ...</p>
             </aside>
@@ -1310,12 +1311,15 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 
           <section data-state="tp">
             <h3>Travaux Pratiques : Etat des lieux</h3>
-            <p>
-              On change les mainteneurs sur les projets ! Vous avez 20 minutes pour essayer d'installer le projet sur lequel vous ne travaillez pas habituellement.
-              Notez vos remarques et points de documentation à améliorer.
-            </p>
+            <p>On change les mainteneurs sur les projets !</p>
+            <ol>
+            	<li>Installez le projet en local</li>
+            	<li>Lancez la démonstration</li>
+            	<li>Notez vos conseils d'amélioration</li>
+            	<li class="fragment">Bonus : ajoutez un utilisateur <em><acronym lang="en" title="Very Important People">VIP</acronym></em></li>
+            </ol>
             <aside class="notes">
-              <p><strong>Penser à leur faire <a href="http://dist.sonar.codehaus.org/sonar-3.5.zip">télécharger sonar</a> depuis <a href="http://sonarsource.org">sonarsource</a></strong></p>
+            	<p>L'utilisateur <em><acronym>VIP</acronym></em> est traité spécialement dans les messages de log</p>
             </aside>
           </section>
 
@@ -1360,12 +1364,9 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
           <section data-state="tp">
             <h3>Travaux Pratiques : Stratégie</h3>
             <ul>
-              <li>Installez Sonar et analysez votre projet : <pre><code>&lt;sonar_install&gt;/bin/sonar.sh start
-mvn sonar:sonar
--- OU vi sonar-project.properties; sonnar-runner
-firefox http://localhost:9000/</code></pre></li>
-              <li>Listez les 5 priorités d'amélioration d'après vous</li>
-              <li class="fragment">Travaillez sur les points indiqués</li>
+              <li><a hreflang="en" href="http://localhost:9000/">Votre projet analysé dans Sonar</a></li>
+              <li>Analyser les 5 priorités d'amélioration d'après vous</li>
+              <li class="fragment">Bonus : travaillez sur les points indiqués</li>
             </ul>
             <aside class="notes">
               <ul>
