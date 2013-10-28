@@ -1,0 +1,1536 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+
+		<title>Développement (Logiciel) Durable</title>
+
+		<meta name="description" content="Une présentation sur la maintenabilité des applications"/>
+		<meta name="author" content="Laurent Cottereau" />
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link rel="stylesheet" href="reveal/css/reveal.min.css" />
+		<link rel="stylesheet" href="reveal/css/theme/default.css" id="theme" />
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal/lib/css/zenburn.css" />
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal/lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style>
+			.reveal section img.no-border {
+				background: none;
+				border: none;
+				box-shadow: none;
+        		vertical-align: middle;
+			}
+		    .reveal cite {
+		    	font-style: italic;
+		    }
+			.reveal ul {
+				list-style-type: square;
+			}
+			.reveal figcaption {
+				font-size: 70%;
+			}
+			.reveal figcaption cite {
+				font-style: italic;
+			}
+		    li.email {
+		        list-style-image: url('img/icon-email.png');
+		    }
+		    li.linkedin {
+		        list-style-image: url('img/icon-linkedin.png');
+		    }
+		    li.twitter {
+		        list-style-image: url('img/icon-twitter.png');
+		    }
+		    li.github {
+		        list-style-image: url('img/icon-github.png');
+		    }
+			.dingle body {
+				background: url(img/fond_dingle.jpg) no-repeat center center fixed;
+			}
+			.warning body {
+				background: url(img/warning.jpg) no-repeat center center fixed;
+			}
+		    .question body {
+		        background: url(img/question_mark.png) no-repeat center center fixed;
+		    }
+		    .question section.present, .tp section.present {
+		        background-color: rgba(0, 0, 0, 0.75);
+		        border-radius: 10px;
+		        padding: 10px;
+		    }
+		    .tp body {
+		        background: url(img/travaux-pratiques.jpg) no-repeat center center fixed;
+		    }
+			.dingle body, .warning body, .question body, .tp body {
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+			}
+			.warning section {
+				border-radius: 10px;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+		    .dingle .reveal a:not(.image) {
+		        color: white;
+		    }
+		    .dingle .reveal a:not(.image):hover {
+		        text-decoration: underline;
+		    }
+		    .plusloin body {
+		        background-image: url('img/forkme.png');
+		        background-repeat: no-repeat;
+		        background-position: top right;
+		    }
+		    .reveal .note {
+		    	font-size: smaller;
+		    }
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section> <!-- TITRE -->
+					<h1 style="font-size: 2.3em;">Développement <img alt="Logiciel" class="no-border" src="img/floppy.png"/> Durable</h1>
+					<p>Maintenabilité des applications</p>
+				</section>
+
+
+				<section> <!-- PRESENTATION -->
+
+			<section data-state="question">
+            <h2 style="display: none">Questions préliminaires</h2>
+            <ul>
+                <li>Différence entre projet et maintenance ?</li>
+                <li>Différents types de maintenance ?</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>3 phases TBR &ndash; Flou autour de la MEP &ndash; Trains &ndash; 2 def projet</li>
+                <li><a href="https://fr.wikipedia.org/wiki/Informatique">Corrective &ndash; Evolutive &ndash; Adaptative</a> &ndash; Préventive (moins en informatique)</li>
+              </ul>
+            </aside>
+					</section>
+
+          <section>
+            <h2>Laurent Cottereau</h2>
+            <p><img class="no-border" src="img/skills.png" alt="Java GNU/Linux Bash CSS SQL Git J2EE HTTP Maven Accessibilité Scrum JavaScript Spring Performance PHP Visual Basic HTML Subversion jQuery JRAT Jmeter Selenium Firebug TCP/IP JMS"/></p>
+            <aside class="notes">
+              <ul>
+                <li>dev et management d'équipes de dev</li>
+                <li>
+                  RATP mais aussi SAPN, EFG, Cofiroute, Roche Bobois,
+                  Conseil Régional de l'Ile de France, Aventis. Sénat
+                </li>
+                <li>1 à 5 développeurs, de 2 mois à 1 an</li>
+                <li>Pas de gros projets</li>
+              </ul>
+              <p>Important pour mettre ma présentation dans contexte de mon XP</p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>La vraie vie de développeur</h2>
+            <p><img alt="" src="img/dilbert-reprise-projet.gif" /></p>
+            <aside class="notes">
+              <ul>
+              	<li>Pas comme le film <a href="https://fr.wikipedia.org/wiki/Les_Stagiaires"><cite>Les Stagiaires</cite></a></li>
+                <li>Prise en charge d'un projet suite à démission. Livraison imminente</li>
+                <li>Au moins, pas de documentation, pas de fausse croyances</li>
+                <li>Correction de code dupliqué, mais en fait pas vraiment mais presque</li>
+                <li>Régression fonctionnelle (le plus frustant pour les utilisateurs)</li>
+              </ul>
+            </aside>
+          </section> 
+
+          <section>
+            <h2>Des impacts forts</h2>
+            <p><img class="fragment" src="img/pentium.jpg"/> <img class="fragment" src="img/ariane.jpg" alt="Le bug "/></p>
+			<aside class="notes">
+              <ul>
+                <li>Bug division du Pentium en 1994 (problème d'init de variable). Peut-être 475 m$</li>
+                <li><a hreflang="en" href="https://en.wikipedia.org/wiki/Ariane_5_Flight_501">Bug integer overflow vol inaugural Ariane 5</a>. 370 m$, bug le plus coûteux de l'histoire</li>
+                <li>Estimation du coût des pannes logicielles pour l'économie mondiale proche centaine de milliards d'€</li>
+                <li><a href="https://www.inria.fr/centre/grenoble/actualites/la-fiabilite-des-systemes-devient-un-defi-majeur">Toujours du boulot</a> mais de grandes responsabilités</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-state="question">
+            <p>Qu'est-ce que la maintenabilité ?</p>
+            <aside class="notes">
+              Après les définitions et l'exemple, qu'en pensez-vous ?
+            </aside>
+          </section>
+
+					<section>
+						<h2>Proposition de définition</h2>
+						<blockquote>Capacité à pouvoir maintenir une application sur le long terme et pour tout type de maintenance</blockquote>
+            <p><img class="fragment roll-in no-border" alt="cela a un coût" src="img/money.png"/></p>
+						<aside class="notes">
+							<ul>
+								<li>au travers des changements d'équipe, des migrations techniques, des grosses évolutions</li>
+								<li>moins il est cher (au sens large) de faire une évolution, plus la maintenabilité est haute</li>
+								<li>faire mal est moins cher à court terme. plus cher de redresser la qualité</li>
+                <li> ⇒ adapter au contexte / à la durée de vie</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-state="question">
+						<h3>Adaptation au contexte</h3>
+						<p>
+							<img class="fragment" alt="projet pilote" src="img/pilote.jpg"/>
+							<img class="fragment" alt="logiciel de paie d'une grande entreprise" src="img/taxes.jpg"/>
+							<img class="fragment" alt="jeu vidéo" src="img/wow.jpg"/>
+						</p>
+						<aside class="notes">
+							<ul>
+								<li>quels sont les enjeux d'après vous ?</li>
+								<li>durée de vie</li>
+								<li>complexités du code, besoins en performance</li>
+								<li>criticité des bugs</li>
+								<li>retour sur investissement</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Pourquoi cette présentation ?</h3>
+						<figure>
+						  <blockquote>Programmers are constantly in maintenance mode</blockquote>
+						  <figcaption>&nbsp;&mdash;&nbsp;<cite>The Pragmatic Programmer: From Journeyman to Master</cite></figcaption>
+						</figure>
+						<p>
+							<image class="fragment" src="img/yoda.png" class="Vous pouvez maîtriser cet art"/>
+						</p>
+						<aside class="notes">
+							<ul>
+								<li>Beaucoup de boulot : toujours après projet</li>
+								<li>site web Sénat début années 90, système de paie 25 ans</li>
+								<li>des choses à apprendre : compliqué (cf longueur intro et pas de vrai nom), montée en puissance (outils)</li>
+								<li>vu le marché, excellente valorisation</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Ce que l'on verra</h3>
+						<ol>
+							<li>4 Bonnes pratiques</li>
+							<li>Gestion des environnements</li>
+							<li>Usine de développement</li>
+							<li>Stratégie de reprise</li>
+						</ol>
+						<aside class="notes">
+							<ul>
+								<li>particulièrement pour l'informatique de gestion</li>
+                <li>indicateur de maintenabilité avec usine de dev</li>
+                <li>comment vous comporter avec scenario dilbert</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Ce que l'on ne verra pas</h3>
+						<ul>
+							<li>Organisationnel</li>
+						</ul>
+						<aside class="notes">
+							Si vous êtes un jour responsables d'équipes de dev
+							<ul>
+								<li>équipes projet ET maintenance</li>
+								<li>dev en interne, pour limiter perte de connaissance interne et incapacité à évaluer les travaux externes</li>
+								<li>pas de perte de temps à abuser les indicateurs de suivi (uniquement une impression de contrôle)</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+        <section> <!-- 1) BONNES PRATIQUES -->
+
+          <section> <!-- 1.1) #WTF -->
+            <h2>1&nbsp;&dash;&nbsp;#WTF</h2>
+            <p><a href="http://www.osnews.com/story/19266/WTFs_m" title="The true indicator of code quality, on OSNews"><img src="img/wtf.jpg" alt="The true indicator of code quality, the What-the-fucks per minute" /></a></p>
+            <aside class="notes">
+              Premier problème de maintenance est l'incompréhension (par un nouveau dev mais aussi soi-même après 6 mois). Voir aussi 
+              le <a hreflang="en" href="http://www.cs.arizona.edu/projects/sumatra/hallofshame/">Java Hall Of Shame</a>.
+            </aside>
+          </section>
+
+          <section>
+            <h3>KISS</h3>
+            <p><img alt="Pourquoi faire simple quand on peut faire compliqué ?" src="img/shadoks.jpg"/></p>
+            <blockquote class="fragment"><strong>Keep It Simple, Stupid</strong></blockquote>
+            <aside class="notes">
+              <ul>
+                <li><a href="http://www.redaction-technique.org/redacteur-technique/redacteur-technique/principe-de-simplicite-kiss/">Idem difficulté d'expliquer simplement du complexe</a> : mais permet compréhension complète</li>
+                <li><a hreflang="en" href="https://en.wikipedia.org/wiki/Unix_philosophy">Philosophie Unix</a> 1/3 : <a href="http://www.parleys.com/play/519bdedfe4b0549489a4a43b/chapter63/about" lang="en">Write programs that do one thing and do it well</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Single_responsibility_principle" hreflang="en">Principe de <abbr title="responsabilité">resp.</abbr> unique (<acronym title="Programmation Orientée Objet">OO</acronym>)</a></li>
+                <li>choix progiciels (voir <a hreflang="en" href="https://en.wikipedia.org/wiki/Rube_Goldberg_machine">machines de Rube Goldberg</a> ou Shadoks) : plus difficile d'évoluer après</li>
+                <li>agile aide à éviter d'anticiper sur besoins (appli ou archi)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Code expressif / lisible</h3>
+            <pre><code>
+              Calendar c = new GregorianCalendar();
+              Calendar b = j.bd();
+              if (b != null
+                  && c.get(Calendar.DAY_OF_YEAR) ==
+                     b.get(Calendar.DAY_OF_YEAR)) {
+                  return new BD();
+              }
+            </code></pre>
+            <pre class="fragment"><code>
+              if (joe.hasBirthday()) {
+                  BandeDessinee gift = new BandeDessinee("Lincoln");
+                  return gift;
+              }
+            </code></pre>
+            <pre class="fragment"><code>
+              when(joe.hasBirthday()).thenSend(gift);
+            </code></pre>
+            <aside class="notes">
+              <ul>
+                <li>exprimer son intention via le code au mainteneur : <a href="http://blog.xebia.fr/2013/01/14/craftsman-recipes-de-lart-de-bien-nommer-les-concepts/">racontez des histoires !</a></li>
+                <li><a hreflang="en" href="http://blog.8thlight.com/ryan-verner/2013/10/09/reducing-incidental-complexity-in-our-code-and-in-our-teaching.html" title="Reducing incidental complexity in our code and in our teaching">factoriser en méthodes (sémantique / javadocs / API réutilisables)</a></li>
+                <li>Noms de variables et métaphore XP</li>
+                <li>Choix de bibliothèques (ex : <a href="http://joda-time.sourceforge.net/" lang="en">Joda Time</a> et <a href="jcp.org/en/jsr/detail?id=310" hreflang="en">JSR 310</a>)</li>
+                <li>Le chaînage de méthode (fluent code) et <a
+                    href="https://fr.wikipedia.org/wiki/Domain-specific_programming_language"><acronym lang="en"
+                    title="Domain Specific Language">DSL</acronym></a> améliore la lisibilité</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section> <!-- 1.2) Less is More -->
+            <h2>2&nbsp;&dash;&nbsp;Less Is More</h2>
+            <pre class="fragment"><code>@Override
+public String toString() {
+  return "Message [senderName=" + senderName + ", receiverName="
+    + receiverName + ", sendingDate=" + sendingDate + ", subject="
+    + subject + ", body=" + body + "]";
+}</code></pre>
+            <p class="fragment">Moins de fonctionnalité</p>
+            <aside class="notes">
+              <ul>
+              	<li>Pourquoi certains élèves ont codé <code>toString()</code></li>
+                <li>Deuxième et plus gros problème</li>
+                <li>pas incohérent avec la réponse au besoin : principes de simplicité dans le design (apple)</li>
+                <li>Agilité aide à définir les fonctions au plus juste</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-state="warning">
+            <h3>Comprenez ce que vous faites !</h3>
+            <pre class="fragment"><code>private static final long serialVersionUID = 1L;</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>Soyez curieux et perfectionnistes !</li>
+                <li><strong>exemple sessions web</strong> et <a href="http://blog.ninja-squad.com/2013/07/26/stop-with-serialVersionUID/">serialVersionUID</a></li>
+                <li>différence entre bon (utile, demandé) et mauvais dev</li>
+                <li>bugs techniques inacceptables (pb fonctionnels compréhensibles)</li>
+                <li>en permanence : veille techno, lecture specs, pas de pré-suppositions</li>
+                <li>TRES IMPORTANT : <a lang="en" hreflang="en" href="http://christianheilmann.com/2013/09/26/7-things-about-working-in-i-t-you-dont-learn-in-school/" title="7 things about working in IT you don't learn in school">The <em>how</em> lands you a job, the <em>why</em> lands you a career</a></li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Réfléchissez à ce que vous commitez</h3>
+            <h4>A supprimer</h4>
+            <pre class="fragment"><code>import java.util.Date;
+//import java.util.Date;</code></pre>
+            <pre class="fragment"><code>/**
+ * 
+ */
+private static final long serialVersionUID = 1L;</code></pre>
+            <pre class="fragment"><code>@Override
+public void setSenderEmail(String senderEmail) {
+  // TODO Auto-generated method stub
+	
+}</code></pre>
+			<pre class="fragment"><code>/**
+* $Id:$
+* @author toto
+*/
+public int doSomething() {
+  //System.out.println("TOTO");
+  return x;
+  //return x*2;
+}</code></pre>
+            <aside class="notes">
+              <ul>
+              	<li>aucun code binaire (cf projet)</li>
+                <li>infos qui ne seront pas tenues à jours (@author est déjà ailleurs)</li>
+                <li>classique : vieux code de test : git est là pour ça</li>
+                <li>données auto-remplies à réfléchir  (OK car à jour)</li>
+                <li>se méfier du code généré (risque d'incohérence, de lier à un environnement)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h4>A garder</h4>
+            <pre><code>
+              /*
+               * (c) Copyright 2013 Laurent Cottereau
+               *
+               * This file is part of Foobar.
+               * Foobar is free software: you can redistribute it and/or
+               * modify it under the terms of the GNU General Public
+               * License as published by the Free Software Foundation.
+               * You should have received a copy of the GNU General Public
+               * License along with Foobar.
+               * If not, see &lt;http://www.gnu.org/licenses/&gt;.
+               */
+              /**
+               * commentaire décrivant le comportement pour qui
+               * ne veut pas lire le code.
+               * TODO penser à implémenter autre chose.
+            </code></pre>
+              <aside class="notes">
+                <ul>
+                  <li>LICENCE, Commentaires, TODO</li>
+                  <li>Le commit est un moment solennel et presque définitif</li>
+                  <li>La revue doit être complète à chaque fois</li>
+                  <li>Préférer les petits commits souvent (plus facile détecter erreurs et améliorations possibles)</li>
+                </ul>
+              </aside>
+          </section>
+
+          <section data-state="question">
+            <h3>Bibliothèques, API et Frameworks</h3>
+            <p>Différences ?</p>
+
+            <aside class="notes">
+              <ul>
+                <li>Bibliothèques (pas library en français) : collections de nouvelles fonctions à utiliser</li>
+                <li>API : description de ces fonctions (javadoc)</li>
+                <li>Framework : IoC. un programme sur lequel on injecte un comportement. Inclut organisation, paradigms, conventions en plus de bibliothèques</li>
+                <li>raccord sur la curiosité permanente</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h4>Se concentrer sur la Valeur ajoutée</h4>
+            <p>
+              <img alt="informatique de gestion, " src="img/taxes.jpg"/>
+              <img alt="logiciel de blog, " src="img/wordpress.jpg" />
+              <img alt="jeu vidéo" src="img/wow.jpg"/>
+            </p>
+            <p class="fragment">Critères de choix classiques</p>
+            <aside class="notes">
+              <ul>
+                <li>Coder uniquement spécificité/élément différenciateur</li>
+                <li>Code externe généralement mieux testé</li>
+                <li>gestion : <strong>code "métier"</strong>. ergonomie ? <del>affichage des pages (Play, Spring MCV,...)</del></li>
+                <li>blog : <strong>gestion articles</strong>. commentaires ? <del>infrastructure, connexion</del></li>
+                <li>jeu vidéo : graphiques et IA.</li>
+                <li>OS, communauté, docu, prix, couteau suisse</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Pépite : Lombok</h3>
+            <ul>
+              <li><code>@Getter(lazy=true)</code></li>
+              <li><code>@ToString</code></li>
+              <li><code>@<em>XXX</em>ArgsConstructor</code></li>
+              <li><code>@Data</code></li>
+              <li><code>@Cleanup</code></li>
+              <li><code>@Log</code></li>
+              <li>...</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Design Patterns. Lombok fournit aussi le code</li>
+                <li>Plus rapide ET plus lisible.</li>
+                <li>
+                  de <a href="http://projectlombok.org/features/" hreflang="en">nombreuses autres</a>,
+                  des <a href="http://projectlombok.org/features/experimental/" hreflang="en">expérimentales</a> (dont <code>@Builder</code>) et
+                  des <a href="https://github.com/peichhorn/lombok-pg" hreflang="en">non-officielles</a>
+                </li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h4>Sans Lombok</h4>
+            <pre style="font-size: 7%;"><code>package server;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="MESSAGES_TABLE")
+public class MessageBackup implements Serializable{
+	private int id;
+	
+	public String senderName;
+	public String receiverName;
+	public String sendingDate;
+	public String subject;
+	public String body;
+	public int alreadyRead=0;
+	
+	public MailBox mailb;
+	
+	//private MailBox mailbox;
+	
+	
+	public MessageBackup() {
+	}
+	
+	//contruct a news message
+	public MessageBackup(String senderName, String sendingDate,
+			String subject, String body){
+		this.senderName = senderName;
+		this.receiverName = "@@";
+		this.sendingDate = sendingDate;
+		this.subject = subject;
+		this.body = body;
+		this.alreadyRead = 0;
+	}
+	public MessageBackup(String senderName, String receiverName, String sendingDate,
+			String subject, String body) {
+		this.senderName = senderName;
+		this.receiverName = receiverName;
+		this.sendingDate = sendingDate;
+		this.subject = subject;
+		this.body = body;
+		this.alreadyRead = 0;
+	}
+	
+	@Override
+	public String toString() {
+		return "Message [senderName=" + senderName + ", receiverName="
+				+ receiverName + ", sendingDate=" + sendingDate + ", subject="
+				+ subject + ", body=" + body + "]";
+	}
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="ID")
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	@ManyToOne
+	@JoinColumn(name="MAILBOX_ID")
+	public MailBox getMailb() {
+		return mailb;
+	}
+
+	public void setMailb(MailBox mailb) {
+		this.mailb = mailb;
+	}
+	@Column(name="SENDER")
+	public String getSenderName() {
+		return senderName;
+	}
+	public void setSenderName(String senderName) {
+		this.senderName = senderName;
+	}
+	//@Column(name="RECEIVER")
+	public String getReceiverName() {
+		return receiverName;
+	}
+	public void setReceiverName(String receiverName) {
+		this.receiverName = receiverName;
+	}
+	@Column(name="DATE")
+	public String getSendingDate() {
+		return sendingDate;
+	}
+	public void setSendingDate(String sendingDate) {
+		this.sendingDate = sendingDate;
+	}
+	@Column(name="SUBJECT")
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	@Column(name="BODY")
+	public String getBody() {
+		return body;
+	}
+	public void setBody(String body) {
+		this.body = body;
+	}
+	//@Column(name="READ")
+	public int getAlreadyRead() {
+		return alreadyRead;
+	}
+	public void setAlreadyRead(int alreadyRead) {
+		this.alreadyRead = alreadyRead;
+	}
+	/*
+	@ManyToOne()
+	@JoinColumn(name="MAILBOX_ID")
+	public MailBox getMailbox() {
+		return mailbox;
+	}
+	public void setMailbox(MailBox mailbox) {
+		this.mailbox = mailbox;
+	}
+	*/
+}
+</code></pre>
+          </section>
+
+          <section>
+            <h4>Avec Lombok</h4>
+            <pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+    &lt;version&gt;1.12.2&lt;/version&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;</code></pre>
+            <pre><code>@Entity
+@Data
+public class MessageBackup implements Serializable {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	private String senderName;
+	private String receiverName;
+	private String sendingDate;
+	private String subject;
+	private String body;
+	private int alreadyRead=0;
+	@ManyToOne
+	@JoinColumn(name="MAILBOX_ID")
+	private MailBox mailbox;
+}</code></pre>
+            <aside class="notes">
+              <ul>
+              	<li>130 lignes ⇒ 28 lignes</li>
+                <li>récupération de la dépendance JPA</li>
+                <li>suppression des commentaires + imports inutiles</li>
+                <li>suppression de @Table, @Column (convention)</li>
+                <li>pas d'attributs publics</li>
+                <li>@Data pour constructeurs, getters, setters, toString</li>
+                <li> ⇒ que de l'utile ? (débat sur mailbox, contraintes à ajouter)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h4>Difficultés</h4>
+            <ul>
+              <li>Intégration</li>
+              <li>Debug</li>
+              <li>#WTF</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>à l'IDE : jar à installer dans Eclipse ou IntelliJ</li>
+                <li>aux frameworks : <a hreflang="en" href="https://github.com/aaronfreeman/play-lombok">difficulté avec Play</a></li>
+                <li>pas de problème pour le code généré (cf scope provided) mais lien impossible en debug IDE</li>
+                <li>même difficultés qu'avec l'AOP : documentation et/ou rester simple</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-state="tp">
+            <h4>Travaux Pratiques : Lombok</h4>
+            <p>Mise en place sur votre micro-projet</p>
+            <p><code style="text-decoration: underline;">http://projectlombok.org/features/</code></p>
+            <aside class="notes">
+            </aside>
+          </section>
+
+          <section>
+            <h3 lang="en">
+              <acronym title="Don't Repeat Yourself">DRY</acronym> &ndash;
+              don't <acronym title="Write Everything Twice">WET</acronym>
+            </h3>
+            <blockquote lang="en">
+              Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
+            </blockquote>
+            <aside class="notes">
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" hreflang="en">Risques</a> : corriger à un seul endroit, savoir lequel utiliser</li>
+                <li>Aide à une bonne conception (responsabilité unique)</li>
+                <li>Attention si presque-pareil : pourquoi ? comment gérer ?</li>
+                <li>Attention à la surgénéralisation (intra et inter projets)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3 lang="en">Convention over configuration</h3>
+            <ul>
+              <li class="fragment highlight-green">valeurs par défaut</li>
+              <li class="fragment highlight-red">code spécifique / paramétrages</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li><strong><a hreflang="en" href="https://maven.apache.org/">maven</a></strong>, noms par défaut des tables/colonnes JPA</li>
+                <li>on peut choisir des conventions mais les documenter</li>
+                <li>choix de bibliothèques exactement adaptées</li>
+                <li>idéal de rester dans les conventions</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Et les optimisations de performances ?</h3>
+            <p class="fragment">D'autres s'en préoccupent mieux que vous !</p>
+            <aside class="notes">
+              <ul>
+                <li><a href="http://blog.xebia.fr/2013/05/27/comprendre-le-fonctionnement-de-la-jvm-article-1/" title="Comprendre le fonctionnement de la JVM – Article 1/2">Faites confiance aux ingénieurs JVM</a></li>
+                <li>Si besoin d'optim, plutôt paramétrage JVM (expertise nécessaire)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <figure>
+              <blockquote cite="http://wengu.tartarie.com/wg/wengu.php?lang=fr&no=59&l=Daodejing">
+                La modération doit être le premier soin de l'homme.
+              </blockquote>
+              <figcaption>&nbsp;&mdash; <cite>De la Voie et de la Vertu</cite>, Lao-tseu</figcaption>
+            </figure>
+            <figure class="fragment">
+              <pre><code class="javascript">
+                  function(a,b,c,d){d+=c;return[d&lt;0|a&amp;b&lt;&lt;
+                  d?a=parseInt((a|b&lt;&lt;c).toString(d=32,b=new Date&amp;2|1)
+                  .replace('v',''),d):a|b&lt;&lt;d,a,b,d]}
+              </code></pre>
+              <figcaption>&nbsp;&mdash;<a href="https://gist.github.com/aemkei/1672254#file-annotated-js"><code>140byt.es</code></a></figcaption>
+            </figure>
+            <aside class="notes">
+              <ul>
+                <li>Il faut garder l'expressivité</li>
+                <li>Le plus important est de réfléchir à ce qui est fait. Savoir pourquoi on fait des choix</li>
+                <li>Pas possible de faire tous les bons choix, mais y réfléchir vous empêche de les refaire ⇒ meilleurs plus vite</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-state="tp">
+            <h3>Travaux Pratiques : nettoyez vos projets</h3>
+            <p>Lister le maximum de tâches permettant de diminuer la quantité de code sur votre projet</p>
+            <aside class="notes">
+              <ul>
+                <li>Chaque binôme propose un truc à son tour. Le dernier à en proposer gagne</li>
+                <li>Il faut un exemple précis à chaque fois</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section> <!-- 1.3) Votre code est votre documentation -->
+            <h2>3&nbsp;&dash;&nbsp;Votre code est votre documentation</h2>
+            <p class="fragment"><img alt="Pas de gros documents Word/OpenOffice" src="img/word-no-more.png"/></p>
+            <aside class="notes">
+              <ul>
+                <li><a href="https://fr.wikipedia.org/wiki/Cycle_de_d%C3%A9veloppement_%28logiciel%29#Mod.C3.A8le_en_cascade">Vestiges du BTP (cascade)</a> : contraintes sur ordonnancement et coûts de changement</li>
+                <li>Jamais lus et mis à jour (contributeurs, workflow)</li>
+                <li> ⇒ on creuse dans le code pour connaître le métier</li>
+                <li>cohérent : le code est le patrimoine</li>
+                <li>mais on peut quand même faire mieux</li>
+                <li>Pas lié à Word, même si le plus courant</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Dans le code</h3>
+            <ul>
+              <li><code>javadoc</code></li>
+              <li><code>TODO</code></li>
+              <li>contournements / hacks</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>javadoc : concepts métiers et API. Pas les évidences (à écrire et lire).</li>
+                <li>rédiger javadoc générale, coder, affiner javadoc</li>
+                <li>outils listent les TODO</li>
+                <li>plutôt ticket pour TODO long terme</li>
+                <li>lien peut suffire pour contournements</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Documentation <em>automatique</em></h3>
+            <ul>
+              <li class="fragment">Gestionnaire de tickets</li>
+              <li class="fragment">Gestionnaire de version</li>
+            </ul>
+            <pre class="fragment"><code class="Bash">$:~/anaf$ git log --pretty=oneline --abbrev-commit
+              3b962cf vues
+              98ee6cd vues
+              b029a3f model et vues
+              e3a527c model et vues
+              5187f8b security</code></pre>
+            <pre class="fragment"><code class="Bash">$:~/trace$ git log --pretty=oneline --abbrev-commit
+              5ab30fb réduction du champ d'application d'une règle CSS
+                      pour les vignettes vidéo
+              231195a crebas.sql représente maintenant l'état de la
+                      dernière version de la base
+              31c15dd #1996 - léger espace autour d'une image dans un
+                      datatable-ui
+              ca7b84b on replace l'onglet acteurs entre les onglets
+                      organisation et résultat
+              e0b5cf9 suppression de l'onglet contexte (élément mis
+                      dans l'onglet détails)</code></pre>
+            <aside class="notes">
+              <ul>
+                <li>historique des problèmes, incidents, évolutions fonctionnelles, choix d'architecture</li>
+                <li>Pas automatique : créer et bien remplir (penser à soi dans 2 ans). Trouver la maille.</li>
+                <li>1 ligne de résumé. Puis détails si nécessaires</li>
+                <li>Lien vers tickets (et inversement, IDE aident)</li>
+                <li>pas cher et coût très réparti</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Historique de ticket</h3>
+            <p><img alt="historique d'un ticket bugzilla" src="img/historique-bugzilla.png"/></p>
+          </section>
+
+          <section>
+            <h3>Pour le reste</h3>
+            <p>Simple &ndash; Court &ndash; Facile</p>
+            <ul>
+              <li class="fragment">Wiki</li>
+              <li class="fragment">fichier <code>README</code></li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Wiki<ul>
+                  <li>entreprise ou forge logicielle (github)</li>
+                  <li>Ouvert à tous (idéal) &ndash; imédiat &ndash; historique</li>
+                </ul></li>
+                <li>Readme<ul>
+                  <li>github, logiciels unix, <a href="http://www.paris-web.fr/2012/conferences/readme-un-fichier-nomme-plaisir.php">paris-web</a></li>
+                  <li>Lu car court et adapté : viser le lecteur cible</li>
+                  <li>livré avec le code et lisible (markdown)</li>
+                </ul></li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Qu'y trouve-t-on ?</h3>
+            <p>Point d'entrée unique</p>
+            <ul class="fragment">
+              <li>Description haut niveau</li>
+              <li>Contacts</li>
+              <li>Installation et Environnements</li>
+              <li class="fragment highlight-blue">Changelog</li>
+              <li><em lang="en">Catchall</em></li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Adapté à cible (dev, utilisateur, manager)</li>
+                <li>Manuel, Prise en main, ...</li>
+                <li>Lien vers systèmes et docs</li>
+                <li>Fonctionnel et Technique</li>
+                <li>Plutôt contacts permanents (mail d'équipe)</li>
+                <li>Changelog et historique des choix techniques si reformulation pour utilisateurs</li>
+                <li>Roadmap, Métaphore, FAQ, Plan de reprise</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Contractualisation</h3>
+            <p>Obligé de faire des documents Word ?</p>
+            <p class="fragment">⇨ dédoublez la documentation</p>
+            <aside class="notes">
+              <ul>
+                <li>Les gros documents words ne seront pas mis à jour</li>
+                <li>Les autres vous serviront à la maintenance</li>
+                <li>L'entreprise choisit de dépenser de l'argent dans des processus "qualité"</li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section> <!-- 1.4) Prenez vos responsabilités -->
+            <h2>4&nbsp;&dash;&nbsp;Prenez vos responsabilités</h2>
+            <p><a hreflang="en" title="Excuses for lazy developers" href="http://developerexcuses.com/"><img alt="marre des excuses de développeurs" src="img/excuses.png"/></a></p>
+            <aside class="notes">
+            	<ul>
+            		<li><a hreflang="en" href="http://blog.8thlight.com/uncle-bob/2013/10/24/The-Careless-Ones.html" title="The careless ones">Problème de niveau d'exigence général dans la profession</a>. Médiocrité</li>
+            		<li><em lang="en"><a hreflang="en" href="https://en.wikipedia.org/wiki/Undocumented_feature">It's not a bug, it's a(n undocumented) feature</a></em> quand non documenté mais <em>tolérable</em></li>
+            		<li>Utilisateurs et ingénieurs part du principe que plein de bugs</li>
+            		<li>License payées qui se dédouanent en cas de problème</li>
+            		<li>On peut s'en sortir en faisant n'importe quoi</li>
+            	</ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Théorie des fenêtres brisées</h3>
+            <p><img class="fragment fade-out" alt="immeuble propre et neuf" src="img/immeuble.jpg"/><img class="fragment" alt="immeuble dévasté" src="img/broken-window.jpg"/></p>
+            <aside class="notes">
+              <ul>
+                <li>New York (graffitis dans métro 80s et Giuliani sur petits crimes alcool ou urinage public)</li>
+                <li>
+                  En projet, ne pas <a hreflang="en" href="https://en.wikipedia.org/wiki/Broken_windows_theory">laisser petits pb</a>
+                  pour éviter les gros : traiter au fur et à mesure
+                </li>
+                <li>Les habitants de NY sont les nouveaux dev</li>
+                <li>Si code legacy, choisir stratégie (utile+facile en 1er)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Compilateur</h3>
+            <pre><code class="no-highlight">
+            Note : Foo() in interface FooBase has been deprecated.
+            Note : Foo.java uses unchecked or unsafe operations.
+            </code></pre>
+            <pre class="fragment"><code data-noescape class="bash">
+            <del>javac -nowarn</del>
+            javac -Xlint <span class="fragment">-Werror</span>
+            </code></pre>
+            <aside class="notes">
+            	<ul>
+            		<li><a hreflang="en" href="http://marxsoftware.blogspot.fr/2010/10/javacs-xlint-options.html">Option non standard de la JVM oracle</a></li>
+            		<li><a hreflang="en" href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javac.html#nonstandard">Autres warnings</a> : <code>fallthrough</code>, <code>finally</code>, <code>unused</code></li>
+                	<li>
+                  		<a hreflang="en" href="http://stackoverflow.com/questions/234075/what-is-your-best-programmer-joke/235307#235307">Blague
+                  		du fumeur</a> qu'il dit que c'est OK parce qu'il est informaticien : il se fiche des avertissements,
+                 		seules les erreurs le préoccupent
+               		</li>
+               	</ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3 lang="en"><acronym title="Integrated Development Environment">IDE</acronym></h3>
+            <p><img alt="" src="img/ide-warnings.jpg"/></p>
+            <aside class="notes">
+              <ul>
+                <li>Reprend les infos du compilateur. En rajoute : imports</li>
+                <li>Souvent code couleur (en haut à droite)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Logs</h3>
+            <ul>
+              <li>Maelström d'API</li>
+              <li>Maîtrise nécessaire</li>
+              <li>Suivez-les</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Log4j classique mais préfère Slf4j et Logback</li>
+                <li>serveurs, frameworks, bibliothèques, applicatif</li>
+                <li>maîtriser les API de logs configurer chaque env</li>
+                <li>classiquement, en production, warnings ou error</li>
+                <li>en dev, parfois en info pour anticiper les pb</li>
+                <li>savoir comment passer en debug</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Plateforme Qualité</h3>
+            <p><img alt="Sonar donne de nombreux indicateurs" src="img/sonar-trace.png"/></p>
+            <aside class="notes">
+            	<ul>
+                	<li>Colonne de droite (avec <acronym lang="en" title="Lack of Cohesion Of Methods">LCOM4</acronym>) puis duplications</li>
+                	<li>En gris: commentaires (sauf API), Classes/Méthodes</li>
+                </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Soyez vigilants</h2>
+            <p><img alt="Attention ! Il pourrait y avoir des ninjas dans le coin" src="img/ninja.png"/></p>
+            <aside class="notes">
+              <ul>
+                <li>Un grand nombre d'information est là pour vous aider</li>
+                <li>Ne laissez rien passer</li>
+                <li><a hreflang="en" href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">La règle du boy scout</a></li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Quoi faire ?</h3>
+            <ol>
+              <li>Analyser</li>
+              <li class="fragment">Corriger <em>OU</em> repousser <em>OU</em> ne pas traiter</li>
+              <li class="fragment">Cacher le message</li>
+              <li class="fragment">Documenter</li>
+            </ol>
+            <aside class="notes">
+              <ul>
+                <li><abbr title="informatique">info.</abbr> facile car il y a <strong>toujours</strong> une explication rationnelle</li>
+                <li>si vraiment dur, <a hreflang="en" href="http://stackoverflow.com/">c'est vraiment nécessaire de creuser</a></li>
+                <li>repousser avec TODO ou ticket</li>
+                <li>pas garder le message pour voir les nouveaux : <code>@SuppressWarning</code> ou config de la source</li>
+                <li>ne pas désactiver les futurs messages</li>
+                <li>doc critique si pas capable de cacher le msg</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Remaniement</h3>
+            <p>Changer la structure sans changer le fonctionnel</p>
+            <aside class="notes">
+            	<ul>
+            		<li>Objectif : maintenabilité améliorée</li>
+            		<li>Vigilance pour ce qui peut être un <a hreflang="en" lang="en" href="https://en.wikipedia.org/wiki/Code_refactoring">code smell</a></li>
+            		<li>Les tests sont quasi-nécessaires</li>
+            	</ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Tests automatisés</h3>
+            <p><img alt="tests unitaires, d'intégration et fonctionnels se recouvrent" src="img/types-tests.png" /></p>
+            <aside class="notes">
+              <ul>
+                <li>bug est moins cher si détecté tôt (exponentiel)</li>
+                <li>tests manuels rajoutent environ 30% * livraison</li>
+                <li>Code non applicatif prod mais patrimoine aussi</li>
+                <li>Evite 2 pires bugs <acronym title="du point de vue de">pdv</acronym> user : régressions/répétitions</li>
+                <li>plus facile de remanier le code</li>
+                <li>pas de catégorisation officielle (jeunesse)</li>
+                <li>+ facile debug ⇒ + facile code (choix expérience)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3 lang="en">Test Driven Development</h3>
+            <!-- TODO Améliorer l'image -->
+            <p><img alt="Tests en erreurs puis tests passent puis remaniement et ça recommence" src="img/TDD.png"/></p>
+            <aside class="notes">
+              <ul>
+                <li>code applicatif doit résoudre un test en erreur</li>
+                <li>aide à ne coder que le nécessaire</li>
+                <li>naturellement 100% de couverture</li>
+                <li>aide à trouver en auto le code inutile</li>
+                <li>en pratique, priorité là où risque (<acronym title="valeur ajoutée">VA</acronym>)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Bonnes pratiques</h3>
+            <ul>
+              <li>C'est du code</li>
+              <li>Niveau de cloisonnement</li>
+              <li>Jeu de données</li>
+              <li>Documentation</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Même principes (lisibilité, KISS, Less is More, ...)</li>
+                <li><a href="http://blog.8thlight.com/uncle-bob/2013/03/06/ThePragmaticsOfTDD.html" hreflang="en">Types de test selon projet, peu recouvrement</a></li>
+                <li>Cloisonnement unitaire ⇒ données intégrées</li>
+                <li>1 jeu de données pour l'ensemble des TF</li>
+                <li>Gérer jeu de données ⇒ cf environnements </li>
+                <li lang="en"><a href="http://www.artima.com/weblogs/viewpost.jsp?thread=203994" hreflang="en">The Way of Testivus</a></li>
+                <li>Elément clé de la documentation</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h3>Junit &amp; Mockito</h3>
+            <pre><code>
+            @Mock Iterator i;
+            @InjectMocks MaClasse m;
+
+            @Test
+            public void iterator_will_return_hello_world(){
+                // 1 - PREPARE
+                when(i.next()).thenReturn("Hello").thenReturn("World");
+                // 2 - EXECUTE
+                String result=m.getNextTwice();
+                // 3 - VERIFIE
+                assertEquals("Hello World", result);
+            }
+            </code></pre>
+            <p class="fragment"><img class="no-border" alt="bonus" src="img/bonus.png"/> PowerMock pour <code>final</code>, <code>private</code>, <code>static</code></p>
+            <aside class="notes">
+              <ul>
+                <li>Junit : annotations et assert</li>
+                <li><a hreflang="en" href="http://testng.org/">TestNG</a >est à explorer (bon support)</li>
+                <li><a href="http://blog.xebia.fr/2013/02/19/craftsman-recipes-happy-hour-pour-vos-tests-avec-mockito/">Mockito</a> : seuls la classe testée peut échouer</li>
+                <li>D'autres (EasyMock) mais Mockito marche bien</li>
+                <li>Trio avec <a href="https://code.google.com/p/powermock/" hreflang="en">PowerMock</a> quasi indispensables</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-state="tp">
+            <h3>Travaux Pratiques : TDD</h3>
+            <p>Coder une méthode qui renvoie un résumé d'un email : </p>
+            <blockquote>message de &lt;X&gt; à &lt;Y&gt; envoyé à &lt;HH&gt;:&lt;MM&gt; à propos de &lt;S&gt;</blockquote>
+            <p class="fragment note">Pensez aux cas aux limites !</p>
+            <aside class="notes">
+            	<ul>
+            		<li>Pourrait être enrichi avec complexité sur date, niveau de détail, ...</li>
+            </aside>
+          </section>
+
+          <section>
+            <p><img alt="Bon pour le Karma" src="img/karma.jpg" /></p>
+            <aside class="notes">
+              <ul>
+                <li><a href="https://fr.wikipedia.org/wiki/R%C3%A9usinage_de_code">Refactoring</a> : travail du code sans ajout de fonctionnalité ⇨ maintenabilité
+                  <ul>
+                    <li>lisibilité</li>
+                    <li>nettoyages (direct si <abbr title="suppression">suppr</abbr> fonction)</li>
+                    <li>architecture logicielle/OO</li>
+                  </ul>
+                </li>
+                <li>Difficile et mal valorisé (management)</li>
+                <li>Mais c'est le <a href="https://fr.wikipedia.org/wiki/Karma">Karma</a> du <em>bon</em> développeur</li>
+                <li>Valorisisation par ses pairs et gains en maintenabilité.</li>
+                <li>Collectivement, il faut s'améliorer</li>
+              </ul>
+            </aside>
+          </section>
+
+		</section>
+
+        <section> <!-- 2) GESTION DES ENVIRONNEMENTS -->
+
+          <section>
+            <h2>Environnements</h2>
+            <p class="fragments"><img alt="environnement de tests automatisés, local, de qualification et de production" src="img/environnements.png"/></p>
+            <aside class="notes">
+              <ul>
+                <li>local : tout devrait être testable (dev sous linux ?)</li>
+                <li>décrire en sens historique des développements</li>
+                <li>nombre d'utilisateurs. De + en + la vraie vie (hors projet)</li>
+                <li>risques et criticité des bugs avec adhérence au SI</li>
+                <li>criticité des données de test ou réelles</li>
+                <li>autonomie : communiquer avant maj, pas vendredi en prod, possibilité de debug</li>
+              </ul>
+            </aside>
+          </section>
+
+					<section>
+						<h3>Adapter au contexte</h3>
+						<ul>
+              <li class="fragment">Pré-production</li>
+              <li class="fragment">Plusieurs qualifications</li>
+              <li class="fragment">Intégration</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+                <li>préprod : debug sur données de prod, performances</li>
+                <li>tests de perf presque inutiles hors identique prod</li>
+                <li>qualif : plusieurs versions en parallèle</li>
+                <li>integ : pour compilation/packaging manuel</li>
+                <li>Sur ce slide, équipe de gestion d'env nécessaire (cher)</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Portabilité du binaire</h3>
+						<ul>
+              <li>Unique <code>.jar</code> ou <code>.war</code> réutilisable</li>
+              <li>Configuration spécifique sur l'environnement</li>
+						</ul>
+						<aside class="notes">
+							<ol>
+                <li>Limite les risques en prod (tests pertinent)</li>
+                <li>Partage plus facile (déploiement auto ?)</li>
+                <li>Sécurité (mots de passe que sur env, pas au dev)</li>
+              </ol>
+              <ul>
+                <li><a hreflang="en" title="Store config in the environment" href="http://12factor.net/config">Variables d'environnement</a> (voire normes <abbr title="exploitation">exploit.</abbr> figées)</li>
+                <li>Pointent sur fichier de <abbr title="configuration">conf</abbr> (ou <code>catalina.properties</code>)</li>
+                <li>Se méfier de <code>context.xml</code></li>
+                <li>Temps pour trouver une méthode vaut le coup</li>
+                <li>Sinon filtres maven (automatisation)</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Prévisibilité du binaire</h3>
+						<pre><code>[WARNING] File encoding has not been set,
+            using platform encoding UTF-8, i.e. build is platform dependent!</code></pre>
+						<pre class="fragment"><code>
+&lt;properties&gt;
+    &lt;maven.compiler.source&gt;1.6&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;${maven.compiler.source}&lt;/maven.compiler.target&gt;
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    (...)
+&lt;/properties&gt;
+						</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>(Presque)-même binaire quel que soit l'environnement de gén.</li>
+								<li>Les références à un environnement donnée (anaf/amine)</li>
+                				<li>Faire différence avec conventions prévisibles</li>
+							</ul>
+						</aside>
+					</section>
+
+          <section data-state="tp">
+            <h3>Travaux Pratiques : binaire portable</h3>
+            <p>Lister les parties non portables dans le code source de votre projet</p>
+            <aside class="notes">
+              <p>Aperçu des méthodes pour externaliser : variables d'environnements, fichiers à un endroit fixe, ...</p>
+            </aside>
+          </section>
+
+        </section>
+
+        <section> <!-- 3) USINE DE DEVELOPPEMENT -->
+        	<section>
+        		<h2>Usine de développement</h2>
+        		<p><img alt="Usine de développement" src="img/usine-dev.png"/></p>
+        		<aside class="notes">
+        			On peut évoquer le déploiement continu (<a hreflang="en" href="http://fr.slideshare.net/jallspaw/10-deploys-per-day-dev-and-ops-cooperation-at-flickr">plus de 10/j à Flickr</a>, <a hreflang="en" href="http://dahernan.github.io/2013/10/14/continuous-deployment-trends/">environ 35/j à Etsy</a>).
+        		</aside>
+        	</section>
+
+        	<section>
+						<h3>Indicateur de maintenabilité ?</h3>
+						<p><img alt="capture d'écran sonar" src="img/sonar-trace.png"/></p>
+						<aside class="notes">
+							<ul>
+                <li>100% partout louche (très simple ou triche)<ul>
+                  <li><code>/* COMMENT. */</code> (vu en externalisation)</li>
+                  <li>variable privée non utilisée (OK Lombok)</li>
+                  <li>Extension de bibliothèques</li>
+                </ul></li>
+                <li>Note moins utile qu'évolution (cf RATP maintenance)</li>
+							</ul>
+						</aside>
+					</section>
+
+          <section>
+						<h3>Dette Technique</h3>
+						<ul>
+              <li>Intérêts doivent être payés</li>
+              <li>Idée du coût de remboursement</li>
+            </ul>
+						<aside class="notes">
+							<ul>
+                <li>intérêts sont tps dev + longs et bugs</li>
+                <li>Parlant pour tous</li>
+                <li>Coûts utile pour convaincre</li>
+                <li>Le coût est en % du coût du projet</li>
+							</ul>
+						</aside>
+					</section>
+
+          <section>
+						<h3>Critères de choix</h3>
+						<ul>
+              <li>KISS</li>
+              <li>interconnexions</li>
+              <li>communauté</li>
+              <li>connaissance en interne</li>
+              <li>pérennité</li>
+						</ul>
+            <pre class="fragment"><code class="no-highlight">fixes #12 : dernier test de validation d'un contrôle
+Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
+/cc @toto</code></pre>
+						<aside class="notes">
+							<ul>
+                <li>adéquation au besoin, ergonomie</li>
+                <li>commentaire commit github avec lien&nbsp;&ndash;&nbsp;comm. #12 avec lien&nbsp;&ndash;&nbsp;résolution #12&nbsp;&ndash;&nbsp;mail à @toto</li>
+                <li>documentation et testé dans vraie vie entreprise</li>
+                <li>connaissance interne : admin sys, dev ou utilisateurs</li>
+                <li>pérennité logiciel (difficile à garantir)</li>
+                <li>surtout capacité à changer en gardant l'historique (format des données libres)</li>
+							</ul>
+						</aside>
+					</section>
+
+        </section>
+
+
+        <section> <!-- 4) STRATEGIE DE REPRISE -->
+          <section>
+						<h2>Stratégie de reprise</h2>
+            <h3>Etat des lieux</h3>
+						<ol>
+              <li>répertorier les contenus disponibles</li>
+              <li>lire la documentation</li>
+              <li>installation de l'environnement de développement</li>
+              <li>mise à jour de la documentation</li>
+						</ol>
+						<aside class="notes">
+							<ul>
+                <li>comment optimiser votre prise en maintenance ?</li>
+                <li>lister et récupérer : code source, documentation, URLs...</li>
+                <li>lire doc de démarrage si elle existe</li>
+                <li>env complet (compile, package, infra, données)</li>
+                <li>docu ce qui n'était pas dispo : pour futurs nouveaux</li>
+                <li>répéter à chaque arrivée dans l'équipe</li>
+							</ul>
+						</aside>
+					</section>
+
+          <section data-state="tp">
+            <h3>Travaux Pratiques : Etat des lieux</h3>
+            <p>On change les mainteneurs sur les projets !</p>
+            <ol>
+            	<li>Installez le projet en local</li>
+            	<li>Lancez la démonstration</li>
+            	<li>Notez vos conseils d'amélioration</li>
+            	<li class="fragment">Bonus : ajoutez un utilisateur <em><acronym lang="en" title="Very Important People">VIP</acronym></em></li>
+            </ol>
+            <aside class="notes">
+            	<p>L'utilisateur <em><acronym>VIP</acronym></em> est traité spécialement dans les messages de log</p>
+            </aside>
+          </section>
+
+          <section>
+						<h3>Amélioration</h3>
+						<ol>
+              <li>Etablir une stratégie séquencée</li>
+              <li>Adhésion du management et des utilisateurs</li>
+						</ol>
+						<aside class="notes">
+							<ul>
+                <li>Analyse risques avec sonar et au feeling</li>
+                <li>stratégie mise en place bonnes pratiques (boy scout ?)</li>
+                <li>usine peut être coûteux à gérer ⇒ graduellement</li>
+                <li>pour env, voir rapidement ce qui peut bloquer</li>
+                <li>management : coût / workflows et contraintes : tous</li>
+                <li>formalisation (contractuelle ?) du nouveau fonct.</li>
+							</ul>
+						</aside>
+					</section>
+
+          <section>
+            <h3>Je ne sais pas à quoi sert ce code ?!</h3>
+            <ol>
+              <li>Creuser</li>
+              <li>Tester</li>
+              <li>Supprimer</li>
+              <li>Documenter</li>
+            </ol>
+            <aside class="notes">
+              <ul>
+                <li>il faut comprendre à quoi il sert (specs...)</li>
+                <li>sur du code legacy, probable code inutile</li>
+                <li>très peu de cas pertinents pour garder du code non compris</li>
+                <li>communiquer et avertir avant suppressions (surtout si pas de tests)</li>
+                <li>mieux vaut le risque que garder du code non maîtrisé</li>
+                <li>N'ayez pas peur ! retour arrière possible</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section data-state="tp">
+            <h3>Travaux Pratiques : Stratégie</h3>
+            <ul>
+              <li><a hreflang="en" href="http://localhost:9000/">Votre projet analysé dans Sonar</a></li>
+              <li>Analyser les 5 priorités d'amélioration d'après vous</li>
+              <li class="fragment">Bonus : travaillez sur les points indiqués</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>Bien pointer la partie <em lang="en">Hotspots</em></li>
+                <li>Priorités doivent être en fonction de leur coûts et criticité</li>
+                <li>Ne pas oublier : couverture des tests, documentation, ...</li>
+              </ul>
+            </aside>
+          </section>
+
+        </section>
+
+        <section> <!-- CONCLUSION -->
+
+          <section>
+						<h3>Et c'est utile ?</h3>
+						<ul>
+              <li>code plus clair</li>
+              <li>documentation à jour</li>
+              <li>risques de régression fonctionnelle limités</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+                <li>retour sur le scenario dilbert</li>
+                <li>code plus lisible, sans inutile : découverte plus facile</li>
+                <li>tests unitaires</li>
+                <li>n'empêche pas tout mais est une aide énorme</li>
+							</ul>
+						</aside>
+					</section>
+
+          <section>
+						<h3>En entreprise</h3>
+						<ul>
+              <li class="fragment highlight-green">Le <em>principe</em> d'une bonne maintenabilité est acquis (en général)</li>
+              <li>L'utilisation de la dette technique</li>
+              <li class="fragment highlight-red">L'investissement effectif sur la maintenabilité</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+                <li>bonnes pratiques et usine de dev</li>
+                <li>contractuel mauvais (indicateurs) mais utile à avoir</li>
+                <li><strong>code = patrimoine</strong> pas acquis</li>
+                <li>la valorisation effective pas acquise</li>
+                <li>
+                  certaines SSII se placent sur ce créneau :
+                  <a href="http://training.xebia.fr/formations-java-jee/formation-tdd-software-craftsmanship.html">Xebia</a>,
+                  <a href="http://blog.octo.com/les-artisans-codeurs-chez-octo/">Octo</a>, Valtech, Ippon (?)
+                </li>
+							</ul>
+						</aside>
+					</section>
+
+        <section data-state="plusloin">
+          	<h2>Pour aller plus loin</h2>
+          	<ul>
+          		<li>Expérimentez ces pratiques et outils sur vos projets</li>
+          		<li>Des liens <a href="https://github.com/lcottereau/maintainability-slides" hreflang="en">dans cette présentation</a></li>
+          		<li>Des lectures<ul>
+          			<li><a lang="en" href="http://pragprog.com/book/tpp/the-pragmatic-programmer"><cite>The Pragmatic Programmer : from Journeyman to Master</cite></a></li>
+              		<li><a lang="en" href="http://www.cleancoder.com/"><cite>Clean Code : A Handbook of Agile Software Craftmanship</cite></a></li>
+              		<li><a lang="en" href="http://programmer.97things.oreilly.com"><cite>97 Things Every Programer Should Know</cite></a></li>
+            	</ul></li>
+            	<li>Le mouvement des <a hreflang="en" href="http://manifesto.softwarecraftsmanship.org/#/en">artisans codeurs</a></li>
+			</ul>
+			<aside class="notes">
+				<ul>
+					<li>participer à des projets <span lang="en">Open Source</span></li>
+            	    <li>penser à s'abonner aux RSS/twitter/...</li>
+                	<li>l'anglais "technique" est presqu'indispensable</li>
+                	<li>aussi <cite>97 things every software architect should know</cite></li>
+                	<li>qualités: curiosité, remise en cause, réaliste, polyvalent</li>
+                	<li>peur OK (mieux de savoir). Diversité = intérêt</li>
+				</ul>
+			</aside>
+		</section>
+
+          <section>
+            <h2>Crédits</h2>
+            <p>Cette présentation a été réalisée avec <a hreflang="en" href="https://github.com/hakimel/reveal.js">reveal.js</a>,
+                <a href="http://inkscape.org/?lang=fr">Inkscape</a>, <a href="http://sozi.baierouge.fr/">Sozi</a>,
+                <a hreflang="en" href="https://www.draw.io/">diagram.ly</a> et <a hreflang="en" href="http://www.wordle.net/">wordle</a></p>
+            <p>Merci à
+                <a hreflang="en" href="http://www.linkedin.com/in/florentmathe">F. Mathé</a>,
+                <a hreflang="en" href="http://universaluclick.com/licensing_permissions/educational_use">Dilbert.com</a>, 
+                <a lang="en" href="https://commons.wikimedia.org/wiki/Main_Page?uselang=fr">Wikimedia Commons</a>,
+                <a href="http://blog.octo.com/vers-une-usine-de-developpement-2-0/">OCTO</a>, 
+                <a href="http://aaaproduction.fr/">aaa productions</a>,
+                <a hreflang="en" href="https://github.com/danleech/simple-icons">Dan Leech</a>,
+                <a hreflang="en" href="http://obinoobie.deviantart.com/art/Microsoft-Office-Word-Icon-195507790">obinoobie (Deviant Art)</a>,
+                <a hreflang="en" href="http://ivadeath.deviantart.com/art/Karma-264163572">ivadeath (Deviant Art)</a>,
+                <a hreflang="en" href="https://secure.flickr.com/photos/rooster88fan/2077109462/">rooster88fan (Flickr)</a>,
+                <a hreflang="en" href="https://secure.flickr.com/photos/amagill/3367543296/">amagill (Flickr)</a>,
+                <a hreflang="en" href="https://secure.flickr.com/photos/pablogrb/3519906015/">pablogrb (Flickr)</a>,
+                <a hreflang="en" href="http://kogakure.github.com/gitweb-theme/">kogakure (Flickr)</a> et
+                <a hreflang="en" href="http://pixabay.com/id/users/Nemo/">Nemo (pixabay)</a>
+                pour le partage de leurs contributions</p>
+          </section>
+
+          <section>
+            <figure>
+              <blockquote>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</blockquote>
+              <figcaption>&nbsp;&mdash;&nbsp;Martin Fowler</figcaption>
+            </figure>
+          </section>
+
+          <section data-state="dingle">
+            <h1>Merci</h1>
+            <ul>
+              <li class="email"><a href="mailto:laurent@cottereau.name"><code>laurent@cottereau.name</code></a></li>
+              <li class="twitter"><a href="https://twitter.com/lcottereau"><code>@lcottereau</code></a></li>
+              <li class="linkedin"><a href="http://fr.linkedin.com/in/lcottereau/fr"><code>lcottereau</code></a></li>
+              <li class="github"><a hreflang="en" href="https://github.com/lcottereau"><code>lcottereau</code></a></li>
+            </ul>
+          </section>
+
+        </section>
+			</div>
+
+		</div>
+
+		<script src="reveal/lib/js/head.min.js"></script>
+		<script src="reveal/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
