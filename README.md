@@ -4,7 +4,7 @@ Une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
 en cours de travail est consultable](http://lcottereau.github.com/maintainability-slides/) mais n'est pas forcément à jour avec le code source ci-joint.
 
 Le [Synopsis](https://github.com/lcottereau/maintainability-slides/wiki/Synopsis) et les [Exercices](https://github.com/lcottereau/maintainability-slides/wiki/Exercices)
-vous donnent une idée du déroulement de la présentation qui dure entre 7 et 10h suivant le temps laissé pour les exercices.
+vous donnent une idée du déroulement de la présentation qui dure entre 6 et 8h suivant le temps laissé pour les exercices.
 
 ## Installation
 
@@ -14,6 +14,7 @@ vous donnent une idée du déroulement de la présentation qui dure entre 7 et 1
 ## Historique
 
 * 22 mars 2013 : [License Pro CSID de l'IUT de Montreuil (Paris 8)](http://lcottereau.github.com/maintainability-slides/20130322/)
+* 28 octobre 2013 : [Option ASR de Telecom SudParis](http://lcottereau.github.io/maintainability-slides/20131028/)
 
 ## Contexte
 
