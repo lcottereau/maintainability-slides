@@ -112,89 +112,37 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section> <!-- TITRE -->
+				<section>
 					<h1 style="font-size: 2.3em;">Développement <img alt="Logiciel" class="no-border" src="img/floppy.png"/> Durable</h1>
 					<p>Maintenabilité des applications</p>
 				</section>
 
-
-				<section> <!-- PRESENTATION -->
-
-			<section data-state="question">
-            <h2 style="display: none">Questions préliminaires</h2>
-            <ul>
-                <li>Différence entre projet et maintenance ?</li>
-                <li>Différents types de maintenance ?</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li>3 phases TBR &ndash; Flou autour de la MEP &ndash; Trains &ndash; 2 def projet</li>
-                <li><a href="https://fr.wikipedia.org/wiki/Informatique">Corrective &ndash; Evolutive &ndash; Adaptative</a> &ndash; Préventive (moins en informatique)</li>
-              </ul>
-            </aside>
+				<section>
+					<section>
+						<h2>La vraie vie de développeur</h2>
+						<p><img alt="" src="img/dilbert-reprise-projet.gif" /></p>
+						<aside class="notes">
+							<ul>
+								<li>Pas comme le film <a href="https://fr.wikipedia.org/wiki/Les_Stagiaires"><cite>Les Stagiaires</cite></a></li>
+								<li>Prise en charge d'un projet suite à démission. Livraison imminente</li>
+								<li>Au moins, pas de documentation, pas de fausse croyances</li>
+								<li>Correction de code dupliqué, mais en fait pas vraiment mais presque</li>
+								<li>Régression fonctionnelle (le plus frustant pour les utilisateurs)</li>
+							</ul>
+						</aside>
 					</section>
-
-          <section>
-            <h2>Laurent Cottereau</h2>
-            <p><img class="no-border" src="img/skills.png" alt="Java GNU/Linux Bash CSS SQL Git J2EE HTTP Maven Accessibilité Scrum JavaScript Spring Performance PHP Visual Basic HTML Subversion jQuery JRAT Jmeter Selenium Firebug TCP/IP JMS"/></p>
-            <aside class="notes">
-              <ul>
-                <li>dev et management d'équipes de dev</li>
-                <li>
-                  RATP mais aussi SAPN, EFG, Cofiroute, Roche Bobois,
-                  Conseil Régional de l'Ile de France, Aventis. Sénat
-                </li>
-                <li>1 à 5 développeurs, de 2 mois à 1 an</li>
-                <li>Pas de gros projets</li>
-              </ul>
-              <p>Important pour mettre ma présentation dans contexte de mon XP</p>
-            </aside>
-          </section>
-
-          <section>
-            <h2>La vraie vie de développeur</h2>
-            <p><img alt="" src="img/dilbert-reprise-projet.gif" /></p>
-            <aside class="notes">
-              <ul>
-              	<li>Pas comme le film <a href="https://fr.wikipedia.org/wiki/Les_Stagiaires"><cite>Les Stagiaires</cite></a></li>
-                <li>Prise en charge d'un projet suite à démission. Livraison imminente</li>
-                <li>Au moins, pas de documentation, pas de fausse croyances</li>
-                <li>Correction de code dupliqué, mais en fait pas vraiment mais presque</li>
-                <li>Régression fonctionnelle (le plus frustant pour les utilisateurs)</li>
-              </ul>
-            </aside>
-          </section> 
-
-          <section>
-            <h2>Des impacts forts</h2>
-            <p><img class="fragment" src="img/pentium.jpg"/> <img class="fragment" src="img/ariane.jpg" alt="Le bug "/></p>
-			<aside class="notes">
-              <ul>
-                <li>Bug division du Pentium en 1994 (problème d'init de variable). Peut-être 475 m$</li>
-                <li><a hreflang="en" href="https://en.wikipedia.org/wiki/Ariane_5_Flight_501">Bug integer overflow vol inaugural Ariane 5</a>. 370 m$, bug le plus coûteux de l'histoire</li>
-                <li>Estimation du coût des pannes logicielles pour l'économie mondiale proche centaine de milliards d'€</li>
-                <li><a href="https://www.inria.fr/centre/grenoble/actualites/la-fiabilite-des-systemes-devient-un-defi-majeur">Toujours du boulot</a> mais de grandes responsabilités</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section data-state="question">
-            <p>Qu'est-ce que la maintenabilité ?</p>
-            <aside class="notes">
-              Après les définitions et l'exemple, qu'en pensez-vous ?
-            </aside>
-          </section>
 
 					<section>
 						<h2>Proposition de définition</h2>
 						<blockquote>Capacité à pouvoir maintenir une application sur le long terme et pour tout type de maintenance</blockquote>
-            <p><img class="fragment roll-in no-border" alt="cela a un coût" src="img/money.png"/></p>
+						<p><img class="fragment roll-in no-border" alt="cela a un coût" src="img/money.png"/></p>
 						<aside class="notes">
 							<ul>
+								<li>pas le temps de trop en discuter en 2h</li>
 								<li>au travers des changements d'équipe, des migrations techniques, des grosses évolutions</li>
 								<li>moins il est cher (au sens large) de faire une évolution, plus la maintenabilité est haute</li>
 								<li>faire mal est moins cher à court terme. plus cher de redresser la qualité</li>
-                <li> ⇒ adapter au contexte / à la durée de vie</li>
+								<li> ⇒ adapter au contexte / à la durée de vie</li>
 							</ul>
 						</aside>
 					</section>
@@ -208,7 +156,6 @@
 						</p>
 						<aside class="notes">
 							<ul>
-								<li>quels sont les enjeux d'après vous ?</li>
 								<li>durée de vie</li>
 								<li>complexités du code, besoins en performance</li>
 								<li>criticité des bugs</li>
