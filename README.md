@@ -8,7 +8,8 @@ vous donnent une idée du déroulement de la présentation qui dure entre 6 et 8
 
 ## Installation
 
-Ouvrir le fichier [index.html](index.html) dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
+ 1. `git submodule init; git submodule update` va récupérer la bibliothèque [reveal.js](https://github.com/hakimel/reveal.js)
+ 1. Ouvrir le fichier [index.html](index.html) dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
 
 ## Historique
 
