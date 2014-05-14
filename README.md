@@ -8,8 +8,7 @@ vous donnent une idée du déroulement de la présentation qui dure entre 6 et 8
 
 ## Installation
 
-1. Installer [reveal.js (zip)](https://github.com/hakimel/reveal.js/archive/master.zip) dans un répertoire `reveal` à la racine du projet.
-1. Ouvrir le fichier [index.html](index.html) dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
+Ouvrir le fichier [index.html](index.html) dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
 
 ## Historique
 
@@ -30,4 +29,3 @@ Il faut poser des questions sur
     * connaissance des différentes briques de l'usine de dev
     * en particulier, quel gestionnaire de version est utilisé
 * Existence de projets sur lesquels travailler concrètement
-
