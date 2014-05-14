@@ -36,9 +36,9 @@
 				box-shadow: none;
         		vertical-align: middle;
 			}
-		    .reveal cite {
-		    	font-style: italic;
-		    }
+	    .reveal cite {
+	    	font-style: italic;
+	    }
 			.reveal ul {
 				list-style-type: square;
 			}
@@ -48,59 +48,39 @@
 			.reveal figcaption cite {
 				font-style: italic;
 			}
-		    li.email {
-		        list-style-image: url('img/icon-email.png');
-		    }
-		    li.linkedin {
-		        list-style-image: url('img/icon-linkedin.png');
-		    }
-		    li.twitter {
-		        list-style-image: url('img/icon-twitter.png');
-		    }
-		    li.github {
-		        list-style-image: url('img/icon-github.png');
-		    }
-			.dingle body {
-				background: url(img/fond_dingle.jpg) no-repeat center center fixed;
+	    li.email {
+	        list-style-image: url('img/icon-email.png');
+	    }
+	    li.linkedin {
+	        list-style-image: url('img/icon-linkedin.png');
+	    }
+	    li.twitter {
+	        list-style-image: url('img/icon-twitter.png');
+	    }
+	    li.github {
+	        list-style-image: url('img/icon-github.png');
+	    }
+			.plusloin body {
+			    background-image: url('img/forkme.png');
+			    background-repeat: no-repeat;
+			    background-position: top right;
 			}
-			.warning body {
-				background: url(img/warning.jpg) no-repeat center center fixed;
+			.reveal .note {
+				font-size: smaller;
 			}
-		    .question body {
-		        background: url(img/question_mark.png) no-repeat center center fixed;
-		    }
-		    .question section.present, .tp section.present {
-		        background-color: rgba(0, 0, 0, 0.75);
-		        border-radius: 10px;
-		        padding: 10px;
-		    }
-		    .tp body {
-		        background: url(img/travaux-pratiques.jpg) no-repeat center center fixed;
-		    }
-			.dingle body, .warning body, .question body, .tp body {
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-			}
-			.warning section {
-				border-radius: 10px;
-				background-color: rgba(0, 0, 0, 0.5);
-			}
-		    .dingle .reveal a:not(.image) {
-		        color: white;
-		    }
-		    .dingle .reveal a:not(.image):hover {
-		        text-decoration: underline;
-		    }
-		    .plusloin body {
-		        background-image: url('img/forkme.png');
-		        background-repeat: no-repeat;
-		        background-position: top right;
-		    }
-		    .reveal .note {
-		    	font-size: smaller;
-		    }
+	    .reveal a:not(.image) {
+	        color: white;
+	    }
+	    .reveal a:not(.image):hover {
+	        text-decoration: underline;
+					background: transparent;
+					color: white;
+					border: none;
+	    }
+	    html.light-background .present {
+	    	background-color: rgba(0, 0, 0, 0.8);
+	    	border-radius: 10px;
+	    }
 		</style>
 
 	</head>
@@ -147,7 +127,7 @@
 						</aside>
 					</section>
 
-					<section data-state="question">
+					<section>
 						<h3>Adaptation au contexte</h3>
 						<p>
 							<img class="fragment" alt="projet pilote" src="img/pilote.jpg"/>
@@ -296,7 +276,7 @@ public String toString() {
             </aside>
           </section>
 
-          <section data-state="warning">
+          <section data-background="img/slide-warning.jpg">
             <h3>Comprenez ce que vous faites !</h3>
             <pre class="fragment"><code>private static final long serialVersionUID = 1L;</code></pre>
             <aside class="notes">
@@ -1359,9 +1339,38 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 						</aside>
 					</section>
 
+				<section data-background="img/slide-beer.jpg" data-state="light-background">
+					<h2>Crédits</h2>
+					<ul>
+						<li><em>Logiciels</em> :
+							<a hreflang="en" href="http://lab.hakim.se/reveal-js/">reveal.js</a>,
+							<a href="http://inkscape.org/?lang=fr">inkscape</a>,
+							<a hreflang="en" href="http://simpleicons.org/">simple icons</a>,
+							<a hreflang="en" href="https://www.draw.io/">diagram.ly</a> et
+							<a hreflang="en" href="http://www.wordle.net/">wordle</a>
+						</li>
+						<li><em>Photos</em> :
+							<a hreflang="en" href="http://www.linkedin.com/in/florentmathe">F. Mathé</a>,
+							<a hreflang="en" href="http://universaluclick.com/licensing_permissions/educational_use">Dilbert.com</a>,
+							<a lang="en" href="https://commons.wikimedia.org/wiki/Main_Page?uselang=fr">Wikimedia Commons</a>,
+							<a href="http://blog.octo.com/vers-une-usine-de-developpement-2-0/">OCTO</a>,
+							<a href="http://aaaproduction.fr/">aaa productions</a>,
+							<a hreflang="en" href="https://github.com/danleech/simple-icons">Dan Leech</a>,
+							<a hreflang="en" href="http://obinoobie.deviantart.com/art/Microsoft-Office-Word-Icon-195507790">obinoobie </a>,
+							<a hreflang="en" href="http://ivadeath.deviantart.com/art/Karma-264163572">ivadeath</a>,
+							<a hreflang="en" href="https://secure.flickr.com/photos/rooster88fan/2077109462/">rooster88fan</a>,
+							<a hreflang="en" href="https://secure.flickr.com/photos/amagill/3367543296/">amagill</a>,
+							<a hreflang="en" href="https://secure.flickr.com/photos/pablogrb/3519906015/">pablogrb</a>,
+							<a hreflang="en" href="http://kogakure.github.com/gitweb-theme/">kogakure</a> et
+							<a hreflang="en" href="http://pixabay.com/id/users/Nemo/">Nemo</a>
+						</li>
+					</ul>
+					<aside class="notes">
           <section>
 						<h3>En entreprise</h3>
 						<ul>
+							<li>si dans la salle, je leur paie une bière non virtuelle</li>
+							<li>dans le même esprit de partage, partagé sur github</li>
               <li class="fragment highlight-green">Le <em>principe</em> d'une bonne maintenabilité est acquis (en général)</li>
               <li>L'utilisation de la dette technique</li>
               <li class="fragment highlight-red">L'investissement effectif sur la maintenabilité</li>
@@ -1406,26 +1415,8 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 		</section>
 
           <section>
-            <h2>Crédits</h2>
-            <p>Cette présentation a été réalisée avec <a hreflang="en" href="https://github.com/hakimel/reveal.js">reveal.js</a>,
-                <a href="http://inkscape.org/?lang=fr">Inkscape</a>, <a href="http://sozi.baierouge.fr/">Sozi</a>,
-                <a hreflang="en" href="https://www.draw.io/">diagram.ly</a> et <a hreflang="en" href="http://www.wordle.net/">wordle</a></p>
-            <p>Merci à
-                <a hreflang="en" href="http://www.linkedin.com/in/florentmathe">F. Mathé</a>,
-                <a hreflang="en" href="http://universaluclick.com/licensing_permissions/educational_use">Dilbert.com</a>, 
-                <a lang="en" href="https://commons.wikimedia.org/wiki/Main_Page?uselang=fr">Wikimedia Commons</a>,
-                <a href="http://blog.octo.com/vers-une-usine-de-developpement-2-0/">OCTO</a>, 
-                <a href="http://aaaproduction.fr/">aaa productions</a>,
-                <a hreflang="en" href="https://github.com/danleech/simple-icons">Dan Leech</a>,
-                <a hreflang="en" href="http://obinoobie.deviantart.com/art/Microsoft-Office-Word-Icon-195507790">obinoobie (Deviant Art)</a>,
-                <a hreflang="en" href="http://ivadeath.deviantart.com/art/Karma-264163572">ivadeath (Deviant Art)</a>,
-                <a hreflang="en" href="https://secure.flickr.com/photos/rooster88fan/2077109462/">rooster88fan (Flickr)</a>,
-                <a hreflang="en" href="https://secure.flickr.com/photos/amagill/3367543296/">amagill (Flickr)</a>,
-                <a hreflang="en" href="https://secure.flickr.com/photos/pablogrb/3519906015/">pablogrb (Flickr)</a>,
-                <a hreflang="en" href="http://kogakure.github.com/gitweb-theme/">kogakure (Flickr)</a> et
-                <a hreflang="en" href="http://pixabay.com/id/users/Nemo/">Nemo (pixabay)</a>
-                pour le partage de leurs contributions</p>
-          </section>
+					</aside>
+				</section>
 
           <section>
             <figure>
@@ -1434,15 +1425,15 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
             </figure>
           </section>
 
-          <section data-state="dingle">
-            <h1>Merci</h1>
-            <ul>
-              <li class="email"><a href="mailto:laurent@cottereau.name"><code>laurent@cottereau.name</code></a></li>
-              <li class="twitter"><a href="https://twitter.com/lcottereau"><code>@lcottereau</code></a></li>
-              <li class="linkedin"><a href="http://fr.linkedin.com/in/lcottereau/fr"><code>lcottereau</code></a></li>
-              <li class="github"><a hreflang="en" href="https://github.com/lcottereau"><code>lcottereau</code></a></li>
-            </ul>
-          </section>
+				<section data-background="img/slide-dingle.jpg">
+				  <h1>Merci</h1>
+				  <ul>
+				    <li class="email"><a href="mailto:laurent@cottereau.name"><code>laurent@cottereau.name</code></a></li>
+				    <li class="twitter"><a href="https://twitter.com/lcottereau"><code>@lcottereau</code></a></li>
+				    <li class="linkedin"><a href="http://fr.linkedin.com/in/lcottereau/fr"><code>lcottereau</code></a></li>
+				    <li class="github"><a hreflang="en" href="https://github.com/lcottereau"><code>lcottereau</code></a></li>
+				  </ul>
+				</section>
 
         </section>
 			</div>
