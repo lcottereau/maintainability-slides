@@ -120,8 +120,7 @@
 							<ul>
 								<li>pas le temps de trop en discuter en 2h</li>
 								<li>au travers des changements d'équipe, des migrations techniques, des grosses évolutions</li>
-								<li>moins il est cher (au sens large) de faire une évolution, plus la maintenabilité est haute</li>
-								<li>faire mal est moins cher à court terme. plus cher de redresser la qualité</li>
+								<li>en général, - cher ⇔ - maintenable</li>
 								<li> ⇒ adapter au contexte / à la durée de vie</li>
 							</ul>
 						</aside>
@@ -157,25 +156,25 @@
 							<ul>
 								<li>Beaucoup de boulot : toujours après projet</li>
 								<li>site web Sénat début années 90, système de paie 25 ans</li>
-								<li>des choses à apprendre : compliqué (cf longueur intro et pas de vrai nom), montée en puissance (outils)</li>
-								<li>vu le marché, excellente valorisation</li>
+								<li>une des nombreuses compétences du dev moderne</li>
+								<li>montée en puissance (outils)</li>
+								<li>vu le marché, excellente perspective de valorisation</li>
 							</ul>
 						</aside>
 					</section>
 
 					<section>
 						<h3>Ce que l'on verra</h3>
-						<ol>
-							<li>4 Bonnes pratiques</li>
-							<li>Gestion des environnements</li>
-							<li>Usine de développement</li>
-							<li>Stratégie de reprise</li>
-						</ol>
+						<ul>
+							<li>Technique</li>
+							<li>Documentation</li>
+							<li>Attitude</li>
+						</ul>
 						<aside class="notes">
 							<ul>
-								<li>particulièrement pour l'informatique de gestion</li>
-                <li>indicateur de maintenabilité avec usine de dev</li>
-                <li>comment vous comporter avec scenario dilbert</li>
+								<li>4 Bonnes pratiques</li>
+								<li>extract 1 journée avec étudiants, dont <acronym title="Travaux pratiques">TPs</acronym></li>
+								<li>2h ⇒ pas gestion environnements, usine de dev, indicateurs, ...</li>
 							</ul>
 						</aside>
 					</section>
@@ -189,7 +188,7 @@
 							Si vous êtes un jour responsables d'équipes de dev
 							<ul>
 								<li>équipes projet ET maintenance</li>
-								<li>dev en interne, pour limiter perte de connaissance interne et incapacité à évaluer les travaux externes</li>
+								<li>connaissance technique en interne et capacité à évaluer les travaux externes</li>
 								<li>pas de perte de temps à abuser les indicateurs de suivi (uniquement une impression de contrôle)</li>
 							</ul>
 						</aside>
@@ -202,8 +201,10 @@
             <h2>1&nbsp;&dash;&nbsp;#WTF</h2>
             <p><a href="http://www.osnews.com/story/19266/WTFs_m" title="The true indicator of code quality, on OSNews"><img src="img/wtf.jpg" alt="The true indicator of code quality, the What-the-fucks per minute" /></a></p>
             <aside class="notes">
-              Premier problème de maintenance est l'incompréhension (par un nouveau dev mais aussi soi-même après 6 mois). Voir aussi 
-              le <a hreflang="en" href="http://www.cs.arizona.edu/projects/sumatra/hallofshame/">Java Hall Of Shame</a>.
+							<ul>
+								<li><em lang="en">Principle of least astonishment</em> (via <a hreflang="en" href="http://www.cs.arizona.edu/projects/sumatra/hallofshame/">Java Hall Of Shame</a>)</li>
+								<li>Incompréhension par un autre dev (ou soi-même après 6 mois)</li>
+								<li>Toujours un peu mais doit être limité</li>
             </aside>
           </section>
 
@@ -259,17 +260,10 @@
         <section>
           <section> <!-- 1.2) Less is More -->
             <h2>2&nbsp;&dash;&nbsp;Less Is More</h2>
-            <pre class="fragment"><code>@Override
-public String toString() {
-  return "Message [senderName=" + senderName + ", receiverName="
-    + receiverName + ", sendingDate=" + sendingDate + ", subject="
-    + subject + ", body=" + body + "]";
-}</code></pre>
             <p class="fragment">Moins de fonctionnalité</p>
             <aside class="notes">
               <ul>
-              	<li>Pourquoi certains élèves ont codé <code>toString()</code></li>
-                <li>Deuxième et plus gros problème</li>
+              	<li>Très présent dans le code des élèves (copier/coller ? toString inutiles...)</li>
                 <li>pas incohérent avec la réponse au besoin : principes de simplicité dans le design (apple)</li>
                 <li>Agilité aide à définir les fonctions au plus juste</li>
               </ul>
@@ -297,13 +291,13 @@ public String toString() {
             <pre class="fragment"><code>import java.util.Date;
 //import java.util.Date;</code></pre>
             <pre class="fragment"><code>/**
- * 
+ *
  */
 private static final long serialVersionUID = 1L;</code></pre>
             <pre class="fragment"><code>@Override
 public void setSenderEmail(String senderEmail) {
   // TODO Auto-generated method stub
-	
+
 }</code></pre>
 			<pre class="fragment"><code>/**
 * $Id:$
@@ -316,6 +310,7 @@ public int doSomething() {
 }</code></pre>
             <aside class="notes">
               <ul>
+								<li>exemples tirés des projets d'élèves</li>
               	<li>aucun code binaire (cf projet)</li>
                 <li>infos qui ne seront pas tenues à jours (@author est déjà ailleurs)</li>
                 <li>classique : vieux code de test : git est là pour ça</li>
@@ -354,20 +349,6 @@ public int doSomething() {
               </aside>
           </section>
 
-          <section data-state="question">
-            <h3>Bibliothèques, API et Frameworks</h3>
-            <p>Différences ?</p>
-
-            <aside class="notes">
-              <ul>
-                <li>Bibliothèques (pas library en français) : collections de nouvelles fonctions à utiliser</li>
-                <li>API : description de ces fonctions (javadoc)</li>
-                <li>Framework : IoC. un programme sur lequel on injecte un comportement. Inclut organisation, paradigms, conventions en plus de bibliothèques</li>
-                <li>raccord sur la curiosité permanente</li>
-              </ul>
-            </aside>
-          </section>
-
           <section>
             <h4>Se concentrer sur la Valeur ajoutée</h4>
             <p>
@@ -375,7 +356,7 @@ public int doSomething() {
               <img alt="logiciel de blog, " src="img/wordpress.jpg" />
               <img alt="jeu vidéo" src="img/wow.jpg"/>
             </p>
-            <p class="fragment">Critères de choix classiques</p>
+            <p class="fragment highlight-red">Attention au choix framework/bibliothèque/API</p>
             <aside class="notes">
               <ul>
                 <li>Coder uniquement spécificité/élément différenciateur</li>
@@ -389,224 +370,8 @@ public int doSomething() {
           </section>
 
           <section>
-            <h3>Pépite : Lombok</h3>
-            <ul>
-              <li><code>@Getter(lazy=true)</code></li>
-              <li><code>@ToString</code></li>
-              <li><code>@<em>XXX</em>ArgsConstructor</code></li>
-              <li><code>@Data</code></li>
-              <li><code>@Cleanup</code></li>
-              <li><code>@Log</code></li>
-              <li>...</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li>Design Patterns. Lombok fournit aussi le code</li>
-                <li>Plus rapide ET plus lisible.</li>
-                <li>
-                  de <a href="http://projectlombok.org/features/" hreflang="en">nombreuses autres</a>,
-                  des <a href="http://projectlombok.org/features/experimental/" hreflang="en">expérimentales</a> (dont <code>@Builder</code>) et
-                  des <a href="https://github.com/peichhorn/lombok-pg" hreflang="en">non-officielles</a>
-                </li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h4>Sans Lombok</h4>
-            <pre style="font-size: 7%;"><code>package server;
-
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="MESSAGES_TABLE")
-public class MessageBackup implements Serializable{
-	private int id;
-	
-	public String senderName;
-	public String receiverName;
-	public String sendingDate;
-	public String subject;
-	public String body;
-	public int alreadyRead=0;
-	
-	public MailBox mailb;
-	
-	//private MailBox mailbox;
-	
-	
-	public MessageBackup() {
-	}
-	
-	//contruct a news message
-	public MessageBackup(String senderName, String sendingDate,
-			String subject, String body){
-		this.senderName = senderName;
-		this.receiverName = "@@";
-		this.sendingDate = sendingDate;
-		this.subject = subject;
-		this.body = body;
-		this.alreadyRead = 0;
-	}
-	public MessageBackup(String senderName, String receiverName, String sendingDate,
-			String subject, String body) {
-		this.senderName = senderName;
-		this.receiverName = receiverName;
-		this.sendingDate = sendingDate;
-		this.subject = subject;
-		this.body = body;
-		this.alreadyRead = 0;
-	}
-	
-	@Override
-	public String toString() {
-		return "Message [senderName=" + senderName + ", receiverName="
-				+ receiverName + ", sendingDate=" + sendingDate + ", subject="
-				+ subject + ", body=" + body + "]";
-	}
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="ID")
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	@ManyToOne
-	@JoinColumn(name="MAILBOX_ID")
-	public MailBox getMailb() {
-		return mailb;
-	}
-
-	public void setMailb(MailBox mailb) {
-		this.mailb = mailb;
-	}
-	@Column(name="SENDER")
-	public String getSenderName() {
-		return senderName;
-	}
-	public void setSenderName(String senderName) {
-		this.senderName = senderName;
-	}
-	//@Column(name="RECEIVER")
-	public String getReceiverName() {
-		return receiverName;
-	}
-	public void setReceiverName(String receiverName) {
-		this.receiverName = receiverName;
-	}
-	@Column(name="DATE")
-	public String getSendingDate() {
-		return sendingDate;
-	}
-	public void setSendingDate(String sendingDate) {
-		this.sendingDate = sendingDate;
-	}
-	@Column(name="SUBJECT")
-	public String getSubject() {
-		return subject;
-	}
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
-	@Column(name="BODY")
-	public String getBody() {
-		return body;
-	}
-	public void setBody(String body) {
-		this.body = body;
-	}
-	//@Column(name="READ")
-	public int getAlreadyRead() {
-		return alreadyRead;
-	}
-	public void setAlreadyRead(int alreadyRead) {
-		this.alreadyRead = alreadyRead;
-	}
-	/*
-	@ManyToOne()
-	@JoinColumn(name="MAILBOX_ID")
-	public MailBox getMailbox() {
-		return mailbox;
-	}
-	public void setMailbox(MailBox mailbox) {
-		this.mailbox = mailbox;
-	}
-	*/
-}
-</code></pre>
-          </section>
-
-          <section>
-            <h4>Avec Lombok</h4>
-            <pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
-    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
-    &lt;version&gt;1.12.2&lt;/version&gt;
-    &lt;scope&gt;provided&lt;/scope&gt;
-&lt;/dependency&gt;</code></pre>
-            <pre><code>@Entity
-@Data
-public class MessageBackup implements Serializable {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
-	private String senderName;
-	private String receiverName;
-	private String sendingDate;
-	private String subject;
-	private String body;
-	private int alreadyRead=0;
-	@ManyToOne
-	@JoinColumn(name="MAILBOX_ID")
-	private MailBox mailbox;
-}</code></pre>
-            <aside class="notes">
-              <ul>
-              	<li>130 lignes ⇒ 28 lignes</li>
-                <li>récupération de la dépendance JPA</li>
-                <li>suppression des commentaires + imports inutiles</li>
-                <li>suppression de @Table, @Column (convention)</li>
-                <li>pas d'attributs publics</li>
-                <li>@Data pour constructeurs, getters, setters, toString</li>
-                <li> ⇒ que de l'utile ? (débat sur mailbox, contraintes à ajouter)</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h4>Difficultés</h4>
-            <ul>
-              <li>Intégration</li>
-              <li>Debug</li>
-              <li>#WTF</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li>à l'IDE : jar à installer dans Eclipse ou IntelliJ</li>
-                <li>aux frameworks : <a hreflang="en" href="https://github.com/aaronfreeman/play-lombok">difficulté avec Play</a></li>
-                <li>pas de problème pour le code généré (cf scope provided) mais lien impossible en debug IDE</li>
-                <li>même difficultés qu'avec l'AOP : documentation et/ou rester simple</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section data-state="tp">
-            <h4>Travaux Pratiques : Lombok</h4>
-            <p>Mise en place sur votre micro-projet</p>
-            <p><code style="text-decoration: underline;">http://projectlombok.org/features/</code></p>
-            <aside class="notes">
-            </aside>
+            <h3>Design patterns automatiques</h3>
+						<p>TODO</p>
           </section>
 
           <section>
@@ -671,6 +436,7 @@ public class MessageBackup implements Serializable {
             </figure>
             <aside class="notes">
               <ul>
+								<li>Pour tétris, doc énorme</li>
                 <li>Il faut garder l'expressivité</li>
                 <li>Le plus important est de réfléchir à ce qui est fait. Savoir pourquoi on fait des choix</li>
                 <li>Pas possible de faire tous les bons choix, mais y réfléchir vous empêche de les refaire ⇒ meilleurs plus vite</li>
@@ -678,16 +444,6 @@ public class MessageBackup implements Serializable {
             </aside>
           </section>
 
-          <section data-state="tp">
-            <h3>Travaux Pratiques : nettoyez vos projets</h3>
-            <p>Lister le maximum de tâches permettant de diminuer la quantité de code sur votre projet</p>
-            <aside class="notes">
-              <ul>
-                <li>Chaque binôme propose un truc à son tour. Le dernier à en proposer gagne</li>
-                <li>Il faut un exemple précis à chaque fois</li>
-              </ul>
-            </aside>
-          </section>
         </section>
 
         <section>
@@ -696,12 +452,12 @@ public class MessageBackup implements Serializable {
             <p class="fragment"><img alt="Pas de gros documents Word/OpenOffice" src="img/word-no-more.png"/></p>
             <aside class="notes">
               <ul>
+								<li>refus des grosses docs monolithiques</li>
                 <li><a href="https://fr.wikipedia.org/wiki/Cycle_de_d%C3%A9veloppement_%28logiciel%29#Mod.C3.A8le_en_cascade">Vestiges du BTP (cascade)</a> : contraintes sur ordonnancement et coûts de changement</li>
                 <li>Jamais lus et mis à jour (contributeurs, workflow)</li>
                 <li> ⇒ on creuse dans le code pour connaître le métier</li>
                 <li>cohérent : le code est le patrimoine</li>
                 <li>mais on peut quand même faire mieux</li>
-                <li>Pas lié à Word, même si le plus courant</li>
               </ul>
             </aside>
           </section>
@@ -730,12 +486,6 @@ public class MessageBackup implements Serializable {
               <li class="fragment">Gestionnaire de tickets</li>
               <li class="fragment">Gestionnaire de version</li>
             </ul>
-            <pre class="fragment"><code class="Bash">$:~/anaf$ git log --pretty=oneline --abbrev-commit
-              3b962cf vues
-              98ee6cd vues
-              b029a3f model et vues
-              e3a527c model et vues
-              5187f8b security</code></pre>
             <pre class="fragment"><code class="Bash">$:~/trace$ git log --pretty=oneline --abbrev-commit
               5ab30fb réduction du champ d'application d'une règle CSS
                       pour les vignettes vidéo
@@ -752,7 +502,7 @@ public class MessageBackup implements Serializable {
                 <li>historique des problèmes, incidents, évolutions fonctionnelles, choix d'architecture</li>
                 <li>Pas automatique : créer et bien remplir (penser à soi dans 2 ans). Trouver la maille.</li>
                 <li>1 ligne de résumé. Puis détails si nécessaires</li>
-                <li>Lien vers tickets (et inversement, IDE aident)</li>
+                <li>Lien vers tickets (et inversement, outils aident)</li>
                 <li>pas cher et coût très réparti</li>
               </ul>
             </aside>
@@ -781,6 +531,7 @@ public class MessageBackup implements Serializable {
                   <li>Lu car court et adapté : viser le lecteur cible</li>
                   <li>livré avec le code et lisible (markdown)</li>
                 </ul></li>
+								<li>Si nécessaire, doublon avec word</li>
               </ul>
             </aside>
           </section>
@@ -804,19 +555,6 @@ public class MessageBackup implements Serializable {
                 <li>Plutôt contacts permanents (mail d'équipe)</li>
                 <li>Changelog et historique des choix techniques si reformulation pour utilisateurs</li>
                 <li>Roadmap, Métaphore, FAQ, Plan de reprise</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h3>Contractualisation</h3>
-            <p>Obligé de faire des documents Word ?</p>
-            <p class="fragment">⇨ dédoublez la documentation</p>
-            <aside class="notes">
-              <ul>
-                <li>Les gros documents words ne seront pas mis à jour</li>
-                <li>Les autres vous serviront à la maintenance</li>
-                <li>L'entreprise choisit de dépenser de l'argent dans des processus "qualité"</li>
               </ul>
             </aside>
           </section>
@@ -853,6 +591,17 @@ public class MessageBackup implements Serializable {
             </aside>
           </section>
 
+					<section>
+						<h3>Soyez vigilants</h2>
+						<p><img alt="Attention ! Il pourrait y avoir des ninjas dans le coin" src="img/ninja.png"/></p>
+						<aside class="notes">
+							<ul>
+								<li>Un grand nombre d'information est là pour vous aider</li>
+								<li>Ne laissez rien passer</li>
+								<li><a hreflang="en" href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">La règle du boy scout</a></li>
+							</ul>
+						</aside>
+					</section>
           <section>
             <h3>Compilateur</h3>
             <pre><code class="no-highlight">
@@ -865,14 +614,14 @@ public class MessageBackup implements Serializable {
             </code></pre>
             <aside class="notes">
             	<ul>
-            		<li><a hreflang="en" href="http://marxsoftware.blogspot.fr/2010/10/javacs-xlint-options.html">Option non standard de la JVM oracle</a></li>
-            		<li><a hreflang="en" href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javac.html#nonstandard">Autres warnings</a> : <code>fallthrough</code>, <code>finally</code>, <code>unused</code></li>
-                	<li>
-                  		<a hreflang="en" href="http://stackoverflow.com/questions/234075/what-is-your-best-programmer-joke/235307#235307">Blague
-                  		du fumeur</a> qu'il dit que c'est OK parce qu'il est informaticien : il se fiche des avertissements,
-                 		seules les erreurs le préoccupent
-               		</li>
-               	</ul>
+								<li>
+									<a hreflang="en" href="http://stackoverflow.com/questions/234075/what-is-your-best-programmer-joke/235307#235307">Blague
+										du fumeur</a> qui dit que c'est OK parce qu'il est informaticien : il se fiche des avertissements,
+										seules les erreurs le préoccupent
+								</li>
+									<li><a hreflang="en" href="http://marxsoftware.blogspot.fr/2010/10/javacs-xlint-options.html">Option non standard de la JVM oracle</a></li>
+									<li><a hreflang="en" href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javac.html#nonstandard">Autres warnings</a> : <code>fallthrough</code>, <code>finally</code>, <code>unused</code></li>
+							</ul>
             </aside>
           </section>
 
@@ -882,6 +631,7 @@ public class MessageBackup implements Serializable {
             <aside class="notes">
               <ul>
                 <li>Reprend les infos du compilateur. En rajoute : imports</li>
+								<li>Possibilité de plugins en plus</li>
                 <li>Souvent code couleur (en haut à droite)</li>
               </ul>
             </aside>
@@ -890,7 +640,7 @@ public class MessageBackup implements Serializable {
           <section>
             <h3>Logs</h3>
             <ul>
-              <li>Maelström d'API</li>
+              <li>Nombreuses API</li>
               <li>Maîtrise nécessaire</li>
               <li>Suivez-les</li>
             </ul>
@@ -918,18 +668,6 @@ public class MessageBackup implements Serializable {
           </section>
 
           <section>
-            <h3>Soyez vigilants</h2>
-            <p><img alt="Attention ! Il pourrait y avoir des ninjas dans le coin" src="img/ninja.png"/></p>
-            <aside class="notes">
-              <ul>
-                <li>Un grand nombre d'information est là pour vous aider</li>
-                <li>Ne laissez rien passer</li>
-                <li><a hreflang="en" href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">La règle du boy scout</a></li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
             <h3>Quoi faire ?</h3>
             <ol>
               <li>Analyser</li>
@@ -941,6 +679,7 @@ public class MessageBackup implements Serializable {
               <ul>
                 <li><abbr title="informatique">info.</abbr> facile car il y a <strong>toujours</strong> une explication rationnelle</li>
                 <li>si vraiment dur, <a hreflang="en" href="http://stackoverflow.com/">c'est vraiment nécessaire de creuser</a></li>
+								<li>stratégie open-source d'une entreprise</li>
                 <li>repousser avec TODO ou ticket</li>
                 <li>pas garder le message pour voir les nouveaux : <code>@SuppressWarning</code> ou config de la source</li>
                 <li>ne pas désactiver les futurs messages</li>
@@ -954,8 +693,13 @@ public class MessageBackup implements Serializable {
             <p>Changer la structure sans changer le fonctionnel</p>
             <aside class="notes">
             	<ul>
-            		<li>Objectif : maintenabilité améliorée</li>
-            		<li>Vigilance pour ce qui peut être un <a hreflang="en" lang="en" href="https://en.wikipedia.org/wiki/Code_refactoring">code smell</a></li>
+            		<li>Objectif : maintenabilité améliorée
+									<ul>
+										<li>lisibilité</li>
+										<li>nettoyages (direct si <abbr title="suppression">suppr</abbr> fonction)</li>
+										<li>architecture logicielle/OO</li>
+									</ul></li>
+            		<li>Vigilance pour ce qui peut être un <a hreflang="en" lang="en" href="https://en.wikipedia.org/wiki/Code_smell#Common_code_smells">code smell</a></li>
             		<li>Les tests sont quasi-nécessaires</li>
             	</ul>
             </aside>
@@ -979,15 +723,15 @@ public class MessageBackup implements Serializable {
 
           <section>
             <h3 lang="en">Test Driven Development</h3>
-            <!-- TODO Améliorer l'image -->
             <p><img alt="Tests en erreurs puis tests passent puis remaniement et ça recommence" src="img/TDD.png"/></p>
             <aside class="notes">
               <ul>
                 <li>code applicatif doit résoudre un test en erreur</li>
-                <li>aide à ne coder que le nécessaire</li>
+                <li>aide à ne coder que le nécessaire fonctionnel</li>
                 <li>naturellement 100% de couverture</li>
                 <li>aide à trouver en auto le code inutile</li>
-                <li>en pratique, priorité là où risque (<acronym title="valeur ajoutée">VA</acronym>)</li>
+                <li>souvent, priorité là où risque (<acronym title="valeur ajoutée">VA</acronym>)</li>
+								<li>attention aux <a hreflang="http://pitest.org/" title="mutation testing">tests non pertinents</a></li>
               </ul>
             </aside>
           </section>
@@ -1014,55 +758,9 @@ public class MessageBackup implements Serializable {
           </section>
 
           <section>
-            <h3>Junit &amp; Mockito</h3>
-            <pre><code>
-            @Mock Iterator i;
-            @InjectMocks MaClasse m;
-
-            @Test
-            public void iterator_will_return_hello_world(){
-                // 1 - PREPARE
-                when(i.next()).thenReturn("Hello").thenReturn("World");
-                // 2 - EXECUTE
-                String result=m.getNextTwice();
-                // 3 - VERIFIE
-                assertEquals("Hello World", result);
-            }
-            </code></pre>
-            <p class="fragment"><img class="no-border" alt="bonus" src="img/bonus.png"/> PowerMock pour <code>final</code>, <code>private</code>, <code>static</code></p>
-            <aside class="notes">
-              <ul>
-                <li>Junit : annotations et assert</li>
-                <li><a hreflang="en" href="http://testng.org/">TestNG</a >est à explorer (bon support)</li>
-                <li><a href="http://blog.xebia.fr/2013/02/19/craftsman-recipes-happy-hour-pour-vos-tests-avec-mockito/">Mockito</a> : seuls la classe testée peut échouer</li>
-                <li>D'autres (EasyMock) mais Mockito marche bien</li>
-                <li>Trio avec <a href="https://code.google.com/p/powermock/" hreflang="en">PowerMock</a> quasi indispensables</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section data-state="tp">
-            <h3>Travaux Pratiques : TDD</h3>
-            <p>Coder une méthode qui renvoie un résumé d'un email : </p>
-            <blockquote>message de &lt;X&gt; à &lt;Y&gt; envoyé à &lt;HH&gt;:&lt;MM&gt; à propos de &lt;S&gt;</blockquote>
-            <p class="fragment note">Pensez aux cas aux limites !</p>
-            <aside class="notes">
-            	<ul>
-            		<li>Pourrait être enrichi avec complexité sur date, niveau de détail, ...</li>
-            </aside>
-          </section>
-
-          <section>
             <p><img alt="Bon pour le Karma" src="img/karma.jpg" /></p>
             <aside class="notes">
               <ul>
-                <li><a href="https://fr.wikipedia.org/wiki/R%C3%A9usinage_de_code">Refactoring</a> : travail du code sans ajout de fonctionnalité ⇨ maintenabilité
-                  <ul>
-                    <li>lisibilité</li>
-                    <li>nettoyages (direct si <abbr title="suppression">suppr</abbr> fonction)</li>
-                    <li>architecture logicielle/OO</li>
-                  </ul>
-                </li>
                 <li>Difficile et mal valorisé (management)</li>
                 <li>Mais c'est le <a href="https://fr.wikipedia.org/wiki/Karma">Karma</a> du <em>bon</em> développeur</li>
                 <li>Valorisisation par ses pairs et gains en maintenabilité.</li>
@@ -1071,273 +769,34 @@ public class MessageBackup implements Serializable {
             </aside>
           </section>
 
-		</section>
 
-        <section> <!-- 2) GESTION DES ENVIRONNEMENTS -->
-
-          <section>
-            <h2>Environnements</h2>
-            <p class="fragments"><img alt="environnement de tests automatisés, local, de qualification et de production" src="img/environnements.png"/></p>
-            <aside class="notes">
-              <ul>
-                <li>local : tout devrait être testable (dev sous linux ?)</li>
-                <li>décrire en sens historique des développements</li>
-                <li>nombre d'utilisateurs. De + en + la vraie vie (hors projet)</li>
-                <li>risques et criticité des bugs avec adhérence au SI</li>
-                <li>criticité des données de test ou réelles</li>
-                <li>autonomie : communiquer avant maj, pas vendredi en prod, possibilité de debug</li>
-              </ul>
-            </aside>
-          </section>
-
-					<section>
-						<h3>Adapter au contexte</h3>
 						<ul>
-              <li class="fragment">Pré-production</li>
-              <li class="fragment">Plusieurs qualifications</li>
-              <li class="fragment">Intégration</li>
 						</ul>
-						<aside class="notes">
-							<ul>
-                <li>préprod : debug sur données de prod, performances</li>
-                <li>tests de perf presque inutiles hors identique prod</li>
-                <li>qualif : plusieurs versions en parallèle</li>
-                <li>integ : pour compilation/packaging manuel</li>
-                <li>Sur ce slide, équipe de gestion d'env nécessaire (cher)</li>
-							</ul>
-						</aside>
 					</section>
 
-					<section>
-						<h3>Portabilité du binaire</h3>
+        <section data-state="plusloin">
+					<h2>Pour aller plus loin</h2>
+					<ul>
+						<li>Pratiquer</li>
+						<li>Des liens <a href="https://github.com/lcottereau/maintainability-slides" hreflang="en">dans cette présentation</a></li>
+						<li>Des lectures<ul>
+							<li><a lang="en" href="http://pragprog.com/book/tpp/the-pragmatic-programmer"><cite>The Pragmatic Programmer : from Journeyman to Master</cite></a></li>
+							<li><a lang="en" href="http://www.cleancoder.com/"><cite>Clean Code : A Handbook of Agile Software Craftmanship</cite></a></li>
+							<li><a lang="en" href="http://programmer.97things.oreilly.com"><cite>97 Things Every Programer Should Know</cite></a></li>
+						</ul></li>
+						<li>Le mouvement des <a hreflang="en" href="http://manifesto.softwarecraftsmanship.org/#/en">artisans codeurs</a></li>
+					</ul>
+					<aside class="notes">
 						<ul>
-              <li>Unique <code>.jar</code> ou <code>.war</code> réutilisable</li>
-              <li>Configuration spécifique sur l'environnement</li>
+							<li>participer à des projets <span lang="en">Open Source</span></li>
+							<li>penser à s'abonner aux RSS/twitter/...</li>
+							<li>l'anglais "technique" est presqu'indispensable</li>
+							<li>aussi <cite>97 things every software architect should know</cite></li>
+							<li>qualités: curiosité, remise en cause, réaliste, polyvalent</li>
+							<li>peur OK (mieux de savoir). Diversité = intérêt</li>
 						</ul>
-						<aside class="notes">
-							<ol>
-                <li>Limite les risques en prod (tests pertinent)</li>
-                <li>Partage plus facile (déploiement auto ?)</li>
-                <li>Sécurité (mots de passe que sur env, pas au dev)</li>
-              </ol>
-              <ul>
-                <li><a hreflang="en" title="Store config in the environment" href="http://12factor.net/config">Variables d'environnement</a> (voire normes <abbr title="exploitation">exploit.</abbr> figées)</li>
-                <li>Pointent sur fichier de <abbr title="configuration">conf</abbr> (ou <code>catalina.properties</code>)</li>
-                <li>Se méfier de <code>context.xml</code></li>
-                <li>Temps pour trouver une méthode vaut le coup</li>
-                <li>Sinon filtres maven (automatisation)</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section>
-						<h3>Prévisibilité du binaire</h3>
-						<pre><code>[WARNING] File encoding has not been set,
-            using platform encoding UTF-8, i.e. build is platform dependent!</code></pre>
-						<pre class="fragment"><code>
-&lt;properties&gt;
-    &lt;maven.compiler.source&gt;1.6&lt;/maven.compiler.source&gt;
-    &lt;maven.compiler.target&gt;${maven.compiler.source}&lt;/maven.compiler.target&gt;
-    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-    (...)
-&lt;/properties&gt;
-						</code></pre>
-						<aside class="notes">
-							<ul>
-								<li>(Presque)-même binaire quel que soit l'environnement de gén.</li>
-								<li>Les références à un environnement donnée (anaf/amine)</li>
-                				<li>Faire différence avec conventions prévisibles</li>
-							</ul>
-						</aside>
-					</section>
-
-          <section data-state="tp">
-            <h3>Travaux Pratiques : binaire portable</h3>
-            <p>Lister les parties non portables dans le code source de votre projet</p>
-            <aside class="notes">
-              <p>Aperçu des méthodes pour externaliser : variables d'environnements, fichiers à un endroit fixe, ...</p>
-            </aside>
-          </section>
-
-        </section>
-
-        <section> <!-- 3) USINE DE DEVELOPPEMENT -->
-        	<section>
-        		<h2>Usine de développement</h2>
-        		<p><img alt="Usine de développement" src="img/usine-dev.png"/></p>
-        		<aside class="notes">
-        			On peut évoquer le déploiement continu (<a hreflang="en" href="http://fr.slideshare.net/jallspaw/10-deploys-per-day-dev-and-ops-cooperation-at-flickr">plus de 10/j à Flickr</a>, <a hreflang="en" href="http://dahernan.github.io/2013/10/14/continuous-deployment-trends/">environ 35/j à Etsy</a>).
-        		</aside>
-        	</section>
-
-        	<section>
-						<h3>Indicateur de maintenabilité ?</h3>
-						<p><img alt="capture d'écran sonar" src="img/sonar-trace.png"/></p>
-						<aside class="notes">
-							<ul>
-                <li>100% partout louche (très simple ou triche)<ul>
-                  <li><code>/* COMMENT. */</code> (vu en externalisation)</li>
-                  <li>variable privée non utilisée (OK Lombok)</li>
-                  <li>Extension de bibliothèques</li>
-                </ul></li>
-                <li>Note moins utile qu'évolution (cf RATP maintenance)</li>
-							</ul>
-						</aside>
-					</section>
-
-          <section>
-						<h3>Dette Technique</h3>
-						<ul>
-              <li>Intérêts doivent être payés</li>
-              <li>Idée du coût de remboursement</li>
-            </ul>
-						<aside class="notes">
-							<ul>
-                <li>intérêts sont tps dev + longs et bugs</li>
-                <li>Parlant pour tous</li>
-                <li>Coûts utile pour convaincre</li>
-                <li>Le coût est en % du coût du projet</li>
-							</ul>
-						</aside>
-					</section>
-
-          <section>
-						<h3>Critères de choix</h3>
-						<ul>
-              <li>KISS</li>
-              <li>interconnexions</li>
-              <li>communauté</li>
-              <li>connaissance en interne</li>
-              <li>pérennité</li>
-						</ul>
-            <pre class="fragment"><code class="no-highlight">fixes #12 : dernier test de validation d'un contrôle
-Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
-/cc @toto</code></pre>
-						<aside class="notes">
-							<ul>
-                <li>adéquation au besoin, ergonomie</li>
-                <li>commentaire commit github avec lien&nbsp;&ndash;&nbsp;comm. #12 avec lien&nbsp;&ndash;&nbsp;résolution #12&nbsp;&ndash;&nbsp;mail à @toto</li>
-                <li>documentation et testé dans vraie vie entreprise</li>
-                <li>connaissance interne : admin sys, dev ou utilisateurs</li>
-                <li>pérennité logiciel (difficile à garantir)</li>
-                <li>surtout capacité à changer en gardant l'historique (format des données libres)</li>
-							</ul>
-						</aside>
-					</section>
-
-        </section>
-
-
-        <section> <!-- 4) STRATEGIE DE REPRISE -->
-          <section>
-						<h2>Stratégie de reprise</h2>
-            <h3>Etat des lieux</h3>
-						<ol>
-              <li>répertorier les contenus disponibles</li>
-              <li>lire la documentation</li>
-              <li>installation de l'environnement de développement</li>
-              <li>mise à jour de la documentation</li>
-						</ol>
-						<aside class="notes">
-							<ul>
-                <li>comment optimiser votre prise en maintenance ?</li>
-                <li>lister et récupérer : code source, documentation, URLs...</li>
-                <li>lire doc de démarrage si elle existe</li>
-                <li>env complet (compile, package, infra, données)</li>
-                <li>docu ce qui n'était pas dispo : pour futurs nouveaux</li>
-                <li>répéter à chaque arrivée dans l'équipe</li>
-							</ul>
-						</aside>
-					</section>
-
-          <section data-state="tp">
-            <h3>Travaux Pratiques : Etat des lieux</h3>
-            <p>On change les mainteneurs sur les projets !</p>
-            <ol>
-            	<li>Installez le projet en local</li>
-            	<li>Lancez la démonstration</li>
-            	<li>Notez vos conseils d'amélioration</li>
-            	<li class="fragment">Bonus : ajoutez un utilisateur <em><acronym lang="en" title="Very Important People">VIP</acronym></em></li>
-            </ol>
-            <aside class="notes">
-            	<p>L'utilisateur <em><acronym>VIP</acronym></em> est traité spécialement dans les messages de log</p>
-            </aside>
-          </section>
-
-          <section>
-						<h3>Amélioration</h3>
-						<ol>
-              <li>Etablir une stratégie séquencée</li>
-              <li>Adhésion du management et des utilisateurs</li>
-						</ol>
-						<aside class="notes">
-							<ul>
-                <li>Analyse risques avec sonar et au feeling</li>
-                <li>stratégie mise en place bonnes pratiques (boy scout ?)</li>
-                <li>usine peut être coûteux à gérer ⇒ graduellement</li>
-                <li>pour env, voir rapidement ce qui peut bloquer</li>
-                <li>management : coût / workflows et contraintes : tous</li>
-                <li>formalisation (contractuelle ?) du nouveau fonct.</li>
-							</ul>
-						</aside>
-					</section>
-
-          <section>
-            <h3>Je ne sais pas à quoi sert ce code ?!</h3>
-            <ol>
-              <li>Creuser</li>
-              <li>Tester</li>
-              <li>Supprimer</li>
-              <li>Documenter</li>
-            </ol>
-            <aside class="notes">
-              <ul>
-                <li>il faut comprendre à quoi il sert (specs...)</li>
-                <li>sur du code legacy, probable code inutile</li>
-                <li>très peu de cas pertinents pour garder du code non compris</li>
-                <li>communiquer et avertir avant suppressions (surtout si pas de tests)</li>
-                <li>mieux vaut le risque que garder du code non maîtrisé</li>
-                <li>N'ayez pas peur ! retour arrière possible</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section data-state="tp">
-            <h3>Travaux Pratiques : Stratégie</h3>
-            <ul>
-              <li><a hreflang="en" href="http://localhost:9000/">Votre projet analysé dans Sonar</a></li>
-              <li>Analyser les 5 priorités d'amélioration d'après vous</li>
-              <li class="fragment">Bonus : travaillez sur les points indiqués</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li>Bien pointer la partie <em lang="en">Hotspots</em></li>
-                <li>Priorités doivent être en fonction de leur coûts et criticité</li>
-                <li>Ne pas oublier : couverture des tests, documentation, ...</li>
-              </ul>
-            </aside>
-          </section>
-
-        </section>
-
-        <section> <!-- CONCLUSION -->
-
-          <section>
-						<h3>Et c'est utile ?</h3>
-						<ul>
-              <li>code plus clair</li>
-              <li>documentation à jour</li>
-              <li>risques de régression fonctionnelle limités</li>
-						</ul>
-						<aside class="notes">
-							<ul>
-                <li>retour sur le scenario dilbert</li>
-                <li>code plus lisible, sans inutile : découverte plus facile</li>
-                <li>tests unitaires</li>
-                <li>n'empêche pas tout mais est une aide énorme</li>
-							</ul>
-						</aside>
-					</section>
+					</aside>
+				</section>
 
 				<section data-background="img/slide-beer.jpg" data-state="light-background">
 					<h2>Crédits</h2>
@@ -1366,64 +825,19 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 						</li>
 					</ul>
 					<aside class="notes">
-          <section>
-						<h3>En entreprise</h3>
 						<ul>
 							<li>si dans la salle, je leur paie une bière non virtuelle</li>
 							<li>dans le même esprit de partage, partagé sur github</li>
-              <li class="fragment highlight-green">Le <em>principe</em> d'une bonne maintenabilité est acquis (en général)</li>
-              <li>L'utilisation de la dette technique</li>
-              <li class="fragment highlight-red">L'investissement effectif sur la maintenabilité</li>
 						</ul>
-						<aside class="notes">
-							<ul>
-                <li>bonnes pratiques et usine de dev</li>
-                <li>contractuel mauvais (indicateurs) mais utile à avoir</li>
-                <li><strong>code = patrimoine</strong> pas acquis</li>
-                <li>la valorisation effective pas acquise</li>
-                <li>
-                  certaines SSII se placent sur ce créneau :
-                  <a href="http://training.xebia.fr/formations-java-jee/formation-tdd-software-craftsmanship.html">Xebia</a>,
-                  <a href="http://blog.octo.com/les-artisans-codeurs-chez-octo/">Octo</a>, Valtech, Ippon (?)
-                </li>
-							</ul>
-						</aside>
-					</section>
-
-        <section data-state="plusloin">
-          	<h2>Pour aller plus loin</h2>
-          	<ul>
-          		<li>Expérimentez ces pratiques et outils sur vos projets</li>
-          		<li>Des liens <a href="https://github.com/lcottereau/maintainability-slides" hreflang="en">dans cette présentation</a></li>
-          		<li>Des lectures<ul>
-          			<li><a lang="en" href="http://pragprog.com/book/tpp/the-pragmatic-programmer"><cite>The Pragmatic Programmer : from Journeyman to Master</cite></a></li>
-              		<li><a lang="en" href="http://www.cleancoder.com/"><cite>Clean Code : A Handbook of Agile Software Craftmanship</cite></a></li>
-              		<li><a lang="en" href="http://programmer.97things.oreilly.com"><cite>97 Things Every Programer Should Know</cite></a></li>
-            	</ul></li>
-            	<li>Le mouvement des <a hreflang="en" href="http://manifesto.softwarecraftsmanship.org/#/en">artisans codeurs</a></li>
-			</ul>
-			<aside class="notes">
-				<ul>
-					<li>participer à des projets <span lang="en">Open Source</span></li>
-            	    <li>penser à s'abonner aux RSS/twitter/...</li>
-                	<li>l'anglais "technique" est presqu'indispensable</li>
-                	<li>aussi <cite>97 things every software architect should know</cite></li>
-                	<li>qualités: curiosité, remise en cause, réaliste, polyvalent</li>
-                	<li>peur OK (mieux de savoir). Diversité = intérêt</li>
-				</ul>
-			</aside>
-		</section>
-
-          <section>
 					</aside>
 				</section>
 
-          <section>
-            <figure>
-              <blockquote>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</blockquote>
-              <figcaption>&nbsp;&mdash;&nbsp;Martin Fowler</figcaption>
-            </figure>
-          </section>
+				<section>
+					<figure>
+						<blockquote>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</blockquote>
+						<figcaption>&nbsp;&mdash;&nbsp;Martin Fowler</figcaption>
+					</figure>
+				</section>
 
 				<section data-background="img/slide-dingle.jpg">
 				  <h1>Merci</h1>
