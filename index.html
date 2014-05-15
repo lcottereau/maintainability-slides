@@ -81,6 +81,10 @@
 	    	background-color: rgba(0, 0, 0, 0.8);
 	    	border-radius: 10px;
 	    }
+	    html.code-extracts img {
+	    	vertical-align: top;
+	    	width: 2.5em;
+	    }
 		</style>
 
 	</head>
@@ -348,10 +352,392 @@ public int doSomething() {
             </aside>
           </section>
 
-          <section>
-            <h3>Design patterns automatiques</h3>
-						<p>TODO</p>
-          </section>
+					<section>
+						<h2>Un cas typique</h2>
+						<pre><code>
+/**
+ * Copyright Sénat.
+ */
+package fr.senat.model.dosleg;
+
+import fr.senat.model.dosleg.validator.ActiviteValide;
+import fr.senat.model.senateurs.GroupePolitique;
+import fr.senat.util.Constants;
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+    public void setGroupePolitique(final GroupePolitique groupePolitique) {
+        this.groupePolitique = groupePolitique;
+    }
+
+    public void setOrganismes(final Set&lt;Organisme&gt; organismes) {
+        this.organismes = organismes;
+    }
+
+    public void setLois(final Set&lt;Loi&gt; lois) {
+        this.lois = lois;
+    }
+
+    public void setLivrables(final Set&lt;LivrableControle&gt; livrables) {
+        this.livrables = livrables;
+    }
+
+    public void setActeurs(final Set&lt;ActeurControle&gt; acteurs) {
+        this.acteurs = acteurs;
+    }
+
+    public void setThemes(final Set&lt;Theme&gt; themes) {
+        this.themes = themes;
+    }
+
+    /**
+     * Renvoie la date à prendre en compte pour le nommage du groupe politique lié à ce contrôle. TODO vérifier cette
+     * règle de gestion avec S. Dubourg.
+     *
+     * @return la date à prendre en compte.
+     */
+    private LocalDate getDateNommageGroupePolitique() {
+        if (isClosed()) {
+            return echeance.getDate();
+        } else {
+            return LocalDate.now();
+        }
+    }
+
+    /**
+     * Renvoie le libellé de groupe politique à la date adéquate pour ce contrôle, préfixé de l'article adéquat. Ainsi,
+     * un contrôle en cours prendra le nom à la date du jour alors qu'un contrôle fini prendra le nom à la date
+     * d'échéance.
+     *
+     * @return le libellé préfixé de l'article. &lt;code&gt;null&lt;/code&gt; si le groupe politique n'est pas défini.
+     */
+    public String getLibelleLongEtArticleGroupePolitique() {
+        if (groupePolitique != null) {
+            LocalDate d = getDateNommageGroupePolitique();
+            StringBuilder sb = new StringBuilder(groupePolitique.getArticle(d));
+            sb.append(" ");
+            sb.append(groupePolitique.getLibelleLong(d));
+            return sb.toString();
+        }
+        return null;
+    }
+
+    /**
+     * Détermine si le contrôle est fini.
+     *
+     * @return &lt;code&gt;true&lt;/code&gt; si le contrôle est fini.
+     */
+    public boolean isClosed() {
+        return echeance != null && echeance.getDate().isBefore(LocalDate.now());
+    }
+
+    /**
+     * Reporte d'un an le contrôle. La date de début d'activité est inchangée mais la date de report est décalée d'un an
+     * (année suivant le démarrage si c'est le premier report)
+     */
+    public void reporter() {
+        if (canReporteControle()) {
+            if (programmeReport == null) {
+                programmeReport = programmeCreation + 1;
+            } else {
+                programmeReport++;
+            }
+        }
+    }
+
+    /**
+     * Renvoie le dernier programme d'activité du contrôle.
+     *
+     * @return le dernier programme d'activité du contrôle.
+     */
+    public int getDernierProgramme() {
+        if (programmeReport == null) {
+            return programmeCreation;
+        } else {
+            return programmeReport;
+        }
+    }
+
+    /**
+     * Indique si un contrôle peut être reporté. C'est le cas si l'échéance correspond à une session strictement
+     * postérieure supérieure à la session de report actuelle.
+     *
+     * @return &lt;code&gt;true&lt;/code&gt; si le contrôle peut être reporté. &lt;code&gt;false&lt;/code&gt; sinon.
+     */
+    public boolean canReporteControle() {
+        if (echeance.getDate() != null) {
+            return (getDernierProgramme() &lt; echeance.getSession());
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Renvoie la session correspondant à une date.
+     *
+     * @param date la date dont on cherche la session.
+     * @return la session, représentée par l'année de démarrage de la session (2013 pour la session 2013-2014 par
+     * exemple). &lt;code&gt;null&lt;/code&gt; si la date en paramètre est nulle.
+     */
+    public static Integer getSession(LocalDate date) {
+        if (date != null) {
+            if (date.getMonthOfYear() &lt; OCTOBER) {
+                return date.getYear() - 1;
+            } else {
+                return date.getYear();
+            }
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Renvoie l'année de fin d'activité du contrôle.
+     *
+     * @return l'année de fin d'activité.
+     */
+    public int getFinActivite() {
+        return getDernierProgramme() + 1;
+    }
+
+    /**
+     * Définit la fin d'activité. Calcule le programme correspondant et définit éventuellement un report sur le
+     * contrôle.
+     *
+     * @param fin l'année de fin d'activité spécifiée dans le formulaire.
+     */
+    public void setFinActivite(int fin) {
+        if (fin &gt; getProgrammeCreation() + 1) {
+            setProgrammeReport(fin - 1);
+        } else {
+            setProgrammeReport(null);
+        }
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object o) {
+        if (o == this) return true;
+        if (!(o instanceof Controle)) return false;
+        final Controle other = (Controle)o;
+        if (!other.canEqual((java.lang.Object)this)) return false;
+        final java.lang.Object this$id = this.getId();
+        final java.lang.Object other$id = other.getId();
+        if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
+        final java.lang.Object this$libelle = this.getLibelle();
+        final java.lang.Object other$libelle = other.getLibelle();
+        if (this$libelle == null ? other$libelle != null : !this$libelle.equals(other$libelle)) return false;
+        final java.lang.Object this$objet = this.getObjet();
+        final java.lang.Object other$objet = other.getObjet();
+        if (this$objet == null ? other$objet != null : !this$objet.equals(other$objet)) return false;
+        final java.lang.Object this$url = this.getUrl();
+        final java.lang.Object other$url = other.getUrl();
+        if (this$url == null ? other$url != null : !this$url.equals(other$url)) return false;
+        if (this.isInitiativeDesGroupes() != other.isInitiativeDesGroupes()) return false;
+        if (this.isCourDesComptes() != other.isCourDesComptes()) return false;
+        if (this.getProgrammeCreation() != other.getProgrammeCreation()) return false;
+        final java.lang.Object this$programmeReport = this.getProgrammeReport();
+        final java.lang.Object other$programmeReport = other.getProgrammeReport();
+        if (this$programmeReport == null ? other$programmeReport != null : !this$programmeReport.equals(other$programmeReport)) return false;
+        final java.lang.Object this$dateCreation = this.getDateCreation();
+        final java.lang.Object other$dateCreation = other.getDateCreation();
+        if (this$dateCreation == null ? other$dateCreation != null : !this$dateCreation.equals(other$dateCreation)) return false;
+        if (this.isCloture() != other.isCloture()) return false;
+        if (this.isAvecRapport() != other.isAvecRapport()) return false;
+        final java.lang.Object this$echeance = this.getEcheance();
+        final java.lang.Object other$echeance = other.getEcheance();
+        if (this$echeance == null ? other$echeance != null : !this$echeance.equals(other$echeance)) return false;
+        final java.lang.Object this$groupePolitique = this.getGroupePolitique();
+        final java.lang.Object other$groupePolitique = other.getGroupePolitique();
+        if (this$groupePolitique == null ? other$groupePolitique != null : !this$groupePolitique.equals(other$groupePolitique)) return false;
+        final java.lang.Object this$organismes = this.getOrganismes();
+        final java.lang.Object other$organismes = other.getOrganismes();
+        if (this$organismes == null ? other$organismes != null : !this$organismes.equals(other$organismes)) return false;
+        final java.lang.Object this$lois = this.getLois();
+        final java.lang.Object other$lois = other.getLois();
+        if (this$lois == null ? other$lois != null : !this$lois.equals(other$lois)) return false;
+        final java.lang.Object this$livrables = this.getLivrables();
+        final java.lang.Object other$livrables = other.getLivrables();
+        if (this$livrables == null ? other$livrables != null : !this$livrables.equals(other$livrables)) return false;
+        final java.lang.Object this$acteurs = this.getActeurs();
+        final java.lang.Object other$acteurs = other.getActeurs();
+        if (this$acteurs == null ? other$acteurs != null : !this$acteurs.equals(other$acteurs)) return false;
+        final java.lang.Object this$themes = this.getThemes();
+        final java.lang.Object other$themes = other.getThemes();
+        if (this$themes == null ? other$themes != null : !this$themes.equals(other$themes)) return false;
+        return true;
+    }
+
+    public boolean canEqual(final java.lang.Object other) {
+        return other instanceof Controle;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        final java.lang.Object $id = this.getId();
+        result = result * PRIME + ($id == null ? 0 : $id.hashCode());
+        final java.lang.Object $libelle = this.getLibelle();
+        result = result * PRIME + ($libelle == null ? 0 : $libelle.hashCode());
+        final java.lang.Object $objet = this.getObjet();
+        result = result * PRIME + ($objet == null ? 0 : $objet.hashCode());
+        final java.lang.Object $url = this.getUrl();
+        result = result * PRIME + ($url == null ? 0 : $url.hashCode());
+        result = result * PRIME + (this.isInitiativeDesGroupes() ? 79 : 97);
+        result = result * PRIME + (this.isCourDesComptes() ? 79 : 97);
+        result = result * PRIME + this.getProgrammeCreation();
+        final java.lang.Object $programmeReport = this.getProgrammeReport();
+        result = result * PRIME + ($programmeReport == null ? 0 : $programmeReport.hashCode());
+        final java.lang.Object $dateCreation = this.getDateCreation();
+        result = result * PRIME + ($dateCreation == null ? 0 : $dateCreation.hashCode());
+        result = result * PRIME + (this.isCloture() ? 79 : 97);
+        result = result * PRIME + (this.isAvecRapport() ? 79 : 97);
+        final java.lang.Object $echeance = this.getEcheance();
+        result = result * PRIME + ($echeance == null ? 0 : $echeance.hashCode());
+        final java.lang.Object $groupePolitique = this.getGroupePolitique();
+        result = result * PRIME + ($groupePolitique == null ? 0 : $groupePolitique.hashCode());
+        final java.lang.Object $organismes = this.getOrganismes();
+        result = result * PRIME + ($organismes == null ? 0 : $organismes.hashCode());
+        final java.lang.Object $lois = this.getLois();
+        result = result * PRIME + ($lois == null ? 0 : $lois.hashCode());
+        final java.lang.Object $livrables = this.getLivrables();
+        result = result * PRIME + ($livrables == null ? 0 : $livrables.hashCode());
+        final java.lang.Object $acteurs = this.getActeurs();
+        result = result * PRIME + ($acteurs == null ? 0 : $acteurs.hashCode());
+        final java.lang.Object $themes = this.getThemes();
+        result = result * PRIME + ($themes == null ? 0 : $themes.hashCode());
+        return result;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "Controle(id=" + this.getId() + ", libelle=" + this.getLibelle() + ", objet=" + this.getObjet() + ", url=" + this.getUrl() + ", initiativeDesGroupes=" + this.isInitiativeDesGroupes() + ", courDesComptes=" + this.isCourDesComptes() + ", programmeCreation=" + this.getProgrammeCreation() + ", programmeReport=" + this.getProgrammeReport() + ", dateCreation=" + this.getDateCreation() + ", cloture=" + this.isCloture() + ", avecRapport=" + this.isAvecRapport() + ", echeance=" + this.getEcheance() + ")";
+    }
+}
+					</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>Une classe JPA assez touffue avec </li>
+								<li>getters (lazy), constructeur mini, utils et métier (noyée)</li>
+								<li>Consensus du monde professionel, standards (beans)
+									<ul>
+										<li><a hreflang="en" href="http://www.artima.com/lejava/articles/equality.html">vos méthodes <code>equals</code> et héritage</a></li>
+										<li>penser à utiliser <code>@ConstructorProperties</code></li>
+										<li>gérer le <span lang="en">thread-safe</span> sur un calcul d'attribut à la demande</li>
+									</ul>
+								</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Utilisation simpliste</h2>
+						<pre><code>
+							&lt;dependency>
+							&nbsp;&nbsp;&lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+							&nbsp;&nbsp;&lt;artifactId&gt;lombok&lt;/artifactId&gt;
+							&nbsp;&nbsp;&lt;version&gt;1.12.6&lt;/version&gt;
+							&nbsp;&nbsp;&lt;scope&gt;provided&lt;/scope&gt;
+							&lt;/dependency&gt;
+						</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>plutôt que IDE (fragile) ou guava/JDK (intrusif)</li>
+								<li>le <code>jar</code> dans le <code>CLASSPATH</code> lors de la compilation est suffisant</li>
+								<li>rien au runtime</li>
+								<li>si pas Netbeans : installation (via <code>lombok.jar</code> ou plugin)</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Les plus évidentes</h2>
+						<ul lang="en">
+							<li><code>@ToString</code></li>
+							<li class="fragment"><code>@EqualsAndHashCode</code></li>
+							<li class="fragment"><code>@Getter<span class="fragment">(lazy=true)</span></code></li>
+							<li class="fragment"><code>@Setter</code></li>
+							<li class="fragment"><code>@RequiredArgsConstructor</code></li>
+							<li class="fragment"><code>@Data</code></li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li><code>toString</code> classiquement utilisé pour le debug</li>
+								<li>ces annotations sont <a hreflang="en" href="http://projectlombok.org/features/index.html">documentées</a> en ligne</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-background="img/slide-fireworks.jpg" data-state="code-extracts">
+						<h2>Gain</h2>
+						<p>
+							<img alt="avant : 481 lignes de code" src="img/java-before.png"/>
+							<img alt="après : 234 lignes de code concentrées sur la valeur ajoutée" src="img/java-after.png"/>
+						</p>
+						<aside class="notes">
+							<ul>
+								<li>diviser par 2 les lignes de code</li>
+								<li>se concentrer sur la valeur ajoutée (le différenciateur)</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h2>D'autres exemples</h2>
+						<ul>
+							<li><code>@Delegate</code></li>
+							<li class="fragment"><code>@Value</code></li>
+							<li class="fragment"><code>@Log</code></li>
+							<li class="fragment"><code>@Builder</code>
+						</ul>
+						<pre class="fragment"><code>SuperHero.builder().name("Superman").from("Krypton").alias("Clark").build();</code></pre></li>
+						<aside class="notes">
+							<ul>
+								<li>déléguer l'exécution d'une partie des tâches. classique en objet. plomberie lourde</li>
+								<li>classe immutable sans risque d'oubli, et bien documentée</li>
+								<li>pas besoin de se rappeler de la ligne à écrire, et cohérence des clés</li>
+								<li>interface fluide d'instanciation (<acronym lang="latin" title="confere">cf</acronym> expressivité du code)</li>
+								<li>16 <a hreflang="en" href="http://projectlombok.org/features/">stables</a>, 6 <a hreflang="en" href="http://projectlombok.org/features/experimental/">expérimentaux (officiels)</a>, 30 <a hreflang="en" href="https://github.com/peichhorn/lombok-pg">playground (externes)</a> ou perso</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Points d'attention</h2>
+						<ul>
+							<li>prise en main</li>
+							<li>code non maîtrisé</li>
+							<li>intégration aux outils</li>
+							<li>debug</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>mise en place échelonnée pour comprendre les impacts (<code>delombok</code> si problème)</li>
+								<li><code lang="en">StackOverflow</code> avec <code>@toString</code> par <abbr title="exemple">ex.</abbr></li>
+								<li>penser au <code>exclude</code> dans ce cas-là</li>
+								<li>debug difficile : rester sur le testé</li>
+								<li>conclusion : permet d'exprimer l'intention pas l'implémentation</li>
+							</ul>
+						</aside>
+					</section>
 
           <section>
             <h3 lang="en">
