@@ -253,6 +253,40 @@
             </aside>
           </section>
 
+					<section>
+						<h3 lang="en">Convention over configuration</h3>
+						<ul>
+							<li class="fragment highlight-green">valeurs par défaut</li>
+							<li class="fragment highlight-red">code spécifique / paramétrages</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li><strong><a hreflang="en" href="https://maven.apache.org/">maven</a></strong>, noms par défaut des tables/colonnes JPA</li>
+								<li>on peut choisir des conventions mais les documenter</li>
+								<li>choix de bibliothèques exactement adaptées</li>
+								<li>idéal de rester dans les conventions</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3 lang="en">
+							<acronym title="Don't Repeat Yourself">DRY</acronym> &ndash;
+							don't <acronym title="Write Everything Twice">WET</acronym>
+						</h3>
+						<blockquote lang="en">
+							Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
+						</blockquote>
+						<aside class="notes">
+							<ul>
+								<li><a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" hreflang="en">Risques</a> : corriger à un seul endroit, savoir lequel utiliser</li>
+								<li>Aide à une bonne conception (responsabilité unique)</li>
+								<li>Attention si presque-pareil : pourquoi ? comment gérer ?</li>
+								<li>Attention à la surgénéralisation (intra et inter projets)</li>
+							</ul>
+						</aside>
+					</section>
+
           <section data-background="img/slide-warning.jpg" data-state="light-background">
             <h3>Comprenez ce que vous faites !</h3>
             <pre class="fragment"><code>private static final long serialVersionUID = 1L;</code></pre>
@@ -738,40 +772,6 @@ import javax.validation.constraints.Size;
 							</ul>
 						</aside>
 					</section>
-
-          <section>
-            <h3 lang="en">
-              <acronym title="Don't Repeat Yourself">DRY</acronym> &ndash;
-              don't <acronym title="Write Everything Twice">WET</acronym>
-            </h3>
-            <blockquote lang="en">
-              Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
-            </blockquote>
-            <aside class="notes">
-              <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" hreflang="en">Risques</a> : corriger à un seul endroit, savoir lequel utiliser</li>
-                <li>Aide à une bonne conception (responsabilité unique)</li>
-                <li>Attention si presque-pareil : pourquoi ? comment gérer ?</li>
-                <li>Attention à la surgénéralisation (intra et inter projets)</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h3 lang="en">Convention over configuration</h3>
-            <ul>
-              <li class="fragment highlight-green">valeurs par défaut</li>
-              <li class="fragment highlight-red">code spécifique / paramétrages</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li><strong><a hreflang="en" href="https://maven.apache.org/">maven</a></strong>, noms par défaut des tables/colonnes JPA</li>
-                <li>on peut choisir des conventions mais les documenter</li>
-                <li>choix de bibliothèques exactement adaptées</li>
-                <li>idéal de rester dans les conventions</li>
-              </ul>
-            </aside>
-          </section>
 
           <section>
             <h3>Et les optimisations de performances ?</h3>
