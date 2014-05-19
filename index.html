@@ -421,6 +421,210 @@ import javax.persistence.OrderBy;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import org.hibernate.annotations.Type;
+import static org.joda.time.DateTimeConstants.OCTOBER;
+import org.joda.time.LocalDate;
+import static org.joda.time.LocalDate.now;
+
+/**
+ * Représente une mission de contrôle et d'évaluation du Sénat. Peut être une Mission Commune d'Information, une
+ * commission d'enquête, un contrôle d'application d'une loi, un contrôle de commission permanente, etc... Par défaut,
+ * le contrôle n'est à l'initiative des groupes, ni avec l'aide de la cour des comptes ou clôturé, mais il est considéré
+ * comme avec rapport. Par ailleurs, les organismes, lois, livrables, acteurs et thèmes sont des ensembles vides.
+ */
+@Entity
+@ActiviteValide
+public class Controle implements Serializable {
+    private static final String FOREIGN_KEY_ID = "CON_ID";
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    @Size(max = 256, message = "trop long.")
+    @Column(name = "LIB", length = 256)
+    @NotNull
+    private String libelle;
+    @Size(max = 2048, message = "trop long.")
+    private String objet;
+    @Pattern(regexp = Constants.URL_PATTERN, message = "pas au bon format (par exemple : http://www.senat.fr/commission/XX/missions_d_information/mission_dinformation_sur_YY.html)")
+    private String url;
+    @NotNull
+    @Column(name = "INITIATIVE_GROUPES")
+    @Type(type = "fr.senat.util.hibernate.usertype.OuiNonSmallType")
+    private boolean initiativeDesGroupes = false;
+    @NotNull
+    @Column(name = "COUR_COMPTES")
+    @Type(type = "fr.senat.util.hibernate.usertype.OuiNonSmallType")
+    private boolean courDesComptes = false;
+    @NotNull
+    @Column(name = "PROGRAMME_CREATION")
+    private int programmeCreation = Controle.getSession(now());
+    @Column(name = "PROGRAMME_REPORT")
+    private Integer programmeReport;
+    @Column(name = "DATE_CREATION")
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+    private LocalDate dateCreation;
+    @NotNull
+    @Type(type = "fr.senat.util.hibernate.usertype.OuiNonSmallType")
+    private boolean cloture = false;
+    @NotNull
+    @Column(name = "AVEC_RAPPORT")
+    @Type(type = "fr.senat.util.hibernate.usertype.OuiNonSmallType")
+    private boolean avecRapport = true;
+    @Embedded
+    @NotNull
+    private EcheanceControle echeance = new EcheanceControle();
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "GRPPOL")
+    private GroupePolitique groupePolitique;
+    @ManyToMany
+    @JoinTable(name = "CONTROLE_ORG", joinColumns = @JoinColumn(name = FOREIGN_KEY_ID), inverseJoinColumns = @JoinColumn(name = "ORGCOD"))
+    private Set&lt;Organisme&gt; organismes = new HashSet&lt;Organisme&gt;();
+    @ManyToMany
+    @JoinTable(name = "CONTROLE_LOI", joinColumns = @JoinColumn(name = FOREIGN_KEY_ID), inverseJoinColumns = @JoinColumn(name = "LOICOD"))
+    private Set&lt;Loi&gt; lois = new HashSet&lt;Loi&gt;();
+    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = FOREIGN_KEY_ID, nullable = false)
+    private Set&lt;LivrableControle&gt; livrables = new HashSet&lt;LivrableControle&gt;();
+    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = FOREIGN_KEY_ID, nullable = false)
+    @OrderBy("id asc")
+    private Set&lt;ActeurControle&gt; acteurs = new HashSet&lt;ActeurControle&gt;();
+    private final java.util.concurrent.AtomicReference&lt;java.lang.Object&gt; themes = new java.util.concurrent.AtomicReference&lt;java.lang.Object&gt;();
+
+
+    public Controle() {
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public String getLibelle() {
+        return this.libelle;
+    }
+
+    public String getObjet() {
+        return this.objet;
+    }
+
+    public String getUrl() {
+        return this.url;
+    }
+
+    public boolean isInitiativeDesGroupes() {
+        return this.initiativeDesGroupes;
+    }
+
+    public boolean isCourDesComptes() {
+        return this.courDesComptes;
+    }
+
+    public int getProgrammeCreation() {
+        return this.programmeCreation;
+    }
+
+    public Integer getProgrammeReport() {
+        return this.programmeReport;
+    }
+
+    public LocalDate getDateCreation() {
+        return this.dateCreation;
+    }
+
+    public boolean isCloture() {
+        return this.cloture;
+    }
+
+    public boolean isAvecRapport() {
+        return this.avecRapport;
+    }
+
+    public EcheanceControle getEcheance() {
+        return this.echeance;
+    }
+
+    public GroupePolitique getGroupePolitique() {
+        return this.groupePolitique;
+    }
+
+    public Set&lt;Organisme&gt; getOrganismes() {
+        return this.organismes;
+    }
+
+    public Set&lt;Loi&gt; getLois() {
+        return this.lois;
+    }
+
+    public Set&lt;LivrableControle&gt; getLivrables() {
+        return this.livrables;
+    }
+
+    public Set&lt;ActeurControle&gt; getActeurs() {
+        return this.acteurs;
+    }
+
+    public Set&lt;Theme&gt; getThemes() {
+        java.lang.Object value = this.themes.get();
+        if (value == null) {
+            synchronized(this.themes) {
+                value = this.themes.get();
+                if (value == null) {
+                    final Set&lt;Theme&gt; actualValue = Cache.getInstance().calculateThemes();
+                    value = actualValue == null ? this.themes : actualValue;
+                    this.themes.set(value);
+                }
+            }
+        }
+        return (Set&lt;Theme&gt;)(value == this.themes ? null : value);
+     }
+
+    public void setId(final Integer id) {
+        this.id = id;
+    }
+
+    public void setLibelle(final String libelle) {
+        this.libelle = libelle;
+    }
+
+    public void setObjet(final String objet) {
+        this.objet = objet;
+    }
+
+    public void setUrl(final String url) {
+        this.url = url;
+    }
+
+    public void setInitiativeDesGroupes(final boolean initiativeDesGroupes) {
+        this.initiativeDesGroupes = initiativeDesGroupes;
+    }
+
+    public void setCourDesComptes(final boolean courDesComptes) {
+        this.courDesComptes = courDesComptes;
+    }
+
+    public void setProgrammeCreation(final int programmeCreation) {
+        this.programmeCreation = programmeCreation;
+    }
+
+    public void setProgrammeReport(final Integer programmeReport) {
+        this.programmeReport = programmeReport;
+    }
+
+    public void setDateCreation(final LocalDate dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public void setCloture(final boolean cloture) {
+        this.cloture = cloture;
+    }
+
+    public void setAvecRapport(final boolean avecRapport) {
+        this.avecRapport = avecRapport;
+    }
+
+    public void setEcheance(final EcheanceControle echeance) {
+        this.echeance = echeance;
+    }
 
     public void setGroupePolitique(final GroupePolitique groupePolitique) {
         this.groupePolitique = groupePolitique;
