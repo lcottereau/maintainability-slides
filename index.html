@@ -382,7 +382,7 @@ public int doSomething() {
               <ul>
                 <li>Coder uniquement spécificité/élément différenciateur</li>
                 <li>Code externe généralement mieux testé</li>
-                <li>gestion : <strong>code "métier"</strong>. ergonomie ? <del>affichage des pages (Play, Spring MCV,...)</del></li>
+                <li>gestion : <strong>code "métier"</strong>. ergonomie ? <del>affichage des pages (Play, Spring MVC,...)</del></li>
                 <li>blog : <strong>gestion articles</strong>. commentaires ? <del>infrastructure, connexion</del></li>
                 <li>jeu vidéo : graphiques et IA.</li>
                 <li>OS, communauté, docu, prix, couteau suisse</li>
@@ -783,7 +783,8 @@ import javax.validation.constraints.Size;
             <aside class="notes">
               <ul>
                 <li><a href="http://blog.xebia.fr/2013/05/27/comprendre-le-fonctionnement-de-la-jvm-article-1/" title="Comprendre le fonctionnement de la JVM – Article 1/2">Faites confiance aux ingénieurs JVM</a></li>
-                <li>Si besoin d'optim, plutôt paramétrage JVM (expertise nécessaire)</li>
+								<li>N'empêche pas de faire les bons choix de structures : Hashmap recherche par clé en O(1), Linkedlist en O(n) et binary tree en O(log n)</li>
+                <li>Si besoin d'optim, plutôt <a hreflang="en" href="https://weblogs.java.net/blog/kcpeppe/archive/2013/12/11/case-study-jvm-hotspot-flags">paramétrage JVM (expertise nécessaire)</a></li>
               </ul>
             </aside>
           </section>
