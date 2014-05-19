@@ -4,16 +4,17 @@ Une présentation sur la [maintenabilité](http://en.wikipedia.org/wiki/Maintain
 en cours de travail est consultable](http://lcottereau.github.com/maintainability-slides/) mais n'est pas forcément à jour avec le code source ci-joint.
 
 Le [Synopsis](https://github.com/lcottereau/maintainability-slides/wiki/Synopsis) et les [Exercices](https://github.com/lcottereau/maintainability-slides/wiki/Exercices)
-vous donnent une idée du déroulement de la présentation qui dure entre 7 et 10h suivant le temps laissé pour les exercices.
+vous donnent une idée du déroulement de la présentation qui dure entre 6 et 8h suivant le temps laissé pour les exercices.
 
 ## Installation
 
-1. Installer [reveal.js (zip)](https://github.com/hakimel/reveal.js/archive/master.zip) dans un répertoire `reveal` à la racine du projet.
-1. Ouvrir le fichier [index.html](index.html) dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
+ 1. `git submodule init; git submodule update` va récupérer la bibliothèque [reveal.js](https://github.com/hakimel/reveal.js)
+ 1. Ouvrir le fichier [index.html](index.html) dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
 
 ## Historique
 
 * 22 mars 2013 : [License Pro CSID de l'IUT de Montreuil (Paris 8)](http://lcottereau.github.com/maintainability-slides/20130322/)
+* 28 octobre 2013 : [Option ASR de Telecom SudParis](http://lcottereau.github.io/maintainability-slides/20131028/)
 
 ## Contexte
 
@@ -29,4 +30,3 @@ Il faut poser des questions sur
     * connaissance des différentes briques de l'usine de dev
     * en particulier, quel gestionnaire de version est utilisé
 * Existence de projets sur lesquels travailler concrètement
-
