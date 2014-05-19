@@ -162,6 +162,7 @@
 								<li>4 Bonnes pratiques</li>
 								<li>extract 1 journée avec étudiants, dont <acronym title="Travaux pratiques">TPs</acronym></li>
 								<li>2h ⇒ pas gestion environnements, usine de dev, indicateurs, ...</li>
+								<li>particulièrement sur java</li>
 							</ul>
 						</aside>
 					</section>
@@ -905,7 +906,6 @@ public class Controle implements Serializable {
 								<li>plutôt que IDE (fragile) ou guava/JDK (intrusif)</li>
 								<li>le <code>jar</code> dans le <code>CLASSPATH</code> lors de la compilation est suffisant</li>
 								<li>rien au runtime</li>
-								<li>si pas Netbeans : installation (via <code>lombok.jar</code> ou plugin)</li>
 							</ul>
 						</aside>
 					</section>
@@ -975,7 +975,8 @@ public class Controle implements Serializable {
 								<li>mise en place échelonnée pour comprendre les impacts (<code>delombok</code> si problème)</li>
 								<li><code lang="en">StackOverflow</code> avec <code>@toString</code> par <abbr title="exemple">ex.</abbr></li>
 								<li>penser au <code>exclude</code> dans ce cas-là</li>
-								<li>debug difficile : rester sur le testé</li>
+								<li>si pas Netbeans : installation (via <code>lombok.jar</code> ou plugin)</li>
+								<li>debug difficile : rester sur les classiques</li>
 								<li>conclusion : permet d'exprimer l'intention pas l'implémentation</li>
 							</ul>
 						</aside>
@@ -987,7 +988,7 @@ public class Controle implements Serializable {
             <aside class="notes">
               <ul>
                 <li><a href="http://blog.xebia.fr/2013/05/27/comprendre-le-fonctionnement-de-la-jvm-article-1/" title="Comprendre le fonctionnement de la JVM – Article 1/2">Faites confiance aux ingénieurs JVM</a></li>
-								<li>N'empêche pas de faire les bons choix de structures : Hashmap recherche par clé en O(1), Linkedlist en O(n) et binary tree en O(log n)</li>
+								<li>N'empêche pas de faire les bons choix de structures : Hashmap/LinkedList/BinaryTree, StringBuilder ou String
                 <li>Si besoin d'optim, plutôt <a hreflang="en" href="https://weblogs.java.net/blog/kcpeppe/archive/2013/12/11/case-study-jvm-hotspot-flags">paramétrage JVM (expertise nécessaire)</a></li>
               </ul>
             </aside>
@@ -1179,7 +1180,7 @@ public class Controle implements Serializable {
 						<aside class="notes">
 							<ul>
 								<li>Un grand nombre d'information est là pour vous aider</li>
-								<li><a hreflang="en" href="http://blog.8thlight.com/doug-bradbury/2013/10/08/stuck-in-the-muck.html">Ne laissez rien passer</a></li>
+								<li>Ne laissez rien passer</li>
 								<li><a hreflang="en" href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">La règle du boy scout</a></li>
 							</ul>
 						</aside>
@@ -1246,6 +1247,11 @@ public class Controle implements Serializable {
             	<ul>
                 	<li>Colonne de droite (avec <acronym lang="en" title="Lack of Cohesion Of Methods">LCOM4</acronym>) puis duplications</li>
                 	<li>En gris: commentaires (sauf API), Classes/Méthodes</li>
+									<li>Permet aussi la revue de code</li>
+									<li><em lang="en">feedback</em> non automatisés</li>
+									<li>cher mais sans pareil pour maintenabilité</li>
+									<li>anticipe le risque de changement humain</li>
+									<li>comme de faire tomber les serveurs au hasard</li>
                 </ul>
             </aside>
           </section>
@@ -1260,7 +1266,7 @@ public class Controle implements Serializable {
             </ol>
             <aside class="notes">
               <ul>
-                <li><abbr title="informatique">info.</abbr> facile car il y a <strong>toujours</strong> une explication rationnelle</li>
+                <li><abbr title="informatique">info.</abbr> facile car <a hreflang="en" href="http://blog.8thlight.com/doug-bradbury/2013/10/08/stuck-in-the-muck.html">il y a <strong>toujours</strong> une explication rationnelle</a></li>
                 <li>si vraiment dur, <a hreflang="en" href="http://stackoverflow.com/">c'est vraiment nécessaire de creuser</a></li>
 								<li>stratégie open-source d'une entreprise</li>
                 <li>repousser avec TODO ou ticket</li>
@@ -1289,22 +1295,6 @@ public class Controle implements Serializable {
           </section>
 
           <section>
-            <h3>Tests automatisés</h3>
-            <p><img alt="tests unitaires, d'intégration et fonctionnels se recouvrent" src="img/types-tests.png" /></p>
-            <aside class="notes">
-              <ul>
-                <li>bug est moins cher si détecté tôt (exponentiel)</li>
-                <li>tests manuels rajoutent environ 30% * livraison</li>
-                <li>Code non applicatif prod mais patrimoine aussi</li>
-                <li>Evite 2 pires bugs <acronym title="du point de vue de">pdv</acronym> user : régressions/répétitions</li>
-                <li>plus facile de remanier le code. super doc.</li>
-                <li>pas de catégorisation officielle (jeunesse)</li>
-                <li>+ facile debug ⇒ + facile code (choix expérience)</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
             <h3 lang="en">Test Driven Development</h3>
             <p><img alt="Tests en erreurs puis tests passent puis remaniement et ça recommence" src="img/TDD.png"/></p>
             <aside class="notes">
@@ -1313,29 +1303,8 @@ public class Controle implements Serializable {
                 <li>aide à ne coder que le nécessaire fonctionnel</li>
                 <li>naturellement 100% de couverture</li>
                 <li>aide à trouver en auto le code inutile</li>
-                <li>souvent, priorité là où risque (<acronym title="valeur ajoutée">VA</acronym>)</li>
+								<li>aussi une très bonne documentation</li>
 								<li>attention aux <a hreflang="http://pitest.org/" title="mutation testing">tests non pertinents</a></li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h3>Bonnes pratiques</h3>
-            <ul>
-              <li>C'est du code</li>
-              <li>Niveau de cloisonnement</li>
-              <li>Jeu de données</li>
-              <li>Documentation</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li>Même principes (lisibilité, KISS, Less is More, ...)</li>
-                <li><a href="http://blog.8thlight.com/uncle-bob/2013/03/06/ThePragmaticsOfTDD.html" hreflang="en">Types de test selon projet, peu recouvrement</a></li>
-                <li>Cloisonnement unitaire ⇒ données intégrées</li>
-                <li>1 jeu de données pour l'ensemble des TF</li>
-                <li>Gérer jeu de données ⇒ cf environnements </li>
-                <li lang="en"><a href="http://www.artima.com/weblogs/viewpost.jsp?thread=203994" hreflang="en">The Way of Testivus</a></li>
-                <li>Elément clé de la documentation</li>
               </ul>
             </aside>
           </section>
