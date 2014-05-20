@@ -36,9 +36,9 @@
 				box-shadow: none;
         		vertical-align: middle;
 			}
-		    .reveal cite {
-		    	font-style: italic;
-		    }
+	    .reveal cite {
+	    	font-style: italic;
+	    }
 			.reveal ul {
 				list-style-type: square;
 			}
@@ -48,59 +48,44 @@
 			.reveal figcaption cite {
 				font-style: italic;
 			}
-		    li.email {
-		        list-style-image: url('img/icon-email.png');
-		    }
-		    li.linkedin {
-		        list-style-image: url('img/icon-linkedin.png');
-		    }
-		    li.twitter {
-		        list-style-image: url('img/icon-twitter.png');
-		    }
-		    li.github {
-		        list-style-image: url('img/icon-github.png');
-		    }
-			.dingle body {
-				background: url(img/fond_dingle.jpg) no-repeat center center fixed;
+	    li.email {
+	        list-style-image: url('img/icon-email.png');
+	    }
+	    li.linkedin {
+	        list-style-image: url('img/icon-linkedin.png');
+	    }
+	    li.twitter {
+	        list-style-image: url('img/icon-twitter.png');
+	    }
+	    li.github {
+	        list-style-image: url('img/icon-github.png');
+	    }
+			.plusloin body {
+			    background-image: url('img/forkme.png');
+			    background-repeat: no-repeat;
+			    background-position: top right;
 			}
-			.warning body {
-				background: url(img/warning.jpg) no-repeat center center fixed;
+			.reveal .note {
+				font-size: smaller;
 			}
-		    .question body {
-		        background: url(img/question_mark.png) no-repeat center center fixed;
-		    }
-		    .question section.present, .tp section.present {
-		        background-color: rgba(0, 0, 0, 0.75);
-		        border-radius: 10px;
-		        padding: 10px;
-		    }
-		    .tp body {
-		        background: url(img/travaux-pratiques.jpg) no-repeat center center fixed;
-		    }
-			.dingle body, .warning body, .question body, .tp body {
-				-webkit-background-size: cover;
-				-moz-background-size: cover;
-				-o-background-size: cover;
-				background-size: cover;
-			}
-			.warning section {
-				border-radius: 10px;
-				background-color: rgba(0, 0, 0, 0.5);
-			}
-		    .dingle .reveal a:not(.image) {
-		        color: white;
-		    }
-		    .dingle .reveal a:not(.image):hover {
-		        text-decoration: underline;
-		    }
-		    .plusloin body {
-		        background-image: url('img/forkme.png');
-		        background-repeat: no-repeat;
-		        background-position: top right;
-		    }
-		    .reveal .note {
-		    	font-size: smaller;
-		    }
+	    .reveal a:not(.image) {
+	        color: white;
+	    }
+	    .reveal a:not(.image):hover {
+	        text-decoration: underline;
+					background: transparent;
+					color: white;
+					border: none;
+	    }
+	    html.light-background .reveal .present {
+	    	background-color: rgba(0, 0, 0, 0.8);
+	    	border-radius: 10px;
+				padding: 20px 10px;
+	    }
+	    html.code-extracts img {
+	    	vertical-align: top;
+	    	width: 2.5em;
+	    }
 		</style>
 
 	</head>
@@ -112,107 +97,43 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section> <!-- TITRE -->
+				<section>
 					<h1 style="font-size: 2.3em;">Développement <img alt="Logiciel" class="no-border" src="img/floppy.png"/> Durable</h1>
 					<p>Maintenabilité des applications</p>
+					<aside class="notes">
+						<ul>
+							<li>Pas comme le film <a href="https://fr.wikipedia.org/wiki/Les_Stagiaires"><cite>Les Stagiaires</cite></a></li>
+						</ul>
+					</aside>
 				</section>
 
-
-				<section> <!-- PRESENTATION -->
-
-			<section data-state="question">
-            <h2 style="display: none">Questions préliminaires</h2>
-            <ul>
-                <li>Différence entre projet et maintenance ?</li>
-                <li>Différents types de maintenance ?</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li>3 phases TBR &ndash; Flou autour de la MEP &ndash; Trains &ndash; 2 def projet</li>
-                <li><a href="https://fr.wikipedia.org/wiki/Informatique">Corrective &ndash; Evolutive &ndash; Adaptative</a> &ndash; Préventive (moins en informatique)</li>
-              </ul>
-            </aside>
-					</section>
-
-          <section>
-            <h2>Laurent Cottereau</h2>
-            <p><img class="no-border" src="img/skills.png" alt="Java GNU/Linux Bash CSS SQL Git J2EE HTTP Maven Accessibilité Scrum JavaScript Spring Performance PHP Visual Basic HTML Subversion jQuery JRAT Jmeter Selenium Firebug TCP/IP JMS"/></p>
-            <aside class="notes">
-              <ul>
-                <li>dev et management d'équipes de dev</li>
-                <li>
-                  RATP mais aussi SAPN, EFG, Cofiroute, Roche Bobois,
-                  Conseil Régional de l'Ile de France, Aventis. Sénat
-                </li>
-                <li>1 à 5 développeurs, de 2 mois à 1 an</li>
-                <li>Pas de gros projets</li>
-              </ul>
-              <p>Important pour mettre ma présentation dans contexte de mon XP</p>
-            </aside>
-          </section>
-
-          <section>
-            <h2>La vraie vie de développeur</h2>
-            <p><img alt="" src="img/dilbert-reprise-projet.gif" /></p>
-            <aside class="notes">
-              <ul>
-              	<li>Pas comme le film <a href="https://fr.wikipedia.org/wiki/Les_Stagiaires"><cite>Les Stagiaires</cite></a></li>
-                <li>Prise en charge d'un projet suite à démission. Livraison imminente</li>
-                <li>Au moins, pas de documentation, pas de fausse croyances</li>
-                <li>Correction de code dupliqué, mais en fait pas vraiment mais presque</li>
-                <li>Régression fonctionnelle (le plus frustant pour les utilisateurs)</li>
-              </ul>
-            </aside>
-          </section> 
-
-          <section>
-            <h2>Des impacts forts</h2>
-            <p><img class="fragment" src="img/pentium.jpg"/> <img class="fragment" src="img/ariane.jpg" alt="Le bug "/></p>
-			<aside class="notes">
-              <ul>
-                <li>Bug division du Pentium en 1994 (problème d'init de variable). Peut-être 475 m$</li>
-                <li><a hreflang="en" href="https://en.wikipedia.org/wiki/Ariane_5_Flight_501">Bug integer overflow vol inaugural Ariane 5</a>. 370 m$, bug le plus coûteux de l'histoire</li>
-                <li>Estimation du coût des pannes logicielles pour l'économie mondiale proche centaine de milliards d'€</li>
-                <li><a href="https://www.inria.fr/centre/grenoble/actualites/la-fiabilite-des-systemes-devient-un-defi-majeur">Toujours du boulot</a> mais de grandes responsabilités</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section data-state="question">
-            <p>Qu'est-ce que la maintenabilité ?</p>
-            <aside class="notes">
-              Après les définitions et l'exemple, qu'en pensez-vous ?
-            </aside>
-          </section>
-
+				<section>
 					<section>
-						<h2>Proposition de définition</h2>
-						<blockquote>Capacité à pouvoir maintenir une application sur le long terme et pour tout type de maintenance</blockquote>
-            <p><img class="fragment roll-in no-border" alt="cela a un coût" src="img/money.png"/></p>
+						<h2>La vraie vie de développeur</h2>
+						<p><img alt="" src="img/dilbert-reprise-projet.gif" /></p>
 						<aside class="notes">
 							<ul>
-								<li>au travers des changements d'équipe, des migrations techniques, des grosses évolutions</li>
-								<li>moins il est cher (au sens large) de faire une évolution, plus la maintenabilité est haute</li>
-								<li>faire mal est moins cher à court terme. plus cher de redresser la qualité</li>
-                <li> ⇒ adapter au contexte / à la durée de vie</li>
+								<li>Prise en charge d'un projet suite à démission. Livraison imminente</li>
+								<li>Au moins, pas de documentation, pas de fausse croyances</li>
+								<li>Correction de code dupliqué, mais en fait pas vraiment mais presque</li>
+								<li>Régression fonctionnelle (le plus frustant pour les utilisateurs)</li>
 							</ul>
 						</aside>
 					</section>
 
-					<section data-state="question">
-						<h3>Adaptation au contexte</h3>
-						<p>
-							<img class="fragment" alt="projet pilote" src="img/pilote.jpg"/>
-							<img class="fragment" alt="logiciel de paie d'une grande entreprise" src="img/taxes.jpg"/>
-							<img class="fragment" alt="jeu vidéo" src="img/wow.jpg"/>
-						</p>
+					<section data-background="img/question_mark.png" data-state="light-background">
+						<p>Qu'est-ce que la maintenabilité ?</p>
+						<aside class="notes">
+							Après les définitions et l'exemple, qu'en pensez-vous ?
+						</aside>
+					</section>
+
+					<section>
+						<h2>Proposition de définition</h2>
+						<blockquote>Capacité à pouvoir maintenir une application sur le long terme et pour tout type de maintenance</blockquote>
 						<aside class="notes">
 							<ul>
-								<li>quels sont les enjeux d'après vous ?</li>
-								<li>durée de vie</li>
-								<li>complexités du code, besoins en performance</li>
-								<li>criticité des bugs</li>
-								<li>retour sur investissement</li>
+								<li>au travers des changements d'équipe, des migrations techniques, des grosses évolutions</li>
 							</ul>
 						</aside>
 					</section>
@@ -230,8 +151,9 @@
 							<ul>
 								<li>Beaucoup de boulot : toujours après projet</li>
 								<li>site web Sénat début années 90, système de paie 25 ans</li>
-								<li>des choses à apprendre : compliqué (cf longueur intro et pas de vrai nom), montée en puissance (outils)</li>
-								<li>vu le marché, excellente valorisation</li>
+								<li>une des nombreuses compétences du dev moderne</li>
+								<li>montée en puissance (outils)</li>
+								<li>vu le marché, excellente perspective de valorisation</li>
 							</ul>
 						</aside>
 					</section>
@@ -262,7 +184,8 @@
 							Si vous êtes un jour responsables d'équipes de dev
 							<ul>
 								<li>équipes projet ET maintenance</li>
-								<li>dev en interne, pour limiter perte de connaissance interne et incapacité à évaluer les travaux externes</li>
+								<li>célèbre <q>You build it, you run it</q> de Amazon</li>
+								<li>connaissance technique en interne et capacité à évaluer les travaux externes</li>
 								<li>pas de perte de temps à abuser les indicateurs de suivi (uniquement une impression de contrôle)</li>
 							</ul>
 						</aside>
@@ -275,8 +198,10 @@
             <h2>1&nbsp;&dash;&nbsp;#WTF</h2>
             <p><a href="http://www.osnews.com/story/19266/WTFs_m" title="The true indicator of code quality, on OSNews"><img src="img/wtf.jpg" alt="The true indicator of code quality, the What-the-fucks per minute" /></a></p>
             <aside class="notes">
-              Premier problème de maintenance est l'incompréhension (par un nouveau dev mais aussi soi-même après 6 mois). Voir aussi 
-              le <a hreflang="en" href="http://www.cs.arizona.edu/projects/sumatra/hallofshame/">Java Hall Of Shame</a>.
+							<ul>
+								<li><em lang="en">Principle of least astonishment</em> (via <a hreflang="en" href="http://www.cs.arizona.edu/projects/sumatra/hallofshame/">Java Hall Of Shame</a>)</li>
+								<li>Incompréhension par un autre dev (ou soi-même après 6 mois)</li>
+								<li>Toujours un peu mais doit être limité</li>
             </aside>
           </section>
 
@@ -301,7 +226,7 @@
               Calendar c = new GregorianCalendar();
               Calendar b = j.bd();
               if (b != null
-                  && c.get(Calendar.DAY_OF_YEAR) ==
+                  &amp;&amp; c.get(Calendar.DAY_OF_YEAR) ==
                      b.get(Calendar.DAY_OF_YEAR)) {
                   return new BD();
               }
@@ -332,53 +257,79 @@
         <section>
           <section> <!-- 1.2) Less is More -->
             <h2>2&nbsp;&dash;&nbsp;Less Is More</h2>
-            <pre class="fragment"><code>@Override
-public String toString() {
-  return "Message [senderName=" + senderName + ", receiverName="
-    + receiverName + ", sendingDate=" + sendingDate + ", subject="
-    + subject + ", body=" + body + "]";
-}</code></pre>
             <p class="fragment">Moins de fonctionnalité</p>
             <aside class="notes">
               <ul>
-              	<li>Pourquoi certains élèves ont codé <code>toString()</code></li>
-                <li>Deuxième et plus gros problème</li>
-                <li>pas incohérent avec la réponse au besoin : principes de simplicité dans le design (apple)</li>
+              	<li>Très présent dans le code des élèves (copier/coller ? toString inutiles...)</li>
                 <li>Agilité aide à définir les fonctions au plus juste</li>
               </ul>
             </aside>
           </section>
 
-          <section data-state="warning">
-            <h3>Comprenez ce que vous faites !</h3>
-            <pre class="fragment"><code>private static final long serialVersionUID = 1L;</code></pre>
-            <aside class="notes">
-              <ul>
-                <li>Soyez curieux et perfectionnistes !</li>
-                <li><strong>exemple sessions web</strong> et <a href="http://blog.ninja-squad.com/2013/07/26/stop-with-serialVersionUID/">serialVersionUID</a></li>
-                <li>différence entre bon (utile, demandé) et mauvais dev</li>
-                <li>bugs techniques inacceptables (pb fonctionnels compréhensibles)</li>
-                <li>en permanence : veille techno, lecture specs, pas de pré-suppositions</li>
-                <li>TRES IMPORTANT : <a lang="en" hreflang="en" href="http://christianheilmann.com/2013/09/26/7-things-about-working-in-i-t-you-dont-learn-in-school/" title="7 things about working in IT you don't learn in school">The <em>how</em> lands you a job, the <em>why</em> lands you a career</a></li>
-              </ul>
-            </aside>
-          </section>
+					<section>
+						<h3 lang="en">Convention over configuration</h3>
+						<ul>
+							<li class="fragment highlight-green">valeurs par défaut</li>
+							<li class="fragment highlight-red">code spécifique / paramétrages</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li><strong><a hreflang="en" href="https://maven.apache.org/">maven</a></strong>, noms par défaut des tables/colonnes JPA</li>
+								<li>on peut choisir des conventions mais les documenter</li>
+								<li>choix de bibliothèques exactement adaptées</li>
+								<li>idéal de rester dans les conventions</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-background="img/slide-warning.jpg" data-state="light-background">
+						<h3>Comprenez ce que vous faites !</h3>
+						<pre class="fragment"><code>private static final long serialVersionUID = 1L;</code></pre>
+						<aside class="notes">
+							<ul>
+								<li><a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">Soyez curieux</a> et perfectionnistes !</li>
+								<li><strong>exemple sessions web</strong> et <a href="http://blog.ninja-squad.com/2013/07/26/stop-with-serialVersionUID/">serialVersionUID</a></li>
+								<li>différence entre bon (utile, demandé) et mauvais dev</li>
+								<li>bugs techniques inacceptables (pb fonctionnels compréhensibles)</li>
+								<li>en permanence : veille techno, katas, lecture specs, pas de pré-suppositions</li>
+								<li>TRES IMPORTANT : <a lang="en" hreflang="en" href="http://christianheilmann.com/2013/09/26/7-things-about-working-in-i-t-you-dont-learn-in-school/" title="7 things about working in IT you don't learn in school">The <em>how</em> lands you a job, the <em>why</em> lands you a career</a></li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3 lang="en">
+							<acronym title="Don't Repeat Yourself">DRY</acronym> &ndash;
+							don't <acronym title="Write Everything Twice">WET</acronym>
+						</h3>
+						<blockquote lang="en">
+							Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
+						</blockquote>
+						<aside class="notes">
+							<ul>
+								<li><a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" hreflang="en">Risques</a> : corriger à un seul endroit, savoir lequel utiliser</li>
+								<li>Aide à une bonne conception (responsabilité unique)</li>
+								<li>Attention si presque-pareil : pourquoi ? comment gérer ?</li>
+								<li>Attention à la surgénéralisation (intra et inter projets)</li>
+							</ul>
+						</aside>
+					</section>
 
           <section>
             <h3>Réfléchissez à ce que vous commitez</h3>
             <h4>A supprimer</h4>
-            <pre class="fragment"><code>import java.util.Date;
+            <pre><code>import java.util.Date;
 //import java.util.Date;</code></pre>
-            <pre class="fragment"><code>/**
- * 
+            <pre><code>/**
+ *
  */
 private static final long serialVersionUID = 1L;</code></pre>
-            <pre class="fragment"><code>@Override
+            <pre><code>@Override
 public void setSenderEmail(String senderEmail) {
   // TODO Auto-generated method stub
-	
+
 }</code></pre>
-			<pre class="fragment"><code>/**
+			<pre><code>/**
 * $Id:$
 * @author toto
 */
@@ -389,6 +340,7 @@ public int doSomething() {
 }</code></pre>
             <aside class="notes">
               <ul>
+								<li>exemples tirés des projets d'élèves</li>
               	<li>aucun code binaire (cf projet)</li>
                 <li>infos qui ne seront pas tenues à jours (@author est déjà ailleurs)</li>
                 <li>classique : vieux code de test : git est là pour ça</li>
@@ -427,7 +379,7 @@ public int doSomething() {
               </aside>
           </section>
 
-          <section data-state="question">
+          <section data-background="img/question_mark.png" data-state="light-background">
             <h3>Bibliothèques, API et Frameworks</h3>
             <p>Différences ?</p>
 
@@ -448,12 +400,12 @@ public int doSomething() {
               <img alt="logiciel de blog, " src="img/wordpress.jpg" />
               <img alt="jeu vidéo" src="img/wow.jpg"/>
             </p>
-            <p class="fragment">Critères de choix classiques</p>
+            <p class="fragment highlight-red">Attention au choix framework/bibliothèque/API</p>
             <aside class="notes">
               <ul>
                 <li>Coder uniquement spécificité/élément différenciateur</li>
                 <li>Code externe généralement mieux testé</li>
-                <li>gestion : <strong>code "métier"</strong>. ergonomie ? <del>affichage des pages (Play, Spring MCV,...)</del></li>
+                <li>gestion : <strong>code "métier"</strong>. ergonomie ? <del>affichage des pages (Play, Spring MVC,...)</del></li>
                 <li>blog : <strong>gestion articles</strong>. commentaires ? <del>infrastructure, connexion</del></li>
                 <li>jeu vidéo : graphiques et IA.</li>
                 <li>OS, communauté, docu, prix, couteau suisse</li>
@@ -461,260 +413,604 @@ public int doSomething() {
             </aside>
           </section>
 
-          <section>
-            <h3>Pépite : Lombok</h3>
-            <ul>
-              <li><code>@Getter(lazy=true)</code></li>
-              <li><code>@ToString</code></li>
-              <li><code>@<em>XXX</em>ArgsConstructor</code></li>
-              <li><code>@Data</code></li>
-              <li><code>@Cleanup</code></li>
-              <li><code>@Log</code></li>
-              <li>...</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li>Design Patterns. Lombok fournit aussi le code</li>
-                <li>Plus rapide ET plus lisible.</li>
-                <li>
-                  de <a href="http://projectlombok.org/features/" hreflang="en">nombreuses autres</a>,
-                  des <a href="http://projectlombok.org/features/experimental/" hreflang="en">expérimentales</a> (dont <code>@Builder</code>) et
-                  des <a href="https://github.com/peichhorn/lombok-pg" hreflang="en">non-officielles</a>
-                </li>
-              </ul>
-            </aside>
-          </section>
+					<section>
+						<h2>Un cas typique</h2>
+						<pre><code>
+/**
+ * Copyright Sénat.
+ */
+package fr.senat.model.dosleg;
 
-          <section>
-            <h4>Sans Lombok</h4>
-            <pre style="font-size: 7%;"><code>package server;
-
+import fr.senat.model.dosleg.validator.ActiviteValide;
+import fr.senat.model.senateurs.GroupePolitique;
+import fr.senat.util.Constants;
 import java.io.Serializable;
-
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import org.hibernate.annotations.Type;
+import static org.joda.time.DateTimeConstants.OCTOBER;
+import org.joda.time.LocalDate;
+import static org.joda.time.LocalDate.now;
 
+/**
+ * Représente une mission de contrôle et d'évaluation du Sénat. Peut être une Mission Commune d'Information, une
+ * commission d'enquête, un contrôle d'application d'une loi, un contrôle de commission permanente, etc... Par défaut,
+ * le contrôle n'est à l'initiative des groupes, ni avec l'aide de la cour des comptes ou clôturé, mais il est considéré
+ * comme avec rapport. Par ailleurs, les organismes, lois, livrables, acteurs et thèmes sont des ensembles vides.
+ */
 @Entity
-@Table(name="MESSAGES_TABLE")
-public class MessageBackup implements Serializable{
-	private int id;
-	
-	public String senderName;
-	public String receiverName;
-	public String sendingDate;
-	public String subject;
-	public String body;
-	public int alreadyRead=0;
-	
-	public MailBox mailb;
-	
-	//private MailBox mailbox;
-	
-	
-	public MessageBackup() {
-	}
-	
-	//contruct a news message
-	public MessageBackup(String senderName, String sendingDate,
-			String subject, String body){
-		this.senderName = senderName;
-		this.receiverName = "@@";
-		this.sendingDate = sendingDate;
-		this.subject = subject;
-		this.body = body;
-		this.alreadyRead = 0;
-	}
-	public MessageBackup(String senderName, String receiverName, String sendingDate,
-			String subject, String body) {
-		this.senderName = senderName;
-		this.receiverName = receiverName;
-		this.sendingDate = sendingDate;
-		this.subject = subject;
-		this.body = body;
-		this.alreadyRead = 0;
-	}
-	
-	@Override
-	public String toString() {
-		return "Message [senderName=" + senderName + ", receiverName="
-				+ receiverName + ", sendingDate=" + sendingDate + ", subject="
-				+ subject + ", body=" + body + "]";
-	}
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="ID")
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	@ManyToOne
-	@JoinColumn(name="MAILBOX_ID")
-	public MailBox getMailb() {
-		return mailb;
-	}
+@ActiviteValide
+public class Controle implements Serializable {
+    private static final String FOREIGN_KEY_ID = "CON_ID";
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    @Size(max = 256, message = "trop long.")
+    @Column(name = "LIB", length = 256)
+    @NotNull
+    private String libelle;
+    @Size(max = 2048, message = "trop long.")
+    private String objet;
+    @Pattern(regexp = Constants.URL_PATTERN, message = "pas au bon format (par exemple : http://www.senat.fr/commission/XX/missions_d_information/mission_dinformation_sur_YY.html)")
+    private String url;
+    @NotNull
+    @Column(name = "INITIATIVE_GROUPES")
+    @Type(type = "fr.senat.util.hibernate.usertype.OuiNonSmallType")
+    private boolean initiativeDesGroupes = false;
+    @NotNull
+    @Column(name = "COUR_COMPTES")
+    @Type(type = "fr.senat.util.hibernate.usertype.OuiNonSmallType")
+    private boolean courDesComptes = false;
+    @NotNull
+    @Column(name = "PROGRAMME_CREATION")
+    private int programmeCreation = Controle.getSession(now());
+    @Column(name = "PROGRAMME_REPORT")
+    private Integer programmeReport;
+    @Column(name = "DATE_CREATION")
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+    private LocalDate dateCreation;
+    @NotNull
+    @Type(type = "fr.senat.util.hibernate.usertype.OuiNonSmallType")
+    private boolean cloture = false;
+    @NotNull
+    @Column(name = "AVEC_RAPPORT")
+    @Type(type = "fr.senat.util.hibernate.usertype.OuiNonSmallType")
+    private boolean avecRapport = true;
+    @Embedded
+    @NotNull
+    private EcheanceControle echeance = new EcheanceControle();
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "GRPPOL")
+    private GroupePolitique groupePolitique;
+    @ManyToMany
+    @JoinTable(name = "CONTROLE_ORG", joinColumns = @JoinColumn(name = FOREIGN_KEY_ID), inverseJoinColumns = @JoinColumn(name = "ORGCOD"))
+    private Set&lt;Organisme&gt; organismes = new HashSet&lt;Organisme&gt;();
+    @ManyToMany
+    @JoinTable(name = "CONTROLE_LOI", joinColumns = @JoinColumn(name = FOREIGN_KEY_ID), inverseJoinColumns = @JoinColumn(name = "LOICOD"))
+    private Set&lt;Loi&gt; lois = new HashSet&lt;Loi&gt;();
+    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = FOREIGN_KEY_ID, nullable = false)
+    private Set&lt;LivrableControle&gt; livrables = new HashSet&lt;LivrableControle&gt;();
+    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = FOREIGN_KEY_ID, nullable = false)
+    @OrderBy("id asc")
+    private Set&lt;ActeurControle&gt; acteurs = new HashSet&lt;ActeurControle&gt;();
+    private final java.util.concurrent.AtomicReference&lt;java.lang.Object&gt; themes = new java.util.concurrent.AtomicReference&lt;java.lang.Object&gt;();
 
-	public void setMailb(MailBox mailb) {
-		this.mailb = mailb;
-	}
-	@Column(name="SENDER")
-	public String getSenderName() {
-		return senderName;
-	}
-	public void setSenderName(String senderName) {
-		this.senderName = senderName;
-	}
-	//@Column(name="RECEIVER")
-	public String getReceiverName() {
-		return receiverName;
-	}
-	public void setReceiverName(String receiverName) {
-		this.receiverName = receiverName;
-	}
-	@Column(name="DATE")
-	public String getSendingDate() {
-		return sendingDate;
-	}
-	public void setSendingDate(String sendingDate) {
-		this.sendingDate = sendingDate;
-	}
-	@Column(name="SUBJECT")
-	public String getSubject() {
-		return subject;
-	}
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
-	@Column(name="BODY")
-	public String getBody() {
-		return body;
-	}
-	public void setBody(String body) {
-		this.body = body;
-	}
-	//@Column(name="READ")
-	public int getAlreadyRead() {
-		return alreadyRead;
-	}
-	public void setAlreadyRead(int alreadyRead) {
-		this.alreadyRead = alreadyRead;
-	}
-	/*
-	@ManyToOne()
-	@JoinColumn(name="MAILBOX_ID")
-	public MailBox getMailbox() {
-		return mailbox;
-	}
-	public void setMailbox(MailBox mailbox) {
-		this.mailbox = mailbox;
-	}
-	*/
+
+    public Controle() {
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public String getLibelle() {
+        return this.libelle;
+    }
+
+    public String getObjet() {
+        return this.objet;
+    }
+
+    public String getUrl() {
+        return this.url;
+    }
+
+    public boolean isInitiativeDesGroupes() {
+        return this.initiativeDesGroupes;
+    }
+
+    public boolean isCourDesComptes() {
+        return this.courDesComptes;
+    }
+
+    public int getProgrammeCreation() {
+        return this.programmeCreation;
+    }
+
+    public Integer getProgrammeReport() {
+        return this.programmeReport;
+    }
+
+    public LocalDate getDateCreation() {
+        return this.dateCreation;
+    }
+
+    public boolean isCloture() {
+        return this.cloture;
+    }
+
+    public boolean isAvecRapport() {
+        return this.avecRapport;
+    }
+
+    public EcheanceControle getEcheance() {
+        return this.echeance;
+    }
+
+    public GroupePolitique getGroupePolitique() {
+        return this.groupePolitique;
+    }
+
+    public Set&lt;Organisme&gt; getOrganismes() {
+        return this.organismes;
+    }
+
+    public Set&lt;Loi&gt; getLois() {
+        return this.lois;
+    }
+
+    public Set&lt;LivrableControle&gt; getLivrables() {
+        return this.livrables;
+    }
+
+    public Set&lt;ActeurControle&gt; getActeurs() {
+        return this.acteurs;
+    }
+
+    public Set&lt;Theme&gt; getThemes() {
+        java.lang.Object value = this.themes.get();
+        if (value == null) {
+            synchronized(this.themes) {
+                value = this.themes.get();
+                if (value == null) {
+                    final Set&lt;Theme&gt; actualValue = Cache.getInstance().calculateThemes();
+                    value = actualValue == null ? this.themes : actualValue;
+                    this.themes.set(value);
+                }
+            }
+        }
+        return (Set&lt;Theme&gt;)(value == this.themes ? null : value);
+     }
+
+    public void setId(final Integer id) {
+        this.id = id;
+    }
+
+    public void setLibelle(final String libelle) {
+        this.libelle = libelle;
+    }
+
+    public void setObjet(final String objet) {
+        this.objet = objet;
+    }
+
+    public void setUrl(final String url) {
+        this.url = url;
+    }
+
+    public void setInitiativeDesGroupes(final boolean initiativeDesGroupes) {
+        this.initiativeDesGroupes = initiativeDesGroupes;
+    }
+
+    public void setCourDesComptes(final boolean courDesComptes) {
+        this.courDesComptes = courDesComptes;
+    }
+
+    public void setProgrammeCreation(final int programmeCreation) {
+        this.programmeCreation = programmeCreation;
+    }
+
+    public void setProgrammeReport(final Integer programmeReport) {
+        this.programmeReport = programmeReport;
+    }
+
+    public void setDateCreation(final LocalDate dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public void setCloture(final boolean cloture) {
+        this.cloture = cloture;
+    }
+
+    public void setAvecRapport(final boolean avecRapport) {
+        this.avecRapport = avecRapport;
+    }
+
+    public void setEcheance(final EcheanceControle echeance) {
+        this.echeance = echeance;
+    }
+
+    public void setGroupePolitique(final GroupePolitique groupePolitique) {
+        this.groupePolitique = groupePolitique;
+    }
+
+    public void setOrganismes(final Set&lt;Organisme&gt; organismes) {
+        this.organismes = organismes;
+    }
+
+    public void setLois(final Set&lt;Loi&gt; lois) {
+        this.lois = lois;
+    }
+
+    public void setLivrables(final Set&lt;LivrableControle&gt; livrables) {
+        this.livrables = livrables;
+    }
+
+    public void setActeurs(final Set&lt;ActeurControle&gt; acteurs) {
+        this.acteurs = acteurs;
+    }
+
+    public void setThemes(final Set&lt;Theme&gt; themes) {
+        this.themes = themes;
+    }
+
+    /**
+     * Renvoie la date à prendre en compte pour le nommage du groupe politique lié à ce contrôle. TODO vérifier cette
+     * règle de gestion avec S. Dubourg.
+     *
+     * @return la date à prendre en compte.
+     */
+    private LocalDate getDateNommageGroupePolitique() {
+        if (isClosed()) {
+            return echeance.getDate();
+        } else {
+            return LocalDate.now();
+        }
+    }
+
+    /**
+     * Renvoie le libellé de groupe politique à la date adéquate pour ce contrôle, préfixé de l'article adéquat. Ainsi,
+     * un contrôle en cours prendra le nom à la date du jour alors qu'un contrôle fini prendra le nom à la date
+     * d'échéance.
+     *
+     * @return le libellé préfixé de l'article. &lt;code&gt;null&lt;/code&gt; si le groupe politique n'est pas défini.
+     */
+    public String getLibelleLongEtArticleGroupePolitique() {
+        if (groupePolitique != null) {
+            LocalDate d = getDateNommageGroupePolitique();
+            StringBuilder sb = new StringBuilder(groupePolitique.getArticle(d));
+            sb.append(" ");
+            sb.append(groupePolitique.getLibelleLong(d));
+            return sb.toString();
+        }
+        return null;
+    }
+
+    /**
+     * Détermine si le contrôle est fini.
+     *
+     * @return &lt;code&gt;true&lt;/code&gt; si le contrôle est fini.
+     */
+    public boolean isClosed() {
+        return echeance != null && echeance.getDate().isBefore(LocalDate.now());
+    }
+
+    /**
+     * Reporte d'un an le contrôle. La date de début d'activité est inchangée mais la date de report est décalée d'un an
+     * (année suivant le démarrage si c'est le premier report)
+     */
+    public void reporter() {
+        if (canReporteControle()) {
+            if (programmeReport == null) {
+                programmeReport = programmeCreation + 1;
+            } else {
+                programmeReport++;
+            }
+        }
+    }
+
+    /**
+     * Renvoie le dernier programme d'activité du contrôle.
+     *
+     * @return le dernier programme d'activité du contrôle.
+     */
+    public int getDernierProgramme() {
+        if (programmeReport == null) {
+            return programmeCreation;
+        } else {
+            return programmeReport;
+        }
+    }
+
+    /**
+     * Indique si un contrôle peut être reporté. C'est le cas si l'échéance correspond à une session strictement
+     * postérieure supérieure à la session de report actuelle.
+     *
+     * @return &lt;code&gt;true&lt;/code&gt; si le contrôle peut être reporté. &lt;code&gt;false&lt;/code&gt; sinon.
+     */
+    public boolean canReporteControle() {
+        if (echeance.getDate() != null) {
+            return (getDernierProgramme() &lt; echeance.getSession());
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Renvoie la session correspondant à une date.
+     *
+     * @param date la date dont on cherche la session.
+     * @return la session, représentée par l'année de démarrage de la session (2013 pour la session 2013-2014 par
+     * exemple). &lt;code&gt;null&lt;/code&gt; si la date en paramètre est nulle.
+     */
+    public static Integer getSession(LocalDate date) {
+        if (date != null) {
+            if (date.getMonthOfYear() &lt; OCTOBER) {
+                return date.getYear() - 1;
+            } else {
+                return date.getYear();
+            }
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Renvoie l'année de fin d'activité du contrôle.
+     *
+     * @return l'année de fin d'activité.
+     */
+    public int getFinActivite() {
+        return getDernierProgramme() + 1;
+    }
+
+    /**
+     * Définit la fin d'activité. Calcule le programme correspondant et définit éventuellement un report sur le
+     * contrôle.
+     *
+     * @param fin l'année de fin d'activité spécifiée dans le formulaire.
+     */
+    public void setFinActivite(int fin) {
+        if (fin &gt; getProgrammeCreation() + 1) {
+            setProgrammeReport(fin - 1);
+        } else {
+            setProgrammeReport(null);
+        }
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object o) {
+        if (o == this) return true;
+        if (!(o instanceof Controle)) return false;
+        final Controle other = (Controle)o;
+        if (!other.canEqual((java.lang.Object)this)) return false;
+        final java.lang.Object this$id = this.getId();
+        final java.lang.Object other$id = other.getId();
+        if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
+        final java.lang.Object this$libelle = this.getLibelle();
+        final java.lang.Object other$libelle = other.getLibelle();
+        if (this$libelle == null ? other$libelle != null : !this$libelle.equals(other$libelle)) return false;
+        final java.lang.Object this$objet = this.getObjet();
+        final java.lang.Object other$objet = other.getObjet();
+        if (this$objet == null ? other$objet != null : !this$objet.equals(other$objet)) return false;
+        final java.lang.Object this$url = this.getUrl();
+        final java.lang.Object other$url = other.getUrl();
+        if (this$url == null ? other$url != null : !this$url.equals(other$url)) return false;
+        if (this.isInitiativeDesGroupes() != other.isInitiativeDesGroupes()) return false;
+        if (this.isCourDesComptes() != other.isCourDesComptes()) return false;
+        if (this.getProgrammeCreation() != other.getProgrammeCreation()) return false;
+        final java.lang.Object this$programmeReport = this.getProgrammeReport();
+        final java.lang.Object other$programmeReport = other.getProgrammeReport();
+        if (this$programmeReport == null ? other$programmeReport != null : !this$programmeReport.equals(other$programmeReport)) return false;
+        final java.lang.Object this$dateCreation = this.getDateCreation();
+        final java.lang.Object other$dateCreation = other.getDateCreation();
+        if (this$dateCreation == null ? other$dateCreation != null : !this$dateCreation.equals(other$dateCreation)) return false;
+        if (this.isCloture() != other.isCloture()) return false;
+        if (this.isAvecRapport() != other.isAvecRapport()) return false;
+        final java.lang.Object this$echeance = this.getEcheance();
+        final java.lang.Object other$echeance = other.getEcheance();
+        if (this$echeance == null ? other$echeance != null : !this$echeance.equals(other$echeance)) return false;
+        final java.lang.Object this$groupePolitique = this.getGroupePolitique();
+        final java.lang.Object other$groupePolitique = other.getGroupePolitique();
+        if (this$groupePolitique == null ? other$groupePolitique != null : !this$groupePolitique.equals(other$groupePolitique)) return false;
+        final java.lang.Object this$organismes = this.getOrganismes();
+        final java.lang.Object other$organismes = other.getOrganismes();
+        if (this$organismes == null ? other$organismes != null : !this$organismes.equals(other$organismes)) return false;
+        final java.lang.Object this$lois = this.getLois();
+        final java.lang.Object other$lois = other.getLois();
+        if (this$lois == null ? other$lois != null : !this$lois.equals(other$lois)) return false;
+        final java.lang.Object this$livrables = this.getLivrables();
+        final java.lang.Object other$livrables = other.getLivrables();
+        if (this$livrables == null ? other$livrables != null : !this$livrables.equals(other$livrables)) return false;
+        final java.lang.Object this$acteurs = this.getActeurs();
+        final java.lang.Object other$acteurs = other.getActeurs();
+        if (this$acteurs == null ? other$acteurs != null : !this$acteurs.equals(other$acteurs)) return false;
+        final java.lang.Object this$themes = this.getThemes();
+        final java.lang.Object other$themes = other.getThemes();
+        if (this$themes == null ? other$themes != null : !this$themes.equals(other$themes)) return false;
+        return true;
+    }
+
+    public boolean canEqual(final java.lang.Object other) {
+        return other instanceof Controle;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        final java.lang.Object $id = this.getId();
+        result = result * PRIME + ($id == null ? 0 : $id.hashCode());
+        final java.lang.Object $libelle = this.getLibelle();
+        result = result * PRIME + ($libelle == null ? 0 : $libelle.hashCode());
+        final java.lang.Object $objet = this.getObjet();
+        result = result * PRIME + ($objet == null ? 0 : $objet.hashCode());
+        final java.lang.Object $url = this.getUrl();
+        result = result * PRIME + ($url == null ? 0 : $url.hashCode());
+        result = result * PRIME + (this.isInitiativeDesGroupes() ? 79 : 97);
+        result = result * PRIME + (this.isCourDesComptes() ? 79 : 97);
+        result = result * PRIME + this.getProgrammeCreation();
+        final java.lang.Object $programmeReport = this.getProgrammeReport();
+        result = result * PRIME + ($programmeReport == null ? 0 : $programmeReport.hashCode());
+        final java.lang.Object $dateCreation = this.getDateCreation();
+        result = result * PRIME + ($dateCreation == null ? 0 : $dateCreation.hashCode());
+        result = result * PRIME + (this.isCloture() ? 79 : 97);
+        result = result * PRIME + (this.isAvecRapport() ? 79 : 97);
+        final java.lang.Object $echeance = this.getEcheance();
+        result = result * PRIME + ($echeance == null ? 0 : $echeance.hashCode());
+        final java.lang.Object $groupePolitique = this.getGroupePolitique();
+        result = result * PRIME + ($groupePolitique == null ? 0 : $groupePolitique.hashCode());
+        final java.lang.Object $organismes = this.getOrganismes();
+        result = result * PRIME + ($organismes == null ? 0 : $organismes.hashCode());
+        final java.lang.Object $lois = this.getLois();
+        result = result * PRIME + ($lois == null ? 0 : $lois.hashCode());
+        final java.lang.Object $livrables = this.getLivrables();
+        result = result * PRIME + ($livrables == null ? 0 : $livrables.hashCode());
+        final java.lang.Object $acteurs = this.getActeurs();
+        result = result * PRIME + ($acteurs == null ? 0 : $acteurs.hashCode());
+        final java.lang.Object $themes = this.getThemes();
+        result = result * PRIME + ($themes == null ? 0 : $themes.hashCode());
+        return result;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "Controle(id=" + this.getId() + ", libelle=" + this.getLibelle() + ", objet=" + this.getObjet() + ", url=" + this.getUrl() + ", initiativeDesGroupes=" + this.isInitiativeDesGroupes() + ", courDesComptes=" + this.isCourDesComptes() + ", programmeCreation=" + this.getProgrammeCreation() + ", programmeReport=" + this.getProgrammeReport() + ", dateCreation=" + this.getDateCreation() + ", cloture=" + this.isCloture() + ", avecRapport=" + this.isAvecRapport() + ", echeance=" + this.getEcheance() + ")";
+    }
 }
-</code></pre>
-          </section>
+					</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>Une classe JPA assez touffue avec </li>
+								<li>getters (lazy), constructeur mini, utils et métier (noyée)</li>
+								<li>Consensus du monde professionel, standards (beans)
+									<ul>
+										<li><a hreflang="en" href="http://www.artima.com/lejava/articles/equality.html">vos méthodes <code>equals</code> et héritage</a></li>
+										<li>penser à utiliser <code>@ConstructorProperties</code></li>
+										<li>gérer le <span lang="en">thread-safe</span> sur un calcul d'attribut à la demande</li>
+									</ul>
+								</li>
+							</ul>
+						</aside>
+					</section>
 
-          <section>
-            <h4>Avec Lombok</h4>
-            <pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
-    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
-    &lt;version&gt;1.12.2&lt;/version&gt;
-    &lt;scope&gt;provided&lt;/scope&gt;
-&lt;/dependency&gt;</code></pre>
-            <pre><code>@Entity
-@Data
-public class MessageBackup implements Serializable {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
-	private String senderName;
-	private String receiverName;
-	private String sendingDate;
-	private String subject;
-	private String body;
-	private int alreadyRead=0;
-	@ManyToOne
-	@JoinColumn(name="MAILBOX_ID")
-	private MailBox mailbox;
-}</code></pre>
-            <aside class="notes">
-              <ul>
-              	<li>130 lignes ⇒ 28 lignes</li>
-                <li>récupération de la dépendance JPA</li>
-                <li>suppression des commentaires + imports inutiles</li>
-                <li>suppression de @Table, @Column (convention)</li>
-                <li>pas d'attributs publics</li>
-                <li>@Data pour constructeurs, getters, setters, toString</li>
-                <li> ⇒ que de l'utile ? (débat sur mailbox, contraintes à ajouter)</li>
-              </ul>
-            </aside>
-          </section>
+					<section>
+						<h2>lombok</h2>
+						<pre><code>
+							&lt;dependency>
+							&nbsp;&nbsp;&lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+							&nbsp;&nbsp;&lt;artifactId&gt;lombok&lt;/artifactId&gt;
+							&nbsp;&nbsp;&lt;version&gt;1.12.6&lt;/version&gt;
+							&nbsp;&nbsp;&lt;scope&gt;provided&lt;/scope&gt;
+							&lt;/dependency&gt;
+						</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>plutôt que IDE (fragile) ou guava/JDK (intrusif)</li>
+								<li>le <code>jar</code> dans le <code>CLASSPATH</code> lors de la compilation est suffisant</li>
+								<li>rien au runtime</li>
+							</ul>
+						</aside>
+					</section>
 
-          <section>
-            <h4>Difficultés</h4>
-            <ul>
-              <li>Intégration</li>
-              <li>Debug</li>
-              <li>#WTF</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li>à l'IDE : jar à installer dans Eclipse ou IntelliJ</li>
-                <li>aux frameworks : <a hreflang="en" href="https://github.com/aaronfreeman/play-lombok">difficulté avec Play</a></li>
-                <li>pas de problème pour le code généré (cf scope provided) mais lien impossible en debug IDE</li>
-                <li>même difficultés qu'avec l'AOP : documentation et/ou rester simple</li>
-              </ul>
-            </aside>
-          </section>
+					<section>
+						<h2>Les plus évidentes</h2>
+						<ul lang="en">
+							<li><code>@ToString</code></li>
+							<li class="fragment"><code>@EqualsAndHashCode</code></li>
+							<li class="fragment"><code>@Getter<span class="fragment">(lazy=true)</span></code></li>
+							<li class="fragment"><code>@Setter</code></li>
+							<li class="fragment"><code>@RequiredArgsConstructor</code></li>
+							<li class="fragment"><code>@Data</code></li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li><code>toString</code> classiquement utilisé pour le debug</li>
+								<li>ces annotations sont <a hreflang="en" href="http://projectlombok.org/features/index.html">documentées</a> en ligne</li>
+							</ul>
+						</aside>
+					</section>
 
-          <section data-state="tp">
-            <h4>Travaux Pratiques : Lombok</h4>
-            <p>Mise en place sur votre micro-projet</p>
-            <p><code style="text-decoration: underline;">http://projectlombok.org/features/</code></p>
-            <aside class="notes">
-            </aside>
-          </section>
+					<section data-background="img/slide-fireworks.jpg" data-state="code-extracts">
+						<h2>Gain</h2>
+						<p>
+							<img alt="avant : 481 lignes de code" src="img/java-before.png"/>
+							<img alt="après : 234 lignes de code concentrées sur la valeur ajoutée" src="img/java-after.png"/>
+						</p>
+						<aside class="notes">
+							<ul>
+								<li>diviser par 2 les lignes de code</li>
+								<li>se concentrer sur la valeur ajoutée (le différenciateur)</li>
+							</ul>
+						</aside>
+					</section>
 
-          <section>
-            <h3 lang="en">
-              <acronym title="Don't Repeat Yourself">DRY</acronym> &ndash;
-              don't <acronym title="Write Everything Twice">WET</acronym>
-            </h3>
-            <blockquote lang="en">
-              Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
-            </blockquote>
-            <aside class="notes">
-              <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" hreflang="en">Risques</a> : corriger à un seul endroit, savoir lequel utiliser</li>
-                <li>Aide à une bonne conception (responsabilité unique)</li>
-                <li>Attention si presque-pareil : pourquoi ? comment gérer ?</li>
-                <li>Attention à la surgénéralisation (intra et inter projets)</li>
-              </ul>
-            </aside>
-          </section>
+					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
+						<h4>Travaux Pratiques : Lombok</h4>
+						<p>Mise en place sur votre projet</p>
+						<p><code style="text-decoration: underline;">http://projectlombok.org/features/</code></p>
+						<aside class="notes">
+						</aside>
+					</section>
 
-          <section>
-            <h3 lang="en">Convention over configuration</h3>
-            <ul>
-              <li class="fragment highlight-green">valeurs par défaut</li>
-              <li class="fragment highlight-red">code spécifique / paramétrages</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li><strong><a hreflang="en" href="https://maven.apache.org/">maven</a></strong>, noms par défaut des tables/colonnes JPA</li>
-                <li>on peut choisir des conventions mais les documenter</li>
-                <li>choix de bibliothèques exactement adaptées</li>
-                <li>idéal de rester dans les conventions</li>
-              </ul>
-            </aside>
-          </section>
+					<section>
+						<h2>D'autres exemples</h2>
+						<ul>
+							<li><code>@Delegate</code></li>
+							<li class="fragment"><code>@Value</code></li>
+							<li class="fragment"><code>@Log</code></li>
+							<li class="fragment"><code>@Builder</code>
+						</ul>
+						<pre class="fragment"><code>SuperHero.builder().name("Superman").from("Krypton").alias("Clark").build();</code></pre></li>
+						<aside class="notes">
+							<ul>
+								<li>déléguer l'exécution d'une partie des tâches. classique en objet. plomberie lourde</li>
+								<li>classe immutable sans risque d'oubli, et bien documentée</li>
+								<li>pas besoin de se rappeler de la ligne à écrire, et cohérence des clés</li>
+								<li>interface fluide d'instanciation (<acronym lang="latin" title="confere">cf</acronym> expressivité du code)</li>
+								<li>16 <a hreflang="en" href="http://projectlombok.org/features/">stables</a>, 6 <a hreflang="en" href="http://projectlombok.org/features/experimental/">expérimentaux (officiels)</a>, 30 <a hreflang="en" href="https://github.com/peichhorn/lombok-pg">playground (externes)</a> ou perso</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h2>Points d'attention</h2>
+						<ul>
+							<li>prise en main</li>
+							<li>code non maîtrisé</li>
+							<li>intégration aux outils</li>
+							<li>debug</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>mise en place échelonnée pour comprendre les impacts (<code>delombok</code> si problème)</li>
+								<li><code lang="en">StackOverflow</code> avec <code>@toString</code> par <abbr title="exemple">ex.</abbr></li>
+								<li>penser au <code>exclude</code> dans ce cas-là</li>
+								<li>si pas Netbeans : installation (via <code>lombok.jar</code> ou plugin)</li>
+								<li>debug difficile : rester sur les classiques</li>
+								<li>conclusion : permet d'exprimer l'intention pas l'implémentation</li>
+							</ul>
+						</aside>
+					</section>
 
           <section>
             <h3>Et les optimisations de performances ?</h3>
@@ -722,7 +1018,8 @@ public class MessageBackup implements Serializable {
             <aside class="notes">
               <ul>
                 <li><a href="http://blog.xebia.fr/2013/05/27/comprendre-le-fonctionnement-de-la-jvm-article-1/" title="Comprendre le fonctionnement de la JVM – Article 1/2">Faites confiance aux ingénieurs JVM</a></li>
-                <li>Si besoin d'optim, plutôt paramétrage JVM (expertise nécessaire)</li>
+								<li>N'empêche pas de faire les bons choix de structures : Hashmap/LinkedList/BinaryTree, StringBuilder ou String
+                <li>Si besoin d'optim, plutôt <a hreflang="en" href="https://weblogs.java.net/blog/kcpeppe/archive/2013/12/11/case-study-jvm-hotspot-flags">paramétrage JVM (expertise nécessaire)</a></li>
               </ul>
             </aside>
           </section>
@@ -744,6 +1041,7 @@ public class MessageBackup implements Serializable {
             </figure>
             <aside class="notes">
               <ul>
+								<li>Pour tétris, doc énorme</li>
                 <li>Il faut garder l'expressivité</li>
                 <li>Le plus important est de réfléchir à ce qui est fait. Savoir pourquoi on fait des choix</li>
                 <li>Pas possible de faire tous les bons choix, mais y réfléchir vous empêche de les refaire ⇒ meilleurs plus vite</li>
@@ -751,7 +1049,7 @@ public class MessageBackup implements Serializable {
             </aside>
           </section>
 
-          <section data-state="tp">
+          <section data-background="img/travaux-pratiques.jpg" data-state="light-background">
             <h3>Travaux Pratiques : nettoyez vos projets</h3>
             <p>Lister le maximum de tâches permettant de diminuer la quantité de code sur votre projet</p>
             <aside class="notes">
@@ -764,17 +1062,17 @@ public class MessageBackup implements Serializable {
         </section>
 
         <section>
-          <section> <!-- 1.3) Votre code est votre documentation -->
+          <section>
             <h2>3&nbsp;&dash;&nbsp;Votre code est votre documentation</h2>
             <p class="fragment"><img alt="Pas de gros documents Word/OpenOffice" src="img/word-no-more.png"/></p>
             <aside class="notes">
               <ul>
+								<li>refus des docs monolithiques (<a href=http://agilemanifesto.org/iso/fr/">manifeste agile : <q>logiciels opérationnels plutôt qu'une doc exhaustive</q></a>)</li>
                 <li><a href="https://fr.wikipedia.org/wiki/Cycle_de_d%C3%A9veloppement_%28logiciel%29#Mod.C3.A8le_en_cascade">Vestiges du BTP (cascade)</a> : contraintes sur ordonnancement et coûts de changement</li>
                 <li>Jamais lus et mis à jour (contributeurs, workflow)</li>
                 <li> ⇒ on creuse dans le code pour connaître le métier</li>
                 <li>cohérent : le code est le patrimoine</li>
-                <li>mais on peut quand même faire mieux</li>
-                <li>Pas lié à Word, même si le plus courant</li>
+                <li>mais pas optimal, cf Dilbert</li>
               </ul>
             </aside>
           </section>
@@ -789,6 +1087,7 @@ public class MessageBackup implements Serializable {
             <aside class="notes">
               <ul>
                 <li>javadoc : concepts métiers et API. Pas les évidences (à écrire et lire).</li>
+								<li><a hreflang="en" href="http://www.adam-bien.com/roller/abien/entry/how_to_comment_with_javadoc"><em>quoi</em> dans le nom, <em>comment</em> dans le code, <em>pourquoi</em> dans le javadoc</em></a></li>
                 <li>rédiger javadoc générale, coder, affiner javadoc</li>
                 <li>outils listent les TODO</li>
                 <li>plutôt ticket pour TODO long terme</li>
@@ -798,42 +1097,41 @@ public class MessageBackup implements Serializable {
           </section>
 
           <section>
-            <h3>Documentation <em>automatique</em></h3>
-            <ul>
-              <li class="fragment">Gestionnaire de tickets</li>
-              <li class="fragment">Gestionnaire de version</li>
-            </ul>
-            <pre class="fragment"><code class="Bash">$:~/anaf$ git log --pretty=oneline --abbrev-commit
-              3b962cf vues
-              98ee6cd vues
-              b029a3f model et vues
-              e3a527c model et vues
-              5187f8b security</code></pre>
-            <pre class="fragment"><code class="Bash">$:~/trace$ git log --pretty=oneline --abbrev-commit
-              5ab30fb réduction du champ d'application d'une règle CSS
-                      pour les vignettes vidéo
-              231195a crebas.sql représente maintenant l'état de la
-                      dernière version de la base
-              31c15dd #1996 - léger espace autour d'une image dans un
-                      datatable-ui
-              ca7b84b on replace l'onglet acteurs entre les onglets
-                      organisation et résultat
-              e0b5cf9 suppression de l'onglet contexte (élément mis
-                      dans l'onglet détails)</code></pre>
+            <h3>Gestionnaire de tickets</em></h3>
+						<p><img alt="historique d'un ticket bugzilla" src="img/historique-bugzilla.png"/></p>
             <aside class="notes">
               <ul>
+								<li>documentation <em>automatique</em></li>
                 <li>historique des problèmes, incidents, évolutions fonctionnelles, choix d'architecture</li>
-                <li>Pas automatique : créer et bien remplir (penser à soi dans 2 ans). Trouver la maille.</li>
-                <li>1 ligne de résumé. Puis détails si nécessaires</li>
-                <li>Lien vers tickets (et inversement, IDE aident)</li>
-                <li>pas cher et coût très réparti</li>
+                <li>Pas automatique : créer et bien remplir (penser à soi dans 2 ans). Trouver la maille.</li
               </ul>
             </aside>
           </section>
 
           <section>
-            <h3>Historique de ticket</h3>
-            <p><img alt="historique d'un ticket bugzilla" src="img/historique-bugzilla.png"/></p>
+            <h3>Gestionnaire de versions</h3>
+						<pre><code class="markdown">$:~/trace$ git log --pretty=oneline --abbrev-commit
+
+							5ab30fb réduction du champ d'application d'une règle CSS
+											        pour les vignettes vidéo
+							231195a crebas.sql représente maintenant l'état de la
+											        dernière version de la base
+							31c15dd #1996 - léger espace autour d'une image dans un
+											        datatable-ui
+							ca7b84b on replace l'onglet acteurs entre les onglets
+											        organisation et résultat
+							e0b5cf9 suppression de l'onglet contexte (élément mis
+											        dans l'onglet détails)</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>mêmes consignes de remplissage</li>
+								<li><a href="http://www.git-attitude.fr/2014/05/04/bien-utiliser-git-merge-et-rebase/"
+									title="Bien Utiliser git merge et rebase">Nettoyer son historique</a> avec systèmes distribués</li>
+								<li>1 ligne de résumé. Puis détails si nécessaires</li>
+								<li>Lien vers tickets (et inversement, outils aident)</li>
+								<li>pas cher et coût très réparti</li>
+							</ul>
+						</aside>
           </section>
 
           <section>
@@ -854,6 +1152,7 @@ public class MessageBackup implements Serializable {
                   <li>Lu car court et adapté : viser le lecteur cible</li>
                   <li>livré avec le code et lisible (markdown)</li>
                 </ul></li>
+								<li>Si nécessaire, doublon avec word</li>
               </ul>
             </aside>
           </section>
@@ -880,19 +1179,6 @@ public class MessageBackup implements Serializable {
               </ul>
             </aside>
           </section>
-
-          <section>
-            <h3>Contractualisation</h3>
-            <p>Obligé de faire des documents Word ?</p>
-            <p class="fragment">⇨ dédoublez la documentation</p>
-            <aside class="notes">
-              <ul>
-                <li>Les gros documents words ne seront pas mis à jour</li>
-                <li>Les autres vous serviront à la maintenance</li>
-                <li>L'entreprise choisit de dépenser de l'argent dans des processus "qualité"</li>
-              </ul>
-            </aside>
-          </section>
         </section>
 
         <section>
@@ -912,19 +1198,33 @@ public class MessageBackup implements Serializable {
 
           <section>
             <h3>Théorie des fenêtres brisées</h3>
-            <p><img class="fragment fade-out" alt="immeuble propre et neuf" src="img/immeuble.jpg"/><img class="fragment" alt="immeuble dévasté" src="img/broken-window.jpg"/></p>
+            <p><img alt="immeuble propre et neuf" src="img/immeuble.jpg"/>&nbsp;<img alt="immeuble dévasté" src="img/broken-window.jpg"/></p>
             <aside class="notes">
               <ul>
+								<li>Où va être fait le prochain tag ?</li>
+								<li><q>Ce n'est pas bien grave de casser une fenêtre de plus</q></li>
                 <li>New York (graffitis dans métro 80s et Giuliani sur petits crimes alcool ou urinage public)</li>
                 <li>
                   En projet, ne pas <a hreflang="en" href="https://en.wikipedia.org/wiki/Broken_windows_theory">laisser petits pb</a>
                   pour éviter les gros : traiter au fur et à mesure
                 </li>
-                <li>Les habitants de NY sont les nouveaux dev</li>
+                <li>NY est votre code, les devs sont les flics</li>
                 <li>Si code legacy, choisir stratégie (utile+facile en 1er)</li>
               </ul>
             </aside>
           </section>
+
+					<section>
+						<h3>Soyez vigilants</h2>
+						<p><img alt="Attention ! Il pourrait y avoir des ninjas dans le coin" src="img/ninja.png"/></p>
+						<aside class="notes">
+							<ul>
+								<li>Un grand nombre d'information est là pour vous aider</li>
+								<li>Ne laissez rien passer</li>
+								<li><a hreflang="en" href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">La règle du boy scout</a></li>
+							</ul>
+						</aside>
+					</section>
 
           <section>
             <h3>Compilateur</h3>
@@ -938,14 +1238,14 @@ public class MessageBackup implements Serializable {
             </code></pre>
             <aside class="notes">
             	<ul>
-            		<li><a hreflang="en" href="http://marxsoftware.blogspot.fr/2010/10/javacs-xlint-options.html">Option non standard de la JVM oracle</a></li>
-            		<li><a hreflang="en" href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javac.html#nonstandard">Autres warnings</a> : <code>fallthrough</code>, <code>finally</code>, <code>unused</code></li>
-                	<li>
-                  		<a hreflang="en" href="http://stackoverflow.com/questions/234075/what-is-your-best-programmer-joke/235307#235307">Blague
-                  		du fumeur</a> qu'il dit que c'est OK parce qu'il est informaticien : il se fiche des avertissements,
-                 		seules les erreurs le préoccupent
-               		</li>
-               	</ul>
+								<li>
+									<a hreflang="en" href="http://stackoverflow.com/questions/234075/what-is-your-best-programmer-joke/235307#235307">Blague
+										du fumeur</a> qui dit que c'est OK parce qu'il est informaticien : il se fiche des avertissements,
+										seules les erreurs le préoccupent
+								</li>
+									<li><a hreflang="en" href="http://marxsoftware.blogspot.fr/2010/10/javacs-xlint-options.html">Option non standard de la JVM oracle</a></li>
+									<li><a hreflang="en" href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javac.html#nonstandard">Autres warnings</a> : <code>fallthrough</code>, <code>finally</code>, <code>unused</code></li>
+							</ul>
             </aside>
           </section>
 
@@ -955,6 +1255,7 @@ public class MessageBackup implements Serializable {
             <aside class="notes">
               <ul>
                 <li>Reprend les infos du compilateur. En rajoute : imports</li>
+								<li>Possibilité de plugins en plus</li>
                 <li>Souvent code couleur (en haut à droite)</li>
               </ul>
             </aside>
@@ -963,7 +1264,7 @@ public class MessageBackup implements Serializable {
           <section>
             <h3>Logs</h3>
             <ul>
-              <li>Maelström d'API</li>
+              <li>Nombreuses API</li>
               <li>Maîtrise nécessaire</li>
               <li>Suivez-les</li>
             </ul>
@@ -986,19 +1287,12 @@ public class MessageBackup implements Serializable {
             	<ul>
                 	<li>Colonne de droite (avec <acronym lang="en" title="Lack of Cohesion Of Methods">LCOM4</acronym>) puis duplications</li>
                 	<li>En gris: commentaires (sauf API), Classes/Méthodes</li>
+									<li>Permet aussi la revue de code</li>
+									<li><em lang="en">feedback</em> non automatisés</li>
+									<li>cher mais sans pareil pour maintenabilité</li>
+									<li>anticipe le risque de changement humain</li>
+									<li>comme de faire tomber les serveurs au hasard</li>
                 </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h3>Soyez vigilants</h2>
-            <p><img alt="Attention ! Il pourrait y avoir des ninjas dans le coin" src="img/ninja.png"/></p>
-            <aside class="notes">
-              <ul>
-                <li>Un grand nombre d'information est là pour vous aider</li>
-                <li>Ne laissez rien passer</li>
-                <li><a hreflang="en" href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">La règle du boy scout</a></li>
-              </ul>
             </aside>
           </section>
 
@@ -1012,8 +1306,9 @@ public class MessageBackup implements Serializable {
             </ol>
             <aside class="notes">
               <ul>
-                <li><abbr title="informatique">info.</abbr> facile car il y a <strong>toujours</strong> une explication rationnelle</li>
+                <li><abbr title="informatique">info.</abbr> facile car <a hreflang="en" href="http://blog.8thlight.com/doug-bradbury/2013/10/08/stuck-in-the-muck.html">il y a <strong>toujours</strong> une explication rationnelle</a></li>
                 <li>si vraiment dur, <a hreflang="en" href="http://stackoverflow.com/">c'est vraiment nécessaire de creuser</a></li>
+								<li>stratégie open-source d'une entreprise</li>
                 <li>repousser avec TODO ou ticket</li>
                 <li>pas garder le message pour voir les nouveaux : <code>@SuppressWarning</code> ou config de la source</li>
                 <li>ne pas désactiver les futurs messages</li>
@@ -1027,8 +1322,13 @@ public class MessageBackup implements Serializable {
             <p>Changer la structure sans changer le fonctionnel</p>
             <aside class="notes">
             	<ul>
-            		<li>Objectif : maintenabilité améliorée</li>
-            		<li>Vigilance pour ce qui peut être un <a hreflang="en" lang="en" href="https://en.wikipedia.org/wiki/Code_refactoring">code smell</a></li>
+            		<li>Objectif : maintenabilité améliorée
+									<ul>
+										<li>lisibilité</li>
+										<li>nettoyages (direct si <abbr title="suppression">suppr</abbr> fonction)</li>
+										<li>architecture logicielle/OO</li>
+									</ul></li>
+            		<li>Vigilance pour ce qui peut être un <a hreflang="en" lang="en" href="https://en.wikipedia.org/wiki/Code_smell#Common_code_smells">code smell</a></li>
             		<li>Les tests sont quasi-nécessaires</li>
             	</ul>
             </aside>
@@ -1052,90 +1352,23 @@ public class MessageBackup implements Serializable {
 
           <section>
             <h3 lang="en">Test Driven Development</h3>
-            <!-- TODO Améliorer l'image -->
             <p><img alt="Tests en erreurs puis tests passent puis remaniement et ça recommence" src="img/TDD.png"/></p>
             <aside class="notes">
               <ul>
                 <li>code applicatif doit résoudre un test en erreur</li>
-                <li>aide à ne coder que le nécessaire</li>
+                <li>aide à ne coder que le nécessaire fonctionnel</li>
                 <li>naturellement 100% de couverture</li>
                 <li>aide à trouver en auto le code inutile</li>
-                <li>en pratique, priorité là où risque (<acronym title="valeur ajoutée">VA</acronym>)</li>
+								<li>aussi une très bonne documentation</li>
+								<li>attention aux <a hreflang="http://pitest.org/" title="mutation testing">tests non pertinents</a></li>
               </ul>
             </aside>
           </section>
 
           <section>
-            <h3>Bonnes pratiques</h3>
-            <ul>
-              <li>C'est du code</li>
-              <li>Niveau de cloisonnement</li>
-              <li>Jeu de données</li>
-              <li>Documentation</li>
-            </ul>
+            <p><img alt="Bon pour le Karma" src="img/karma.jpg"/></p>
             <aside class="notes">
               <ul>
-                <li>Même principes (lisibilité, KISS, Less is More, ...)</li>
-                <li><a href="http://blog.8thlight.com/uncle-bob/2013/03/06/ThePragmaticsOfTDD.html" hreflang="en">Types de test selon projet, peu recouvrement</a></li>
-                <li>Cloisonnement unitaire ⇒ données intégrées</li>
-                <li>1 jeu de données pour l'ensemble des TF</li>
-                <li>Gérer jeu de données ⇒ cf environnements </li>
-                <li lang="en"><a href="http://www.artima.com/weblogs/viewpost.jsp?thread=203994" hreflang="en">The Way of Testivus</a></li>
-                <li>Elément clé de la documentation</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h3>Junit &amp; Mockito</h3>
-            <pre><code>
-            @Mock Iterator i;
-            @InjectMocks MaClasse m;
-
-            @Test
-            public void iterator_will_return_hello_world(){
-                // 1 - PREPARE
-                when(i.next()).thenReturn("Hello").thenReturn("World");
-                // 2 - EXECUTE
-                String result=m.getNextTwice();
-                // 3 - VERIFIE
-                assertEquals("Hello World", result);
-            }
-            </code></pre>
-            <p class="fragment"><img class="no-border" alt="bonus" src="img/bonus.png"/> PowerMock pour <code>final</code>, <code>private</code>, <code>static</code></p>
-            <aside class="notes">
-              <ul>
-                <li>Junit : annotations et assert</li>
-                <li><a hreflang="en" href="http://testng.org/">TestNG</a >est à explorer (bon support)</li>
-                <li><a href="http://blog.xebia.fr/2013/02/19/craftsman-recipes-happy-hour-pour-vos-tests-avec-mockito/">Mockito</a> : seuls la classe testée peut échouer</li>
-                <li>D'autres (EasyMock) mais Mockito marche bien</li>
-                <li>Trio avec <a href="https://code.google.com/p/powermock/" hreflang="en">PowerMock</a> quasi indispensables</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section data-state="tp">
-            <h3>Travaux Pratiques : TDD</h3>
-            <p>Coder une méthode qui renvoie un résumé d'un email : </p>
-            <blockquote>message de &lt;X&gt; à &lt;Y&gt; envoyé à &lt;HH&gt;:&lt;MM&gt; à propos de &lt;S&gt;</blockquote>
-            <p class="fragment note">Pensez aux cas aux limites !</p>
-            <aside class="notes">
-            	<ul>
-            		<li>Pourrait être enrichi avec complexité sur date, niveau de détail, ...</li>
-            </aside>
-          </section>
-
-          <section>
-            <p><img alt="Bon pour le Karma" src="img/karma.jpg" /></p>
-            <aside class="notes">
-              <ul>
-                <li><a href="https://fr.wikipedia.org/wiki/R%C3%A9usinage_de_code">Refactoring</a> : travail du code sans ajout de fonctionnalité ⇨ maintenabilité
-                  <ul>
-                    <li>lisibilité</li>
-                    <li>nettoyages (direct si <abbr title="suppression">suppr</abbr> fonction)</li>
-                    <li>architecture logicielle/OO</li>
-                  </ul>
-                </li>
                 <li>Difficile et mal valorisé (management)</li>
                 <li>Mais c'est le <a href="https://fr.wikipedia.org/wiki/Karma">Karma</a> du <em>bon</em> développeur</li>
                 <li>Valorisisation par ses pairs et gains en maintenabilité.</li>
@@ -1144,7 +1377,33 @@ public class MessageBackup implements Serializable {
             </aside>
           </section>
 
-		</section>
+					<section>
+						<figure>
+							<blockquote lang="en">Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. Code for readability.</blockquote>
+							<figcaption>&nbsp;&mdash;&nbsp;John F. Woods</figcaption>
+						</figure>
+						<aside class="notes">
+							<ul>
+								<li><a hreflang="en" href="http://stackoverflow.com/questions/876089/who-wrote-this-programing-saying-always-code-as-if-the-guy-who-ends-up-maintai">version moins positive mais très concrète</a></li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
+						<h3>Travaux Pratiques : Etat des lieux</h3>
+						<p>On change les mainteneurs sur les projets !</p>
+						<ol>
+							<li>Installez le projet en local</li>
+							<li>Lancez la démonstration</li>
+							<li>Notez vos conseils d'amélioration</li>
+							<li class="fragment">Bonus : ajoutez un utilisateur <em><acronym lang="en" title="Very Important People">VIP</acronym></em></li>
+						</ol>
+						<aside class="notes">
+							<p>L'utilisateur <em><acronym>VIP</acronym></em> est traité spécialement dans les messages de log</p>
+						</aside>
+					</section>
+
+				</section>
 
         <section> <!-- 2) GESTION DES ENVIRONNEMENTS -->
 
@@ -1224,7 +1483,7 @@ public class MessageBackup implements Serializable {
 						</aside>
 					</section>
 
-          <section data-state="tp">
+          <section data-background="img/travaux-pratiques.jpg" data-state="light-background">
             <h3>Travaux Pratiques : binaire portable</h3>
             <p>Lister les parties non portables dans le code source de votre projet</p>
             <aside class="notes">
@@ -1254,6 +1513,7 @@ public class MessageBackup implements Serializable {
                   <li>Extension de bibliothèques</li>
                 </ul></li>
                 <li>Note moins utile qu'évolution (cf RATP maintenance)</li>
+								<li><a hreflang="en" href="http://stackoverflow.com/questions/876089/who-wrote-this-programing-saying-always-code-as-if-the-guy-who-ends-up-maintai">version moins positive mais très concrète</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1274,228 +1534,98 @@ public class MessageBackup implements Serializable {
 						</aside>
 					</section>
 
-          <section>
-						<h3>Critères de choix</h3>
+					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
+						<h3>Travaux Pratiques : Stratégie</h3>
 						<ul>
-              <li>KISS</li>
-              <li>interconnexions</li>
-              <li>communauté</li>
-              <li>connaissance en interne</li>
-              <li>pérennité</li>
+							<li><a hreflang="en" href="http://localhost:9000/">Votre projet analysé dans Sonar</a></li>
+							<li>Analyser les 5 priorités d'amélioration d'après vous</li>
+							<li class="fragment">Bonus : travaillez sur les points indiqués</li>
 						</ul>
-            <pre class="fragment"><code class="no-highlight">fixes #12 : dernier test de validation d'un contrôle
-Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
-/cc @toto</code></pre>
 						<aside class="notes">
 							<ul>
-                <li>adéquation au besoin, ergonomie</li>
-                <li>commentaire commit github avec lien&nbsp;&ndash;&nbsp;comm. #12 avec lien&nbsp;&ndash;&nbsp;résolution #12&nbsp;&ndash;&nbsp;mail à @toto</li>
-                <li>documentation et testé dans vraie vie entreprise</li>
-                <li>connaissance interne : admin sys, dev ou utilisateurs</li>
-                <li>pérennité logiciel (difficile à garantir)</li>
-                <li>surtout capacité à changer en gardant l'historique (format des données libres)</li>
+								<li>Bien pointer la partie <em lang="en">Hotspots</em></li>
+								<li>Priorités doivent être en fonction de leur coûts et criticité</li>
+								<li>Ne pas oublier : couverture des tests, documentation, ...</li>
 							</ul>
 						</aside>
 					</section>
-
-        </section>
-
-
-        <section> <!-- 4) STRATEGIE DE REPRISE -->
-          <section>
-						<h2>Stratégie de reprise</h2>
-            <h3>Etat des lieux</h3>
-						<ol>
-              <li>répertorier les contenus disponibles</li>
-              <li>lire la documentation</li>
-              <li>installation de l'environnement de développement</li>
-              <li>mise à jour de la documentation</li>
-						</ol>
-						<aside class="notes">
-							<ul>
-                <li>comment optimiser votre prise en maintenance ?</li>
-                <li>lister et récupérer : code source, documentation, URLs...</li>
-                <li>lire doc de démarrage si elle existe</li>
-                <li>env complet (compile, package, infra, données)</li>
-                <li>docu ce qui n'était pas dispo : pour futurs nouveaux</li>
-                <li>répéter à chaque arrivée dans l'équipe</li>
-							</ul>
-						</aside>
-					</section>
-
-          <section data-state="tp">
-            <h3>Travaux Pratiques : Etat des lieux</h3>
-            <p>On change les mainteneurs sur les projets !</p>
-            <ol>
-            	<li>Installez le projet en local</li>
-            	<li>Lancez la démonstration</li>
-            	<li>Notez vos conseils d'amélioration</li>
-            	<li class="fragment">Bonus : ajoutez un utilisateur <em><acronym lang="en" title="Very Important People">VIP</acronym></em></li>
-            </ol>
-            <aside class="notes">
-            	<p>L'utilisateur <em><acronym>VIP</acronym></em> est traité spécialement dans les messages de log</p>
-            </aside>
-          </section>
-
-          <section>
-						<h3>Amélioration</h3>
-						<ol>
-              <li>Etablir une stratégie séquencée</li>
-              <li>Adhésion du management et des utilisateurs</li>
-						</ol>
-						<aside class="notes">
-							<ul>
-                <li>Analyse risques avec sonar et au feeling</li>
-                <li>stratégie mise en place bonnes pratiques (boy scout ?)</li>
-                <li>usine peut être coûteux à gérer ⇒ graduellement</li>
-                <li>pour env, voir rapidement ce qui peut bloquer</li>
-                <li>management : coût / workflows et contraintes : tous</li>
-                <li>formalisation (contractuelle ?) du nouveau fonct.</li>
-							</ul>
-						</aside>
-					</section>
-
-          <section>
-            <h3>Je ne sais pas à quoi sert ce code ?!</h3>
-            <ol>
-              <li>Creuser</li>
-              <li>Tester</li>
-              <li>Supprimer</li>
-              <li>Documenter</li>
-            </ol>
-            <aside class="notes">
-              <ul>
-                <li>il faut comprendre à quoi il sert (specs...)</li>
-                <li>sur du code legacy, probable code inutile</li>
-                <li>très peu de cas pertinents pour garder du code non compris</li>
-                <li>communiquer et avertir avant suppressions (surtout si pas de tests)</li>
-                <li>mieux vaut le risque que garder du code non maîtrisé</li>
-                <li>N'ayez pas peur ! retour arrière possible</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section data-state="tp">
-            <h3>Travaux Pratiques : Stratégie</h3>
-            <ul>
-              <li><a hreflang="en" href="http://localhost:9000/">Votre projet analysé dans Sonar</a></li>
-              <li>Analyser les 5 priorités d'amélioration d'après vous</li>
-              <li class="fragment">Bonus : travaillez sur les points indiqués</li>
-            </ul>
-            <aside class="notes">
-              <ul>
-                <li>Bien pointer la partie <em lang="en">Hotspots</em></li>
-                <li>Priorités doivent être en fonction de leur coûts et criticité</li>
-                <li>Ne pas oublier : couverture des tests, documentation, ...</li>
-              </ul>
-            </aside>
-          </section>
 
         </section>
 
         <section> <!-- CONCLUSION -->
 
-          <section>
-						<h3>Et c'est utile ?</h3>
+				<section data-state="plusloin">
+					<h2>Pour aller plus loin</h2>
+					<ul>
+						<li>Pratiquer</li>
+						<li>Des liens <a href="https://github.com/lcottereau/maintainability-slides" hreflang="en">dans cette présentation</a></li>
+						<li>Des lectures<ul>
+							<li><a lang="en" href="http://pragprog.com/book/tpp/the-pragmatic-programmer"><cite>The Pragmatic Programmer : from Journeyman to Master</cite></a></li>
+							<li><a lang="en" href="http://www.cleancoder.com/"><cite>Clean Code : A Handbook of Agile Software Craftmanship</cite></a></li>
+							<li><a lang="en" href="http://programmer.97things.oreilly.com"><cite>97 Things Every Programer Should Know</cite></a></li>
+						</ul></li>
+						<li>Le mouvement des <a hreflang="en" href="http://manifesto.softwarecraftsmanship.org/#/en">artisans codeurs</a></li>
+					</ul>
+					<aside class="notes">
 						<ul>
-              <li>code plus clair</li>
-              <li>documentation à jour</li>
-              <li>risques de régression fonctionnelle limités</li>
+							<li>participer à des projets <span lang="en">Open Source</span></li>
+							<li>penser à s'abonner aux RSS/twitter/...</li>
+							<li>l'anglais "technique" est presqu'indispensable</li>
+							<li>aussi <cite>97 things every software architect should know</cite></li>
+							<li>qualités: curiosité, remise en cause, réaliste, polyvalent</li>
+							<li>peur OK (mieux de savoir). Diversité = intérêt</li>
 						</ul>
-						<aside class="notes">
-							<ul>
-                <li>retour sur le scenario dilbert</li>
-                <li>code plus lisible, sans inutile : découverte plus facile</li>
-                <li>tests unitaires</li>
-                <li>n'empêche pas tout mais est une aide énorme</li>
-							</ul>
-						</aside>
-					</section>
+					</aside>
+				</section>
 
-          <section>
-						<h3>En entreprise</h3>
+				<section data-background="img/slide-beer.jpg" data-state="light-background">
+					<h2>Crédits</h2>
+					<ul>
+						<li><em>Logiciels</em> :
+							<a hreflang="en" href="http://lab.hakim.se/reveal-js/">reveal.js</a>,
+							<a href="http://inkscape.org/?lang=fr">inkscape</a>,
+							<a hreflang="en" href="http://simpleicons.org/">simple icons</a>,
+							<a hreflang="en" href="https://www.draw.io/">diagram.ly</a> et
+							<a hreflang="en" href="http://www.wordle.net/">wordle</a>
+						</li>
+						<li><em>Photos</em> :
+							<a hreflang="en" href="http://www.linkedin.com/in/florentmathe">F. Mathé</a>,
+							<a hreflang="en" href="http://universaluclick.com/licensing_permissions/educational_use">Dilbert.com</a>,
+							<a lang="en" href="https://commons.wikimedia.org/wiki/Main_Page?uselang=fr">Wikimedia Commons</a>,
+							<a href="http://blog.octo.com/vers-une-usine-de-developpement-2-0/">OCTO</a>,
+							<a href="http://aaaproduction.fr/">aaa productions</a>,
+							<a hreflang="en" href="http://obinoobie.deviantart.com/art/Microsoft-Office-Word-Icon-195507790">obinoobie </a>,
+							<a hreflang="en" href="http://ivadeath.deviantart.com/art/Karma-264163572">ivadeath</a>,
+							<a hreflang="en" href="https://secure.flickr.com/photos/rooster88fan/2077109462/">rooster88fan</a>,
+							<a hreflang="en" href="https://secure.flickr.com/photos/pablogrb/3519906015/">pablogrb</a>,
+							<a hreflang="en" href="http://kogakure.github.com/gitweb-theme/">kogakure</a> et
+							<a hreflang="en" href="http://pixabay.com/id/users/Nemo/">Nemo</a>
+						</li>
+					</ul>
+					<aside class="notes">
 						<ul>
-              <li class="fragment highlight-green">Le <em>principe</em> d'une bonne maintenabilité est acquis (en général)</li>
-              <li>L'utilisation de la dette technique</li>
-              <li class="fragment highlight-red">L'investissement effectif sur la maintenabilité</li>
+							<li>si dans la salle, je leur paie une bière non virtuelle</li>
+							<li>dans le même esprit de partage, partagé sur github</li>
 						</ul>
-						<aside class="notes">
-							<ul>
-                <li>bonnes pratiques et usine de dev</li>
-                <li>contractuel mauvais (indicateurs) mais utile à avoir</li>
-                <li><strong>code = patrimoine</strong> pas acquis</li>
-                <li>la valorisation effective pas acquise</li>
-                <li>
-                  certaines SSII se placent sur ce créneau :
-                  <a href="http://training.xebia.fr/formations-java-jee/formation-tdd-software-craftsmanship.html">Xebia</a>,
-                  <a href="http://blog.octo.com/les-artisans-codeurs-chez-octo/">Octo</a>, Valtech, Ippon (?)
-                </li>
-							</ul>
-						</aside>
-					</section>
+					</aside>
+				</section>
 
-        <section data-state="plusloin">
-          	<h2>Pour aller plus loin</h2>
-          	<ul>
-          		<li>Expérimentez ces pratiques et outils sur vos projets</li>
-          		<li>Des liens <a href="https://github.com/lcottereau/maintainability-slides" hreflang="en">dans cette présentation</a></li>
-          		<li>Des lectures<ul>
-          			<li><a lang="en" href="http://pragprog.com/book/tpp/the-pragmatic-programmer"><cite>The Pragmatic Programmer : from Journeyman to Master</cite></a></li>
-              		<li><a lang="en" href="http://www.cleancoder.com/"><cite>Clean Code : A Handbook of Agile Software Craftmanship</cite></a></li>
-              		<li><a lang="en" href="http://programmer.97things.oreilly.com"><cite>97 Things Every Programer Should Know</cite></a></li>
-            	</ul></li>
-            	<li>Le mouvement des <a hreflang="en" href="http://manifesto.softwarecraftsmanship.org/#/en">artisans codeurs</a></li>
-			</ul>
-			<aside class="notes">
-				<ul>
-					<li>participer à des projets <span lang="en">Open Source</span></li>
-            	    <li>penser à s'abonner aux RSS/twitter/...</li>
-                	<li>l'anglais "technique" est presqu'indispensable</li>
-                	<li>aussi <cite>97 things every software architect should know</cite></li>
-                	<li>qualités: curiosité, remise en cause, réaliste, polyvalent</li>
-                	<li>peur OK (mieux de savoir). Diversité = intérêt</li>
-				</ul>
-			</aside>
-		</section>
+				<section>
+					<figure>
+						<blockquote>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</blockquote>
+						<figcaption>&nbsp;&mdash;&nbsp;Martin Fowler</figcaption>
+					</figure>
+				</section>
 
-          <section>
-            <h2>Crédits</h2>
-            <p>Cette présentation a été réalisée avec <a hreflang="en" href="https://github.com/hakimel/reveal.js">reveal.js</a>,
-                <a href="http://inkscape.org/?lang=fr">Inkscape</a>, <a href="http://sozi.baierouge.fr/">Sozi</a>,
-                <a hreflang="en" href="https://www.draw.io/">diagram.ly</a> et <a hreflang="en" href="http://www.wordle.net/">wordle</a></p>
-            <p>Merci à
-                <a hreflang="en" href="http://www.linkedin.com/in/florentmathe">F. Mathé</a>,
-                <a hreflang="en" href="http://universaluclick.com/licensing_permissions/educational_use">Dilbert.com</a>, 
-                <a lang="en" href="https://commons.wikimedia.org/wiki/Main_Page?uselang=fr">Wikimedia Commons</a>,
-                <a href="http://blog.octo.com/vers-une-usine-de-developpement-2-0/">OCTO</a>, 
-                <a href="http://aaaproduction.fr/">aaa productions</a>,
-                <a hreflang="en" href="https://github.com/danleech/simple-icons">Dan Leech</a>,
-                <a hreflang="en" href="http://obinoobie.deviantart.com/art/Microsoft-Office-Word-Icon-195507790">obinoobie (Deviant Art)</a>,
-                <a hreflang="en" href="http://ivadeath.deviantart.com/art/Karma-264163572">ivadeath (Deviant Art)</a>,
-                <a hreflang="en" href="https://secure.flickr.com/photos/rooster88fan/2077109462/">rooster88fan (Flickr)</a>,
-                <a hreflang="en" href="https://secure.flickr.com/photos/amagill/3367543296/">amagill (Flickr)</a>,
-                <a hreflang="en" href="https://secure.flickr.com/photos/pablogrb/3519906015/">pablogrb (Flickr)</a>,
-                <a hreflang="en" href="http://kogakure.github.com/gitweb-theme/">kogakure (Flickr)</a> et
-                <a hreflang="en" href="http://pixabay.com/id/users/Nemo/">Nemo (pixabay)</a>
-                pour le partage de leurs contributions</p>
-          </section>
-
-          <section>
-            <figure>
-              <blockquote>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</blockquote>
-              <figcaption>&nbsp;&mdash;&nbsp;Martin Fowler</figcaption>
-            </figure>
-          </section>
-
-          <section data-state="dingle">
-            <h1>Merci</h1>
-            <ul>
-              <li class="email"><a href="mailto:laurent@cottereau.name"><code>laurent@cottereau.name</code></a></li>
-              <li class="twitter"><a href="https://twitter.com/lcottereau"><code>@lcottereau</code></a></li>
-              <li class="linkedin"><a href="http://fr.linkedin.com/in/lcottereau/fr"><code>lcottereau</code></a></li>
-              <li class="github"><a hreflang="en" href="https://github.com/lcottereau"><code>lcottereau</code></a></li>
-            </ul>
-          </section>
+				<section data-background="img/slide-dingle.jpg">
+				  <h1>Merci</h1>
+				  <ul>
+				    <li class="email"><a href="mailto:laurent@cottereau.name"><code>laurent@cottereau.name</code></a></li>
+				    <li class="twitter"><a href="https://twitter.com/lcottereau"><code>@lcottereau</code></a></li>
+				    <li class="linkedin"><a href="http://fr.linkedin.com/in/lcottereau/fr"><code>lcottereau</code></a></li>
+				    <li class="github"><a hreflang="en" href="https://github.com/lcottereau"><code>lcottereau</code></a></li>
+				  </ul>
+				</section>
 
         </section>
 			</div>
@@ -1521,8 +1651,6 @@ Ne tient pas compte du premier test pour éviter le hack (cf sur http://...)
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
