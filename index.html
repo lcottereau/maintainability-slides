@@ -77,9 +77,10 @@
 					color: white;
 					border: none;
 	    }
-	    html.light-background .present {
+	    html.light-background .reveal section .present {
 	    	background-color: rgba(0, 0, 0, 0.8);
 	    	border-radius: 10px;
+				padding: 20px 10px;
 	    }
 	    html.code-extracts img {
 	    	vertical-align: top;
@@ -120,6 +121,13 @@
 						</aside>
 					</section>
 
+					<section data-background="img/question_mark.png" data-state="light-background">
+						<p>Qu'est-ce que la maintenabilité ?</p>
+						<aside class="notes">
+							Après les définitions et l'exemple, qu'en pensez-vous ?
+						</aside>
+					</section>
+
 					<section>
 						<h2>Proposition de définition</h2>
 						<blockquote>Capacité à pouvoir maintenir une application sur le long terme et pour tout type de maintenance</blockquote>
@@ -152,17 +160,15 @@
 
 					<section>
 						<h3>Ce que l'on verra</h3>
-						<ul>
-							<li>Technique</li>
-							<li>Documentation</li>
-							<li>Attitude</li>
-						</ul>
+						<ol>
+							<li>4 Bonnes pratiques</li>
+							<li>Gestion des environnements</li>
+							<li>Usine de développement</li>
+						</ol>
 						<aside class="notes">
 							<ul>
-								<li>4 Bonnes pratiques</li>
-								<li>extract 1 journée avec étudiants, dont <acronym title="Travaux pratiques">TPs</acronym></li>
-								<li>2h ⇒ pas gestion environnements, usine de dev, indicateurs, ...</li>
-								<li>particulièrement sur java</li>
+								<li>particulièrement pour l'informatique de gestion</li>
+                <li>indicateur de maintenabilité avec usine de dev</li>
 							</ul>
 						</aside>
 					</section>
@@ -218,7 +224,7 @@
               Calendar c = new GregorianCalendar();
               Calendar b = j.bd();
               if (b != null
-                  && c.get(Calendar.DAY_OF_YEAR) ==
+                  &amp;&amp; c.get(Calendar.DAY_OF_YEAR) ==
                      b.get(Calendar.DAY_OF_YEAR)) {
                   return new BD();
               }
@@ -241,6 +247,7 @@
                 <li>Le chaînage de méthode (fluent code) et <a
                     href="https://fr.wikipedia.org/wiki/Domain-specific_programming_language"><acronym lang="en"
                     title="Domain Specific Language">DSL</acronym></a> améliore la lisibilité</li>
+								<li>imports statiques</li>
               </ul>
             </aside>
           </section>
@@ -369,6 +376,20 @@ public int doSomething() {
                   <li>Préférer les petits commits souvent (plus facile détecter erreurs et améliorations possibles)</li>
                 </ul>
               </aside>
+          </section>
+
+          <section data-background="img/question_mark.png" data-state="light-background">
+            <h3>Bibliothèques, API et Frameworks</h3>
+            <p>Différences ?</p>
+
+            <aside class="notes">
+              <ul>
+                <li>Bibliothèques (pas library en français) : collections de nouvelles fonctions à utiliser</li>
+                <li>API : description de ces fonctions (javadoc)</li>
+                <li>Framework : IoC. un programme sur lequel on injecte un comportement. Inclut organisation, paradigms, conventions en plus de bibliothèques</li>
+                <li>raccord sur la curiosité permanente</li>
+              </ul>
+            </aside>
           </section>
 
           <section>
@@ -892,7 +913,7 @@ public class Controle implements Serializable {
 					</section>
 
 					<section>
-						<h2>Utilisation simpliste</h2>
+						<h2>lombok</h2>
 						<pre><code>
 							&lt;dependency>
 							&nbsp;&nbsp;&lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
@@ -982,6 +1003,18 @@ public class Controle implements Serializable {
 						</aside>
 					</section>
 
+					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
+						<h3>Travaux Pratiques : nettoyez vos projets</h3>
+						<p>Lister le maximum de tâches permettant de diminuer la quantité de code sur votre projet</p>
+						<aside class="notes">
+							<ul>
+								<li>Chaque binôme propose un truc à son tour. Le dernier à en proposer gagne</li>
+								<li>Il faut un exemple précis à chaque fois</li
+								<li>imports statiques</li>
+							</ul>
+						</aside>
+					</section>
+
           <section>
             <h3>Et les optimisations de performances ?</h3>
             <p class="fragment">D'autres s'en préoccupent mieux que vous !</p>
@@ -1018,7 +1051,6 @@ public class Controle implements Serializable {
               </ul>
             </aside>
           </section>
-
         </section>
 
         <section>
@@ -1124,7 +1156,7 @@ public class Controle implements Serializable {
               <li>Description haut niveau</li>
               <li>Contacts</li>
               <li>Installation et Environnements</li>
-              <li class="fragment highlight-blue">Changelog</li>
+              <li>Changelog</li>
               <li><em lang="en">Catchall</em></li>
             </ul>
             <aside class="notes">
@@ -1295,6 +1327,22 @@ public class Controle implements Serializable {
           </section>
 
           <section>
+            <h3>Tests automatisés</h3>
+            <p><img alt="tests unitaires, d'intégration et fonctionnels se recouvrent" src="img/types-tests.png" /></p>
+            <aside class="notes">
+              <ul>
+                <li>bug est moins cher si détecté tôt (exponentiel)</li>
+                <li>tests manuels rajoutent environ 30% * livraison</li>
+                <li>Code non applicatif prod mais patrimoine aussi</li>
+                <li>Evite 2 pires bugs <acronym title="du point de vue de">pdv</acronym> user : régressions/répétitions</li>
+                <li>plus facile de remanier le code</li>
+                <li>pas de catégorisation officielle (jeunesse)</li>
+                <li>+ facile debug ⇒ + facile code (choix expérience)</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
             <h3 lang="en">Test Driven Development</h3>
             <p><img alt="Tests en erreurs puis tests passent puis remaniement et ça recommence" src="img/TDD.png"/></p>
             <aside class="notes">
@@ -1321,6 +1369,20 @@ public class Controle implements Serializable {
             </aside>
           </section>
 
+					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
+						<h3>Travaux Pratiques : Etat des lieux</h3>
+						<p>On change les mainteneurs sur les projets !</p>
+						<ol>
+							<li>Installez le projet en local</li>
+							<li>Lancez la démonstration</li>
+							<li>Notez vos conseils d'amélioration</li>
+							<li class="fragment">Bonus : ajoutez un utilisateur <em><acronym lang="en" title="Very Important People">VIP</acronym></em></li>
+						</ol>
+						<aside class="notes">
+							<p>L'utilisateur <em><acronym>VIP</acronym></em> est traité spécialement dans les messages de log</p>
+						</aside>
+					</section>
+
 					<section>
 						<figure>
 							<blockquote lang="en">Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. Code for readability.</blockquote>
@@ -1332,11 +1394,161 @@ public class Controle implements Serializable {
 							</ul>
 						</aside>
 					</section>
+
 				</section>
+
+        <section> <!-- 2) GESTION DES ENVIRONNEMENTS -->
+
+          <section>
+            <h2>Environnements</h2>
+            <p class="fragments"><img alt="environnement de tests automatisés, local, de qualification et de production" src="img/environnements.png"/></p>
+            <aside class="notes">
+              <ul>
+                <li>local : tout devrait être testable (dev sous linux ?)</li>
+                <li>décrire en sens historique des développements</li>
+                <li>nombre d'utilisateurs. De + en + la vraie vie (hors projet)</li>
+                <li>risques et criticité des bugs avec adhérence au SI</li>
+                <li>criticité des données de test ou réelles</li>
+                <li>autonomie : communiquer avant maj, pas vendredi en prod, possibilité de debug</li>
+              </ul>
+            </aside>
+          </section>
+
+					<section>
+						<h3>Adapter au contexte</h3>
+						<ul>
+              <li class="fragment">Pré-production</li>
+              <li class="fragment">Plusieurs qualifications</li>
+              <li class="fragment">Intégration</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+                <li>préprod : debug sur données de prod, performances</li>
+                <li>tests de perf presque inutiles hors identique prod</li>
+                <li>qualif : plusieurs versions en parallèle</li>
+                <li>integ : pour compilation/packaging manuel</li>
+                <li>Sur ce slide, équipe de gestion d'env nécessaire (cher)</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Portabilité du binaire</h3>
+						<ul>
+              <li>Unique <code>.jar</code> ou <code>.war</code> réutilisable</li>
+              <li>Configuration spécifique sur l'environnement</li>
+						</ul>
+						<aside class="notes">
+							<ol>
+                <li>Limite les risques en prod (tests pertinent)</li>
+                <li>Partage plus facile (déploiement auto ?)</li>
+                <li>Sécurité (mots de passe que sur env, pas au dev)</li>
+              </ol>
+              <ul>
+                <li><a hreflang="en" title="Store config in the environment" href="http://12factor.net/config">Variables d'environnement</a> (voire normes <abbr title="exploitation">exploit.</abbr> figées)</li>
+                <li>Pointent sur fichier de <abbr title="configuration">conf</abbr> (ou <code>catalina.properties</code>)</li>
+                <li>Se méfier de <code>context.xml</code></li>
+                <li>Temps pour trouver une méthode vaut le coup</li>
+                <li>Sinon filtres maven (automatisation)</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Prévisibilité du binaire</h3>
+						<pre><code>[WARNING] File encoding has not been set,
+            using platform encoding UTF-8, i.e. build is platform dependent!</code></pre>
+						<pre class="fragment"><code>
+&lt;properties&gt;
+    &lt;maven.compiler.source&gt;1.6&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;${maven.compiler.source}&lt;/maven.compiler.target&gt;
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    (...)
+&lt;/properties&gt;
+						</code></pre>
+						<aside class="notes">
+							<ul>
+								<li>(Presque)-même binaire quel que soit l'environnement de gén.</li>
+								<li>Les références à un environnement donnée (anaf/amine)</li>
+                				<li>Faire différence avec conventions prévisibles</li>
+							</ul>
+						</aside>
+					</section>
+
+          <section data-background="img/travaux-pratiques.jpg" data-state="light-background">
+            <h3>Travaux Pratiques : binaire portable</h3>
+            <p>Lister les parties non portables dans le code source de votre projet</p>
+            <aside class="notes">
+              <p>Aperçu des méthodes pour externaliser : variables d'environnements, fichiers à un endroit fixe, ...</p>
+							<p>tests nécessitant une BD ?</p>
+							<p>platform-dépendant</p>
+            </aside>
+          </section>
+
+        </section>
+
+        <section> <!-- 3) USINE DE DEVELOPPEMENT -->
+        	<section>
+        		<h2>Usine de développement</h2>
+        		<p><img alt="Usine de développement" src="img/usine-dev.png"/></p>
+        		<aside class="notes">
+        			On peut évoquer le déploiement continu (<a hreflang="en" href="http://fr.slideshare.net/jallspaw/10-deploys-per-day-dev-and-ops-cooperation-at-flickr">plus de 10/j à Flickr</a>, <a hreflang="en" href="http://dahernan.github.io/2013/10/14/continuous-deployment-trends/">environ 35/j à Etsy</a>).
+        		</aside>
+        	</section>
+
+        	<section>
+						<h3>Indicateur de maintenabilité ?</h3>
+						<p><img alt="capture d'écran sonar" src="img/sonar-trace.png"/></p>
+						<aside class="notes">
+							<ul>
+                <li>100% partout louche (très simple ou triche)<ul>
+                  <li><code>/* COMMENT. */</code> (vu en externalisation)</li>
+                  <li>variable privée non utilisée (OK Lombok)</li>
+                  <li>Extension de bibliothèques</li>
+                </ul></li>
+                <li>Note moins utile qu'évolution (cf RATP maintenance)</li>
+								<li><a hreflang="en" href="http://stackoverflow.com/questions/876089/who-wrote-this-programing-saying-always-code-as-if-the-guy-who-ends-up-maintai">version moins positive mais très concrète</a></li>
+							</ul>
+						</aside>
+					</section>
+
+          <section>
+						<h3>Dette Technique</h3>
+						<ul>
+              <li>Intérêts doivent être payés</li>
+              <li>Idée du coût de remboursement</li>
+            </ul>
+						<aside class="notes">
+							<ul>
+                <li>intérêts sont tps dev + longs et bugs</li>
+                <li>Parlant pour tous</li>
+                <li>Coûts utile pour convaincre</li>
+                <li>Le coût est en % du coût du projet</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
+						<h3>Travaux Pratiques : Stratégie</h3>
+						<ul>
+							<li><a hreflang="en" href="http://localhost:9000/">Votre projet analysé dans Sonar</a></li>
+							<li>Analyser les 5 priorités d'amélioration d'après vous</li>
+							<li class="fragment">Bonus : travaillez sur les points indiqués</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Bien pointer la partie <em lang="en">Hotspots</em></li>
+								<li>Priorités doivent être en fonction de leur coûts et criticité</li>
+								<li>Ne pas oublier : couverture des tests, documentation, ...</li>
+							</ul>
+						</aside>
+					</section>
+
+        </section>
 
         <section> <!-- CONCLUSION -->
 
-        <section data-state="plusloin">
+				<section data-state="plusloin">
 					<h2>Pour aller plus loin</h2>
 					<ul>
 						<li>Pratiquer</li>
@@ -1360,18 +1572,6 @@ public class Controle implements Serializable {
 					</aside>
 				</section>
 
-					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
-						<h3>Idées de TP</h3>
-						<ul>
-							<li>Ajouter lombok sur classes métier</li>
-							<li>Nettoyer son projet</li>
-							<li>Tests unitaires</li>
-							<li>Portabilité du binaire</li>
-							<li>Echange des projets : stratégie de reprise</li>
-							<li>Audit de résultats Sonar et priorisation des corrections</li>
-						</ul>
-					</section>
-
 				<section data-background="img/slide-beer.jpg" data-state="light-background">
 					<h2>Crédits</h2>
 					<ul>
@@ -1388,11 +1588,9 @@ public class Controle implements Serializable {
 							<a lang="en" href="https://commons.wikimedia.org/wiki/Main_Page?uselang=fr">Wikimedia Commons</a>,
 							<a href="http://blog.octo.com/vers-une-usine-de-developpement-2-0/">OCTO</a>,
 							<a href="http://aaaproduction.fr/">aaa productions</a>,
-							<a hreflang="en" href="https://github.com/danleech/simple-icons">Dan Leech</a>,
 							<a hreflang="en" href="http://obinoobie.deviantart.com/art/Microsoft-Office-Word-Icon-195507790">obinoobie </a>,
 							<a hreflang="en" href="http://ivadeath.deviantart.com/art/Karma-264163572">ivadeath</a>,
 							<a hreflang="en" href="https://secure.flickr.com/photos/rooster88fan/2077109462/">rooster88fan</a>,
-							<a hreflang="en" href="https://secure.flickr.com/photos/amagill/3367543296/">amagill</a>,
 							<a hreflang="en" href="https://secure.flickr.com/photos/pablogrb/3519906015/">pablogrb</a>,
 							<a hreflang="en" href="http://kogakure.github.com/gitweb-theme/">kogakure</a> et
 							<a hreflang="en" href="http://pixabay.com/id/users/Nemo/">Nemo</a>
@@ -1447,8 +1645,6 @@ public class Controle implements Serializable {
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					//{ src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					//{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
