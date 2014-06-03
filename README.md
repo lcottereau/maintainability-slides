@@ -20,5 +20,5 @@ des applications. Vous pouvez consulter différentes version en ligne via [l'his
 Si vous souhaitez utiliser ce cours, il faut déterminer les points suivants :
 
 * sur quel projet est-il possible de se baser (exemples, TPs). Idéalement, ce doit être un projet de groupe
-* niveau de matûrité en java
-* connaissances des différentes briques techniques évoquées
+* niveau de matûrité en java et sur les différentes briques techniques évoquées (en particulier si on parle usine de dev)
+* matériel disponible (rétroprojecteur, PCs ou portables pour les TPs)
