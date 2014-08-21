@@ -5,8 +5,7 @@ des applications. Vous pouvez consulter différentes version en ligne via [l'his
 
 ## Installation
 
- 1. `git clone https://github.com/lcottereau/maintainability-slides.git` va récupérer le source du projet
- 1. `git submodule init; git submodule update` va récupérer la bibliothèque [reveal.js](https://github.com/hakimel/reveal.js)
+ 1. `git clone --recursive https://github.com/lcottereau/maintainability-slides.git` va récupérer le source du projet, ainsi que la bibliothèque [reveal.js](https://github.com/hakimel/reveal.js)
  1. Ouvrir le fichier [index.html](index.html) dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
 
 ## Historique
