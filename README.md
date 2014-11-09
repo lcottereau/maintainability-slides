@@ -10,6 +10,8 @@ des applications. Vous pouvez consulter différentes version en ligne via [l'his
 
 ## Historique
 
+* 8 décembre 2014 : Option informatique de l'INSA de Lyon
+* 1<sup>er</sup> décembre 2014 : Option ASR de Telecom SudParis
 * 23 mai 2014 : [License PRO CSID de l'IUT de Montreuil (Paris 8)](http://lcottereau.github.io/maintainability-slides/20140523/)
 * 20 mai 2014 : [IUT Agile 2014 à Montreuil](http://lcottereau.github.io/maintainability-slides/20140520/) (version de 2h)
 * 28 octobre 2013 : [Option ASR de Telecom SudParis](http://lcottereau.github.io/maintainability-slides/20131028/)
