@@ -1020,25 +1020,25 @@ public class Controle implements Serializable {
 					</section>
 
 					<section>
-						<h3>Code expressif / lisible</h3>
-						<pre><code>
-							Calendar c = new GregorianCalendar();
-							Calendar b = j.bd();
-							if (b != null
-									&amp;&amp; c.get(Calendar.DAY_OF_YEAR) ==
-										b.get(Calendar.DAY_OF_YEAR)) {
-									return new BD();
-							}
-						</code></pre>
-						<pre class="fragment"><code>
-							if (joe.hasBirthday()) {
-									BandeDessinee gift = new BandeDessinee("Lincoln");
-									return gift;
-							}
-						</code></pre>
-						<pre class="fragment"><code>
-							when(joe.hasBirthday()).thenSend(gift);
-						</code></pre>
+            <h3>Code expressif / lisible</h3>
+            <pre><code>
+              Calendar c = new GregorianCalendar();
+              Calendar b = j.bd();
+              if (b != null &amp;&amp;
+                c.get(Calendar.DAY_OF_YEAR) ==
+                b.get(Calendar.DAY_OF_YEAR)) {
+                  return new BD();
+              }
+            </code></pre>
+            <pre class="fragment"><code>
+              if (joe.hasBirthday()) {
+                  BandeDessinee gift = new BandeDessinee("Lincoln");
+                  return gift;
+              }
+            </code></pre>
+            <pre class="fragment"><code>
+              when(joe.hasBirthday()).thenSend(gift);
+            </code></pre>
 						<aside class="notes">
 							<ul>
 								<li>exprimer son intention, <a href="http://blog.xebia.fr/2013/01/14/craftsman-recipes-de-lart-de-bien-nommer-les-concepts/">raconter des histoires !</a></li>
