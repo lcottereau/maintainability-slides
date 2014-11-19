@@ -948,6 +948,15 @@ public class Controle implements Serializable {
 					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
 						<h3>Travaux Pratiques : nettoyez vos projets</h3>
 						<p>Lister le maximum de tâches permettant de diminuer la quantité de code sur votre projet</p>
+						<ol class="fragment">
+							<li>fonctionnalités inutiles</li>
+							<li>code contournant une convention</li>
+							<li>code mal maîtrisé</li>
+							<li>code dupliqué</li>
+							<li>code inutile</li>
+							<li>code à externaliser</li>
+							<li>code "automatique"</li>
+						</l>
 						<aside class="notes">
 							<ul>
 								<li>Chaque binôme propose un truc à son tour. Le dernier à en proposer gagne</li>
@@ -1203,6 +1212,23 @@ public class Controle implements Serializable {
               </ul>
             </aside>
           </section>
+
+					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
+						<h3>Travaux Pratiques : Etat des lieux</h3>
+						<p>On change les mainteneurs sur les projets !</p>
+						<ol>
+							<li>Installez le projet en local</li>
+							<li class="specific">Faites une modification mineure</li>
+							<li>Testez, Packagez, Diffusez</li>
+							<li>Notez vos conseils d'amélioration</li>
+						</ol>
+						<aside class="notes">
+							<ul>
+								<li>Tester en automatique ou non</li>
+								<li>Bilan : 1) Où est le source ? 2) Comment lancer ?</li>
+							</ul>
+						</aside>
+					</section>
         </section>
 
         <section>
@@ -1418,20 +1444,6 @@ public class Controle implements Serializable {
             </aside>
           </section>
 
-					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
-						<h3>Travaux Pratiques : Etat des lieux</h3>
-						<p>On change les mainteneurs sur les projets !</p>
-						<ol>
-							<li>Installez le projet en local</li>
-							<li>Lancez la démonstration</li>
-							<li>Notez vos conseils d'amélioration</li>
-							<li class="fragment">Bonus : ajoutez un utilisateur <em><acronym lang="en" title="Very Important People">VIP</acronym></em></li>
-						</ol>
-						<aside class="notes">
-							<p>L'utilisateur <em><acronym>VIP</acronym></em> est traité spécialement dans les messages de log</p>
-						</aside>
-					</section>
-
 					<section>
 						<figure>
 							<blockquote lang="en">Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. Code for readability.</blockquote>
@@ -1546,6 +1558,7 @@ public class Controle implements Serializable {
 						</ul>
 						<aside class="notes">
 							<ul>
+								<li>Petit intermède bonus</li>
 								<li><a hreflang="http://semver.org/" title="semantic versioning">pseudo-standard API</a></li>
 								<li>snapshot (maven) : artefact non unique</li>
 								<li>non snapshot : binaire stable</li>
@@ -1607,13 +1620,12 @@ public class Controle implements Serializable {
 					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
 						<h3>Travaux Pratiques : Stratégie</h3>
 						<ul>
-							<li><a hreflang="en" href="http://localhost:9000/">Votre projet analysé dans Sonar</a></li>
+							<li class="specific"><a hreflang="en" href="http://localhost:9000/">Votre projet analysé dans Sonar</a></li>
 							<li>Analyser les 5 priorités d'amélioration d'après vous</li>
-							<li class="fragment">Bonus : travaillez sur les points indiqués</li>
 						</ul>
 						<aside class="notes">
 							<ul>
-								<li>Bien pointer la partie <em lang="en">Hotspots</em></li>
+								<li>SQALE : par fichier, <span lang="en">dashboard</span> global, ...</li>
 								<li>Priorités doivent être en fonction de leur coûts et criticité</li>
 								<li>Ne pas oublier : couverture des tests, documentation, ...</li>
 							</ul>
