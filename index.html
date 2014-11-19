@@ -227,7 +227,7 @@
 								<li><a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">Soyez curieux</a> et perfectionnistes !</li>
 								<li><strong>exemple sessions web</strong> et <a href="http://blog.ninja-squad.com/2013/07/26/stop-with-serialVersionUID/">serialVersionUID</a></li>
 								<li>différence entre <a hreflang="en" href="http://samizdat.mines.edu/howto/HowToBeAProgrammer.html">bon (utile, demandé)</a> et mauvais dev</li>
-								<li>bugs techniques inacceptables (pb fonctionnels compréhensibles)</li>
+								<li><a hreflang="en" href="http://javarevisited.blogspot.fr/2014/05/10-articles-every-programmer-must-read.html">bugs techniques inacceptables</a> (pb fonctionnels compréhensibles)</li>
 								<li>en permanence : veille techno, <a hreflang="en" href="http://cyber-dojo.org/">katas</a>, lecture specs, pas de pré-suppositions</li>
 								<li>TRES IMPORTANT : <a lang="en" hreflang="en" href="http://christianheilmann.com/2013/09/26/7-things-about-working-in-i-t-you-dont-learn-in-school/" title="7 things about working in IT you don't learn in school">The <em>how</em> lands you a job, the <em>why</em> lands you a career</a></li>
 							</ul>
@@ -245,7 +245,7 @@
 						<aside class="notes">
 							<ul>
 								<li><a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" hreflang="en">Risques</a> : corriger à un seul endroit, savoir lequel utiliser</li>
-								<li>Aide à une bonne conception (responsabilité unique)</li>
+								<li>Aide à une bonne conception (<a hreflang="http://blog.8thlight.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html" href="http://blog.8thlight.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html">responsabilité unique</a>)</li>
 								<li>Pas que copier/coller de code (ex : <em>annuaire inversé</em>)</li>
 								<li>Attention si presque-pareil : pourquoi ? comment gérer ?</li>
 								<li>Attention à la surgénéralisation (intra et inter projets)</li>
@@ -963,7 +963,7 @@ public class Controle implements Serializable {
             <aside class="notes">
               <ul>
                 <li><a href="http://blog.xebia.fr/2013/05/27/comprendre-le-fonctionnement-de-la-jvm-article-1/" title="Comprendre le fonctionnement de la JVM – Article 1/2">Faites confiance aux ingénieurs JVM</a></li>
-								<li>Au minimum, pas avant d'avoir de problème</li>
+								<li>Au minimum, pas avant d'avoir de problème (<a href="http://blog.octo.com/la-mort-prochaine-du-ramasse-miettes/">de + en + avec JVM 64 bits</a>)</li>
 								<li>N'empêche pas de faire les bons choix de structures : Hashmap/LinkedList/BinaryTree, StringBuilder ou String
                 <li>Si besoin d'optim, plutôt <a hreflang="en" href="https://weblogs.java.net/blog/kcpeppe/archive/2013/12/11/case-study-jvm-hotspot-flags">paramétrage JVM (expertise nécessaire)</a></li>
               </ul>
@@ -1063,6 +1063,12 @@ public class Controle implements Serializable {
 							<blockquote>The ratio of time spent reading (code) versus writing is well over 10 to 1 ... (therefore) making it easy to read makes it easier to write.</blockquote>
 							<figcaption>&nbsp;&mdash;&nbsp;Robert C. Martin in <cite>Clean Code</cite></figcaption>
 						</figure>
+						<aside class="notes">
+							<ul>
+								<li>tout est bon pour améliorer lecture</li>
+								<li><a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">standard de formattage (dont indentation)</a></li>
+							</ul>
+						</aside>
 					</section>
 
 					<section>
@@ -1072,7 +1078,7 @@ public class Controle implements Serializable {
 								<li>cet état d'esprit permet des choses sympas</li>
 								<li><a hreflang="en" href="https://xkcd.com/">XKCD</a> est recommandé pour les geeks</li>
 								<li>MAIS <a href="http://onehundredacorns.wordpress.com/2014/09/10/extreme-programmers-paris-xpropa-second-meetup/">code pas littérature</a></li>
-								<li>toujours améliorable et documentation nécessaire</li>
+								<li><a hreflang="en" href="http://thierrycros.net/public/docs/Clean-Code-V2.pdf">toujours améliorable</a> et documentation nécessaire</li>
 							</ul>
 						</aside>
 					</section>
@@ -1354,7 +1360,7 @@ public class Controle implements Serializable {
             <p>Changer la structure sans changer le fonctionnel</p>
             <aside class="notes">
             	<ul>
-            		<li>Objectif : maintenabilité améliorée
+            		<li>Objectif : <a hreflang="en" href="http://martinfowler.com/articles/workflowsOfRefactoring/#long-term">maintenabilité améliorée</a>
 									<ul>
 										<li>lisibilité</li>
 										<li>nettoyages (direct si <abbr title="suppression">suppr</abbr> fonction)</li>
@@ -1376,23 +1382,24 @@ public class Controle implements Serializable {
                 <li>Code non applicatif prod mais patrimoine aussi</li>
 								<li><a href="http://www.parleys.com/play/535fa85be4b03397a8eee8e8/">Doit être <strong>maintenable</strong> lui aussi</a></li>
                 <li>Evite 2 pires bugs <acronym title="du point de vue de">pdv</acronym> user : régressions/répétitions</li>
-                <li>plus facile de remanier le code</li>
                 <li>pas de catégorisation officielle (jeunesse)</li>
-                <li>+ facile debug ⇒ + facile code (choix expérience)</li>
+								<li>aussi <a href="http://cyrille.martraire.com/2014/02/canary-tests/">Canary Tests</a> : vérif env</li>
+								<li>parfois Acceptation quand test écrit par utilisateur</li>
               </ul>
             </aside>
           </section>
 
           <section>
             <h3 lang="en">Test Driven Development</h3>
-            <p><img alt="Tests en erreurs puis tests passent puis remaniement et ça recommence" src="img/TDD.png"/></p>
+            <p><img alt="Tests en erreurs puis tests passent puis remaniement et ça recommence" src="img/tdd.jpg"/></p>
             <aside class="notes">
               <ul>
                 <li>code applicatif doit résoudre un test en erreur</li>
                 <li>aide à ne coder que le nécessaire fonctionnel</li>
                 <li>naturellement 100% de couverture</li>
-                <li>aide à trouver en auto le code inutile</li>
-								<li>aussi une très bonne documentation</li>
+								<li>peut aider à faire émerger design</li>
+								<li>+ facile debug ⇒ + facile code (choix expérience)</li>
+								<li>très bonne documentation (ex d'utilisation)</li>
 								<li>attention aux <a hreflang="http://pitest.org/" title="mutation testing">tests non pertinents</a></li>
               </ul>
             </aside>
@@ -1527,6 +1534,25 @@ public class Controle implements Serializable {
             </aside>
           </section>
 
+					<section>
+						<h3>Versions sémantiques</h3>
+						<pre><code>
+							&lt;refonte&gt;.&lt;évolution&gt;.&lt;bug&gt;[-&lt;QUALIFIER&gt;]
+						</code></pre>
+						<ul>
+							<li class="fragment"><code>v1.0.3-SNAPSHOT</code> : instantané &ndash; développement</li>
+							<li class="fragment"><code>v1.0.3-RC1</code> : stable &ndash; développement</li>
+							<li class="fragment"><code>v1.0.3</code> : stable &ndash; partagé</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li><a hreflang="http://semver.org/" title="semantic versioning">pseudo-standard API</a></li>
+								<li>snapshot (maven) : artefact non unique</li>
+								<li>non snapshot : binaire stable</li>
+							</ul>
+						</aside>
+					</section>
+
         </section>
 
         <section> <!-- 3) USINE DE DEVELOPPEMENT -->
@@ -1634,6 +1660,7 @@ public class Controle implements Serializable {
 						</li>
 						<li><em>Photos</em> :
 							<a hreflang="en" href="http://www.linkedin.com/in/florentmathe">F. Mathé</a>,
+							<a href="http://fr.slideshare.net/agnes_crepet/iut-agile-lyon-20-nov-2013-bdd-28492949">A. Crepet</a>, 
 							<a hreflang="en" href="http://universaluclick.com/licensing_permissions/educational_use">Dilbert.com</a>,
 							<a hreflang="en" href="https://xkcd.com/1421/">XKCD</a>,
 							<a lang="en" href="https://commons.wikimedia.org/wiki/Main_Page?uselang=fr">Wikimedia Commons</a>,
