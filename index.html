@@ -1143,21 +1143,21 @@ public class Controle implements Serializable {
 
           <section>
             <h3>Gestionnaire de versions</h3>
-						<pre class="specific"><code class="markdown">$:~/trace$ git log --pretty=oneline --abbrev-commit
-
-							5ab30fb réduction du champ d'application d'une règle CSS
-											        pour les vignettes vidéo
-							231195a crebas.sql représente maintenant l'état de la
-											        dernière version de la base
-							31c15dd #1996 - léger espace autour d'une image dans un
-											        datatable-ui
-							ca7b84b on replace l'onglet acteurs entre les onglets
-											        organisation et résultat
-							e0b5cf9 suppression de l'onglet contexte (élément mis
-											        dans l'onglet détails)</code></pre>
+						<pre class="specific"><code class="markdown">$ git log --pretty=oneline --abbrev-commit
+							a9fc841 add exec via maven
+							cc17eb4 produce both jar and war
+							b067a58 Merge branch 'master' of
+							        https://github.com/fmonniot/mailbox
+							5707b29 Add documentation and README
+							3e25423 Merge branch 'master' of github.com:fmonniot/mailbox
+							ac7ebd8 fix mvn build
+							c1879cb Add Admin client
+							00d84da more fixes
+						</code></pre>
 						<aside class="notes">
 							<ul>
 								<li>mêmes consignes de remplissage</li>
+								<li>déclarer pourquoi, pas comment (cf numéro de ticket)</li>
 								<li><a href="http://www.git-attitude.fr/2014/05/04/bien-utiliser-git-merge-et-rebase/"
 									title="Bien Utiliser git merge et rebase">Nettoyer son historique</a> avec systèmes distribués</li>
 								<li>1 ligne de résumé. Puis détails si nécessaires</li>
