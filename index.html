@@ -286,6 +286,7 @@ public int doSomething() {
                 <li>classique : vieux code de test : git est là pour ça</li>
                 <li>données auto-remplies à réfléchir  (OK car à jour)</li>
                 <li>se méfier du code généré (risque d'incohérence, de lier à un environnement)</li>
+								<li><strong>suites de tests vides</strong> (2h perdues !)</li>
               </ul>
             </aside>
           </section>
@@ -1029,6 +1030,7 @@ public class Controle implements Serializable {
 								<li><a href="https://en.wikipedia.org/wiki/Single_responsibility_principle" hreflang="en">Principe de <abbr title="responsabilité">resp.</abbr> unique (<acronym title="Programmation Orientée Objet">OO</acronym>)</a></li>
 								<li>choix progiciels (voir <a hreflang="en" href="https://en.wikipedia.org/wiki/Rube_Goldberg_machine">machines de Rube Goldberg</a> ou Shadoks) : plus difficile d'évoluer après</li>
 								<li>agile aide à éviter d'anticiper sur besoins (appli ou archi)</li>
+								<li>éviter par ex. de faire trop de modules mvn en anticipé</li>
 							</ul>
 						</aside>
 					</section>
@@ -1145,7 +1147,7 @@ public class Controle implements Serializable {
           <section>
             <h3>Gestionnaire de versions</h3>
 						<pre class="specific"><code class="markdown">$ git log --pretty=oneline --abbrev-commit
-							
+
 							a9fc841 add exec via maven
 							cc17eb4 produce both jar and war
 							b067a58 Merge branch 'master' of
