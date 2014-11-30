@@ -28,7 +28,13 @@ Si vous souhaitez utiliser ce cours, il faut déterminer les points suivants :
 ## Durées (hors exercices)
 
 * Introduction : 10 à 15 minutes
-* 1 - Less Is More : 50 à 60 minutes (TP à 45-50)
+* 1 - Less Is More : 50 à 60 minutes (TP à 5-10 minutes de la fin)
+* PAUSE
 * 2 - WTF : 20 minutes
 * 3 - Votre code est votre documentation : 20 minutes (TP à la fin)
+* DEJEUNER
 * 4 - Prenez vos responsabilités : 35-40 minutes
+* Environnements : 15 minutes (TP à la fin)
+* PAUSE
+* Usine de développement : 20 minutes (TP à la fin)
+* Conclusion : 5 minutes
