@@ -100,11 +100,6 @@
 				<section>
 					<h1 style="font-size: 2.3em;">Développement <img alt="Logiciel" class="no-border" src="img/floppy.png"/> Durable</h1>
 					<p>Maintenabilité des applications</p>
-					<aside class="notes">
-						<ul>
-							<li>Pas comme le film <a href="https://fr.wikipedia.org/wiki/Les_Stagiaires"><cite>Les Stagiaires</cite></a></li>
-						</ul>
-					</aside>
 				</section>
 
 				<section>
@@ -197,11 +192,26 @@
             <aside class="notes">
               <ul>
 								<li><a hreflang="en" href="http://codeincomplete.com/posts/2014/5/14/development_values/"><acronym lang="en" title="You Ain't Gonna Need It">YAGNI</acronym></a></li>
-              	<li>Très présent dans le code des élèves (copier/coller ? toString inutiles...)</li>
+              	<li class="specific">Très présent dans le code des élèves (copier/coller ? toString inutiles...)</li>
                 <li>Agilité aide à définir les fonctions au plus juste</li>
               </ul>
             </aside>
           </section>
+
+					<section data-background="img/slide-warning.jpg" data-state="light-background">
+						<h3>Comprenez ce que vous faites !</h3>
+						<pre class="fragment"><code class="specific">private static final long serialVersionUID = 1L;</code></pre>
+						<aside class="notes">
+							<ul>
+								<li><a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">Soyez curieux</a> et perfectionnistes !</li>
+								<li><strong>exemple sessions web</strong> et <a href="http://blog.ninja-squad.com/2013/07/26/stop-with-serialVersionUID/">serialVersionUID</a></li>
+								<li>différence entre <a hreflang="en" href="http://samizdat.mines.edu/howto/HowToBeAProgrammer.html">bon (utile, demandé)</a> et mauvais dev</li>
+								<li><a hreflang="en" href="http://javarevisited.blogspot.fr/2014/05/10-articles-every-programmer-must-read.html">bugs techniques inacceptables</a> (pb fonctionnels compréhensibles)</li>
+								<li>en permanence : veille techno, <a hreflang="en" href="http://cyber-dojo.org/">katas</a>, lecture specs, pas de pré-suppositions</li>
+								<li>TRES IMPORTANT : <a lang="en" hreflang="en" href="http://christianheilmann.com/2013/09/26/7-things-about-working-in-i-t-you-dont-learn-in-school/" title="7 things about working in IT you don't learn in school">The <em>how</em> lands you a job, the <em>why</em> lands you a career</a></li>
+							</ul>
+						</aside>
+					</section>
 
 					<section>
 						<h3 lang="en">Convention over configuration</h3>
@@ -216,21 +226,6 @@
 								<li>on peut choisir des conventions mais les documenter</li>
 								<li>choix de bibliothèques exactement adaptées</li>
 								<li>idéal de rester dans les conventions</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-background="img/slide-warning.jpg" data-state="light-background">
-						<h3>Comprenez ce que vous faites !</h3>
-						<pre class="fragment"><code class="specific">private static final long serialVersionUID = 1L;</code></pre>
-						<aside class="notes">
-							<ul>
-								<li><a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">Soyez curieux</a> et perfectionnistes !</li>
-								<li><strong>exemple sessions web</strong> et <a href="http://blog.ninja-squad.com/2013/07/26/stop-with-serialVersionUID/">serialVersionUID</a></li>
-								<li>différence entre <a hreflang="en" href="http://samizdat.mines.edu/howto/HowToBeAProgrammer.html">bon (utile, demandé)</a> et mauvais dev</li>
-								<li><a hreflang="en" href="http://javarevisited.blogspot.fr/2014/05/10-articles-every-programmer-must-read.html">bugs techniques inacceptables</a> (pb fonctionnels compréhensibles)</li>
-								<li>en permanence : veille techno, <a hreflang="en" href="http://cyber-dojo.org/">katas</a>, lecture specs, pas de pré-suppositions</li>
-								<li>TRES IMPORTANT : <a lang="en" hreflang="en" href="http://christianheilmann.com/2013/09/26/7-things-about-working-in-i-t-you-dont-learn-in-school/" title="7 things about working in IT you don't learn in school">The <em>how</em> lands you a job, the <em>why</em> lands you a career</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -960,9 +955,7 @@ public class Controle implements Serializable {
 						</l>
 						<aside class="notes">
 							<ul>
-								<li>Chaque binôme propose un truc à son tour. Le dernier à en proposer gagne</li>
-								<li>Il faut un exemple précis à chaque fois</li
-								<li>imports statiques</li>
+								<li>N'hésitez pas à poser vos questions</li>
 							</ul>
 						</aside>
 					</section>
@@ -1333,6 +1326,7 @@ public class Controle implements Serializable {
                 <li>classiquement, en production, warnings ou error</li>
                 <li>en dev, parfois en info pour anticiper les pb</li>
                 <li>savoir comment passer en debug</li>
+								<li class="specific">souvent un problème sur vos projets</li>
               </ul>
             </aside>
           </section>
