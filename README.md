@@ -24,3 +24,8 @@ Si vous souhaitez utiliser ce cours, il faut déterminer les points suivants :
 * sur quel projet est-il possible de se baser (exemples, TPs). Idéalement, ce doit être un projet de groupe
 * niveau de matûrité en java et sur les différentes briques techniques évoquées (en particulier si on parle usine de dev)
 * matériel disponible (rétroprojecteur, PCs ou portables pour les TPs)
+
+## Durées (hors exercices)
+
+* Introduction : 10 à 15 minutes
+* 1 - Less Is More : 50 à 60 minutes (TP à 45-50)
