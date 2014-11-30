@@ -29,3 +29,6 @@ Si vous souhaitez utiliser ce cours, il faut déterminer les points suivants :
 
 * Introduction : 10 à 15 minutes
 * 1 - Less Is More : 50 à 60 minutes (TP à 45-50)
+* 2 - WTF : 20 minutes
+* 3 - Votre code est votre documentation : 20 minutes (TP à la fin)
+* 4 - Prenez vos responsabilités : 35-40 minutes
