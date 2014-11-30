@@ -1409,14 +1409,13 @@ public class Controle implements Serializable {
             <p><img alt="tests unitaires, d'intégration et fonctionnels se recouvrent" src="img/types-tests.png" /></p>
             <aside class="notes">
               <ul>
+								<li>tests manuels rajoutent environ 30% * livraison</li>
                 <li>bug est moins cher si détecté tôt (exponentiel)</li>
-                <li>tests manuels rajoutent environ 30% * livraison</li>
-                <li>Code non applicatif prod mais patrimoine aussi</li>
-								<li><a href="http://www.parleys.com/play/535fa85be4b03397a8eee8e8/">Doit être <strong>maintenable</strong> lui aussi</a></li>
-                <li>Evite 2 pires bugs <acronym title="du point de vue de">pdv</acronym> user : régressions/répétitions</li>
-                <li>pas de catégorisation officielle (jeunesse)</li>
+								<li>Evite pire bug <acronym title="du point de vue de">pdv</acronym> user : régressions</li>
+								<li>pas de catégorisation officielle (jeunesse)</li>
 								<li>aussi <a href="http://cyrille.martraire.com/2014/02/canary-tests/">Canary Tests</a> : vérif env</li>
 								<li>parfois Acceptation quand test écrit par utilisateur</li>
+								<li><a href="http://www.parleys.com/play/535fa85be4b03397a8eee8e8/">Doit être <strong>maintenable</strong> lui aussi</a></li>
               </ul>
             </aside>
           </section>
@@ -1430,7 +1429,6 @@ public class Controle implements Serializable {
                 <li>aide à ne coder que le nécessaire fonctionnel</li>
                 <li>naturellement 100% de couverture (non-régression)</li>
 								<li>peut aider à faire émerger design</li>
-								<li>+ facile debug ⇒ + facile code (choix expérience)</li>
 								<li>très bonne documentation (ex d'utilisation)</li>
 								<li>attention aux <a hreflang="http://pitest.org/" title="mutation testing">tests non pertinents</a></li>
               </ul>
