@@ -29,3 +29,4 @@ Si vous souhaitez utiliser ce cours, il faut déterminer les points suivants :
 
 * Introduction : 10 à 15 minutes
 * 1 - Less Is More : 50 à 60 minutes (TP à 45-50)
+* 2 - WTF : 20 minutes
