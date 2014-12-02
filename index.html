@@ -100,11 +100,6 @@
 				<section>
 					<h1 style="font-size: 2.3em;">Développement <img alt="Logiciel" class="no-border" src="img/floppy.png"/> Durable</h1>
 					<p>Maintenabilité des applications</p>
-					<aside class="notes">
-						<ul>
-							<li>Pas comme le film <a href="https://fr.wikipedia.org/wiki/Les_Stagiaires"><cite>Les Stagiaires</cite></a></li>
-						</ul>
-					</aside>
 				</section>
 
 				<section>
@@ -181,8 +176,7 @@
 						<aside class="notes">
 							Si vous êtes un jour responsables d'équipes de dev
 							<ul>
-								<li>équipes projet ET maintenance</li>
-								<li>célèbre <q>You build it, you run it</q> de Amazon</li>
+								<li><a hreflang="en" href="https://queue.acm.org/detail.cfm?id=1142065"><cite lang="en">You build it, you run it</cite></a> chez Amazon : <abbr title="développeurs">dev</abbr> plus responsables car contact utilisateurs et <abbr title="environnements">env</abbr> production</li>
 								<li>connaissance technique en interne et capacité à évaluer les travaux externes</li>
 								<li>pas de perte de temps à abuser les indicateurs de suivi (uniquement une impression de contrôle)</li>
 							</ul>
@@ -192,78 +186,32 @@
 
         <section> <!-- 1) BONNES PRATIQUES -->
 
-          <section> <!-- 1.1) #WTF -->
-            <h2>1&nbsp;&dash;&nbsp;#WTF</h2>
-            <p><a href="http://www.osnews.com/story/19266/WTFs_m" title="The true indicator of code quality, on OSNews"><img src="img/wtf.jpg" alt="The true indicator of code quality, the What-the-fucks per minute" /></a></p>
-            <aside class="notes">
-							<ul>
-								<li><em lang="en">Principle of least astonishment</em> (via <a hreflang="en" href="http://www.cs.arizona.edu/projects/sumatra/hallofshame/">Java Hall Of Shame</a>)</li>
-								<li>Incompréhension par un autre dev (ou soi-même après 6 mois)</li>
-								<li>Toujours un peu mais doit être limité</li>
-            </aside>
-          </section>
-
-          <section>
-            <h3>KISS</h3>
-            <p><img alt="Pourquoi faire simple quand on peut faire compliqué ?" src="img/shadoks.jpg"/></p>
-            <blockquote class="fragment"><strong>Keep It Simple, Stupid</strong></blockquote>
-            <aside class="notes">
-              <ul>
-                <li><a href="http://www.redaction-technique.org/redacteur-technique/redacteur-technique/principe-de-simplicite-kiss/">Idem difficulté d'expliquer simplement du complexe</a> : mais permet compréhension complète</li>
-                <li><a hreflang="en" href="https://en.wikipedia.org/wiki/Unix_philosophy">Philosophie Unix</a> 1/3 : <a href="http://www.parleys.com/play/519bdedfe4b0549489a4a43b/chapter63/about" lang="en">Write programs that do one thing and do it well</a></li>
-                <li><a href="https://en.wikipedia.org/wiki/Single_responsibility_principle" hreflang="en">Principe de <abbr title="responsabilité">resp.</abbr> unique (<acronym title="Programmation Orientée Objet">OO</acronym>)</a></li>
-                <li>choix progiciels (voir <a hreflang="en" href="https://en.wikipedia.org/wiki/Rube_Goldberg_machine">machines de Rube Goldberg</a> ou Shadoks) : plus difficile d'évoluer après</li>
-                <li>agile aide à éviter d'anticiper sur besoins (appli ou archi)</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h3>Code expressif / lisible</h3>
-            <pre><code>
-              Calendar c = new GregorianCalendar();
-              Calendar b = j.bd();
-              if (b != null
-                  &amp;&amp; c.get(Calendar.DAY_OF_YEAR) ==
-                     b.get(Calendar.DAY_OF_YEAR)) {
-                  return new BD();
-              }
-            </code></pre>
-            <pre class="fragment"><code>
-              if (joe.hasBirthday()) {
-                  BandeDessinee gift = new BandeDessinee("Lincoln");
-                  return gift;
-              }
-            </code></pre>
-            <pre class="fragment"><code>
-              when(joe.hasBirthday()).thenSend(gift);
-            </code></pre>
-            <aside class="notes">
-              <ul>
-                <li>exprimer son intention via le code au mainteneur : <a href="http://blog.xebia.fr/2013/01/14/craftsman-recipes-de-lart-de-bien-nommer-les-concepts/">racontez des histoires !</a></li>
-                <li><a hreflang="en" href="http://blog.8thlight.com/ryan-verner/2013/10/09/reducing-incidental-complexity-in-our-code-and-in-our-teaching.html" title="Reducing incidental complexity in our code and in our teaching">factoriser en méthodes (sémantique / javadocs / API réutilisables)</a></li>
-                <li>Noms de variables et métaphore XP</li>
-                <li>Choix de bibliothèques (ex : <a href="http://joda-time.sourceforge.net/" lang="en">Joda Time</a> et <a href="jcp.org/en/jsr/detail?id=310" hreflang="en">JSR 310</a>)</li>
-                <li>Le chaînage de méthode (fluent code) et <a
-                    href="https://fr.wikipedia.org/wiki/Domain-specific_programming_language"><acronym lang="en"
-                    title="Domain Specific Language">DSL</acronym></a> améliore la lisibilité</li>
-								<li>imports statiques</li>
-              </ul>
-            </aside>
-          </section>
-        </section>
-
-        <section>
-          <section> <!-- 1.2) Less is More -->
-            <h2>2&nbsp;&dash;&nbsp;Less Is More</h2>
+          <section> <!-- 1.1) Less is More -->
+            <h2>1&nbsp;&dash;&nbsp;Less Is More</h2>
             <p class="fragment">Moins de fonctionnalité</p>
             <aside class="notes">
               <ul>
-              	<li>Très présent dans le code des élèves (copier/coller ? toString inutiles...)</li>
+								<li><a hreflang="en" href="http://codeincomplete.com/posts/2014/5/14/development_values/"><acronym lang="en" title="You Ain't Gonna Need It">YAGNI</acronym></a></li>
+              	<li class="specific">Très présent dans le code des élèves (copier/coller ? toString inutiles...)</li>
                 <li>Agilité aide à définir les fonctions au plus juste</li>
               </ul>
             </aside>
           </section>
+
+					<section data-background="img/slide-warning.jpg" data-state="light-background">
+						<h3>Comprenez ce que vous faites !</h3>
+						<pre class="fragment"><code class="specific">private static final long serialVersionUID = 1L;</code></pre>
+						<aside class="notes">
+							<ul>
+								<li><a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">Soyez curieux</a> et perfectionnistes !</li>
+								<li><strong>exemple sessions web</strong> et <a href="http://blog.ninja-squad.com/2013/07/26/stop-with-serialVersionUID/">serialVersionUID</a></li>
+								<li>différence entre <a hreflang="en" href="http://samizdat.mines.edu/howto/HowToBeAProgrammer.html">bon (utile, demandé)</a> et mauvais dev</li>
+								<li><a hreflang="en" href="http://javarevisited.blogspot.fr/2014/05/10-articles-every-programmer-must-read.html">bugs techniques inacceptables</a> (pb fonctionnels compréhensibles)</li>
+								<li>en permanence : veille techno, <a hreflang="en" href="http://cyber-dojo.org/">katas</a>, lecture specs, pas de pré-suppositions</li>
+								<li>TRES IMPORTANT : <a lang="en" hreflang="en" href="http://christianheilmann.com/2013/09/26/7-things-about-working-in-i-t-you-dont-learn-in-school/" title="7 things about working in IT you don't learn in school">The <em>how</em> lands you a job, the <em>why</em> lands you a career</a></li>
+							</ul>
+						</aside>
+					</section>
 
 					<section>
 						<h3 lang="en">Convention over configuration</h3>
@@ -274,24 +222,10 @@
 						<aside class="notes">
 							<ul>
 								<li><strong><a hreflang="en" href="https://maven.apache.org/">maven</a></strong>, noms par défaut des tables/colonnes JPA</li>
+								<li>une des améliorations de mvn/gradle sur ant</li>
 								<li>on peut choisir des conventions mais les documenter</li>
 								<li>choix de bibliothèques exactement adaptées</li>
 								<li>idéal de rester dans les conventions</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section data-background="img/slide-warning.jpg" data-state="light-background">
-						<h3>Comprenez ce que vous faites !</h3>
-						<pre class="fragment"><code>private static final long serialVersionUID = 1L;</code></pre>
-						<aside class="notes">
-							<ul>
-								<li><a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">Soyez curieux</a> et perfectionnistes !</li>
-								<li><strong>exemple sessions web</strong> et <a href="http://blog.ninja-squad.com/2013/07/26/stop-with-serialVersionUID/">serialVersionUID</a></li>
-								<li>différence entre bon (utile, demandé) et mauvais dev</li>
-								<li>bugs techniques inacceptables (pb fonctionnels compréhensibles)</li>
-								<li>en permanence : veille techno, katas, lecture specs, pas de pré-suppositions</li>
-								<li>TRES IMPORTANT : <a lang="en" hreflang="en" href="http://christianheilmann.com/2013/09/26/7-things-about-working-in-i-t-you-dont-learn-in-school/" title="7 things about working in IT you don't learn in school">The <em>how</em> lands you a job, the <em>why</em> lands you a career</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -307,26 +241,27 @@
 						<aside class="notes">
 							<ul>
 								<li><a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" hreflang="en">Risques</a> : corriger à un seul endroit, savoir lequel utiliser</li>
-								<li>Aide à une bonne conception (responsabilité unique)</li>
+								<li>Aide à une bonne conception (<a hreflang="http://blog.8thlight.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html" href="http://blog.8thlight.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html">responsabilité unique</a>)</li>
+								<li>Pas que copier/coller de code (ex : <em>annuaire inversé</em>)</li>
 								<li>Attention si presque-pareil : pourquoi ? comment gérer ?</li>
 								<li>Attention à la surgénéralisation (intra et inter projets)</li>
 							</ul>
 						</aside>
 					</section>
 
-          <section>
+          <section class="specific">
             <h3>Réfléchissez à ce que vous commitez</h3>
             <h4>A supprimer</h4>
-            <pre><code>import java.util.Date;
-//import java.util.Date;</code></pre>
+            <pre><code>import directoryManager.entity.FinalUser;
+//import entity.FinalUsers;</code></pre>
             <pre><code>/**
  *
  */
 private static final long serialVersionUID = 1L;</code></pre>
             <pre><code>@Override
-public void setSenderEmail(String senderEmail) {
-  // TODO Auto-generated method stub
-
+public String findUserNG(String name) {
+	// TODO Auto-generated method stub
+	return null;
 }</code></pre>
 			<pre><code>/**
 * $Id:$
@@ -341,10 +276,12 @@ public int doSomething() {
               <ul>
 								<li>exemples tirés des projets d'élèves</li>
               	<li>aucun code binaire (cf projet)</li>
-                <li>infos qui ne seront pas tenues à jours (@author est déjà ailleurs)</li>
+                <li>infos pas tenues à jour (@author déjà ailleurs)</li>
+								<li><a hreflang="en" href="http://blog.8thlight.com/dariusz-pasciak/2014/08/13/an-appeal-to-cs-teachers.html">pas de commentaires inutiles</a></li>
                 <li>classique : vieux code de test : git est là pour ça</li>
                 <li>données auto-remplies à réfléchir  (OK car à jour)</li>
                 <li>se méfier du code généré (risque d'incohérence, de lier à un environnement)</li>
+								<li><strong>suites de tests vides</strong> (2h perdues !)</li>
               </ul>
             </aside>
           </section>
@@ -408,6 +345,7 @@ public int doSomething() {
                 <li>blog : <strong>gestion articles</strong>. commentaires ? <del>infrastructure, connexion</del></li>
                 <li>jeu vidéo : graphiques et IA.</li>
                 <li>OS, communauté, docu, prix, couteau suisse</li>
+								<li><a hreflang="en" href="https://speakerdeck.com/tombujok/33-things-you-want-to-do-better-3"><cite>Si vous n'avez qu'un marteau, tout aura l'air d'un clou</cite></a></li>
               </ul>
             </aside>
           </section>
@@ -925,6 +863,7 @@ public class Controle implements Serializable {
 						<aside class="notes">
 							<ul>
 								<li>plutôt que IDE (fragile) ou guava/JDK (intrusif)</li>
+								<li>plus mûr que <a hreflang="en" href="https://github.com/google/auto">Google Auto</a></li>
 								<li>le <code>jar</code> dans le <code>CLASSPATH</code> lors de la compilation est suffisant</li>
 								<li>rien au runtime</li>
 							</ul>
@@ -967,9 +906,9 @@ public class Controle implements Serializable {
 						<h2>D'autres exemples</h2>
 						<ul>
 							<li><code>@Delegate</code></li>
-							<li class="fragment"><code>@Value</code></li>
-							<li class="fragment"><code>@Log</code></li>
-							<li class="fragment"><code>@Builder</code>
+							<li><code>@Value</code></li>
+							<li><code>@Log</code></li>
+							<li><code>@Builder</code>
 						</ul>
 						<pre class="fragment"><code>SuperHero.builder().name("Superman").from("Krypton").alias("Clark").build();</code></pre></li>
 						<aside class="notes">
@@ -1006,11 +945,18 @@ public class Controle implements Serializable {
 					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
 						<h3>Travaux Pratiques : nettoyez vos projets</h3>
 						<p>Lister le maximum de tâches permettant de diminuer la quantité de code sur votre projet</p>
+						<ol class="fragment">
+							<li>fonctionnalités inutiles</li>
+							<li>code contournant une convention</li>
+							<li>code mal maîtrisé</li>
+							<li>code dupliqué</li>
+							<li>code inutile</li>
+							<li>code à externaliser</li>
+							<li>code "automatique"</li>
+						</l>
 						<aside class="notes">
 							<ul>
-								<li>Chaque binôme propose un truc à son tour. Le dernier à en proposer gagne</li>
-								<li>Il faut un exemple précis à chaque fois</li
-								<li>imports statiques</li>
+								<li>N'hésitez pas à poser vos questions</li>
 							</ul>
 						</aside>
 					</section>
@@ -1021,6 +967,7 @@ public class Controle implements Serializable {
             <aside class="notes">
               <ul>
                 <li><a href="http://blog.xebia.fr/2013/05/27/comprendre-le-fonctionnement-de-la-jvm-article-1/" title="Comprendre le fonctionnement de la JVM – Article 1/2">Faites confiance aux ingénieurs JVM</a></li>
+								<li>Au minimum, pas avant d'avoir de problème (<a href="http://blog.octo.com/la-mort-prochaine-du-ramasse-miettes/">de + en + avec JVM 64 bits</a>)</li>
 								<li>N'empêche pas de faire les bons choix de structures : Hashmap/LinkedList/BinaryTree, StringBuilder ou String
                 <li>Si besoin d'optim, plutôt <a hreflang="en" href="https://weblogs.java.net/blog/kcpeppe/archive/2013/12/11/case-study-jvm-hotspot-flags">paramétrage JVM (expertise nécessaire)</a></li>
               </ul>
@@ -1053,13 +1000,112 @@ public class Controle implements Serializable {
           </section>
         </section>
 
+				<section>
+					<section> <!-- 1.2) #WTF -->
+						<h2>2&nbsp;&dash;&nbsp;#WTF</h2>
+						<p><a href="http://www.osnews.com/story/19266/WTFs_m" title="The true indicator of code quality, on OSNews"><img src="img/wtf.jpg" alt="The true indicator of code quality, the What-the-fucks per minute" /></a></p>
+						<aside class="notes">
+							<ul>
+								<li><em lang="en">Principle of least astonishment</em> (via <a hreflang="en" href="http://www.cs.arizona.edu/projects/sumatra/hallofshame/">Java Hall Of Shame</a>)</li>
+								<li>Incompréhension par un autre dev (ou soi-même après 6 mois)</li>
+								<li>Toujours un peu mais doit être limité</li>
+						</aside>
+					</section>
+
+					<section>
+						<h3>KISS</h3>
+						<p lang="en">Keep It Simple, Stupid</p>
+						<p>
+							<img class="fragment current-visible" alt="Pourquoi faire simple quand on peut faire compliqué ?" src="img/shadoks.jpg" style="vertical-align: middle"/>
+							<img class="fragment current-visible" alt="Pas de sur-ingénierie" src="img/kiss-xkcd.png" style="vertical-align: middle"/>
+						</p>
+						<aside class="notes">
+							<ul>
+								<li><a href="http://www.redaction-technique.org/redacteur-technique/redacteur-technique/principe-de-simplicite-kiss/">Idem difficulté d'expliquer simplement du complexe</a> : mais permet compréhension complète</li>
+								<li><a hreflang="en" href="https://en.wikipedia.org/wiki/Unix_philosophy">Philosophie Unix</a> 1/3 : <a href="http://www.parleys.com/play/519bdedfe4b0549489a4a43b/chapter63/about" lang="en">Write programs that do one thing and do it well</a></li>
+								<li><a href="https://en.wikipedia.org/wiki/Single_responsibility_principle" hreflang="en">Principe de <abbr title="responsabilité">resp.</abbr> unique (<acronym title="Programmation Orientée Objet">OO</acronym>)</a></li>
+								<li>choix progiciels (voir <a hreflang="en" href="https://en.wikipedia.org/wiki/Rube_Goldberg_machine">machines de Rube Goldberg</a>, shadoks ou xkcd) : plus difficile d'évoluer après</li>
+								<li>agile aide à éviter d'anticiper sur besoins (appli ou archi)</li>
+								<li>éviter par ex. de faire trop de modules mvn en anticipé</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<figure>
+							<blockquote>La simplicité est la sophistication suprême</blockquote>
+							<figcaption>&nbsp;&mdash;&nbsp;Léonard de Vinci</figcaption>
+						</figure>
+					</section>
+
+					<section>
+            <h3>Code expressif / lisible</h3>
+            <pre><code>
+              Calendar c = new GregorianCalendar();
+              Calendar b = j.bd();
+              if (b != null &amp;&amp;
+                c.get(Calendar.DAY_OF_YEAR) ==
+                b.get(Calendar.DAY_OF_YEAR)) {
+                  return new BD();
+              }
+            </code></pre>
+            <pre class="fragment"><code>
+              if (joe.hasBirthday()) {
+                  BandeDessinee gift = new BandeDessinee("Lincoln");
+                  return gift;
+              }
+            </code></pre>
+            <pre class="fragment"><code>
+              when(joe.hasBirthday()).thenSend(gift);
+            </code></pre>
+						<aside class="notes">
+							<ul>
+								<li>exprimer son intention, <a href="http://blog.xebia.fr/2013/01/14/craftsman-recipes-de-lart-de-bien-nommer-les-concepts/">raconter des histoires !</a></li>
+								<li><a hreflang="en" href="http://blog.8thlight.com/ryan-verner/2013/10/09/reducing-incidental-complexity-in-our-code-and-in-our-teaching.html" title="Reducing incidental complexity in our code and in our teaching">factoriser (sémantique / javadocs / API réutilisables)</a></li>
+								<li>Noms de variables et <a href="http://xprogramming.com/articles/refactoring-not-on-the-backlog/" hreflang"en">métaphore</a> XP (<abbr title="exemple">ex</abbr>: <a hreflang="en" href="https://www.youtube.com/watch?v=ZzQfxoMFH0U#t=210">Docker</a>)</li>
+								<li>Choix de bibliothèques (ex : <a href="http://joda-time.sourceforge.net/" lang="en">Joda Time</a> et <a href="jcp.org/en/jsr/detail?id=310" hreflang="en">JSR 310</a>)</li>
+								<li>Lisibilité via chaînage (fluent code) et <a
+										href="https://fr.wikipedia.org/wiki/Domain-specific_programming_language"><acronym lang="en"
+										title="Domain Specific Language">DSL</acronym></a></li>
+								<li>imports statiques, <a hreflang="en" href="https://code.google.com/p/guava-libraries/wiki/UsingAndAvoidingNullExplained">optionels</a>,...</li>
+								<li><strong>règles de formattage</strong> (automatiques) fondamentales</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<figure lang="en">
+							<blockquote>The ratio of time spent reading (code) versus writing is well over 10 to 1 ... (therefore) making it easy to read makes it easier to write.</blockquote>
+							<figcaption>&nbsp;&mdash;&nbsp;Robert C. Martin in <cite>Clean Code</cite></figcaption>
+						</figure>
+						<aside class="notes">
+							<ul>
+								<li>tout est bon pour améliorer lecture</li>
+								<li><a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">standard de formattage (dont indentation)</a></li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img alt="write code for your future self" src="img/future_self.png" />
+						<aside class="notes">
+							<ul>
+								<li>cet état d'esprit permet des choses sympas</li>
+								<li><a hreflang="en" href="https://xkcd.com/">XKCD</a> est recommandé pour les geeks</li>
+								<li>MAIS <a href="http://onehundredacorns.wordpress.com/2014/09/10/extreme-programmers-paris-xpropa-second-meetup/">code pas littérature</a></li>
+								<li><a hreflang="en" href="http://thierrycros.net/public/docs/Clean-Code-V2.pdf">toujours améliorable</a> et documentation nécessaire</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
         <section>
           <section>
             <h2>3&nbsp;&dash;&nbsp;Votre code est votre documentation</h2>
             <p class="fragment"><img alt="Pas de gros documents Word/OpenOffice" src="img/word-no-more.png"/></p>
             <aside class="notes">
               <ul>
-								<li>refus des docs monolithiques (<a href=http://agilemanifesto.org/iso/fr/">manifeste agile : <q>logiciels opérationnels plutôt qu'une doc exhaustive</q></a>)</li>
+								<li>refus des docs monolithiques (<a href="http://agilemanifesto.org/iso/fr/">manifeste agile : <q>logiciels opérationnels plutôt qu'une doc exhaustive</q></a>)</li>
                 <li><a href="https://fr.wikipedia.org/wiki/Cycle_de_d%C3%A9veloppement_%28logiciel%29#Mod.C3.A8le_en_cascade">Vestiges du BTP (cascade)</a> : contraintes sur ordonnancement et coûts de changement</li>
                 <li>Jamais lus et mis à jour (contributeurs, workflow)</li>
                 <li> ⇒ on creuse dans le code pour connaître le métier</li>
@@ -1090,33 +1136,35 @@ public class Controle implements Serializable {
 
           <section>
             <h3>Gestionnaire de tickets</em></h3>
-						<p><img alt="historique d'un ticket bugzilla" src="img/historique-bugzilla.png"/></p>
+						<p><img class="specific" alt="historique d'un ticket bugzilla" src="img/historique-bugzilla.png"/></p>
             <aside class="notes">
               <ul>
 								<li>documentation <em>automatique</em></li>
                 <li>historique des problèmes, incidents, évolutions fonctionnelles, choix d'architecture</li>
-                <li>Pas automatique : créer et bien remplir (penser à soi dans 2 ans). Trouver la maille.</li
+                <li>Pas automatique : créer et bien remplir (penser à soi dans 2 ans). Trouver la maille.</li>
+								<li>Automatisme permet des <abbr title="vérifications">vérif.</abbr> : <a hreflang="en" href="https://blog.logentries.com/2014/10/our-favorite-continuous-delivery-tools/">obligation d'un ticket pour accepter commit</a></li>
               </ul>
             </aside>
           </section>
 
           <section>
             <h3>Gestionnaire de versions</h3>
-						<pre><code class="markdown">$:~/trace$ git log --pretty=oneline --abbrev-commit
+						<pre class="specific"><code class="markdown">$ git log --pretty=oneline --abbrev-commit
 
-							5ab30fb réduction du champ d'application d'une règle CSS
-											        pour les vignettes vidéo
-							231195a crebas.sql représente maintenant l'état de la
-											        dernière version de la base
-							31c15dd #1996 - léger espace autour d'une image dans un
-											        datatable-ui
-							ca7b84b on replace l'onglet acteurs entre les onglets
-											        organisation et résultat
-							e0b5cf9 suppression de l'onglet contexte (élément mis
-											        dans l'onglet détails)</code></pre>
+							a9fc841 add exec via maven
+							cc17eb4 produce both jar and war
+							b067a58 Merge branch 'master' of
+							        https://github.com/fmonniot/mailbox
+							5707b29 Add documentation and README
+							3e25423 Merge branch 'master' of github.com:fmonniot/mailbox
+							ac7ebd8 fix mvn build
+							c1879cb Add Admin client
+							00d84da more fixes
+						</code></pre>
 						<aside class="notes">
 							<ul>
 								<li>mêmes consignes de remplissage</li>
+								<li>déclarer pourquoi, pas comment (cf numéro de ticket)</li>
 								<li><a href="http://www.git-attitude.fr/2014/05/04/bien-utiliser-git-merge-et-rebase/"
 									title="Bien Utiliser git merge et rebase">Nettoyer son historique</a> avec systèmes distribués</li>
 								<li>1 ligne de résumé. Puis détails si nécessaires</li>
@@ -1171,6 +1219,23 @@ public class Controle implements Serializable {
               </ul>
             </aside>
           </section>
+
+					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
+						<h3>Travaux Pratiques : Etat des lieux</h3>
+						<p>On change les mainteneurs sur les projets !</p>
+						<ol>
+							<li>Installez le projet en local</li>
+							<li class="specific">Faites une modification mineure</li>
+							<li>Testez, Packagez, Diffusez</li>
+							<li>Notez vos conseils d'amélioration</li>
+						</ol>
+						<aside class="notes">
+							<ul>
+								<li>Tester en automatique ou non</li>
+								<li>Bilan : 1) Où est le source ? 2) Comment lancer ?</li>
+							</ul>
+						</aside>
+					</section>
         </section>
 
         <section>
@@ -1179,9 +1244,9 @@ public class Controle implements Serializable {
             <p><a hreflang="en" title="Excuses for lazy developers" href="http://developerexcuses.com/"><img alt="marre des excuses de développeurs" src="img/excuses.png"/></a></p>
             <aside class="notes">
             	<ul>
-            		<li><a hreflang="en" href="http://blog.8thlight.com/uncle-bob/2013/10/24/The-Careless-Ones.html" title="The careless ones">Problème de niveau d'exigence général dans la profession</a>. Médiocrité</li>
-            		<li><em lang="en"><a hreflang="en" href="https://en.wikipedia.org/wiki/Undocumented_feature">It's not a bug, it's a(n undocumented) feature</a></em> quand non documenté mais <em>tolérable</em></li>
-            		<li>Utilisateurs et ingénieurs part du principe que plein de bugs</li>
+            		<li><a hreflang="en" href="http://blog.8thlight.com/uncle-bob/2013/10/24/The-Careless-Ones.html" title="The careless ones">Problème de niveau d'exigence général</a></li>
+            		<li><em lang="en"><a hreflang="en" href="https://en.wikipedia.org/wiki/Undocumented_feature">It's not a bug, it's a(n undocumented) feature</a></em></li>
+            		<li>tout le monde ok si plein de bugs</li>
             		<li>License payées qui se dédouanent en cas de problème</li>
             		<li>On peut s'en sortir en faisant n'importe quoi</li>
             	</ul>
@@ -1207,10 +1272,12 @@ public class Controle implements Serializable {
           </section>
 
 					<section>
-						<h3>Soyez vigilants</h2>
+						<h3>Amélioration Continue</h2>
 						<p><img alt="Attention ! Il pourrait y avoir des ninjas dans le coin" src="img/ninja.png"/></p>
 						<aside class="notes">
 							<ul>
+								<li>Terme japonais : <a href="https://fr.wikipedia.org/wiki/Kaizen" lang="jp">Kaizen</a></li>
+								<li>Voir aussi le mouvement <a href="https://fr.wikipedia.org/wiki/Lean_Startup" lang="en">Lean Startup</a> (élimination des gaspis en continu)</li>
 								<li>Un grand nombre d'information est là pour vous aider</li>
 								<li>Ne laissez rien passer</li>
 								<li><a hreflang="en" href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">La règle du boy scout</a></li>
@@ -1243,7 +1310,7 @@ public class Controle implements Serializable {
 
           <section>
             <h3 lang="en"><acronym title="Integrated Development Environment">IDE</acronym></h3>
-            <p><img alt="" src="img/ide-warnings.jpg"/></p>
+            <p><img class="specific" alt="" src="img/ide-warnings.jpg"/></p>
             <aside class="notes">
               <ul>
                 <li>Reprend les infos du compilateur. En rajoute : imports</li>
@@ -1268,6 +1335,7 @@ public class Controle implements Serializable {
                 <li>classiquement, en production, warnings ou error</li>
                 <li>en dev, parfois en info pour anticiper les pb</li>
                 <li>savoir comment passer en debug</li>
+								<li>en gros, pas géré dans vos code</li>
               </ul>
             </aside>
           </section>
@@ -1289,18 +1357,19 @@ public class Controle implements Serializable {
           </section>
 
           <section>
-            <h3>Quoi faire ?</h3>
+            <h3>Résolution d'un problème</h3>
             <ol>
-              <li>Analyser</li>
+              <li>Analyser (Lire, Chercher, En parler)</li>
               <li class="fragment">Corriger <em>OU</em> repousser <em>OU</em> ne pas traiter</li>
               <li class="fragment">Cacher le message</li>
               <li class="fragment">Documenter</li>
             </ol>
             <aside class="notes">
               <ul>
-                <li><abbr title="informatique">info.</abbr> facile car <a hreflang="en" href="http://blog.8thlight.com/doug-bradbury/2013/10/08/stuck-in-the-muck.html">il y a <strong>toujours</strong> une explication rationnelle</a></li>
-                <li>si vraiment dur, <a hreflang="en" href="http://stackoverflow.com/">c'est vraiment nécessaire de creuser</a></li>
-								<li>stratégie open-source d'une entreprise</li>
+                <li>facile car <a hreflang="en" href="http://blog.8thlight.com/doug-bradbury/2013/10/08/stuck-in-the-muck.html"><strong>toujours</strong> explication</a></li>
+								<li><em>Vraiment</em> lire logs et recherches</li>
+								<li>Chercher ses notes, <a hreflang="en" href="https://duckduckgo.com/">recherche</a>, <a hreflang="en" href="http://stackoverflow.com/">forums</a>, code source ?</li>
+								<li>En parler canard plastique, collègue, expert</li>
                 <li>repousser avec TODO ou ticket</li>
                 <li>pas garder le message pour voir les nouveaux : <code>@SuppressWarning</code> ou config de la source</li>
                 <li>ne pas désactiver les futurs messages</li>
@@ -1309,12 +1378,23 @@ public class Controle implements Serializable {
             </aside>
           </section>
 
+					<section>
+						<h3>Honnêteté</h3>
+						<img alt="sémantique pour désigner un problème dans son code ou dans celui des autres" src="img/say-mean.png" />
+						<aside class="notes">
+							<ul>
+								<li>Mettez-vous à la place d'un autre</li>
+								<li>2 termes possibles mais pas juste fonction de l'auteur</li>
+							</ul>
+						</aside>
+					</section>
+
           <section>
             <h3>Remaniement</h3>
             <p>Changer la structure sans changer le fonctionnel</p>
             <aside class="notes">
             	<ul>
-            		<li>Objectif : maintenabilité améliorée
+            		<li>Objectif : <a hreflang="en" href="http://martinfowler.com/articles/workflowsOfRefactoring/#long-term">maintenabilité améliorée</a>
 									<ul>
 										<li>lisibilité</li>
 										<li>nettoyages (direct si <abbr title="suppression">suppr</abbr> fonction)</li>
@@ -1331,27 +1411,27 @@ public class Controle implements Serializable {
             <p><img alt="tests unitaires, d'intégration et fonctionnels se recouvrent" src="img/types-tests.png" /></p>
             <aside class="notes">
               <ul>
+								<li>tests manuels rajoutent environ 30% * livraison</li>
                 <li>bug est moins cher si détecté tôt (exponentiel)</li>
-                <li>tests manuels rajoutent environ 30% * livraison</li>
-                <li>Code non applicatif prod mais patrimoine aussi</li>
-                <li>Evite 2 pires bugs <acronym title="du point de vue de">pdv</acronym> user : régressions/répétitions</li>
-                <li>plus facile de remanier le code</li>
-                <li>pas de catégorisation officielle (jeunesse)</li>
-                <li>+ facile debug ⇒ + facile code (choix expérience)</li>
+								<li>Evite pire bug <acronym title="du point de vue de">pdv</acronym> user : régressions</li>
+								<li>pas de catégorisation officielle (jeunesse)</li>
+								<li>aussi <a href="http://cyrille.martraire.com/2014/02/canary-tests/">Canary Tests</a> : vérif env</li>
+								<li>parfois Acceptation quand test écrit par utilisateur</li>
+								<li><a href="http://www.parleys.com/play/535fa85be4b03397a8eee8e8/">Doit être <strong>maintenable</strong> lui aussi</a></li>
               </ul>
             </aside>
           </section>
 
           <section>
             <h3 lang="en">Test Driven Development</h3>
-            <p><img alt="Tests en erreurs puis tests passent puis remaniement et ça recommence" src="img/TDD.png"/></p>
+            <p><img alt="Tests en erreurs puis tests passent puis remaniement et ça recommence" src="img/tdd.jpg"/></p>
             <aside class="notes">
               <ul>
                 <li>code applicatif doit résoudre un test en erreur</li>
                 <li>aide à ne coder que le nécessaire fonctionnel</li>
-                <li>naturellement 100% de couverture</li>
-                <li>aide à trouver en auto le code inutile</li>
-								<li>aussi une très bonne documentation</li>
+                <li>naturellement 100% de couverture (non-régression)</li>
+								<li>peut aider à faire émerger design</li>
+								<li>très bonne documentation (ex d'utilisation)</li>
 								<li>attention aux <a hreflang="http://pitest.org/" title="mutation testing">tests non pertinents</a></li>
               </ul>
             </aside>
@@ -1364,28 +1444,15 @@ public class Controle implements Serializable {
                 <li>Difficile et mal valorisé (management)</li>
                 <li>Mais c'est le <a href="https://fr.wikipedia.org/wiki/Karma">Karma</a> du <em>bon</em> développeur</li>
                 <li>Valorisisation par ses pairs et gains en maintenabilité.</li>
-                <li>Collectivement, il faut s'améliorer</li>
+                <li>Collectivement, il faut s'améliorer, <a hreflang="en" href="https://www.parleys.com/play/536770f0e4b04bb59f502713/chapter28/about">respecter son relecteur</a>, son utilisateur et <a hreflang="http://blog.8thlight.com/ginny-hendry/2014/07/11/take-pride-in-your-legacy-code.html" href="http://blog.8thlight.com/ginny-hendry/2014/07/11/take-pride-in-your-legacy-code.html">être fier de son code</a></li>
+								<li>L'<a hreflang="en" href="http://www.scu.edu/ethics/practicing/focusareas/technology/resources/Students.pdf">éthique de l'informatique</a> amené à grandir</li>
               </ul>
             </aside>
           </section>
 
-					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
-						<h3>Travaux Pratiques : Etat des lieux</h3>
-						<p>On change les mainteneurs sur les projets !</p>
-						<ol>
-							<li>Installez le projet en local</li>
-							<li>Lancez la démonstration</li>
-							<li>Notez vos conseils d'amélioration</li>
-							<li class="fragment">Bonus : ajoutez un utilisateur <em><acronym lang="en" title="Very Important People">VIP</acronym></em></li>
-						</ol>
-						<aside class="notes">
-							<p>L'utilisateur <em><acronym>VIP</acronym></em> est traité spécialement dans les messages de log</p>
-						</aside>
-					</section>
-
 					<section>
 						<figure>
-							<blockquote lang="en">Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. Code for readability.</blockquote>
+							<blockquote lang="en">Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.</blockquote>
 							<figcaption>&nbsp;&mdash;&nbsp;John F. Woods</figcaption>
 						</figure>
 						<aside class="notes">
@@ -1469,21 +1536,44 @@ public class Controle implements Serializable {
 						<aside class="notes">
 							<ul>
 								<li>(Presque)-même binaire quel que soit l'environnement de gén.</li>
-								<li>Les références à un environnement donnée (anaf/amine)</li>
-                				<li>Faire différence avec conventions prévisibles</li>
+								<li class="specific"></li>
 							</ul>
 						</aside>
 					</section>
 
           <section data-background="img/travaux-pratiques.jpg" data-state="light-background">
             <h3>Travaux Pratiques : binaire portable</h3>
-            <p>Lister les parties non portables dans le code source de votre projet</p>
+						<ul>
+							<li>Lister les parties non portables dans votre code source</li>
+							<li>Séparer binaire et configuration</li>
+						</ul>
             <aside class="notes">
               <p>Aperçu des méthodes pour externaliser : variables d'environnements, fichiers à un endroit fixe, ...</p>
 							<p>tests nécessitant une BD ?</p>
 							<p>platform-dépendant</p>
             </aside>
           </section>
+
+					<section>
+						<h3>Versions sémantiques</h3>
+						<pre><code>
+							&lt;refonte&gt;.&lt;évolution&gt;.&lt;bug&gt;[-&lt;QUALIFIER&gt;]
+						</code></pre>
+						<ul>
+							<li class="fragment"><code>v1.0.3-SNAPSHOT</code> : instantané &ndash; développement</li>
+							<li class="fragment"><code>v1.0.3-RC1</code> : stable &ndash; développement</li>
+							<li class="fragment"><code>v1.0.3</code> : stable &ndash; partagé</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Petit intermède bonus</li>
+								<li><a hreflang="en" href="http://semver.org/" title="semantic versioning">pseudo-standard API</a></li>
+								<li>MAJEUR-MINEUR-PATCH</li>
+								<li>snapshot (maven) : artefact non unique</li>
+								<li>non snapshot : binaire stable</li>
+							</ul>
+						</aside>
+					</section>
 
         </section>
 
@@ -1492,7 +1582,11 @@ public class Controle implements Serializable {
         		<h2>Usine de développement</h2>
         		<p><img alt="Usine de développement" src="img/usine-dev.png"/></p>
         		<aside class="notes">
-        			On peut évoquer le déploiement continu (<a hreflang="en" href="http://fr.slideshare.net/jallspaw/10-deploys-per-day-dev-and-ops-cooperation-at-flickr">plus de 10/j à Flickr</a>, <a hreflang="en" href="http://dahernan.github.io/2013/10/14/continuous-deployment-trends/">environ 35/j à Etsy</a>).
+							<ul>
+								<li>Evoquer le déploiement continu (<a hreflang="en" href="http://fr.slideshare.net/jallspaw/10-deploys-per-day-dev-and-ops-cooperation-at-flickr">plus de 10/j à Flickr</a>, <a hreflang="en" href="http://dahernan.github.io/2013/10/14/continuous-deployment-trends/">environ 35/j à Etsy</a>)</li>
+								<li>Possible <a hreflang="en" href="http://alistapart.com/article/running-code-reviews-with-confidence">revue de code</a> (avant commit ou après)</li>
+								<li>Google sur code critique : nb de revues minimum pour sortie de quarantaine</li>
+							</ul>
         		</aside>
         	</section>
 
@@ -1507,7 +1601,7 @@ public class Controle implements Serializable {
                   <li>Extension de bibliothèques</li>
                 </ul></li>
                 <li>Note moins utile qu'évolution (cf RATP maintenance)</li>
-								<li><a hreflang="en" href="http://stackoverflow.com/questions/876089/who-wrote-this-programing-saying-always-code-as-if-the-guy-who-ends-up-maintai">version moins positive mais très concrète</a></li>
+								<li>A quoi pensez-vous qu'il correspond ?</li>
 							</ul>
 						</aside>
 					</section>
@@ -1516,14 +1610,18 @@ public class Controle implements Serializable {
 						<h3>Dette Technique</h3>
 						<ul>
               <li>Intérêts doivent être payés</li>
-              <li>Idée du coût de remboursement</li>
+              <li>Couts exponentiels</li>
+							<li>Expression d'un choix</li>
             </ul>
 						<aside class="notes">
 							<ul>
                 <li>intérêts sont tps dev + longs et bugs</li>
-                <li>Parlant pour tous</li>
-                <li>Coûts utile pour convaincre</li>
+                <li><a hreflang="en" href="http://blog.crisp.se/2013/07/12/henrikkniberg/the-solution-to-technical-debt">Coûts utiles pour convaincre</a></li>
                 <li>Le coût est en % du coût du projet</li>
+								<li><a href="http://blog.octo.com/maitriser-sa-dette-technique/">c'est une métaphore, pas une analogie précise</a></li>
+								<li><a href="http://blog.octo.com/pieges-de-lagile-n2-lagile-endette/">Utile que si on veut rembourser</a></li>
+								<li>Qualité moindre doit être un choix conscient</li>
+								<li>Plus classique, <a hreflang="en" href="http://www.sonarsource.com/products/plugins/governance/sqale/">SQALE</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1531,13 +1629,12 @@ public class Controle implements Serializable {
 					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
 						<h3>Travaux Pratiques : Stratégie</h3>
 						<ul>
-							<li><a hreflang="en" href="http://localhost:9000/">Votre projet analysé dans Sonar</a></li>
+							<li class="specific"><a hreflang="en" href="http://localhost:9000/">Votre projet analysé dans Sonar</a></li>
 							<li>Analyser les 5 priorités d'amélioration d'après vous</li>
-							<li class="fragment">Bonus : travaillez sur les points indiqués</li>
 						</ul>
 						<aside class="notes">
 							<ul>
-								<li>Bien pointer la partie <em lang="en">Hotspots</em></li>
+								<li>SQALE : par fichier, <span lang="en">dashboard</span> global, ...</li>
 								<li>Priorités doivent être en fonction de leur coûts et criticité</li>
 								<li>Ne pas oublier : couverture des tests, documentation, ...</li>
 							</ul>
@@ -1558,16 +1655,28 @@ public class Controle implements Serializable {
 							<li><a lang="en" href="http://www.cleancoder.com/"><cite>Clean Code : A Handbook of Agile Software Craftmanship</cite></a></li>
 							<li><a lang="en" href="http://programmer.97things.oreilly.com"><cite>97 Things Every Programer Should Know</cite></a></li>
 						</ul></li>
-						<li>Le mouvement des <a hreflang="en" href="http://manifesto.softwarecraftsmanship.org/#/en">artisans codeurs</a></li>
 					</ul>
 					<aside class="notes">
 						<ul>
-							<li>participer à des projets <span lang="en">Open Source</span></li>
+							<li><a hreflang="en" href="http://upstream-university.org/">participer à des projets <span lang="en">Open Source</span></a></li>
 							<li>penser à s'abonner aux RSS/twitter/...</li>
 							<li>l'anglais "technique" est presqu'indispensable</li>
 							<li>aussi <cite>97 things every software architect should know</cite></li>
 							<li>qualités: curiosité, remise en cause, réaliste, polyvalent</li>
 							<li>peur OK (mieux de savoir). Diversité = intérêt</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-background="img/slide-craft.jpg" data-state="light-background">
+					<h3 lang="en">Software Craftmanship</h3>
+					<p>apprentissage, mentoring, discipline, passion</p>
+					<aside class="notes">
+						<ul>
+							<li><a href="http://techtrends.xebia.fr/#tabs-4" title="Xebia Tech Trends sur le software craftmanship">Artisan du logiciel</a>, cf compagnonnage</li>
+							<li>humilité, implication, veille techique</li>
+							<li>mais aussi <a href="http://raphael-lemaire.com/blog/2014/11/18/attitude-et-ethique-du-developpeur/">pragmatisme et bon sens</a> (qualité mais répondre au besoin)</li>
+							<li class="specific">Vous êtes ingénieurs ! Construisez votre chef d'oeuvre !</li>
 						</ul>
 					</aside>
 				</section>
@@ -1579,12 +1688,16 @@ public class Controle implements Serializable {
 							<a hreflang="en" href="http://lab.hakim.se/reveal-js/">reveal.js</a>,
 							<a href="http://inkscape.org/?lang=fr">inkscape</a>,
 							<a hreflang="en" href="http://simpleicons.org/">simple icons</a>,
-							<a hreflang="en" href="https://www.draw.io/">diagram.ly</a> et
-							<a hreflang="en" href="http://www.wordle.net/">wordle</a>
+							<a hreflang="en" href="https://www.draw.io/">diagram.ly</a>,
+							<a hreflang="en" href="http://www.wordle.net/">wordle</a> et
+							VOUS
 						</li>
 						<li><em>Photos</em> :
 							<a hreflang="en" href="http://www.linkedin.com/in/florentmathe">F. Mathé</a>,
+							<a href="http://fr.slideshare.net/agnes_crepet/iut-agile-lyon-20-nov-2013-bdd-28492949">A. Crepet</a>,
+							<a hreflang="en" href="https://www.flickr.com/photos/z6p6tist6/501709581/">P. Gilbert</a>,
 							<a hreflang="en" href="http://universaluclick.com/licensing_permissions/educational_use">Dilbert.com</a>,
+							<a hreflang="en" href="https://xkcd.com/1421/">XKCD</a>,
 							<a lang="en" href="https://commons.wikimedia.org/wiki/Main_Page?uselang=fr">Wikimedia Commons</a>,
 							<a href="http://blog.octo.com/vers-une-usine-de-developpement-2-0/">OCTO</a>,
 							<a href="http://aaaproduction.fr/">aaa productions</a>,
@@ -1592,23 +1705,28 @@ public class Controle implements Serializable {
 							<a hreflang="en" href="http://ivadeath.deviantart.com/art/Karma-264163572">ivadeath</a>,
 							<a hreflang="en" href="https://secure.flickr.com/photos/rooster88fan/2077109462/">rooster88fan</a>,
 							<a hreflang="en" href="https://secure.flickr.com/photos/pablogrb/3519906015/">pablogrb</a>,
+							<a hreflang="en" href="http://imgur.com/M5wl14r">imgur</a>,
 							<a hreflang="en" href="http://kogakure.github.com/gitweb-theme/">kogakure</a> et
 							<a hreflang="en" href="http://pixabay.com/id/users/Nemo/">Nemo</a>
 						</li>
 					</ul>
 					<aside class="notes">
 						<ul>
-							<li>si dans la salle, je leur paie une bière non virtuelle</li>
+							<li>VOUS : c'est en discutant de ses erreurs que l'on progresse, en info comme ailleurs</li>
+							<li>je leur paie une bière non virtuelle</li>
 							<li>dans le même esprit de partage, partagé sur github</li>
 						</ul>
 					</aside>
 				</section>
 
 				<section>
-					<figure>
+					<figure lang="en">
 						<blockquote>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</blockquote>
-						<figcaption>&nbsp;&mdash;&nbsp;Martin Fowler</figcaption>
+						<figcaption>&nbsp;&mdash;&nbsp;Martin Fowler</cite></figcaption>
 					</figure>
+					<aside class="notes">
+						<p>dans <cite lang="en">Refactoring: Improving the Design of Existing Code</cite></p>
+					</aside>
 				</section>
 
 				<section data-background="img/slide-dingle.jpg">
