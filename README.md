@@ -8,10 +8,14 @@ des applications. Vous pouvez consulter différentes version en ligne via [l'his
  1. `git clone --recursive https://github.com/lcottereau/maintainability-slides.git` va récupérer le source du projet, ainsi que la bibliothèque [reveal.js](https://github.com/hakimel/reveal.js)
  1. Ouvrir le fichier [index.html](index.html) dans votre navigateur. Il vaut mieux le faire via http pour avoir toutes les fonctionnalités de reveal, en particulier les notes du présentateur (touche `s`).
 
+Note : vous pouvez aussi installer à partir de [l'archive à télécharger](https://github.com/lcottereau/maintainability-slides/archive/master.zip),
+mais dans ce cas-là il vous faudra aller chercher séparément la bibliothèque [reveal.js](https://github.com/hakimel/reveal.js/archive/master.zip) et la copier dans le
+répertoire `reveal` à la racine du projet.
+
 ## Historique
 
 * 8 décembre 2014 : Option informatique de l'INSA de Lyon
-* 1<sup>er</sup> décembre 2014 : Option ASR de Telecom SudParis
+* 1<sup>er</sup> décembre 2014 : [Option ASR de Telecom SudParis](http://lcottereau.github.io/maintainability-slides/20141201/)
 * 23 mai 2014 : [License PRO CSID de l'IUT de Montreuil (Paris 8)](http://lcottereau.github.io/maintainability-slides/20140523/)
 * 20 mai 2014 : [IUT Agile 2014 à Montreuil](http://lcottereau.github.io/maintainability-slides/20140520/) (version de 2h)
 * 28 octobre 2013 : [Option ASR de Telecom SudParis](http://lcottereau.github.io/maintainability-slides/20131028/)

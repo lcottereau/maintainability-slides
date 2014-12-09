@@ -119,7 +119,10 @@
 					<section data-background="img/question_mark.png" data-state="light-background">
 						<p>Qu'est-ce que la maintenabilité ?</p>
 						<aside class="notes">
-							Après les définitions et l'exemple, qu'en pensez-vous ?
+							<ul>
+								<li>Après les définitions et l'exemple, qu'en pensez-vous ?</li>
+								<li>4 types : corrective, évolutive, adaptative, préventive</li>
+							</ul>
 						</aside>
 					</section>
 
@@ -192,8 +195,7 @@
             <aside class="notes">
               <ul>
 								<li><a hreflang="en" href="http://codeincomplete.com/posts/2014/5/14/development_values/"><acronym lang="en" title="You Ain't Gonna Need It">YAGNI</acronym></a></li>
-              	<li class="specific">Très présent dans le code des élèves (copier/coller ? toString inutiles...)</li>
-                <li>Agilité aide à définir les fonctions au plus juste</li>
+              	<li>Agilité aide à définir les fonctions au plus juste</li>
               </ul>
             </aside>
           </section>
@@ -245,25 +247,25 @@
 								<li>Pas que copier/coller de code (ex : <em>annuaire inversé</em>)</li>
 								<li>Attention si presque-pareil : pourquoi ? comment gérer ?</li>
 								<li>Attention à la surgénéralisation (intra et inter projets)</li>
+								<li>Aussi ne pas avec des sources et du généré dans dépôt</li>
 							</ul>
 						</aside>
 					</section>
 
-          <section class="specific">
+          <section>
             <h3>Réfléchissez à ce que vous commitez</h3>
             <h4>A supprimer</h4>
-            <pre><code>import directoryManager.entity.FinalUser;
-//import entity.FinalUsers;</code></pre>
-            <pre><code>/**
+            <pre class="specific"><code class="java">//import com.sun.org.apache.bcel.internal.generic.LSTORE;</code></pre>
+            <pre class="specific"><code>/**
  *
  */
 private static final long serialVersionUID = 1L;</code></pre>
             <pre><code>@Override
-public String findUserNG(String name) {
-	// TODO Auto-generated method stub
-	return null;
-}</code></pre>
-			<pre><code>/**
+public void selectionner() {
+    // TODO Auto-generated method stub
+}
+</code></pre>
+			<pre class="specific"><code>/**
 * $Id:$
 * @author toto
 */
@@ -1225,13 +1227,14 @@ public class Controle implements Serializable {
 						<p>On change les mainteneurs sur les projets !</p>
 						<ol>
 							<li>Installez le projet en local</li>
-							<li class="specific">Faites une modification mineure</li>
+							<li>Faites une modification mineure</li>
 							<li>Testez, Packagez, Diffusez</li>
 							<li>Notez vos conseils d'amélioration</li>
 						</ol>
 						<aside class="notes">
 							<ul>
 								<li>Tester en automatique ou non</li>
+								<li class="specific">Idée de modification : dans les instructions, [NOM DES RUES] en majuscules et entre crochets</li>
 								<li>Bilan : 1) Où est le source ? 2) Comment lancer ?</li>
 							</ul>
 						</aside>
@@ -1260,7 +1263,7 @@ public class Controle implements Serializable {
               <ul>
 								<li>Où va être fait le prochain tag ?</li>
 								<li><q>Ce n'est pas bien grave de casser une fenêtre de plus</q></li>
-                <li>New York (graffitis dans métro 80s et Giuliani sur petits crimes alcool ou urinage public)</li>
+                <li>New York 80s (graffitis dans métro) puis police</li>
                 <li>
                   En projet, ne pas <a hreflang="en" href="https://en.wikipedia.org/wiki/Broken_windows_theory">laisser petits pb</a>
                   pour éviter les gros : traiter au fur et à mesure
@@ -1278,9 +1281,9 @@ public class Controle implements Serializable {
 							<ul>
 								<li>Terme japonais : <a href="https://fr.wikipedia.org/wiki/Kaizen" lang="jp">Kaizen</a></li>
 								<li>Voir aussi le mouvement <a href="https://fr.wikipedia.org/wiki/Lean_Startup" lang="en">Lean Startup</a> (élimination des gaspis en continu)</li>
-								<li>Un grand nombre d'information est là pour vous aider</li>
-								<li>Ne laissez rien passer</li>
 								<li><a hreflang="en" href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">La règle du boy scout</a></li>
+								<li>Ne laissez rien passer</li>
+								<li>Un grand nombre d'information est là pour vous aider</li>
 							</ul>
 						</aside>
 					</section>
@@ -1356,7 +1359,7 @@ public class Controle implements Serializable {
             </aside>
           </section>
 
-          <section>
+          <section data-background="img/rubber-duck.jpg" data-state="light-background">
             <h3>Résolution d'un problème</h3>
             <ol>
               <li>Analyser (Lire, Chercher, En parler)</li>
@@ -1471,6 +1474,7 @@ public class Controle implements Serializable {
             <p class="fragments"><img alt="environnement de tests automatisés, local, de qualification et de production" src="img/environnements.png"/></p>
             <aside class="notes">
               <ul>
+								<li>peut-être pas trop vu en stages</li>
                 <li>local : tout devrait être testable (dev sous linux ?)</li>
                 <li>décrire en sens historique des développements</li>
                 <li>nombre d'utilisateurs. De + en + la vraie vie (hors projet)</li>
@@ -1536,7 +1540,6 @@ public class Controle implements Serializable {
 						<aside class="notes">
 							<ul>
 								<li>(Presque)-même binaire quel que soit l'environnement de gén.</li>
-								<li class="specific"></li>
 							</ul>
 						</aside>
 					</section>
@@ -1554,27 +1557,6 @@ public class Controle implements Serializable {
             </aside>
           </section>
 
-					<section>
-						<h3>Versions sémantiques</h3>
-						<pre><code>
-							&lt;refonte&gt;.&lt;évolution&gt;.&lt;bug&gt;[-&lt;QUALIFIER&gt;]
-						</code></pre>
-						<ul>
-							<li class="fragment"><code>v1.0.3-SNAPSHOT</code> : instantané &ndash; développement</li>
-							<li class="fragment"><code>v1.0.3-RC1</code> : stable &ndash; développement</li>
-							<li class="fragment"><code>v1.0.3</code> : stable &ndash; partagé</li>
-						</ul>
-						<aside class="notes">
-							<ul>
-								<li>Petit intermède bonus</li>
-								<li><a hreflang="en" href="http://semver.org/" title="semantic versioning">pseudo-standard API</a></li>
-								<li>MAJEUR-MINEUR-PATCH</li>
-								<li>snapshot (maven) : artefact non unique</li>
-								<li>non snapshot : binaire stable</li>
-							</ul>
-						</aside>
-					</section>
-
         </section>
 
         <section> <!-- 3) USINE DE DEVELOPPEMENT -->
@@ -1583,9 +1565,11 @@ public class Controle implements Serializable {
         		<p><img alt="Usine de développement" src="img/usine-dev.png"/></p>
         		<aside class="notes">
 							<ul>
-								<li>Evoquer le déploiement continu (<a hreflang="en" href="http://fr.slideshare.net/jallspaw/10-deploys-per-day-dev-and-ops-cooperation-at-flickr">plus de 10/j à Flickr</a>, <a hreflang="en" href="http://dahernan.github.io/2013/10/14/continuous-deployment-trends/">environ 35/j à Etsy</a>)</li>
+								<li>Quel IDE utilisez-vous et pourquoi ?</li>
+								<li>Importance de maîtriser ses outils + remise en cause</li>
 								<li>Possible <a hreflang="en" href="http://alistapart.com/article/running-code-reviews-with-confidence">revue de code</a> (avant commit ou après)</li>
 								<li>Google sur code critique : nb de revues minimum pour sortie de quarantaine</li>
+								<li>Evoquer le déploiement continu (<a hreflang="en" href="http://fr.slideshare.net/jallspaw/10-deploys-per-day-dev-and-ops-cooperation-at-flickr">plus de 10/j à Flickr</a>, <a hreflang="en" href="http://dahernan.github.io/2013/10/14/continuous-deployment-trends/">environ 35/j à Etsy</a>)</li>
 							</ul>
         		</aside>
         	</section>
