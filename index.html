@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 	<head>
 		<meta charset="utf-8" />
@@ -202,7 +202,7 @@
 
 					<section data-background="img/slide-warning.jpg" data-state="light-background">
 						<h3>Comprenez ce que vous faites !</h3>
-						<pre class="fragment"><code class="specific">private static final long serialVersionUID = 1L;</code></pre>
+						<pre class="fragment"><code>private static final long serialVersionUID = 1L;</code></pre>
 						<aside class="notes">
 							<ul>
 								<li><a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">Soyez curieux</a> et perfectionnistes !</li>
@@ -260,12 +260,10 @@
  *
  */
 private static final long serialVersionUID = 1L;</code></pre>
-            <pre><code>@Override
-public void selectionner() {
+            <pre><code>private void setResultCode(int resultOk) {
     // TODO Auto-generated method stub
-}
-</code></pre>
-			<pre class="specific"><code>/**
+}</code></pre>
+			<pre><code>/**
 * $Id:$
 * @author toto
 */
@@ -955,7 +953,7 @@ public class Controle implements Serializable {
 							<li>code inutile</li>
 							<li>code à externaliser</li>
 							<li>code "automatique"</li>
-						</l>
+						</ol>
 						<aside class="notes">
 							<ul>
 								<li>N'hésitez pas à poser vos questions</li>
@@ -969,9 +967,10 @@ public class Controle implements Serializable {
             <aside class="notes">
               <ul>
                 <li><a href="http://blog.xebia.fr/2013/05/27/comprendre-le-fonctionnement-de-la-jvm-article-1/" title="Comprendre le fonctionnement de la JVM – Article 1/2">Faites confiance aux ingénieurs JVM</a></li>
-								<li>Au minimum, pas avant d'avoir de problème (<a href="http://blog.octo.com/la-mort-prochaine-du-ramasse-miettes/">de + en + avec JVM 64 bits</a>)</li>
-								<li>N'empêche pas de faire les bons choix de structures : Hashmap/LinkedList/BinaryTree, StringBuilder ou String
+								<li>En général, pas avant d'avoir de problème (<a href="http://blog.octo.com/la-mort-prochaine-du-ramasse-miettes/">de + en + avec JVM 64 bits</a>), sauf <abbr title="concaténation">concat.</abbr> de Strings par ex</li>
+								<li>N'empêche pas de faire les bons choix d'algorithmie' : Hashmap/LinkedList/BinaryTree, StringBuilder ou String
                 <li>Si besoin d'optim, plutôt <a hreflang="en" href="https://weblogs.java.net/blog/kcpeppe/archive/2013/12/11/case-study-jvm-hotspot-flags">paramétrage JVM (expertise nécessaire)</a></li>
+								<li><a href="http://shop.oreilly.com/product/0636920028499.do" title="Java Performance : the Definitive Guide">Excellent bouquin sur le sujet</a></li>
               </ul>
             </aside>
           </section>
@@ -1279,7 +1278,7 @@ public class Controle implements Serializable {
 						<p><img alt="Attention ! Il pourrait y avoir des ninjas dans le coin" src="img/ninja.png"/></p>
 						<aside class="notes">
 							<ul>
-								<li>Terme japonais : <a href="https://fr.wikipedia.org/wiki/Kaizen" lang="jp">Kaizen</a></li>
+								<li>Terme japonais : <a hreflang="en" href="http://lifehacker.com/get-better-at-getting-better-the-kaizen-productivity-p-1672205148" lang="jp">Kaizen</a></li>
 								<li>Voir aussi le mouvement <a href="https://fr.wikipedia.org/wiki/Lean_Startup" lang="en">Lean Startup</a> (élimination des gaspis en continu)</li>
 								<li><a hreflang="en" href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">La règle du boy scout</a></li>
 								<li>Ne laissez rien passer</li>
@@ -1660,7 +1659,7 @@ public class Controle implements Serializable {
 							<li><a href="http://techtrends.xebia.fr/#tabs-4" title="Xebia Tech Trends sur le software craftmanship">Artisan du logiciel</a>, cf compagnonnage</li>
 							<li>humilité, implication, veille techique</li>
 							<li>mais aussi <a href="http://raphael-lemaire.com/blog/2014/11/18/attitude-et-ethique-du-developpeur/">pragmatisme et bon sens</a> (qualité mais répondre au besoin)</li>
-							<li class="specific">Vous êtes ingénieurs ! Construisez votre chef d'oeuvre !</li>
+							<li>Vous êtes techniciens ! Construisez votre chef d'oeuvre !</li>
 						</ul>
 					</aside>
 				</section>
