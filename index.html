@@ -102,7 +102,7 @@
 			<div class="slides">
 
 				<section>
-					<h1 style="font-size: 2.3em;">Développement <img alt="Logiciel" class="no-border" src="img/floppy.png"/> Durable</h1>
+					<h1 style="font-size: 1.6em;">Développement <img alt="Logiciel" class="no-border" src="img/floppy.png"/> Durable</h1>
 					<p>Maintenabilité des applications</p>
 				</section>
 
@@ -292,22 +292,22 @@ public int doSomething() {
 
           <section>
             <h4>A garder</h4>
-            <pre><code>
-              /*
-               * (c) Copyright 2013 Laurent Cottereau
-               *
-               * This file is part of Foobar.
-               * Foobar is free software: you can redistribute it and/or
-               * modify it under the terms of the GNU General Public
-               * License as published by the Free Software Foundation.
-               * You should have received a copy of the GNU General Public
-               * License along with Foobar.
-               * If not, see &lt;http://www.gnu.org/licenses/&gt;.
-               */
-              /**
-               * commentaire décrivant le comportement pour qui
-               * ne veut pas lire le code.
-               * TODO penser à implémenter autre chose.
+            <pre><code class="java">
+/*
+ * (c) Copyright 2013 Laurent Cottereau
+ *
+ * This file is part of Foobar.
+ * Foobar is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation.
+ * You should have received a copy of the GNU General Public
+ * License along with Foobar.
+ * If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+/**
+ * commentaire décrivant le comportement pour qui
+ * ne veut pas lire le code.
+ * TODO penser à implémenter autre chose.
             </code></pre>
               <aside class="notes">
                 <ul>
@@ -857,12 +857,12 @@ public class Controle implements Serializable {
 					<section>
 						<h2>lombok</h2>
 						<pre><code>
-							&lt;dependency>
-							&nbsp;&nbsp;&lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
-							&nbsp;&nbsp;&lt;artifactId&gt;lombok&lt;/artifactId&gt;
-							&nbsp;&nbsp;&lt;version&gt;1.12.6&lt;/version&gt;
-							&nbsp;&nbsp;&lt;scope&gt;provided&lt;/scope&gt;
-							&lt;/dependency&gt;
+&lt;dependency>
+&nbsp;&nbsp;&lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+&nbsp;&nbsp;&lt;artifactId&gt;lombok&lt;/artifactId&gt;
+&nbsp;&nbsp;&lt;version&gt;1.16.6&lt;/version&gt;
+&nbsp;&nbsp;&lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
 						</code></pre>
 						<aside class="notes">
 							<ul>
@@ -988,9 +988,9 @@ public class Controle implements Serializable {
             </figure>
             <figure class="fragment">
               <pre><code class="javascript">
-                  function(a,b,c,d){d+=c;return[d&lt;0|a&amp;b&lt;&lt;
-                  d?a=parseInt((a|b&lt;&lt;c).toString(d=32,b=new Date&amp;2|1)
-                  .replace('v',''),d):a|b&lt;&lt;d,a,b,d]}
+  function(a,b,c,d){d+=c;return[d&lt;0|a&amp;b&lt;&lt;
+  d?a=parseInt((a|b&lt;&lt;c).toString(d=32,b=new Date&amp;2|1)
+  .replace('v',''),d):a|b&lt;&lt;d,a,b,d]}
               </code></pre>
               <figcaption>&nbsp;&mdash;<a href="https://gist.github.com/aemkei/1672254#file-annotated-js"><code>140byt.es</code></a></figcaption>
             </figure>
@@ -1045,22 +1045,22 @@ public class Controle implements Serializable {
 					<section>
             <h3>Code expressif / lisible</h3>
             <pre><code>
-              Calendar c = new GregorianCalendar();
-              Calendar b = j.bd();
-              if (b != null &amp;&amp;
-                c.get(Calendar.DAY_OF_YEAR) ==
-                b.get(Calendar.DAY_OF_YEAR)) {
-                  return new BD();
-              }
+  Calendar c = new GregorianCalendar();
+  Calendar b = j.bd();
+  if (b != null &amp;&amp;
+    c.get(Calendar.DAY_OF_YEAR) ==
+    b.get(Calendar.DAY_OF_YEAR)) {
+      return new BD();
+  }
             </code></pre>
             <pre class="fragment"><code>
-              if (joe.hasBirthday()) {
-                  BandeDessinee gift = new BandeDessinee("Lincoln");
-                  return gift;
-              }
+  if (joe.hasBirthday()) {
+      BandeDessinee gift = new BandeDessinee("Lincoln");
+      return gift;
+  }
             </code></pre>
             <pre class="fragment"><code>
-              when(joe.hasBirthday()).thenSend(gift);
+  when(joe.hasBirthday()).thenSend(gift);
             </code></pre>
 						<aside class="notes">
 							<ul>
@@ -1155,16 +1155,16 @@ public class Controle implements Serializable {
             <h3>Gestionnaire de versions</h3>
 						<pre class="specific"><code class="markdown">$:~/trace$ git log --pretty=oneline --abbrev-commit
 
-							5ab30fb réduction du champ d'application d'une règle CSS
-											        pour les vignettes vidéo
-							231195a crebas.sql représente maintenant l'état de la
-											        dernière version de la base
-							31c15dd #1996 - léger espace autour d'une image dans un
-											        datatable-ui
-							ca7b84b on replace l'onglet acteurs entre les onglets
-											        organisation et résultat
-							e0b5cf9 suppression de l'onglet contexte (élément mis
-											        dans l'onglet détails)</code></pre>
+5ab30fb réduction du champ d'application d'une règle CSS
+        pour les vignettes vidéo
+231195a crebas.sql représente maintenant l'état de la
+        dernière version de la base
+31c15dd #1996 - léger espace autour d'une image dans un
+        datatable-ui
+ca7b84b on replace l'onglet acteurs entre les onglets
+        organisation et résultat
+e0b5cf9 suppression de l'onglet contexte (élément mis
+        dans l'onglet détails)</code></pre>
 						<aside class="notes">
 							<ul>
 								<li>mêmes consignes de remplissage</li>
@@ -1293,12 +1293,12 @@ public class Controle implements Serializable {
           <section>
             <h3>Compilateur</h3>
             <pre><code class="no-highlight">
-            Note : Foo() in interface FooBase has been deprecated.
-            Note : Foo.java uses unchecked or unsafe operations.
+Note : Foo() in interface FooBase has been deprecated.
+Note : Foo.java uses unchecked or unsafe operations.
             </code></pre>
             <pre class="fragment"><code data-noescape class="bash">
-            <del>javac -nowarn</del>
-            javac -Xlint <span class="fragment">-Werror</span>
+<del>javac -nowarn</del>
+javac -Xlint <span class="fragment">-Werror</span>
             </code></pre>
             <aside class="notes">
             	<ul>
@@ -1530,7 +1530,7 @@ public class Controle implements Serializable {
 					<section>
 						<h3>Prévisibilité du binaire</h3>
 						<pre><code>[WARNING] File encoding has not been set,
-            using platform encoding UTF-8, i.e. build is platform dependent!</code></pre>
+ using platform encoding UTF-8, i.e. build is platform dependent!</code></pre>
 						<pre class="fragment"><code>
 &lt;properties&gt;
     &lt;maven.compiler.source&gt;1.6&lt;/maven.compiler.source&gt;
