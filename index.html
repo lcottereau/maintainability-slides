@@ -273,14 +273,14 @@
           <section class="specific">
             <h3>Réfléchissez à ce que vous commitez</h3>
             <h4>A supprimer</h4>
-            <pre><code>import java.util.Date;
-//import java.util.Date;</code></pre>
+            <pre><code class="java">//import com.sun.org.apache.....ReturnaddressType;</code></pre>
             <pre><code>/**
  *
  */
 private static final long serialVersionUID = 1L;</code></pre>
-            <pre><code>private void setResultCode(int resultOk) {
-    // TODO Auto-generated method stub
+            <pre><code class="java">public boolean Annuler() {
+  // TODO Auto-generated method stub
+  return false;
 }</code></pre>
 			<pre><code>/**
 * $Id:$
@@ -1174,16 +1174,20 @@ public class Controle implements Serializable {
 
           <section>
             <h3>Gestionnaire de versions</h3>
-						<pre class="specific"><code class="markdown">$:~/trace$ git log --pretty=oneline --abbrev-commit
+						<pre class="specific"><code class="markdown">$ git log --pretty=oneline --abbrev-commit
 
-5ab30fb réduction du champ d'application d'une règle CSS
-        pour les vignettes vidéo
-231195a crebas.sql représente maintenant l'état de la
+5b5be75 getIdClient
+458ce6b corrections
+59ba74e getIdClient
+5292c95 corrections
+851b58e merge
+4020e4f Supprimer et Ajouter avec corrections
+c89ad42 Supprimer et Ajouter avec corrections</code></pre>
+
+<pre class="fragment"><code class="markdown">231195a crebas.sql représente maintenant l'état de la
         dernière version de la base
 31c15dd #1996 - léger espace autour d'une image dans un
         datatable-ui
-ca7b84b on replace l'onglet acteurs entre les onglets
-        organisation et résultat
 e0b5cf9 suppression de l'onglet contexte (élément mis
         dans l'onglet détails)</code></pre>
 						<aside class="notes">
