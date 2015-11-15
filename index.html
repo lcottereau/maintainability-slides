@@ -221,6 +221,7 @@
 					<section data-background="img/slide-warning.jpg" data-state="light-background">
 						<h3>Comprenez ce que vous faites !</h3>
 						<pre class="fragment"><code class="specific">private static final long serialVersionUID = 1L;</code></pre>
+						<pre class="fragment">Sessions web et cookies</pre>
 						<aside class="notes">
 							<ul>
 								<li><a href="http://blog.ninja-squad.com/2014/05/02/mix-it-lightning-talk/">Soyez curieux</a> et <a hreflang="en" href="https://www.christianheilmann.com/2015/07/17/the-full-stackoverflow-developer/">perfectionnistes</a> !</li>
@@ -273,13 +274,11 @@
           <section class="specific">
             <h3>Réfléchissez à ce que vous commitez</h3>
             <h4>A supprimer</h4>
-            <pre><code>import java.util.Date;
-//import java.util.Date;</code></pre>
             <pre><code>/**
  *
  */
 private static final long serialVersionUID = 1L;</code></pre>
-            <pre><code>private void setResultCode(int resultOk) {
+            <pre><code class="java">private void setResultCode(int resultOk) {
     // TODO Auto-generated method stub
 }</code></pre>
 			<pre><code>/**
@@ -287,9 +286,12 @@ private static final long serialVersionUID = 1L;</code></pre>
 * @author toto
 */
 public int doSomething() {
-  //System.out.println("TOTO");
-  return x;
-  //return x*2;
+	FinalUser user = new FinalUser();
+	user = em.find(FinalUser.class, userName);
+
+	/*newUser.setUserName(userNName);
+	return newUser.getUserName();*/
+	return userNName;
 }</code></pre>
             <aside class="notes">
               <ul>
@@ -1257,7 +1259,7 @@ e0b5cf9 suppression de l'onglet contexte (élément mis
 						<aside class="notes">
 							<ul>
 								<li>Tester en automatique ou non</li>
-								<li class="specific">Idée de modification : </li>
+								<li class="specific">Idée de modification : ajouter NEW au début du sujet d'un nouveau message</li>
 								<li>Bilan : 1) Où est le source ? 2) Comment lancer ?</li>
 							</ul>
 						</aside>
@@ -1637,7 +1639,7 @@ javac -Xlint <span class="fragment">-Werror</span>
 					<section data-background="img/travaux-pratiques.jpg" data-state="light-background">
 						<h3>Travaux Pratiques : Stratégie</h3>
 						<ul>
-							<li class="specific"><a hreflang="en" href="http://localhost:9000/">Votre projet analysé dans Sonar</a></li>
+							<li class="specific"><a hreflang="en" href="http://b313-13.int-evry.fr:9000/">Votre projet analysé dans Sonar</a></li>
 							<li>Analyser les 5 priorités d'amélioration d'après vous</li>
 						</ul>
 						<aside class="notes">
