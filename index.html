@@ -281,16 +281,16 @@ private static final long serialVersionUID = 1L;</code></pre>
             <pre><code class="java">private void setResultCode(int resultOk) {
     // TODO Auto-generated method stub
 }</code></pre>
-			<pre><code>/**
+			<pre><code class="java">//il affecte au parametre passé dans le query la valeur passée
+q.setParameter("username", username);</code></pre>
+						<pre><code>/**
 * $Id:$
 * @author toto
 */
 public int doSomething() {
 	FinalUser user = new FinalUser();
 	user = em.find(FinalUser.class, userName);
-
-	/*newUser.setUserName(userNName);
-	return newUser.getUserName();*/
+	/*return newUser.getUserName();*/
 	return userNName;
 }</code></pre>
             <aside class="notes">
