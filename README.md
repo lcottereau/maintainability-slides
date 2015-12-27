@@ -14,6 +14,7 @@ répertoire `reveal` à la racine du projet.
 
 ## Historique
 
+* 16 novembre 2015 : [Option ASR de Telecom SudParis](http://lcottereau.github.io/maintainability-slides/20151116/)
 * 12 octobre 2015 : [Option informatique de l'INSA de Lyon](http://lcottereau.github.io/maintainability-slides/20151012/)
 * 16 avril 2015 : [License PRO CSID de l'IUT de Montreuil (Paris 8)](https://lcottereau.github.io/maintainability-slides/20150416/)
 * 8 décembre 2014 : [Option informatique de l'INSA de Lyon](http://lcottereau.github.io/maintainability-slides/20141208/)
